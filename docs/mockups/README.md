@@ -15,7 +15,7 @@ Real TRMNL framework 3.4 markup, CSS, fonts and title bar, drawn by tools/mockup
 | File | What it shows |
 | --- | --- |
 | `compare_resolution.png` | Karwendel: chosen JAXA mockup vs GLO-90 at 200, 280 and 400 grids, and three ripple scales |
-| `corpus_og.png` | All 8 fixture entries at the chosen settings (floor 40th percentile, ripple 4 gaps), OG 1-bit |
+| `corpus_og.png` | All 8 fixture entries at the chosen settings (floor 40th percentile, ripple 4 gaps), OG 1-bit, info box on, title bar off |
 | `corpus_tuned_og.png` | The same at the proposed settings (floor 55th percentile, ripple 5 gaps) |
 | `compare_relief.png` | Absolute height vs local relief at the proposed settings |
 | `views_karwendel.png`, `views_rwenzori.png` | Every view on OG 1-bit and 2-bit, TRMNL X 4-bit and Kindle 2024, plus portrait |

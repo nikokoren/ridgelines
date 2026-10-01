@@ -138,6 +138,15 @@
       }
       var dx = Math.max(pad - bb.x, Math.min(0, w - pad - (bb.x + bb.width)));
       if (dx) { text.setAttribute("x", x + dx); bb = text.getBBox(); }
+      // Last resort when the map could not move far enough: slide the label clear of the box.
+      if (report.box) {
+        var b = report.box;
+        if (bb.x < b[0] + b[2] + pad && bb.y + bb.height > b[1] - pad && bb.y < b[1] + b[3]) {
+          text.setAttribute("x", parseFloat(text.getAttribute("x")) + (b[0] + b[2] + 2 * pad - bb.x));
+          bb = text.getBBox();
+          report.labelSlid = true;
+        }
+      }
       var back = svgEl("rect", { x: bb.x - pad, y: bb.y, width: bb.width + 2 * pad, height: bb.height, fill: paper });
       svg.insertBefore(back, text);
       report.label = { x: bb.x, y: bb.y, w: bb.width, h: bb.height, font: type.fontFamily + " " + fs + "px" };
