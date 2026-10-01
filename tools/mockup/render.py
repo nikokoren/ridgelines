@@ -34,15 +34,46 @@ VIEWS = {
 SEP = " · "
 
 
-def fmt_m(m, lang):
-    s = f"{m:,}"
-    return (s.replace(",", ".") if lang == "de" else s) + " m"
+# Recipe settings (Niko, 2026-10-01). Mirrors the planned settings.yml custom fields.
+SETTINGS = dict(
+    peak_label=True,    # name above the highest peak
+    title_bar=False,    # framework title bar with caption
+    info_box=True,      # bottom left box: range and country, then peak and height
+    language="en",      # en (US English) or de
+    units="metric",     # metric or imperial
+)
+UI = {"en": {"and": "and", "highest": "Highest peak"}, "de": {"and": "und", "highest": "Höchster Gipfel"}}
+
+# Box classes per view, following Downstream's text box (recipe/src/*.liquid there).
+BOX = {
+    "full":            dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[45cqw] portrait:w--[80cqw]",
+                            head="title--large lg:title--xlarge", sub="description lg:description--large"),
+    "half_horizontal": dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[40cqw] portrait:w--[70cqw]",
+                            head="lg:title--large", sub="label label--small lg:label--base"),
+    "half_vertical":   dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[92cqw]",
+                            head="lg:title--large", sub="label label--small lg:label--base"),
+    "quadrant":        dict(pos="bottom--3 lg:bottom--6 left--2 p--2", width="w--[92cqw]",
+                            head="title--small", sub="label label--small"),
+}
 
 
-def caption(e, view, lang="en", portrait=False):
+def fmt_height(m, s):
+    """Peak height in the chosen units and the language's number format, feet to the nearest 10."""
+    v, unit = (m, "m") if s["units"] == "metric" else (int(round(m * 3.28084 / 10) * 10), "ft")
+    txt = f"{v:,}"
+    return (txt.replace(",", ".") if s["language"] == "de" else txt) + " " + unit
+
+
+def countries(e, lang):
+    c = [x for x in e["country"][lang].split(", ") if x]
+    return c[0] if len(c) < 2 else ", ".join(c[:-1]) + f" {UI[lang]['and']} " + c[-1]
+
+
+def caption(e, view, s, portrait=False):
+    lang = s["language"]
     name, peak, country = e["name"][lang], e["peak"][lang], e["country"][lang]
     if view == "full":
-        parts = [name, f"{peak} {fmt_m(e['peak_m'], lang)}"] + ([] if portrait else [country])
+        parts = [name, f"{peak} {fmt_height(e['peak_m'], s)}"] + ([] if portrait else [country])
     elif view == "half_horizontal":
         parts = [name, country]
     else:
@@ -50,17 +81,26 @@ def caption(e, view, lang="en", portrait=False):
     return SEP.join(p for p in parts if p)
 
 
-def view_markup(e, view, lang, portrait, idx):
-    return f"""
-  <div class="view {VIEWS[view][1]}">
-    <div class="layout layout--col layout--stretch">
-      <div id="rl-{idx}" class="w--full h--full" data-ridgelines></div>
-    </div>
+def view_markup(e, view, s, portrait, idx):
+    lang, b = s["language"], BOX[view]
+    box = f"""
+        <div class="absolute {b['pos']} z--2 bg--canvas outline flex flex--col flex--left gap--xsmall {b['width']}" data-ridgelines-box>
+          <span class="w--full title {b['head']}" data-clamp="2">{e['name'][lang]}, {countries(e, lang)}</span>
+          <span class="w--full {b['sub']}" data-clamp="1">{UI[lang]['highest']} {e['peak'][lang]} {fmt_height(e['peak_m'], s)}</span>
+        </div>""" if s["info_box"] else ""
+    bar = f"""
     <div class="title_bar">
       <img class="image image--adaptive" src="/images/plugins/trmnl--render.svg">
       <span class="title">Ridgelines</span>
-      <span class="instance">{caption(e, view, lang, portrait)}</span>
-    </div>
+      <span class="instance">{caption(e, view, s, portrait)}</span>
+    </div>""" if s["title_bar"] else ""
+    return f"""
+  <div class="view {VIEWS[view][1]}">
+    <div class="layout layout--col layout--stretch">
+      <div class="w--full h--full relative">
+        <div id="rl-{idx}" class="w--full h--full" data-ridgelines></div>{box}
+      </div>
+    </div>{bar}
   </div>"""
 
 
@@ -71,11 +111,16 @@ def other_view(cls):
   </div>"""
 
 
-def page(e, device, view, lang="en", portrait=False, dark=False, look=None):
+def page(e, device, view, lang="en", portrait=False, dark=False, look=None, settings=None):
+    s = dict(SETTINGS, **(settings or {}))
+    if lang != "en":
+        s["language"] = lang
+    lang = s["language"]
+    look = dict(look or {}, label=s["peak_label"] and (look or {}).get("label", True))
     d = DEVICES[device]
     cls = "screen " + d["cls"] + (" screen--portrait" if portrait else "") + (" screen--dark-mode" if dark else "")
     mashup, vcls = VIEWS[view]
-    body = view_markup(e, view, lang, portrait, 0)
+    body = view_markup(e, view, s, portrait, 0)
     if mashup:
         n = 4 if view == "quadrant" else 2
         body = f'<div class="mashup {mashup}">' + body + "".join(other_view(vcls) for _ in range(n - 1)) + "</div>"
@@ -131,14 +176,14 @@ class Renderer:
         await self.browser.close()
         await self.pw.stop()
 
-    async def shot(self, e, device, view, out, lang="en", portrait=False, dark=False, look=None):
+    async def shot(self, e, device, view, out, lang="en", portrait=False, dark=False, look=None, settings=None):
         w, h = screen_size(device, portrait)
         # The framework scales the screen by --pixel-ratio itself, so capture the
         # panel's physical size at a device scale factor of 1.
         k = DEVICES[device]["ratio"]
         ctx = await self.browser.new_context(viewport={"width": round(w * k), "height": round(h * k)}, device_scale_factor=1)
         p = await ctx.new_page()
-        html = page(e, device, view, lang, portrait, dark, look)
+        html = page(e, device, view, lang, portrait, dark, look, settings)
 
         async def route(r):
             path = r.request.url[len(ORIGIN):].split("?")[0]
@@ -205,12 +250,13 @@ if __name__ == "__main__":
     ap.add_argument("--portrait", action="store_true")
     ap.add_argument("--dark", action="store_true")
     ap.add_argument("--look", default="{}", help='JSON overrides, e.g. {"ripple": 5}')
+    ap.add_argument("--settings", default="{}", help='recipe settings, e.g. {"title_bar": true, "units": "imperial"}')
     ap.add_argument("--out", default="render.png")
     a = ap.parse_args()
     fetch_framework()
 
     async def main():
         async with Renderer() as r:
-            rep = await r.shot(load(a.entry), a.device, a.view, a.out, a.lang, a.portrait, a.dark, json.loads(a.look))
+            rep = await r.shot(load(a.entry), a.device, a.view, a.out, a.lang, a.portrait, a.dark, json.loads(a.look), json.loads(a.settings))
             print(json.dumps(rep))
     asyncio.run(main())

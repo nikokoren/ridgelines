@@ -67,6 +67,22 @@
       return Math.max(-half + hs, Math.min(half - hs, c));
     }
     var cx = shift(0, pk[0], hw), cy = shift(0, pk[1], hh);
+
+    // The info box (bottom left, setting) covers part of the drawing. If the
+    // summit falls under it, move the map the shorter way: summit above the
+    // box, or right of it. The box keeps its framework position.
+    var info = box.parentNode && box.parentNode.querySelector("[data-ridgelines-box]");
+    if (info && info.offsetWidth) {
+      var bx = info.offsetLeft + info.offsetWidth, by = info.offsetTop, room = 4 * gap;
+      var ppx = w / 2 + (pk[0] - cx) / kmPerPx, ppy = h / 2 - (pk[1] - cy) / kmPerPx;
+      if (ppx < bx + room && ppy > by - room) {
+        var up = ppy - (by - room), right = bx + room - ppx;
+        if (up <= right) cy = Math.max(-half + hh, Math.min(half - hh, cy - up * kmPerPx));
+        else cx = Math.max(-half + hw, Math.min(half - hw, cx - right * kmPerPx));
+        report.movedForBox = up <= right ? "up" : "right";
+      }
+      report.box = [info.offsetLeft, info.offsetTop, info.offsetWidth, info.offsetHeight];
+    }
     report.outside = hw > half || hh > half;              // window wider than the stored square
 
     var svg = svgEl("svg", { width: w, height: h, viewBox: "0 0 " + w + " " + h });
@@ -105,13 +121,21 @@
       var type = TRMNLPaint.type("label", el);
       var fs = parseFloat(type.fontSize), tick = opts.tick * gap;
       var x = peakPt[0], y = peakPt[1];
-      svg.appendChild(svgEl("line", { x1: x, y1: y - gap * 0.5, x2: x, y2: y - gap * 0.5 - tick, stroke: ink, "stroke-width": stroke }));
+      var tickLine = svgEl("line", { x1: x, y1: y - gap * 0.5, x2: x, y2: y - gap * 0.5 - tick, stroke: ink, "stroke-width": stroke });
+      svg.appendChild(tickLine);
       var text = svgEl("text", { x: x, y: y - gap * 0.5 - tick - gap * opts.labelGap, "text-anchor": "middle", fill: ink,
         "font-family": type.fontFamily, "font-size": type.fontSize, "font-weight": type.fontWeight });
       text.textContent = opts.peakName;
       svg.appendChild(text);
       box.appendChild(svg);
       var bb = text.getBBox(), pad = gap * 0.5;
+      if (bb.y < 0) {                                     // summit near the top edge: hang the label below it
+        tickLine.setAttribute("y1", y + gap * 0.5);
+        tickLine.setAttribute("y2", y + gap * 0.5 + tick);
+        text.setAttribute("y", y + gap * 0.5 + tick + gap * opts.labelGap + (y - bb.y - gap * 0.5 - tick - gap * opts.labelGap));
+        bb = text.getBBox();
+        report.labelBelow = true;
+      }
       var dx = Math.max(pad - bb.x, Math.min(0, w - pad - (bb.x + bb.width)));
       if (dx) { text.setAttribute("x", x + dx); bb = text.getBBox(); }
       var back = svgEl("rect", { x: bb.x - pad, y: bb.y, width: bb.width + 2 * pad, height: bb.height, fill: paper });
