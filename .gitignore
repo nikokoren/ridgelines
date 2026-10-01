@@ -1,0 +1,21 @@
+# local caches and generated data
+.cache/
+out/
+entries/
+*.tif
+*.tiff
+*.hgt
+
+# python
+__pycache__/
+*.pyc
+.venv/
+
+# node / cloudflare
+node_modules/
+.wrangler/
+.dev.vars
+*.local.toml
+
+# os
+.DS_Store
