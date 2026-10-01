@@ -47,7 +47,7 @@ UI = {"en": {"and": "and", "highest": "Highest peak"}, "de": {"and": "und", "hig
 # Box classes per view, following Downstream's text box (recipe/src/*.liquid there).
 BOX = {
     "full":            dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[45cqw] portrait:w--[80cqw]",
-                            head="title--large lg:title--xlarge", sub="description lg:description--large"),
+                            head="title--large lg:title--xlarge", sub="description md:description--large"),
     "half_horizontal": dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[40cqw] portrait:w--[70cqw]",
                             head="lg:title--large", sub="label label--small lg:label--base"),
     "half_vertical":   dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[92cqw]",

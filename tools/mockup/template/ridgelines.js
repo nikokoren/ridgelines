@@ -4,11 +4,11 @@
 // size goes through TRMNLPaint.px(). Draws nothing if the container measures zero.
 (function () {
   // Look parameters. gap is the line spacing before px() scaling: at 6.1 the
-  // TRMNL OG full landscape drawing (780 x 411) holds 64 lines, the chosen look.
+  // TRMNL OG full landscape drawing (780 x 411) held 64 lines at ripple 4, the first chosen look.
   // An entry's width_km spans REF_GAPS line gaps, the OG full drawing's width,
   // so every view and device keeps the same map scale and shows more or less
   // terrain instead of a shrunken or stretched map.
-  var LOOK = { gap: 6.1, ripple: 4, floor: null, tick: 2, labelGap: 0.5 };
+  var LOOK = { gap: 6.1, ripple: 5, floor: null, tick: 2, labelGap: 0.5 };
   var REF_GAPS = 128;
 
   function decode(entry) {

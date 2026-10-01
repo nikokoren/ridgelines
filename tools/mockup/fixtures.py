@@ -25,7 +25,7 @@ TILES = os.path.join(CACHE, "glo90")
 ENTRIES = os.path.join(CACHE, "entries")
 R = 6371.0
 GRID = 200          # samples per side, brief: about 200 x 200
-FLOOR_PCT = 40      # chosen mockup's height floor
+FLOOR_PCT = 55      # default since 2026-10-01 (was 40, the first chosen mockup)
 SPIKE_M = 250       # a sample this far above its 7 x 7 median is an artefact
 UA = "ridgelines-mockup/0.1 (look tuning; github.com/nikokoren/ridgelines)"
 
@@ -49,7 +49,7 @@ FIXTURES = {
 # both with a margin. Checked by render.py, which flags any window that leaves
 # the square.
 SQUARE = 1.4
-RELIEF = None            # (sigma_km, share), set by --relief for experiments
+RELIEF = (4, 0.7)        # local relief for every range (Niko, 2026-10-01); --relief 0 0 turns it off
 REF_ASPECT = 411 / 780   # TRMNL OG full landscape drawing, measured by render.py
 
 
@@ -181,7 +181,7 @@ def build(key, suffix=""):
     z = ndimage.gaussian_filter(z, 1.2)
     z = z.reshape(GRID, 3, GRID, 3).mean(axis=(1, 3))
     if RELIEF:
-        # Experimental local relief: take away part of the broad shape so ridges,
+        # Local relief: take away part of the broad shape so ridges,
         # not the massif's dome, carry the ripples. sigma in km, share 0..1.
         sigma_km, share = RELIEF
         z = z - share * ndimage.gaussian_filter(z, sigma_km / (side / GRID), mode="nearest")
@@ -237,9 +237,9 @@ if __name__ == "__main__":
     ap.add_argument("keys", nargs="*")
     ap.add_argument("--grid", type=int, default=GRID, help="samples per side (payload grows with the square)")
     ap.add_argument("--suffix", default="", help="written as <key><suffix>.json, for side by side tests")
-    ap.add_argument("--relief", nargs=2, type=float, metavar=("SIGMA_KM", "SHARE"), help="experimental local relief")
+    ap.add_argument("--relief", nargs=2, type=float, metavar=("SIGMA_KM", "SHARE"), help="local relief, default 4 0.7; 0 0 for absolute height")
     a = ap.parse_args()
     GRID = a.grid
-    RELIEF = tuple(a.relief) if a.relief else None
+    RELIEF = (tuple(a.relief) if a.relief[1] > 0 else None) if a.relief else RELIEF
     for k in a.keys or FIXTURES:
         build(k, a.suffix)

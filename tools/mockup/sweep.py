@@ -6,8 +6,8 @@
     python sweep.py lang    [out]   German captions at quadrant size
     python sweep.py resolution [out]  Karwendel: JAXA mockup vs GLO-90 at 200/280/400 grids
                                       (first: fixtures.py karwendel --grid 280 --suffix _g280, same for 400)
-    python sweep.py relief  [out]   absolute height vs local relief
-                                      (first: fixtures.py --relief 4 0.7 --suffix _relief)
+    python sweep.py relief  [out]   absolute height vs local relief (the default)
+                                      (first: fixtures.py --relief 0 0 --suffix _abs)
 
 LOOK='{"ripple": 5, "floorPct": 55}' overrides the look for any mode.
 """
@@ -88,7 +88,7 @@ async def resolution(r):
 async def relief(r):
     cells = []
     for k in FIXTURES:
-        for suf, cap in [("", "absolute height"), ("_relief", "local relief (4 km, 70 %)")]:
+        for suf, cap in [("_abs", "absolute height"), ("", "local relief (4 km, 70 %), default")]:
             p = os.path.join(OUT, f"relief_{k}{suf}.png")
             await r.shot(render.load(k + suf), "og", "full", p, look=LOOK)
             cells.append((p, f"{render.load(k)['name']['en']}: {cap}"))
