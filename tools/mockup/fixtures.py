@@ -53,9 +53,29 @@ RELIEF = None            # (sigma_km, share), set by --relief for experiments
 REF_ASPECT = 411 / 780   # TRMNL OG full landscape drawing, measured by render.py
 
 
+# Shortened country names where a recognised short form exists (Niko, 2026-10-01:
+# "United States -> USA"). Hand-checked like Downstream's COUNTRIES table, because
+# Wikidata's short name (P1813) is uneven: Australia "AUS", the DR Congo "DRK" in
+# German, the UK both "Britain" and "United Kingdom" (queried 2026-10-01).
+SHORT_COUNTRY = {
+    "Q30":  ("USA", "USA"),                        # as in Downstream, both languages
+    "Q145": ("UK", "Vereinigtes Königreich"),      # no accurate common German short form
+    "Q974": ("DR\u00a0Congo", "DR\u00a0Kongo"),       # no-break space keeps "DR" with its noun
+}
+
+
+def countries(cs):
+    """Country names per language from "Qid<TAB>en<TAB>de|..." rows, short forms where listed,
+    sorted by English name so the order is stable."""
+    rows = sorted(tuple(r.split("\t")) for r in (cs or "").split("|") if r)
+    rows = sorted((SHORT_COUNTRY.get(q, (en, de)) for q, en, de in rows), key=lambda r: r[0])
+    return {"en": ", ".join(r[0] for r in rows), "de": ", ".join(r[1] for r in rows)}
+
+
 def wikidata(qid):
-    q = """SELECT ?rl ?rde ?pl ?pde ?elev ?coord (GROUP_CONCAT(DISTINCT ?cl; separator="|") AS ?cen)
-      (GROUP_CONCAT(DISTINCT ?cdl; separator="|") AS ?cde) WHERE {
+    q = """SELECT ?rl ?rde ?pl ?pde ?elev ?coord
+      (GROUP_CONCAT(DISTINCT CONCAT(STRAFTER(STR(?c), "entity/"), "\t", ?cl, "\t", COALESCE(?cdl, ?cl)); separator="|") AS ?cs)
+      WHERE {
       BIND(wd:%s AS ?r)
       ?r rdfs:label ?rl FILTER(lang(?rl)="en")
       OPTIONAL { ?r rdfs:label ?rde FILTER(lang(?rde)="de") }
@@ -66,7 +86,7 @@ def wikidata(qid):
                  OPTIONAL { ?c rdfs:label ?cdl FILTER(lang(?cdl)="de") } }
     } GROUP BY ?rl ?rde ?pl ?pde ?elev ?coord""" % qid
     url = "https://query.wikidata.org/sparql?" + urllib.parse.urlencode({"query": q, "format": "json"})
-    cache = os.path.join(CACHE, "wikidata", qid + ".json")   # live on first run; delete to refresh
+    cache = os.path.join(CACHE, "wikidata", qid + ".v2.json")   # live on first run; delete to refresh
     if not os.path.exists(cache):
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         for attempt in range(4):
@@ -88,7 +108,7 @@ def wikidata(qid):
         qid=qid, name={"en": v(b, "rl"), "de": v(b, "rde") or v(b, "rl")},
         peak={"en": v(b, "pl"), "de": v(b, "pde") or v(b, "pl")},
         peak_m=round(float(v(b, "elev"))), peak_lat=lat, peak_lon=lon,
-        country={l: ", ".join(sorted(filter(None, (v(b, k) or "").split("|")))) for l, k in (("en", "cen"), ("de", "cde"))},
+        country=countries(v(b, "cs")),
         elevations_listed=sorted({round(float(r["elev"]["value"])) for r in rows}),
     )
 
