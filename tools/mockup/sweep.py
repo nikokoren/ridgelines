@@ -10,6 +10,8 @@
                                       (first: fixtures.py --relief 0 0 --suffix _abs)
 
     python sweep.py shade   [out]   black lines vs shading by height on 2-bit and 4-bit
+    python sweep.py beta    [out]   the Germany and Austria beta list, 10 per sheet
+                                      (first: fixtures.py --list ../../data/beta_de_at.json)
 
 LOOK='{"ripple": 5, "floorPct": 55}' overrides the look for any mode.
 """
@@ -115,6 +117,22 @@ async def shade(r):
                 cells.append((p, f"{e['name']['en']}: {cap}"))
         render.sheet(cells, os.path.join(OUT, f"shade_{dev}.png"), cols=3, box=640,
                      title=f"Shading by height, {render.DEVICES[dev]['label']}, full view")
+
+
+async def beta(r):
+    """Contact sheets of the Germany and Austria beta list, 10 entries per sheet."""
+    ids = [e["id"] for e in json.load(open(os.path.join(render.HERE, "..", "..", "data", "beta_de_at.json")))["entries"]]
+    report = []
+    for part in range(0, len(ids), 10):
+        cells = []
+        for k in ids[part:part + 10]:
+            e = render.load(k); p = os.path.join(OUT, f"beta_{k}.png")
+            rep = (await r.shot(e, "og", "full", p, look=LOOK))[0]
+            rep.update(entry=k, checks=e["_checks"]); report.append(rep)
+            cells.append((p, f"{e['name']['de']}, {e['peak']['de']} {e['peak_m']} m"))
+        render.sheet(cells, os.path.join(OUT, f"beta_{part // 10 + 1}.png"), cols=2,
+                     title=f"Beta list {part + 1} to {part + len(cells)}, TRMNL OG 1-bit, full view, defaults")
+    json.dump(report, open(os.path.join(OUT, "beta_report.json"), "w"), indent=1)
 
 
 async def main():

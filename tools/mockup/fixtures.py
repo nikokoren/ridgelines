@@ -61,16 +61,19 @@ REF_ASPECT = 411 / 780   # TRMNL OG full landscape drawing, measured by render.p
 SHORT_COUNTRY = {
     "Q30":  ("USA", "USA"),                        # as in Downstream, both languages
     "Q145": ("UK", "Vereinigtes Königreich"),      # no accurate common German short form
+    "Q213": ("Czechia", "Tschechien"),                # as in Downstream
     "Q974": ("DR\u00a0Congo", "DR\u00a0Kongo"),       # no-break space keeps "DR" with its noun
 }
 
 
 def countries(cs):
     """Country names per language from "Qid<TAB>en<TAB>de|..." rows, short forms where listed,
-    sorted by English name so the order is stable."""
+    each language sorted alphabetically so the order is stable."""
     rows = sorted(tuple(r.split("\t")) for r in (cs or "").split("|") if r)
-    rows = sorted((SHORT_COUNTRY.get(q, (en, de)) for q, en, de in rows), key=lambda r: r[0])
-    return {"en": ", ".join(r[0] for r in rows), "de": ", ".join(r[1] for r in rows)}
+    rows = [SHORT_COUNTRY.get(q, (en, de)) for q, en, de in rows]
+    # each language in its own alphabetical order: "Austria, Germany", "Deutschland, Österreich"
+    de_key = lambda n: n.replace("Ä", "A").replace("Ö", "O").replace("Ü", "U")
+    return {"en": ", ".join(sorted(r[0] for r in rows)), "de": ", ".join(sorted((r[1] for r in rows), key=de_key))}
 
 
 def wikidata(qid):
@@ -273,11 +276,19 @@ if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
     ap.add_argument("keys", nargs="*")
+    ap.add_argument("--list", help="build the entries of a list file instead, e.g. ../../data/beta_de_at.json")
     ap.add_argument("--grid", type=int, default=GRID, help="samples per side (payload grows with the square)")
     ap.add_argument("--suffix", default="", help="written as <key><suffix>.json, for side by side tests")
     ap.add_argument("--relief", nargs=2, type=float, metavar=("SIGMA_KM", "SHARE"), help="local relief, default 4 0.7; 0 0 for absolute height")
     a = ap.parse_args()
     GRID = a.grid
     RELIEF = (tuple(a.relief) if a.relief[1] > 0 else None) if a.relief else RELIEF
-    for k in a.keys or FIXTURES:
+    if a.list:
+        for e in json.load(open(a.list))["entries"]:
+            FIXTURES[e["id"]] = dict(qid=e["wikidata"], role="beta, Germany and Austria",
+                                     lat=e["lat"], lon=e["lon"], width_km=e["width_km"])
+        keys = a.keys or [e["id"] for e in json.load(open(a.list))["entries"]]
+    else:
+        keys = a.keys or list(FIXTURES)
+    for k in keys:
         build(k, a.suffix)

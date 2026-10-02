@@ -1,0 +1,305 @@
+{
+ "_about": "Ridgelines beta list, Germany and Austria, picked 2026-10-02 from the live Wikidata candidates with a summit of 1,000 m or more inside Germany or Austria. One entry per summit, summits spread at least about 30 km apart. Crops start centred on the summit; width_km is the OG full view width. Names and heights are refetched from Wikidata at build time; the fields here are for review only.",
+ "entries": [
+  {
+   "id": "glocknergruppe",
+   "wikidata": "Q454919",
+   "name_de": "Glocknergruppe",
+   "peak": "Großglockner",
+   "peak_m": 3798,
+   "lat": 47.075,
+   "lon": 12.694,
+   "width_km": 40
+  },
+  {
+   "id": "oetztaler-alpen",
+   "wikidata": "Q307518",
+   "name_de": "Ötztaler Alpen",
+   "peak": "Wildspitze",
+   "peak_m": 3768,
+   "lat": 46.885,
+   "lon": 10.867,
+   "width_km": 40
+  },
+  {
+   "id": "zillertaler-alpen",
+   "wikidata": "Q203151",
+   "name_de": "Zillertaler Alpen",
+   "peak": "Hochfeiler",
+   "peak_m": 3509,
+   "lat": 46.973,
+   "lon": 11.728,
+   "width_km": 40
+  },
+  {
+   "id": "ankogelgruppe",
+   "wikidata": "Q557440",
+   "name_de": "Ankogelgruppe",
+   "peak": "Hochalmspitze",
+   "peak_m": 3360,
+   "lat": 47.016,
+   "lon": 13.321,
+   "width_km": 40
+  },
+  {
+   "id": "dachsteingebirge",
+   "wikidata": "Q261664",
+   "name_de": "Dachsteingebirge",
+   "peak": "Dachstein",
+   "peak_m": 2995,
+   "lat": 47.475,
+   "lon": 13.606,
+   "width_km": 40
+  },
+  {
+   "id": "wettersteingebirge",
+   "wikidata": "Q264223",
+   "name_de": "Wettersteingebirge",
+   "peak": "Zugspitze",
+   "peak_m": 2962,
+   "lat": 47.421,
+   "lon": 10.986,
+   "width_km": 40
+  },
+  {
+   "id": "karwendel",
+   "wikidata": "Q671207",
+   "name_de": "Karwendel",
+   "peak": "Birkkarspitze",
+   "peak_m": 2749,
+   "lat": 47.411,
+   "lon": 11.438,
+   "width_km": 40
+  },
+  {
+   "id": "berchtesgadener-alpen",
+   "wikidata": "Q679384",
+   "name_de": "Berchtesgadener Alpen",
+   "peak": "Hochkönig",
+   "peak_m": 2941,
+   "lat": 47.421,
+   "lon": 13.063,
+   "width_km": 40
+  },
+  {
+   "id": "allgaeuer-alpen",
+   "wikidata": "Q655747",
+   "name_de": "Allgäuer Alpen",
+   "peak": "Krottenkopf",
+   "peak_m": 2656,
+   "lat": 47.312,
+   "lon": 10.356,
+   "width_km": 40
+  },
+  {
+   "id": "raetikon",
+   "wikidata": "Q659729",
+   "name_de": "Rätikon",
+   "peak": "Schesaplana",
+   "peak_m": 2965,
+   "lat": 47.054,
+   "lon": 9.707,
+   "width_km": 40
+  },
+  {
+   "id": "kaisergebirge",
+   "wikidata": "Q697614",
+   "name_de": "Kaisergebirge",
+   "peak": "Ellmauer Halt",
+   "peak_m": 2344,
+   "lat": 47.562,
+   "lon": 12.302,
+   "width_km": 40
+  },
+  {
+   "id": "kitzbueheler-alpen",
+   "wikidata": "Q592910",
+   "name_de": "Kitzbüheler Alpen",
+   "peak": "Kreuzjoch",
+   "peak_m": 2558,
+   "lat": 47.252,
+   "lon": 11.982,
+   "width_km": 40
+  },
+  {
+   "id": "totes-gebirge",
+   "wikidata": "Q697915",
+   "name_de": "Totes Gebirge",
+   "peak": "Großer Priel",
+   "peak_m": 2515,
+   "lat": 47.717,
+   "lon": 14.063,
+   "width_km": 40
+  },
+  {
+   "id": "ennstaler-alpen",
+   "wikidata": "Q697900",
+   "name_de": "Ennstaler Alpen",
+   "peak": "Hochtor",
+   "peak_m": 2369,
+   "lat": 47.562,
+   "lon": 14.633,
+   "width_km": 40
+  },
+  {
+   "id": "hochschwabgruppe",
+   "wikidata": "Q871803",
+   "name_de": "Hochschwabgruppe",
+   "peak": "Hochschwab",
+   "peak_m": 2277,
+   "lat": 47.618,
+   "lon": 15.142,
+   "width_km": 40
+  },
+  {
+   "id": "rax-schneeberg-gruppe",
+   "wikidata": "Q685334",
+   "name_de": "Rax-Schneeberg-Gruppe",
+   "peak": "Schneeberg",
+   "peak_m": 2076,
+   "lat": 47.767,
+   "lon": 15.804,
+   "width_km": 40
+  },
+  {
+   "id": "gurktaler-alpen",
+   "wikidata": "Q701681",
+   "name_de": "Gurktaler Alpen",
+   "peak": "Eisenhut",
+   "peak_m": 2441,
+   "lat": 46.952,
+   "lon": 13.928,
+   "width_km": 40
+  },
+  {
+   "id": "karawanken",
+   "wikidata": "Q198007",
+   "name_de": "Karawanken",
+   "peak": "Hochstuhl",
+   "peak_m": 2237,
+   "lat": 46.434,
+   "lon": 14.174,
+   "width_km": 40
+  },
+  {
+   "id": "koralpe",
+   "wikidata": "Q701036",
+   "name_de": "Koralpe",
+   "peak": "Großer Speikkogel",
+   "peak_m": 2140,
+   "lat": 46.787,
+   "lon": 14.972,
+   "width_km": 40
+  },
+  {
+   "id": "lienzer-dolomiten",
+   "wikidata": "Q3712714",
+   "name_de": "Lienzer Dolomiten",
+   "peak": "Große Sandspitze",
+   "peak_m": 2770,
+   "lat": 46.767,
+   "lon": 12.812,
+   "width_km": 40
+  },
+  {
+   "id": "schwarzwald",
+   "wikidata": "Q4204",
+   "name_de": "Schwarzwald",
+   "peak": "Feldberg",
+   "peak_m": 1494,
+   "lat": 47.874,
+   "lon": 8.004,
+   "width_km": 50
+  },
+  {
+   "id": "bayerischer-wald",
+   "wikidata": "Q4207",
+   "name_de": "Bayerischer Wald",
+   "peak": "Großer Arber",
+   "peak_m": 1456,
+   "lat": 49.112,
+   "lon": 13.136,
+   "width_km": 50
+  },
+  {
+   "id": "harz",
+   "wikidata": "Q4186",
+   "name_de": "Harz",
+   "peak": "Brocken",
+   "peak_m": 1141,
+   "lat": 51.799,
+   "lon": 10.616,
+   "width_km": 50
+  },
+  {
+   "id": "fichtelgebirge",
+   "wikidata": "Q157728",
+   "name_de": "Fichtelgebirge",
+   "peak": "Schneeberg",
+   "peak_m": 1051,
+   "lat": 50.052,
+   "lon": 11.853,
+   "width_km": 50
+  },
+  {
+   "id": "chiemgauer-alpen",
+   "wikidata": "Q572571",
+   "name_de": "Chiemgauer Alpen",
+   "peak": "Sonntagshorn",
+   "peak_m": 1961,
+   "lat": 47.682,
+   "lon": 12.696,
+   "width_km": 40
+  },
+  {
+   "id": "mangfallgebirge",
+   "wikidata": "Q454505",
+   "name_de": "Mangfallgebirge",
+   "peak": "Rotwand",
+   "peak_m": 1884,
+   "lat": 47.65,
+   "lon": 11.934,
+   "width_km": 40
+  },
+  {
+   "id": "seetaler-alpen",
+   "wikidata": "Q1731665",
+   "name_de": "Seetaler Alpen",
+   "peak": "Zirbitzkogel",
+   "peak_m": 2396,
+   "lat": 47.063,
+   "lon": 14.567,
+   "width_km": 40
+  },
+  {
+   "id": "hoellengebirge",
+   "wikidata": "Q261154",
+   "name_de": "Höllengebirge",
+   "peak": "Großer Höllkogel",
+   "peak_m": 1862,
+   "lat": 47.797,
+   "lon": 13.678,
+   "width_km": 40
+  },
+  {
+   "id": "grazer-bergland",
+   "wikidata": "Q1544089",
+   "name_de": "Grazer Bergland",
+   "peak": "Hochlantsch",
+   "peak_m": 1720,
+   "lat": 47.363,
+   "lon": 15.424,
+   "width_km": 40
+  },
+  {
+   "id": "venedigergruppe",
+   "wikidata": "Q668584",
+   "name_de": "Venedigergruppe",
+   "peak": "Großvenediger",
+   "peak_m": 3657,
+   "lat": 47.109,
+   "lon": 12.346,
+   "width_km": 40
+  }
+ ]
+}
