@@ -239,9 +239,18 @@ def build(key, suffix=""):
         top=int(round((top_m - lo) / (hi - lo) * 255)),
         peak_km=[round(v, 3) for v in peak_xy],
         heights=base64.b64encode(q.tobytes()).decode(),
+        # GLO-90 licence, Article 6 (b) and (c), checked 2026-10-02. The notice stays in
+        # English; the liability sentence may be translated. Shown on the About page.
         attribution={
-            "en": "Contains modified Copernicus WorldDEM data. Range facts: Wikidata (CC0).",
-            "de": "Enthält veränderte Copernicus WorldDEM Daten. Gebirgsdaten: Wikidata (CC0).",
+            "notice": "produced using Copernicus WorldDEM\u2122-90 \u00a9 DLR e.V. 2010-2014 and \u00a9 Airbus Defence "
+                      "and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved",
+            "liability": {
+                "en": "The organisations in charge of the Copernicus programme by law or by delegation do not incur "
+                      "any liability for any use of the Copernicus WorldDEM\u2122-90.",
+                "de": "Die Organisationen, die kraft Gesetzes oder im Auftrag f\u00fcr das Copernicus-Programm "
+                      "zust\u00e4ndig sind, haften nicht f\u00fcr die Nutzung des Copernicus WorldDEM\u2122-90.",
+            },
+            "wikidata": {"en": "Range facts: Wikidata (CC0).", "de": "Gebirgsdaten: Wikidata (CC0)."},
         },
         _checks=dict(peak_point_m=round(at_peak), peak_point_ok=peak_ok, peak_source=source,
                      peak_snap_km=round(snap, 2), peak_found_m=round(peak_found_m), spike_pixels=spikes, above_peak_pixels=above_peak, raw_max_m=round(zmax_raw, 1), ocean_share=round(ocean, 3),

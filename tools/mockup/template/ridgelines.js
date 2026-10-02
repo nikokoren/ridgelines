@@ -103,16 +103,51 @@
     }
     if (opts.norm === "window") top255 = Math.max(hiSeen, floor + 1);
 
+    // Optional shading by height on grey screens (look option "shade": a list of
+    // [share of the ripple height, framework grey token], lowest first). Fills come
+    // from TRMNLPaint.bg(), so 2-bit screens get the framework's dither tiles.
+    var bands = [];
+    if (opts.shade && depth >= 2) {
+      var defs = svgEl("defs", {});
+      svg.appendChild(defs);
+      opts.shade.forEach(function (s, k) {
+        var f = TRMNLPaint.bg(s[1], el), fill = f.color;
+        if (f.url && f.size) {
+          var id = "rl-shade-" + k + "-" + Math.random().toString(36).slice(2, 7);
+          var pat = svgEl("pattern", { id: id, patternUnits: "userSpaceOnUse", width: f.size, height: f.size });
+          pat.appendChild(svgEl("rect", { width: f.size, height: f.size, fill: f.color || paper }));
+          pat.appendChild(svgEl("image", { href: f.url, width: f.size, height: f.size }));
+          defs.appendChild(pat);
+          fill = "url(#" + id + ")";
+        }
+        bands.push({ from: s[0], fill: fill });
+      });
+      report.shade = bands.map(function (b) { return b.fill; });
+    }
+
     var peakPt = null, best = Infinity;
     rows.forEach(function (row) {
-      var pts = [];
+      var pts = [], ts = [];
       for (var j = 0; j < xs.length; j++) {
         var t = Math.max(0, (row.vals[j] - floor) / (top255 - floor)), y = row.base - t * amp;
         pts.push(xs[j].toFixed(1) + "," + y.toFixed(1));
+        ts.push(t);
         var xk = cx + (xs[j] - w / 2) * kmPerPx, d = Math.abs(xk - pk[0]) + Math.abs(row.yk - pk[1]) * 3;
         if (d < best && Math.abs(row.yk - pk[1]) < gap * kmPerPx) { best = d; peakPt = [xs[j], y]; }
       }
       svg.appendChild(svgEl("polygon", { points: pts.join(" ") + " " + w + "," + h + " 0," + h, fill: paper, stroke: "none" }));
+      // Each band fills the stretches of this line at or above its height share;
+      // the next line's paper fill trims it to the strip under this line.
+      bands.forEach(function (b) {
+        var j = 0;
+        while (j < xs.length) {
+          if (ts[j] < b.from) { j++; continue; }
+          var j0 = j;
+          while (j < xs.length && ts[j] >= b.from) j++;
+          var j1 = Math.min(j, xs.length - 1);
+          svg.appendChild(svgEl("polygon", { points: pts.slice(j0, j1 + 1).join(" ") + " " + xs[j1] + "," + h + " " + xs[j0] + "," + h, fill: b.fill, stroke: "none" }));
+        }
+      });
       svg.appendChild(svgEl("polyline", { points: pts.join(" "), fill: "none", stroke: ink, "stroke-width": stroke, "stroke-linejoin": "round" }));
     });
     report.lines = lines;

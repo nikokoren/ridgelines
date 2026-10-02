@@ -35,7 +35,7 @@ Rules for any agent working in this repo.
 ## Data
 
 - Terrain from Copernicus DEM GLO-90, list and names from Wikidata. No non-commercial (NC) licensed data, ever: the recipe may earn Creator Fund payouts.
-- Show the Copernicus notice and liability sentence wherever the data appears (details in docs/brief.md).
+- Put the Copernicus GLO-90 notice and liability sentence on the About page, with all other licensing (decided 2026-10-02, exact wording in PROJECT.md Findings).
 - Never commit elevation tiles, caches or generated entry files.
 - tools/mockup reads JAXA demo tiles for look tuning only. Nothing ships from it.
 

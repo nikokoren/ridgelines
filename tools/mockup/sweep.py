@@ -9,6 +9,8 @@
     python sweep.py relief  [out]   absolute height vs local relief (the default)
                                       (first: fixtures.py --relief 0 0 --suffix _abs)
 
+    python sweep.py shade   [out]   black lines vs shading by height on 2-bit and 4-bit
+
 LOOK='{"ripple": 5, "floorPct": 55}' overrides the look for any mode.
 """
 import asyncio, json, os, sys, render
@@ -93,6 +95,26 @@ async def relief(r):
             await r.shot(render.load(k + suf), "og", "full", p, look=LOOK)
             cells.append((p, f"{render.load(k)['name']['en']}: {cap}"))
     render.sheet(cells, os.path.join(OUT, "compare_relief.png"), title=f"Absolute height vs local relief, TRMNL OG 1-bit, look {LOOK or 'default'}")
+
+
+SHADES = [
+    ("black lines only", None),
+    ("light: gray-75 above half height", [[0.5, "gray-75"]]),
+    ("two steps: gray-75 above 30 %, gray-55 above 65 %", [[0.3, "gray-75"], [0.65, "gray-55"]]),
+]
+
+
+async def shade(r):
+    for dev in ["ogv2", "v2"]:
+        cells = []
+        for k in ["karwendel", "glockner", "rwenzori", "cuillin"]:
+            e = render.load(k)
+            for cap, sh in SHADES:
+                p = os.path.join(OUT, f"shade_{dev}_{k}_{len(cells)}.png")
+                rep = await r.shot(e, dev, "full", p, look=dict(LOOK, shade=sh) if sh else LOOK)
+                cells.append((p, f"{e['name']['en']}: {cap}"))
+        render.sheet(cells, os.path.join(OUT, f"shade_{dev}.png"), cols=3, box=640,
+                     title=f"Shading by height, {render.DEVICES[dev]['label']}, full view")
 
 
 async def main():

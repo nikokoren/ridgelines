@@ -20,6 +20,7 @@ Real TRMNL framework 3.4 markup, CSS, fonts and title bar, drawn by tools/mockup
 | `compare_relief.png` | Absolute height vs local relief, floor 55th percentile, ripple 5 gaps |
 | `views_karwendel.png`, `views_rwenzori.png` | Defaults: every view on OG 1-bit and 2-bit, TRMNL X 4-bit and Kindle 2024, plus portrait |
 | `lang_de.png` | German captions in quadrant, half horizontal and full views |
+| `shade_ogv2.png`, `shade_v2.png` | Black lines only vs two shading by height variants, 2-bit OG and 4-bit TRMNL X |
 
 Regenerate with `python tools/mockup/sweep.py <mode>` (modes listed in the script).
 
