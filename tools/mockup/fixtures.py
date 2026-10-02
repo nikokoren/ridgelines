@@ -26,6 +26,7 @@ ENTRIES = os.path.join(CACHE, "entries")
 R = 6371.0
 GRID = 200          # samples per side, brief: about 200 x 200
 FLOOR_PCT = 55      # default since 2026-10-01 (was 40, the first chosen mockup)
+SNAP_KM = 3         # search radius around the listed high point
 SPIKE_M = 250       # a sample this far above its 7 x 7 median is an artefact
 UA = "ridgelines-mockup/0.1 (look tuning; github.com/nikokoren/ridgelines)"
 
@@ -180,6 +181,7 @@ def build(key, suffix=""):
     z[bad] = med[bad]
     z = ndimage.gaussian_filter(z, 1.2)
     z = z.reshape(GRID, 3, GRID, 3).mean(axis=(1, 3))
+    z_abs = z.copy()                                       # true heights, for locating the summit
     if RELIEF:
         # Local relief: take away part of the broad shape so ridges,
         # not the massif's dome, carry the ripples. sigma in km, share 0..1.
@@ -194,14 +196,40 @@ def build(key, suffix=""):
     c = (np.abs(xs) <= f["width_km"] / 2)[None, :] & (np.abs(ys) <= f["width_km"] * REF_ASPECT / 2)[:, None]
     c = c.reshape(GRID, 3, GRID, 3).any(axis=(1, 3))
     top_m = float(z[c].max())
-    # high point position in km from the crop centre (east, north)
-    pe = math.radians(wd["peak_lon"] - f["lon"] + 540) % (2 * math.pi) - math.pi
-    peak_xy = [R * pe * math.cos(math.radians(wd["peak_lat"])), R * math.radians(wd["peak_lat"] - f["lat"])]
-    ocean = float((z <= 0.5).mean())
-    # The high point's coordinates must sit on high ground. Taveuni's peak on
-    # Wikidata (2026-10-01) sits in the sea: 179.967 E instead of W.
-    at_peak = float(sample(np.array([wd["peak_lat"]]), np.array([wd["peak_lon"]]))[0])
+    ocean = float((z_abs <= 0.5).mean())
+    # High point position in km from the crop centre (east, north), snapped to
+    # the highest terrain within SNAP_KM of the listed point, so the label sits
+    # on the summit even when Wikidata's coordinates are rounded. If the listed
+    # point is not on high ground, the sign-flipped longitude and latitude are
+    # tried too, and the candidate whose summit best matches the listed height
+    # wins: Taveuni's Uluigalau is listed at 179.967 E, in the sea; it is at W.
+    gx = xs.reshape(GRID, 3).mean(axis=1)
+    gy = ys.reshape(GRID, 3).mean(axis=1)
+
+    def km(plat, plon):
+        pe = math.radians(plon - f["lon"] + 540) % (2 * math.pi) - math.pi
+        return R * pe * math.cos(math.radians(plat)), R * math.radians(plat - f["lat"])
+
+    def summit(plat, plon):
+        px, py = km(plat, plon)
+        near = (gx[None, :] - px) ** 2 + (gy[:, None] - py) ** 2 <= SNAP_KM ** 2
+        if not near.any():
+            return None
+        r, c = np.unravel_index(np.where(near, z_abs, -np.inf).argmax(), z_abs.shape)
+        return float(z_abs[r, c]), (float(gx[c]), float(gy[r])), math.hypot(gx[c] - px, gy[r] - py)
+
+    plat, plon = wd["peak_lat"], wd["peak_lon"]
+    at_peak = float(sample(np.array([plat]), np.array([plon]))[0])
     peak_ok = at_peak >= 0.75 * wd["peak_m"]
+    cands = [("listed", plat, plon)]
+    if not peak_ok:
+        cands += [("longitude sign flipped", plat, -plon), ("latitude sign flipped", -plat, plon)]
+    found = [(n, summit(a, o)) for n, a, o in cands]
+    found = [(n, s_) for n, s_ in found if s_ and s_[0] > 0]
+    if found:
+        source, (peak_found_m, peak_xy, snap) = min(found, key=lambda t: abs(t[1][0] - wd["peak_m"]))
+    else:
+        source, peak_found_m, peak_xy, snap = "listed, no terrain nearby", at_peak, km(plat, plon), 0.0
     entry = dict(
         id=key, role=f["role"], wikidata=wd["qid"],
         name=wd["name"], peak=wd["peak"], peak_m=wd["peak_m"], country=wd["country"],
@@ -215,7 +243,8 @@ def build(key, suffix=""):
             "en": "Contains modified Copernicus WorldDEM data. Range facts: Wikidata (CC0).",
             "de": "Enthält veränderte Copernicus WorldDEM Daten. Gebirgsdaten: Wikidata (CC0).",
         },
-        _checks=dict(peak_point_m=round(at_peak), peak_point_ok=peak_ok, spike_pixels=spikes, above_peak_pixels=above_peak, raw_max_m=round(zmax_raw, 1), ocean_share=round(ocean, 3),
+        _checks=dict(peak_point_m=round(at_peak), peak_point_ok=peak_ok, peak_source=source,
+                     peak_snap_km=round(snap, 2), peak_found_m=round(peak_found_m), spike_pixels=spikes, above_peak_pixels=above_peak, raw_max_m=round(zmax_raw, 1), ocean_share=round(ocean, 3),
                      peak_in_square=bool(abs(peak_xy[0]) < side / 2 and abs(peak_xy[1]) < side / 2),
                      wikidata_elevations=wd["elevations_listed"]),
     )
@@ -227,7 +256,7 @@ def build(key, suffix=""):
     print(f"{key + suffix:11s} {os.path.getsize(path)/1000:5.1f} kB  {wd['name']['en']}: {wd['peak']['en']} {wd['peak_m']} m"
           f"  crop {lo:.0f} to {hi:.0f} m, raw max {c['raw_max_m']:.0f} m, spikes {spikes}, above high point {above_peak}, ocean {ocean:.0%},"
           f" peak in square {c['peak_in_square']}, Wikidata elevations {c['wikidata_elevations']},"
-          f" terrain at peak point {c['peak_point_m']} m{'' if peak_ok else '  << CHECK HIGH POINT COORDINATES'}")
+          f" terrain at listed point {c['peak_point_m']} m, summit {c['peak_found_m']} m {c['peak_snap_km']} km away ({source})")
     return entry
 
 
