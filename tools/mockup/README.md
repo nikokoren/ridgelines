@@ -4,9 +4,8 @@ Render TRMNL mockups from real terrain, for tuning the look before the productio
 
 | Script | What it does |
 | --- | --- |
-| `fixtures.py` | Builds the fixture corpus from Copernicus DEM GLO-90 plus a live Wikidata query, as entry JSON shaped like the planned pipeline output (200 x 200 8-bit heightmap, floor, ripple top, high point) |
-| `render.py` | Renders one entry through the real TRMNL framework (CSS, JS, fonts from trmnl.com) in Chromium, with `template/ridgelines.js` drawing the SVG |
-| `template/ridgelines.js` | Prototype of the plugin drawing code. Colours from TRMNLPaint, sizes through `TRMNLPaint.px()`, draws nothing when the container measures zero |
+| `fixtures.py` | Shim for `pipeline/entries.py`, where the entry build moved on 2026-10-02 (the build ships, this folder does not) |
+| `render.py` | Renders one entry through the real recipe templates (`recipe/*.txt`, Ruby Liquid via `recipe/tools/render.rb`) and the real TRMNL framework (CSS, JS, fonts from trmnl.com) in Chromium |
 | `sweep.py` | Contact sheets: corpus, ripple x floor tuning, every view and device, German captions, resolution and relief comparisons |
 | `mockup.py` | The original PIL tool on JAXA demo tiles that produced the chosen 2026-10-01 mockup |
 
@@ -14,17 +13,18 @@ Render TRMNL mockups from real terrain, for tuning the look before the productio
 
 ```
 pip install -r requirements.txt
-python fixtures.py                          # 8 entries into .cache/entries/, about 54 kB each
+python ../../pipeline/entries.py            # 8 entries into ../../.cache/entries/, about 55 kB each
 python render.py --entry glockner --device v2 --view quadrant --out q.png
 LOOK='{"ripple": 5, "floorPct": 55}' python sweep.py corpus out/
 python sweep.py views out/                  # 8 entries x 18 view and device combinations, plus out/views_report.json
 ```
 
-- **Data.** Whole 1 degree GLO-90 tiles are cached in `.cache/glo90/` (81 MB for the eight fixtures, measured 2026-10-01). Missing tiles are open ocean and read as 0 m. Wikidata answers are cached per item in `.cache/wikidata/`; delete a file to re-query. The real build reads crop windows over HTTP range requests instead.
+- **Data.** Whole 1 degree GLO-90 tiles are cached in the repo root's `.cache/glo90/` (81 MB for the eight fixtures, measured 2026-10-01). Missing tiles are open ocean and read as 0 m. Wikidata answers are cached per query in `.cache/wikidata/`; delete a file to re-query. The real build reads crop windows over HTTP range requests instead.
 - **Framework.** `render.py` downloads `plugins.css`, `plugins.js`, the fonts and the placeholder title bar icon from trmnl.com into `.cache/fw/` on first run. Delete that folder to pick up a new framework release. Pages need `<body class="environment trmnl">`, or no framework rule applies.
 - **Browser.** Uses the Chromium at `/opt/pw-browsers/chromium-1194`. Change `CHROME` in render.py for another install.
 - **Capture.** The framework scales the screen by the device's `--pixel-ratio` itself, so screenshots are taken at the panel's physical size (TRMNL X: 1872 x 1404) with a device scale factor of 1. Bit depth is approximated afterwards: 1-bit threshold, 2-bit four greys, 4-bit sixteen greys. TRMNL's own conversion may differ.
-- **Look overrides** (render.py `--look`, sweep.py `LOOK`): `ripple` (gaps), `gap` (px before scaling), `floorPct` (percentile of the stored square, tuning only), `floor` (8-bit value), `norm` (`entry` default, `window`, `crop`), `label`.
+- **Settings** (render.py `--settings`): the recipe's form fields, e.g. `{"language": "de", "title_bar": "yes"}`. Needs Ruby with the liquid gem.
+- **Look overrides** (render.py `--look`, sweep.py `LOOK`, passed to the drawing as `window.RIDGELINES_LOOK`): `ripple` (gaps), `gap` (px before scaling), `floorPct` (percentile of the stored square, tuning only), `floor` (8-bit value), `norm` (`entry` default, `window`, `crop`), `label`.
 - **Not framework markup:** the contact sheet frames and their captions. Everything inside each frame is.
 
 ## JAXA demo tiles (mockup.py)

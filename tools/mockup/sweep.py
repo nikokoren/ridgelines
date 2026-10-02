@@ -11,7 +11,7 @@
 
     python sweep.py shade   [out]   black lines vs shading by height on 2-bit and 4-bit
     python sweep.py beta    [out]   the Germany and Austria beta list, 10 per sheet
-                                      (first: fixtures.py --list ../../data/beta_de_at.json)
+                                      (first: python ../../pipeline/entries.py --list ../../data/beta_de_at.json)
 
 LOOK='{"ripple": 5, "floorPct": 55}' overrides the look for any mode.
 """
