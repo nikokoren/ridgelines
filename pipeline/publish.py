@@ -36,7 +36,7 @@ def payload(e):
         "side_km": e["crop"]["side_km"], "width_km": e["crop"]["width_km"],
         "floor": e["floor"], "top": e["top"],
         "peak_x": e["peak_km"][0], "peak_y": e["peak_km"][1],
-        "peak": e["peak"]["en"],                       # local name, the same in every language
+        "peak": {l: e["peak"][l] for l in words.LANGS},
         "box_title": {l: words.headline(e, l) for l in words.LANGS},
         "box_peak": {l: {u: words.peak_line(e, l, u) for u in words.UNITS} for l in words.LANGS},
         "caption": {l: {u: words.captions(e, l, u) for u in words.UNITS} for l in words.LANGS},
