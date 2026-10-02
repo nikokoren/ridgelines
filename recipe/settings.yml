@@ -1,0 +1,68 @@
+---
+# Ridgelines: TRMNL recipe settings (private plugin export format, as in Downstream's recipe/src/settings.yml).
+# polling_url must match recipe/polling_url.txt, which pipeline/publish.py writes.
+name: Ridgelines (beta)
+strategy: polling
+refresh_interval: 60
+polling_url: '{%- assign rl_off = trmnl.user.utc_offset | default: 0 | plus: 0 -%}{%- assign rl_day = "now" | date: "%s" | plus: rl_off | divided_by: 86400 -%}{%- assign rl_n = rl_day | modulo: 30 -%}https://nikokoren.github.io/ridgelines/beta/d/{{ rl_n }}.json'
+polling_headers: ''
+polling_verb: GET
+no_screen_padding: 'no'
+dark_mode: 'no'
+custom_fields:
+- keyname: about
+  name: About This Plugin
+  field_type: author_bio
+  category: nature,art
+  github_url: https://github.com/nikokoren/ridgelines
+  description: >-
+    One real mountain range a day, drawn from above as rippled lines. Beta: 30 ranges in Germany
+    and Austria. The range changes at midnight in your time zone.<br><br>
+    Terrain produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and
+    Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
+    reserved. The organisations in charge of the Copernicus programme by law or by delegation do
+    not incur any liability for any use of the Copernicus WorldDEM™-90. Die Organisationen, die
+    kraft Gesetzes oder im Auftrag für das Copernicus-Programm zuständig sind, haften nicht für die
+    Nutzung des Copernicus WorldDEM™-90.<br><br>
+    Range names, highest points, heights and countries:
+    <a href="https://www.wikidata.org/">Wikidata</a> (CC0).
+- keyname: language
+  name: Language
+  field_type: select
+  description: The language of the words on screen. Peak names stay in their local language.
+  options:
+  - English: en
+  - Deutsch: de
+  default: en
+- keyname: units
+  name: Units
+  field_type: select
+  description: Metric (metres) or imperial (feet), whatever the language.
+  options:
+  - Metric: metric
+  - Imperial: imperial
+  default: metric
+- keyname: peak_label
+  name: Peak name
+  field_type: select
+  description: Name the highest peak above its summit in the drawing.
+  options:
+  - Show: 'yes'
+  - Hide: 'no'
+  default: 'yes'
+- keyname: info_box
+  name: Info box
+  field_type: select
+  description: Range and country, with the highest peak and its height, bottom left.
+  options:
+  - Show: 'yes'
+  - Hide: 'no'
+  default: 'yes'
+- keyname: title_bar
+  name: Title bar
+  field_type: select
+  description: TRMNL's title bar with the plugin name and a short caption.
+  options:
+  - Show: 'yes'
+  - Hide: 'no'
+  default: 'no'

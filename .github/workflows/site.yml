@@ -1,0 +1,51 @@
+# Build the beta entries from Copernicus GLO-90 and Wikidata and deploy them to GitHub Pages.
+# One-time setup: Settings > Pages > Build and deployment > Source: GitHub Actions.
+# Runs on demand, and when the list or the build changes on main.
+name: site
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - data/beta_de_at.json
+      - pipeline/**
+      - .github/workflows/site.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: pip install -r pipeline/requirements.txt
+      - name: Build entries and site
+        run: python pipeline/publish.py
+      - name: Polling URL unchanged
+        run: git diff --exit-code recipe/polling_url.txt
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

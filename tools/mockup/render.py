@@ -1,22 +1,27 @@
-"""Render fixture entries through the real TRMNL framework (CSS, JS, fonts) in Chromium.
+"""Render Ridgelines entries through the real recipe templates and the real TRMNL framework.
 
-Markup uses framework classes only, the drawing comes from template/ridgelines.js,
-so these renders are what the recipe template would produce, not a mock title
-bar. Framework assets are fetched once from trmnl.com into .cache/fw/.
+The view markup comes from recipe/*.txt rendered by Ruby Liquid (recipe/tools/render.rb, the
+engine TRMNL runs) with the payload pipeline/publish.py publishes, so every render here also checks
+the shipping templates. Framework CSS, JS and fonts are fetched once from trmnl.com into
+.cache/fw/. Only the mashup neighbours ("Another plugin") are written here.
 
 Usage:
     python render.py --entry karwendel --device og --view full --out k.png
-    python render.py --sweep            # every entry x view x device, plus contact sheets
+    python render.py --entry raetikon --settings '{"language": "de", "title_bar": "yes"}'
 """
-import argparse, asyncio, json, os, sys, urllib.request
+import argparse, asyncio, json, os, subprocess, sys, urllib.request
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.join(HERE, "..", "..")
 CACHE = os.path.join(HERE, ".cache")
 FW = os.path.join(CACHE, "fw")
-ENTRIES = os.path.join(CACHE, "entries")
+ENTRIES = os.path.join(ROOT, ".cache", "entries")   # written by pipeline/entries.py
+RENDER_RB = os.path.join(ROOT, "recipe", "tools", "render.rb")
 CHROME = "/opt/pw-browsers/chromium-1194/chrome-linux/chrome"
 ORIGIN = "http://mock.trmnl.local"
+sys.path.insert(0, os.path.join(ROOT, "pipeline"))
+import publish as rl_site  # noqa: E402  pipeline/publish.py, the published payload
 
 # screen classes per device as the framework's Devices page lists them (checked 2026-10-01)
 DEVICES = {
@@ -31,77 +36,17 @@ VIEWS = {
     "half_vertical":   ("mashup--1Lx1R", "view--half_vertical"),
     "quadrant":        ("mashup--2x2", "view--quadrant"),
 }
-SEP = " · "
+# Defaults of the custom fields in recipe/settings.yml (Niko, 2026-10-01).
+SETTINGS = dict(language="en", units="metric", peak_label="yes", info_box="yes", title_bar="no")
 
 
-# Recipe settings (Niko, 2026-10-01). Mirrors the planned settings.yml custom fields.
-SETTINGS = dict(
-    peak_label=True,    # name above the highest peak
-    title_bar=False,    # framework title bar with caption
-    info_box=True,      # bottom left box: range and country, then peak and height
-    language="en",      # en (US English) or de
-    units="metric",     # metric or imperial
-)
-UI = {"en": {"and": "and", "highest": "Highest peak"}, "de": {"and": "und", "highest": "Höchster Gipfel"}}
-
-# Box classes per view, following Downstream's text box (recipe/src/*.liquid there).
-BOX = {
-    "full":            dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[45cqw] portrait:w--[80cqw]",
-                            head="title--large lg:title--xlarge", sub="description md:description--large"),
-    "half_horizontal": dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[40cqw] portrait:w--[70cqw]",
-                            head="lg:title--large", sub="label label--small lg:label--base"),
-    "half_vertical":   dict(pos="bottom--3 lg:bottom--6 left--3 p--3", width="w--[92cqw]",
-                            head="lg:title--large", sub="label label--small lg:label--base"),
-    "quadrant":        dict(pos="bottom--3 lg:bottom--6 left--2 p--2", width="w--[92cqw]",
-                            head="title--small", sub="label label--small"),
-}
-
-
-def fmt_height(m, s):
-    """Peak height in the chosen units and the language's number format, feet to the nearest 10."""
-    v, unit = (m, "m") if s["units"] == "metric" else (int(round(m * 3.28084 / 10) * 10), "ft")
-    txt = f"{v:,}"
-    return (txt.replace(",", ".") if s["language"] == "de" else txt) + " " + unit
-
-
-def countries(e, lang):
-    c = [x for x in e["country"][lang].split(", ") if x]
-    return c[0] if len(c) < 2 else ", ".join(c[:-1]) + f" {UI[lang]['and']} " + c[-1]
-
-
-def caption(e, view, s, portrait=False):
-    lang = s["language"]
-    name, peak, country = e["name"][lang], e["peak"][lang], e["country"][lang]
-    if view == "full":
-        parts = [name, f"{peak} {fmt_height(e['peak_m'], s)}"] + ([] if portrait else [country])
-    elif view == "half_horizontal":
-        parts = [name, country]
-    else:
-        parts = [name]
-    return SEP.join(p for p in parts if p)
-
-
-def view_markup(e, view, s, portrait, idx):
-    lang, b = s["language"], BOX[view]
-    box = f"""
-        <div class="absolute {b['pos']} z--2 bg--canvas outline flex flex--col flex--left gap--xsmall {b['width']}" data-ridgelines-box>
-          <span class="w--full title {b['head']}" data-clamp="2">{e['name'][lang]}, {countries(e, lang)}</span>
-          <span class="w--full {b['sub']}" data-clamp="1">{UI[lang]['highest']} {e['peak'][lang]} {fmt_height(e['peak_m'], s)}</span>
-        </div>""" if s["info_box"] else ""
-    bar = f"""
-    <div class="title_bar">
-      <img class="image image--adaptive" src="/images/plugins/trmnl--render.svg">
-      <span class="title">Ridgelines</span>
-      <span class="instance">{caption(e, view, s, portrait)}</span>
-    </div>""" if s["title_bar"] else ""
-    return f"""
-  <div class="view {VIEWS[view][1]}">
-    <div class="layout layout--col layout--stretch">
-      <div class="w--full h--full relative">
-        <div id="rl-{idx}" class="w--full h--full" data-ridgelines></div>{box}
-      </div>
-    </div>{bar}
-  </div>"""
+def liquid(view, payload, settings):
+    """One view's markup, rendered as TRMNL would: Shared plus the view, Ruby Liquid, strict."""
+    ctx = dict(payload, trmnl={"user": {"utc_offset": 0}, "plugin_settings": {"custom_fields_values": settings}})
+    run = subprocess.run(["ruby", RENDER_RB, view], input=json.dumps(ctx).encode(), capture_output=True)
+    if run.returncode:
+        raise SystemExit(f"Liquid failed for {view}: {run.stderr.decode()}")
+    return run.stdout.decode()
 
 
 def other_view(cls):
@@ -112,32 +57,21 @@ def other_view(cls):
 
 
 def page(e, device, view, lang="en", portrait=False, dark=False, look=None, settings=None):
-    s = dict(SETTINGS, **(settings or {}))
+    s = dict(SETTINGS, **{k: ("yes" if v is True else "no" if v is False else v) for k, v in (settings or {}).items()})
     if lang != "en":
         s["language"] = lang
-    lang = s["language"]
-    look = dict(look or {}, label=s["peak_label"] and (look or {}).get("label", True))
     d = DEVICES[device]
     cls = "screen " + d["cls"] + (" screen--portrait" if portrait else "") + (" screen--dark-mode" if dark else "")
     mashup, vcls = VIEWS[view]
-    body = view_markup(e, view, s, portrait, 0)
+    body = f'<div class="view {vcls}">' + liquid(view, rl_site.payload(e), s) + "</div>"
     if mashup:
         n = 4 if view == "quadrant" else 2
         body = f'<div class="mashup {mashup}">' + body + "".join(other_view(vcls) for _ in range(n - 1)) + "</div>"
     return f"""<!doctype html><html><head><meta charset="utf-8">
 <link rel="stylesheet" href="/plugins.css"><script src="/plugins.js"></script>
-<script src="/ridgelines.js"></script></head>
+<script>window.RIDGELINES_LOOK = {json.dumps(look or {})};</script></head>
 <body class="environment trmnl"><div class="{cls}">{body}
-</div>
-<script>
-window.ENTRY = {json.dumps(e, ensure_ascii=False)};
-window.LOOK = {json.dumps(look or {})};
-window.rlDraw = function () {{
-  return Array.prototype.map.call(document.querySelectorAll("[data-ridgelines]"), function (box) {{
-    return Ridgelines.draw(box, ENTRY, Object.assign({{ peakName: ENTRY.peak["{lang}"] }}, LOOK));
-  }});
-}};
-</script></body></html>"""
+</div></body></html>"""
 
 
 def screen_size(device, portrait):
@@ -186,11 +120,10 @@ class Renderer:
         html = page(e, device, view, lang, portrait, dark, look, settings)
 
         async def route(r):
-            path = r.request.url[len(ORIGIN):].split("?")[0]
+            url = r.request.url
+            path = (url[len("https://trmnl.com"):] if url.startswith("https://trmnl.com/") else url[len(ORIGIN):]).split("?")[0]
             if path == "/":
                 return await r.fulfill(body=html, content_type="text/html")
-            if path == "/ridgelines.js":
-                return await r.fulfill(path=os.path.join(HERE, "template", "ridgelines.js"))
             f = os.path.join(FW, path.lstrip("/"))
             if os.path.exists(f):
                 return await r.fulfill(path=f)
@@ -198,8 +131,10 @@ class Renderer:
         await p.route("**/*", route)
         await p.goto(ORIGIN + "/")
         await p.wait_for_function("window.TRMNL_PLUGINS_READY === true", timeout=20000)
-        await p.evaluate("document.fonts.ready")
-        rep = await p.evaluate("rlDraw()")
+        await p.wait_for_function("""Array.prototype.every.call(document.querySelectorAll('[data-ridgelines]'),
+            function (el) { return el.hasAttribute('data-ridgelines-drawn'); })""", timeout=20000)
+        rep = await p.evaluate("""Array.prototype.map.call(document.querySelectorAll('[data-ridgelines]'),
+            function (el) { return JSON.parse(el.getAttribute('data-ridgelines-report')); })""")
         await p.screenshot(path=out)
         await ctx.close()
         quantise(out, DEVICES[device]["depth"])
@@ -250,7 +185,7 @@ if __name__ == "__main__":
     ap.add_argument("--portrait", action="store_true")
     ap.add_argument("--dark", action="store_true")
     ap.add_argument("--look", default="{}", help='JSON overrides, e.g. {"ripple": 5}')
-    ap.add_argument("--settings", default="{}", help='recipe settings, e.g. {"title_bar": true, "units": "imperial"}')
+    ap.add_argument("--settings", default="{}", help='recipe settings, e.g. {"title_bar": "yes", "units": "imperial"}')
     ap.add_argument("--out", default="render.png")
     a = ap.parse_args()
     fetch_framework()

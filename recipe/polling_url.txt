@@ -1,0 +1,1 @@
+{%- assign rl_off = trmnl.user.utc_offset | default: 0 | plus: 0 -%}{%- assign rl_day = "now" | date: "%s" | plus: rl_off | divided_by: 86400 -%}{%- assign rl_n = rl_day | modulo: 30 -%}https://nikokoren.github.io/ridgelines/beta/d/{{ rl_n }}.json
