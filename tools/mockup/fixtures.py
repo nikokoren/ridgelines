@@ -66,32 +66,26 @@ SHORT_COUNTRY = {
 }
 
 
-def countries(cs):
-    """Country names per language from "Qid<TAB>en<TAB>de|..." rows, short forms where listed,
-    each language sorted alphabetically so the order is stable."""
+def countries(cs, summit=()):
+    """Country names per language from "Qid<TAB>en<TAB>de|..." rows, short forms where listed.
+    The summit's own countries come first, then the rest, each group in the language's
+    alphabetical order: "Austria, Liechtenstein, Switzerland" for the Rätikon, whose summit
+    lies in Austria and Switzerland. The template shows more than two as the first plus a count."""
     rows = sorted(tuple(r.split("\t")) for r in (cs or "").split("|") if r)
-    rows = [SHORT_COUNTRY.get(q, (en, de)) for q, en, de in rows]
-    # each language in its own alphabetical order: "Austria, Germany", "Deutschland, Österreich"
     de_key = lambda n: n.replace("Ä", "A").replace("Ö", "O").replace("Ü", "U")
-    return {"en": ", ".join(sorted(r[0] for r in rows)), "de": ", ".join(sorted((r[1] for r in rows), key=de_key))}
+    out = {}
+    for i, key in ((0, lambda n: n), (1, de_key)):
+        names = [(q in summit, SHORT_COUNTRY.get(q, (en, de))[i]) for q, en, de in rows]
+        first = sorted((n for s_, n in names if s_), key=key)
+        out["en" if i == 0 else "de"] = ", ".join(first + sorted((n for s_, n in names if not s_), key=key))
+    return out
 
 
-def wikidata(qid):
-    q = """SELECT ?rl ?rde ?pl ?pde ?elev ?coord
-      (GROUP_CONCAT(DISTINCT CONCAT(STRAFTER(STR(?c), "entity/"), "\t", ?cl, "\t", COALESCE(?cdl, ?cl)); separator="|") AS ?cs)
-      WHERE {
-      BIND(wd:%s AS ?r)
-      ?r rdfs:label ?rl FILTER(lang(?rl)="en")
-      OPTIONAL { ?r rdfs:label ?rde FILTER(lang(?rde)="de") }
-      ?r wdt:P610 ?p . ?p rdfs:label ?pl FILTER(lang(?pl)="en")
-      OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
-      ?p wdt:P2044 ?elev . ?p wdt:P625 ?coord .
-      OPTIONAL { ?r wdt:P17 ?c . ?c rdfs:label ?cl FILTER(lang(?cl)="en")
-                 OPTIONAL { ?c rdfs:label ?cdl FILTER(lang(?cdl)="de") } }
-    } GROUP BY ?rl ?rde ?pl ?pde ?elev ?coord""" % qid
-    url = "https://query.wikidata.org/sparql?" + urllib.parse.urlencode({"query": q, "format": "json"})
-    cache = os.path.join(CACHE, "wikidata", qid + ".v2.json")   # live on first run; delete to refresh
+def sparql(q, name):
+    """Live Wikidata query, cached in .cache/wikidata/<name>.json (delete to refresh)."""
+    cache = os.path.join(CACHE, "wikidata", name + ".json")
     if not os.path.exists(cache):
+        url = "https://query.wikidata.org/sparql?" + urllib.parse.urlencode({"query": q, "format": "json"})
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         for attempt in range(4):
             try:
@@ -102,17 +96,65 @@ def wikidata(qid):
                     raise
         os.makedirs(os.path.dirname(cache), exist_ok=True)
         open(cache, "wb").write(body)
-    rows = json.load(open(cache))["results"]["bindings"]
+    return json.load(open(cache))["results"]["bindings"]
+
+
+def local_name(pqid, en, de):
+    """The peak's local name, used in every language (Niko, 2026-10-02: Großglockner and
+    Mont Blanc in English and German alike). 1. Wikidata's native label (P1705); with
+    several (Mont Blanc: French and Italian), the one matching the English or German label.
+    2. Otherwise the label in the official language (P37) of the peak's country; for a
+    border summit with several, the one matching the German or English label.
+    3. Otherwise the English label."""
+    rows = sparql("""SELECT ?kind ?val ?lng WHERE {
+      { wd:%s wdt:P1705 ?val . BIND("native" AS ?kind) BIND(LANG(?val) AS ?lng) }
+      UNION { wd:%s wdt:P17 ?c . ?c wdt:P37 ?l . ?l wdt:P424 ?lng . BIND("official" AS ?kind)
+              OPTIONAL { wd:%s rdfs:label ?val FILTER(LANG(?val) = ?lng) } }
+    }""" % (pqid, pqid, pqid), pqid + ".names")
+    get = lambda r, k: r[k]["value"] if k in r else None
+    native = [get(r, "val") for r in rows if get(r, "kind") == "native" and get(r, "val")]
+    if native:
+        return next((n for n in native if n in (en, de)), native[0]), "native label"
+    official = {get(r, "lng"): get(r, "val") for r in rows if get(r, "kind") == "official" and get(r, "val")}
+    if len(official) == 1:
+        lng, val = next(iter(official.items()))
+        return val, f"official language ({lng})"
+    # A border summit has several official languages: take the one whose name matches the
+    # German or English label (Hochstuhl: German "Hochstuhl" over Slovene "Stol").
+    for want in (de, en):
+        for lng, val in official.items():
+            if val == want:
+                return val, f"official language ({lng}), border"
+    return en or de, "English label"
+
+
+def wikidata(qid):
+    rows = sparql("""SELECT ?p ?rl ?rde ?pl ?pde ?elev ?coord
+      (GROUP_CONCAT(DISTINCT CONCAT(STRAFTER(STR(?c), "entity/"), "\t", ?cl, "\t", COALESCE(?cdl, ?cl)); separator="|") AS ?cs)
+      (GROUP_CONCAT(DISTINCT STRAFTER(STR(?pc), "entity/"); separator="|") AS ?pcs)
+      WHERE {
+      BIND(wd:%s AS ?r)
+      ?r rdfs:label ?rl FILTER(lang(?rl)="en")
+      OPTIONAL { ?r rdfs:label ?rde FILTER(lang(?rde)="de") }
+      ?r wdt:P610 ?p . ?p rdfs:label ?pl FILTER(lang(?pl)="en")
+      OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
+      ?p wdt:P2044 ?elev . ?p wdt:P625 ?coord .
+      OPTIONAL { ?r wdt:P17 ?c . ?c rdfs:label ?cl FILTER(lang(?cl)="en")
+                 OPTIONAL { ?c rdfs:label ?cdl FILTER(lang(?cdl)="de") } }
+      OPTIONAL { ?p wdt:P17 ?pc }
+    } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v4")
     if not rows:
         raise SystemExit(f"{qid}: no Wikidata row with highest point, elevation and coordinates")
     v = lambda b, k: b[k]["value"] if k in b else None
     b = max(rows, key=lambda b: float(b["elev"]["value"]))  # some peaks carry two elevations
     lon, lat = map(float, v(b, "coord")[6:-1].split())
+    pqid = v(b, "p").rsplit("/", 1)[-1]
+    local, source = local_name(pqid, v(b, "pl"), v(b, "pde"))
     return dict(
         qid=qid, name={"en": v(b, "rl"), "de": v(b, "rde") or v(b, "rl")},
-        peak={"en": v(b, "pl"), "de": v(b, "pde") or v(b, "pl")},
+        peak={"en": local, "de": local}, peak_name_source=source, peak_labels={"en": v(b, "pl"), "de": v(b, "pde")},
         peak_m=round(float(v(b, "elev"))), peak_lat=lat, peak_lon=lon,
-        country=countries(v(b, "cs")),
+        country=countries(v(b, "cs"), (v(b, "pcs") or "").split("|")),
         elevations_listed=sorted({round(float(r["elev"]["value"])) for r in rows}),
     )
 
@@ -255,7 +297,7 @@ def build(key, suffix=""):
             },
             "wikidata": {"en": "Range facts: Wikidata (CC0).", "de": "Gebirgsdaten: Wikidata (CC0)."},
         },
-        _checks=dict(peak_point_m=round(at_peak), peak_point_ok=peak_ok, peak_source=source,
+        _checks=dict(peak_name_source=wd["peak_name_source"], peak_labels=wd["peak_labels"], peak_point_m=round(at_peak), peak_point_ok=peak_ok, peak_source=source,
                      peak_snap_km=round(snap, 2), peak_found_m=round(peak_found_m), spike_pixels=spikes, above_peak_pixels=above_peak, raw_max_m=round(zmax_raw, 1), ocean_share=round(ocean, 3),
                      peak_in_square=bool(abs(peak_xy[0]) < side / 2 and abs(peak_xy[1]) < side / 2),
                      wikidata_elevations=wd["elevations_listed"]),

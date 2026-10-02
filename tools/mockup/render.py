@@ -42,7 +42,8 @@ SETTINGS = dict(
     language="en",      # en (US English) or de
     units="metric",     # metric or imperial
 )
-UI = {"en": {"and": "and", "highest": "Highest peak"}, "de": {"and": "und", "highest": "Höchster Gipfel"}}
+UI = {"en": {"and": "and", "highest": "Highest peak", "more": "and {n}\u00a0more"},
+      "de": {"and": "und", "highest": "Höchster Gipfel", "more": "und {n}\u00a0weitere"}}
 
 # Box classes per view, following Downstream's text box (recipe/src/*.liquid there).
 BOX = {
@@ -65,13 +66,17 @@ def fmt_height(m, s):
 
 
 def countries(e, lang):
+    """One or two countries in full; more than two as the first plus a count (Niko,
+    2026-10-02): "Austria and 2 more", "Österreich und 2 weitere"."""
     c = [x for x in e["country"][lang].split(", ") if x]
-    return c[0] if len(c) < 2 else ", ".join(c[:-1]) + f" {UI[lang]['and']} " + c[-1]
+    if len(c) > 2:
+        return c[0] + " " + UI[lang]["more"].format(n=len(c) - 1)
+    return " ".join([c[0], UI[lang]["and"], c[1]]) if len(c) == 2 else (c[0] if c else "")
 
 
 def caption(e, view, s, portrait=False):
     lang = s["language"]
-    name, peak, country = e["name"][lang], e["peak"][lang], e["country"][lang]
+    name, peak, country = e["name"][lang], e["peak"][lang], countries(e, lang)
     if view == "full":
         parts = [name, f"{peak} {fmt_height(e['peak_m'], s)}"] + ([] if portrait else [country])
     elif view == "half_horizontal":
