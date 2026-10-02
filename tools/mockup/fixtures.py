@@ -61,16 +61,19 @@ REF_ASPECT = 411 / 780   # TRMNL OG full landscape drawing, measured by render.p
 SHORT_COUNTRY = {
     "Q30":  ("USA", "USA"),                        # as in Downstream, both languages
     "Q145": ("UK", "Vereinigtes Königreich"),      # no accurate common German short form
+    "Q213": ("Czechia", "Tschechien"),                # as in Downstream
     "Q974": ("DR\u00a0Congo", "DR\u00a0Kongo"),       # no-break space keeps "DR" with its noun
 }
 
 
 def countries(cs):
     """Country names per language from "Qid<TAB>en<TAB>de|..." rows, short forms where listed,
-    sorted by English name so the order is stable."""
+    each language sorted alphabetically so the order is stable."""
     rows = sorted(tuple(r.split("\t")) for r in (cs or "").split("|") if r)
-    rows = sorted((SHORT_COUNTRY.get(q, (en, de)) for q, en, de in rows), key=lambda r: r[0])
-    return {"en": ", ".join(r[0] for r in rows), "de": ", ".join(r[1] for r in rows)}
+    rows = [SHORT_COUNTRY.get(q, (en, de)) for q, en, de in rows]
+    # each language in its own alphabetical order: "Austria, Germany", "Deutschland, Österreich"
+    de_key = lambda n: n.replace("Ä", "A").replace("Ö", "O").replace("Ü", "U")
+    return {"en": ", ".join(sorted(r[0] for r in rows)), "de": ", ".join(sorted((r[1] for r in rows), key=de_key))}
 
 
 def wikidata(qid):
