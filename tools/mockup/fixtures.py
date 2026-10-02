@@ -273,11 +273,19 @@ if __name__ == "__main__":
     import argparse
     ap = argparse.ArgumentParser()
     ap.add_argument("keys", nargs="*")
+    ap.add_argument("--list", help="build the entries of a list file instead, e.g. ../../data/beta_de_at.json")
     ap.add_argument("--grid", type=int, default=GRID, help="samples per side (payload grows with the square)")
     ap.add_argument("--suffix", default="", help="written as <key><suffix>.json, for side by side tests")
     ap.add_argument("--relief", nargs=2, type=float, metavar=("SIGMA_KM", "SHARE"), help="local relief, default 4 0.7; 0 0 for absolute height")
     a = ap.parse_args()
     GRID = a.grid
     RELIEF = (tuple(a.relief) if a.relief[1] > 0 else None) if a.relief else RELIEF
-    for k in a.keys or FIXTURES:
+    if a.list:
+        for e in json.load(open(a.list))["entries"]:
+            FIXTURES[e["id"]] = dict(qid=e["wikidata"], role="beta, Germany and Austria",
+                                     lat=e["lat"], lon=e["lon"], width_km=e["width_km"])
+        keys = a.keys or [e["id"] for e in json.load(open(a.list))["entries"]]
+    else:
+        keys = a.keys or list(FIXTURES)
+    for k in keys:
         build(k, a.suffix)
