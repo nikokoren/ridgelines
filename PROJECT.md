@@ -33,7 +33,7 @@ Each finding is dated. Re-check before relying on it.
 - **2026-10-01, framework version.** https://trmnl.com/framework/docs/responsive redirects to 3.4, and the docs version picker lists 3.4, 3.1, 3.0, 2.3, 1.2 (fetched 2026-10-01). `https://trmnl.com/css/latest/plugins.css` and `/js/latest/plugins.js` serve the framework that tools/mockup renders with. *Re-check:* open https://trmnl.com/framework and stamp the current version here.
 - **2026-10-01, framework renders.** tools/mockup now renders real Copernicus entries through the framework's own CSS, JS and fonts in Chromium (render.py, sweep.py). Pages need `<body class="environment trmnl">`, or no framework rule applies. The framework scales the screen by `--pixel-ratio` itself, so TRMNL X captures at 1872 x 1404 physical pixels. *Re-check:* delete tools/mockup/.cache/fw and re-render after any framework release.
 - **2026-10-01, drawing container.** `layout layout--col layout--stretch` holding a `w--full h--full` box gives the drawing its full size (OG full 780 x 411, quadrant 365 x 173). `layout--stretch` with a `stretch-y` box collapses to 0 width, and the zero guard in template/ridgelines.js then draws nothing. The sweep drew all 144 combinations of 8 entries x 18 views and devices. *Re-check:* `python sweep.py views` and confirm `views_report.json` has no `"drawn": false`.
-- **2026-10-01, line counts at gap px(6.1).** At ripple 5, the sweep measured: OG full 63, OG portrait 115, half horizontal 24, half vertical 62, quadrant 24. TRMNL X full 112, X portrait 155, X half horizontal and quadrant 48. Kindle 2024 full 64. `TRMNLPaint.px()` returned 6.1 on every device, so spacing holds in CSS pixels as the brief intends. Half horizontal and quadrant fall short of the brief's "about 30" because their layouts are 173 px tall. *Open:* accept 24, or tighten the gap in those views only.
+- **2026-10-01, line counts at gap px(6.1).** At ripple 5, the sweep measured: OG full 63, OG portrait 115, half horizontal 24, half vertical 62, quadrant 24. TRMNL X full 112, X portrait 155, X half horizontal and quadrant 48. Kindle 2024 full 64. `TRMNLPaint.px()` returned 6.1 on every device, so spacing holds in CSS pixels as the brief intends. Half horizontal and quadrant fall short of the brief's "about 30" because their layouts are 173 px tall. *Decided 2026-10-01 (Niko):* the counts are fine (29 with the title bar off).
 - **2026-10-01, ripple scale.** Scaling ripples to the top of the stored square flattened Karwendel badly, because the 1.4x square reaches higher Stubai and Tux summits (up to 3,146 m) outside the range. Scaling to an entry `top` (the highest sample in the OG full window) restores the chosen look in every view. See docs/mockups/compare_resolution.png. *Re-check:* any entry whose neighbours outside the reference window are higher than its own peak.
 - **2026-10-01, elevation spikes on GLO-90.** Capping at the documented high point is wrong. All 1,110 Karwendel samples above 2,769 m are real neighbouring peaks outside the range proper (29 clusters, all in the Stubai and Tux Alps at the square's southern edge). fixtures.py now treats a sample as a spike only if it is 250 m above its 7 x 7 median: 1 hit in Karwendel, 10 in Lyngen (sea cliffs, unchecked), 0 elsewhere. *Re-check:* look at the 10 Lyngen hits before the build adopts the rule.
 - **2026-10-01, heightmap size.** A 200 x 200 grid (54 kB entry JSON, all 8 measured) is enough. On the OG it is visually indistinguishable from 280 (105 kB) and 400 (214 kB), and TRMNL X full still reads smooth. *Re-check:* on a real TRMNL X panel.
@@ -54,8 +54,7 @@ Each finding is dated. Re-check before relying on it.
 
 1. Store search for uniqueness, recorded under Findings.
 2. Check the GLO-90 licence against the ESA annex linked from the AWS registry.
-3. Still open from tuning: half horizontal and quadrant line counts (29 with the title bar off, brief says about 30).
-4. Build pipeline, then Worker, then template. template/ridgelines.js is a working start for the drawing.
+3. Build pipeline, then Worker, then template. template/ridgelines.js is a working start for the drawing.
 
 Done 2026-10-01: framework version stamped; Wikidata properties confirmed live (P610 highest point, P2044 elevation, P625 coordinates, P17 country); fixture corpus of seven ranges plus Karwendel built from GLO-90 (tools/mockup/fixtures.py: Glockner Group, Teton Range, Lyngen Alps, Rwenzori, Taveuni, MacDonnell Ranges, Cuillin); first tuning pass across all of them.
 
@@ -64,5 +63,5 @@ Done 2026-10-01: framework version stamped; Wikidata properties confirmed live (
 - Launch with about 120 entries on a loop, or wait for the full 365?
 - Copernicus notice: on screen, or a short on-screen credit plus the full notice in the listing?
 - Grey screens: black lines only, or shading by height?
-- Portrait caption (see Findings).
+- Portrait caption: resolved by the settings decision. The title bar is off by default, and the info box fits in portrait. With the title bar on, the country is dropped in portrait.
 - Code licence, before the repo goes public.
