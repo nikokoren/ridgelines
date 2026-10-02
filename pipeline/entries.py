@@ -101,8 +101,7 @@ def sparql(q, name):
 
 
 def local_name(pqid, en, de):
-    """The peak's local name, used in every language (Niko, 2026-10-02: Großglockner and
-    Mont Blanc in English and German alike). 1. Wikidata's native label (P1705); with
+    """The peak's local name, used only where Wikidata lacks the label in a language. 1. Wikidata's native label (P1705); with
     several (Mont Blanc: French and Italian), the one matching the English or German label.
     2. Otherwise the label in the official language (P37) of the peak's country; for a
     border summit with several, the one matching the German or English label.
@@ -153,7 +152,10 @@ def wikidata(qid):
     local, source = local_name(pqid, v(b, "pl"), v(b, "pde"))
     return dict(
         qid=qid, name={"en": v(b, "rl"), "de": v(b, "rde") or v(b, "rl")},
-        peak={"en": local, "de": local}, peak_name_source=source, peak_labels={"en": v(b, "pl"), "de": v(b, "pde")},
+        # Each language shows its own Wikidata label (Niko, 2026-10-02, replacing local names the
+        # same day); the local name only fills a missing label.
+        peak={"en": v(b, "pl") or local, "de": v(b, "pde") or v(b, "pl") or local},
+        peak_name_source=source, peak_labels={"en": v(b, "pl"), "de": v(b, "pde")},
         peak_m=round(float(v(b, "elev"))), peak_lat=lat, peak_lon=lon,
         country=countries(v(b, "cs"), (v(b, "pcs") or "").split("|")),
         elevations_listed=sorted({round(float(r["elev"]["value"])) for r in rows}),
