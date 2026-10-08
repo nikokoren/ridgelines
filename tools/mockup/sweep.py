@@ -15,7 +15,7 @@
 
     python sweep.py release [out]   AREA=europe: every flagged range of data/release/<area>.json plus
                                       every SAMPLE-th other one (default 6), 12 per sheet
-                                      (first: python ../../pipeline/select.py <area>; LIST=path for a trial list;
+                                      (first: python ../../pipeline/pick.py <area>; LIST=path for a trial list;
                                       FLAGGED=0 for the sample alone)
 
     python sweep.py every   [out]   every published range (beta and data/release/*.json) on OG full landscape

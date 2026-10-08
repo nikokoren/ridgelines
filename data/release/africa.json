@@ -2,7 +2,7 @@
  "area": "africa",
  "name": "Africa",
  "target": 365,
- "note": "Written by pipeline/select.py from live Wikidata and Copernicus GLO-90; rebuild, do not hand edit.",
+ "note": "Written by pipeline/pick.py from live Wikidata and Copernicus GLO-90; rebuild, do not hand edit.",
  "entries": [
   {
    "id": "Q190048",

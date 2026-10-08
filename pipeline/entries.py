@@ -135,7 +135,7 @@ def local_name(pqid, en, de):
 
 
 class Skip(Exception):
-    """A range that cannot be built (no English label, no highest point); select.py moves on."""
+    """A range that cannot be built (no English label, no highest point); pick.py moves on."""
 
 
 def wikidata(qid):

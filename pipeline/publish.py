@@ -4,7 +4,7 @@
     python pipeline/publish.py --skip-build            # reuse .cache/entries where they match the list
 
 Lists: data/beta_de_at.json (the beta, folder beta/) and data/release/<area>.json (written by
-select.py, one folder per area: europe/, americas/, asia/, africa/). Writes, all git-ignored except
+pick.py, one folder per area: europe/, americas/, asia/, africa/). Writes, all git-ignored except
 the Polling URL:
     site/<folder>/d/<n>.json   one payload per calendar slot, n = 0 .. count-1, in a fixed shuffled order
     site/<folder>/calendar.json, site/NOTICE.md, site/index.html
