@@ -50,9 +50,7 @@
    "lat": 46.4244,
    "lon": 11.85,
    "width_km": 80,
-   "flags": [
-    "1115 spike samples"
-   ]
+   "flags": []
   },
   {
    "id": "Q6489",
@@ -172,9 +170,7 @@
    "lat": 40.0,
    "lon": 20.75,
    "width_km": 80,
-   "flags": [
-    "26 spike samples"
-   ]
+   "flags": []
   },
   {
    "id": "Q119206",
@@ -186,9 +182,7 @@
    "lat": 46.3667,
    "lon": 13.8167,
    "width_km": 74,
-   "flags": [
-    "300 spike samples"
-   ]
+   "flags": []
   },
   {
    "id": "Q14668",
@@ -404,9 +398,7 @@
    "lat": 42.4422,
    "lon": 19.8128,
    "width_km": 80,
-   "flags": [
-    "125 spike samples"
-   ]
+   "flags": []
   },
   {
    "id": "Q1266471",
@@ -792,9 +784,7 @@
    "lat": 46.5,
    "lon": 13.0,
    "width_km": 80,
-   "flags": [
-    "967 spike samples"
-   ]
+   "flags": []
   },
   {
    "id": "Q1010089",
@@ -1742,9 +1732,7 @@
    "lat": 43.2927,
    "lon": 41.1906,
    "width_km": 60,
-   "flags": [
-    "35 spike samples"
-   ]
+   "flags": []
   },
   {
    "id": "Q697915",
@@ -1972,9 +1960,7 @@
    "lat": 42.5178,
    "lon": 43.8514,
    "width_km": 68,
-   "flags": [
-    "91 spike samples"
-   ]
+   "flags": []
   },
   {
    "id": "Q293941",
@@ -2492,6 +2478,18 @@
    "lat": 47.15,
    "lon": 13.3833,
    "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1471502",
+   "wikidata": "Q1471502",
+   "kind": "listed",
+   "name": "Quantock Hills",
+   "peak": "Wills Neck",
+   "peak_m": 384,
+   "lat": 51.15,
+   "lon": -3.2333,
+   "width_km": 35,
    "flags": []
   },
   {
@@ -4408,20 +4406,6 @@
    "width_km": 45,
    "flags": [
     "terrain summit, unnamed"
-   ]
-  },
-  {
-   "id": "Q163177",
-   "wikidata": "Q163177",
-   "kind": "terrain",
-   "name": "Majevica",
-   "peak": "Mala Jelica",
-   "peak_m": 833,
-   "lat": 44.5167,
-   "lon": 18.8833,
-   "width_km": 40,
-   "flags": [
-    "terrain summit"
    ]
   }
  ]

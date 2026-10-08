@@ -77,8 +77,9 @@ def checks(e):
         soft.append("terrain summit" + ("" if c["named_peak"] else ", unnamed"))
     if c["peak_source"] not in ("listed", "terrain") and e["kind"] == "listed":
         soft.append(c["peak_source"])
-    if c["spike_pixels"] > 20:
-        soft.append(f"{c['spike_pixels']} spike samples")
+    # Spike counts are not a review flag: in steep ranges sampled coarsely the rule catches real
+    # ridges (Saint Elias Mountains, 1,919 samples, median 3,091 m), and the drawing is the same
+    # with the filter on or off (PROJECT.md Findings, 2026-10-08). They stay in _checks.
     return hard, soft
 
 
