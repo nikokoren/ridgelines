@@ -91,13 +91,15 @@ def sparql(q, name):
     if not os.path.exists(cache):
         url = "https://query.wikidata.org/sparql?" + urllib.parse.urlencode({"query": q, "format": "json"})
         req = urllib.request.Request(url, headers={"User-Agent": UA})
-        for attempt in range(4):
+        for attempt in range(7):
             try:
                 body = urllib.request.urlopen(req, timeout=90).read()
                 break
-            except (TimeoutError, urllib.error.URLError):
-                if attempt == 3:
+            except (TimeoutError, urllib.error.URLError, http.client.HTTPException):
+                # Wikidata answers 502 and 429 under load (Americas selection, 2026-10-08).
+                if attempt == 6:
                     raise
+                time.sleep(2 ** (attempt + 1))
         os.makedirs(os.path.dirname(cache), exist_ok=True)
         open(cache, "wb").write(body)
     return json.load(open(cache))["results"]["bindings"]
@@ -146,11 +148,13 @@ def wikidata(qid):
       ?r wdt:P610 ?p .
       OPTIONAL { ?p rdfs:label ?pl FILTER(lang(?pl)="en") }
       OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
-      ?p wdt:P2044 ?elev . ?p wdt:P625 ?coord .
+      ?p p:P2044/psn:P2044/wikibase:quantityAmount ?elev . ?p wdt:P625 ?coord .   # normalised to metres
       OPTIONAL { ?r wdt:P17 ?c . ?c rdfs:label ?cl FILTER(lang(?cl)="en")
                  OPTIONAL { ?c rdfs:label ?cdl FILTER(lang(?cdl)="de") } }
       OPTIONAL { ?p wdt:P17 ?pc }
-    } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v5")   # v5: peak label optional
+    } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v6")
+    # v5: peak label optional. v6: elevations normalised to metres; until 2026-10-08 a US peak
+    # listed in feet came through as metres (Mount Nebo "11,933 m").
     if not rows:
         raise Skip(f"{qid}: no Wikidata row with English range label, highest point, elevation and coordinates")
     v = lambda b, k: b[k]["value"] if k in b else None
