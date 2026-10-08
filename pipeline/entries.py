@@ -468,7 +468,7 @@ def build(key, suffix=""):
         },
         _checks=dict(checks, peak_source=source,
                      peak_snap_km=round(snap, 2), peak_found_m=round(peak_found_m), spike_pixels=spikes, above_peak_pixels=above_peak, raw_max_m=round(zmax_raw, 1), ocean_share=round(ocean, 3),
-                     relief_m=round(relief_ref), ocean_ref_share=round(float((ref <= 0.5).mean()), 3),
+                     relief_m=round(relief_ref), window_max_m=round(float(ref.max())), ocean_ref_share=round(float((ref <= 0.5).mean()), 3),
                      peak_in_square=bool(abs(peak_xy[0]) < side / 2 and abs(peak_xy[1]) < side / 2),
                      wikidata_elevations=elevations),
     )

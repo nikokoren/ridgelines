@@ -2,7 +2,7 @@
 
 A [TRMNL](https://trmnl.com) recipe that shows one real mountain range per day, drawn as a top-down map of gently rippled lines.
 
-**Status:** beta. 30 ranges in Germany and Austria, served from GitHub Pages.
+**Status:** store release in progress. 365 ranges for Europe picked and in review; Americas, Asia and Oceania, and Africa to follow. The beta (30 ranges in Germany and Austria) is still served from GitHub Pages.
 
 ![Beta ranges](docs/mockups/beta_1.png)
 
@@ -26,5 +26,10 @@ Data: elevation from Copernicus DEM GLO-90, the list of ranges and their names f
 
 ```
 pip install -r pipeline/requirements.txt
-python pipeline/publish.py        # writes site/ (git-ignored) and recipe/polling_url.txt
+python pipeline/candidates.py         # counts per area (cached Wikidata queries in .cache/)
+python pipeline/select.py europe      # picks 365 ranges into data/release/europe.json
+python pipeline/publish.py            # writes site/ (git-ignored) and recipe/polling_url.txt
+python pipeline/test_polling_url.py   # needs ruby and the liquid gem 5.14.0
 ```
+
+Elevation tiles land in `.cache/glo90/` (about 4 MB each, never committed).

@@ -23,16 +23,32 @@ def height(m, lang, units):
 def countries(entry, lang):
     """One or two countries in full; more than two as the first and a count (Niko, 2026-10-02):
     "Austria and 2 more", "Österreich und 2 weitere". The build lists the summit's countries first."""
-    c = [x for x in entry["country"][lang].split(", ") if x]
+    c = [x for x in plain(entry["country"][lang]).split(", ") if x]
     if len(c) > 2:
         return c[0] + " " + UI[lang]["more"].format(n=len(c) - 1)
     return f"{c[0]} {UI[lang]['and']} {c[1]}" if len(c) == 2 else (c[0] if c else "")
 
 
+def plain(text):
+    """No en or em dashes on screen (CLAUDE.md): Wikidata writes "Kamnik\u2013Savinja Alps"."""
+    return (text or "").replace("\u2013", "-").replace("\u2014", "-")
+
+
+def peak_name(entry, lang):
+    return plain(entry["peak"][lang])
+
+
+def range_name(entry, lang):
+    """The range name, capitalised as a headline: Wikidata keeps French lower case ("monts d'Or")."""
+    n = plain(entry["name"][lang])
+    return n[:1].upper() + n[1:]
+
+
 def headline(entry, lang):
     """Info box headline: range and country, like Downstream's "Munich, Germany"."""
     where = countries(entry, lang)
-    return f"{entry['name'][lang]}, {where}" if where else entry["name"][lang]
+    name = range_name(entry, lang)
+    return f"{name}, {where}" if where else name
 
 
 def peak_line(entry, lang, units):
@@ -40,14 +56,14 @@ def peak_line(entry, lang, units):
     summit that no Wikidata peak names reads "Highest point 1,694 m"."""
     if not entry["peak"][lang]:
         return f"{UI[lang]['point']} {height(entry['peak_m'], lang, units)}"
-    return f"{UI[lang]['highest']} {entry['peak'][lang]} {height(entry['peak_m'], lang, units)}"
+    return f"{UI[lang]['highest']} {peak_name(entry, lang)} {height(entry['peak_m'], lang, units)}"
 
 
 def captions(entry, lang, units):
     """Title bar instance text per view (title bar setting, off by default). Portrait drops the
     country, which did not fit beside the plugin title at 480 px (PROJECT.md, portrait caption)."""
-    name = entry["name"][lang]
-    peak = " ".join(p for p in (entry["peak"][lang], height(entry["peak_m"], lang, units)) if p)
+    name = range_name(entry, lang)
+    peak = " ".join(p for p in (peak_name(entry, lang), height(entry["peak_m"], lang, units)) if p)
     where = countries(entry, lang)
     return {
         "full": SEP.join(p for p in (name, peak, where) if p),

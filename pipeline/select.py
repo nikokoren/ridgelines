@@ -28,6 +28,8 @@ NOT_A_RANGE = re.compile(r"\b(reserve|national park|nature park)\b", re.I)  # "Z
 SPARSE = 0.04        # share of the reference window whose lines lift above the floor: below it the
                       # drawing is a blank field with one bump (Mount Hombori and Adamawa Plateau 0.02)
 THIN = 0.10           # below this, flag for review (MacDonnell 0.09, approved; every beta range 0.20 or more)
+BELOW_VIEW = 0.75     # the summit must reach this share of the highest ground the OG view shows
+                      # (approved ranges reach 0.84 or more; Garleton Hills, 164 m beside the Lammermuirs, 0.33)
 LOW_SUMMIT = 0.65     # terrain summit below this share of the listed height: not on high ground
                       # (smoothing alone gives 0.88 to 0.97 on the corpus, MacDonnell 0.71)
 
@@ -65,6 +67,8 @@ def checks(e):
         hard.append("summit outside the crop")
     if e["kind"] == "listed" and c["peak_found_m"] < LOW_SUMMIT * e["peak_m"]:
         hard.append(f"summit off high ground ({c['peak_found_m']} of {e['peak_m']} m)")
+    if c["peak_found_m"] < BELOW_VIEW * c["window_max_m"]:
+        hard.append(f"summit below the view's high ground ({c['peak_found_m']} of {c['window_max_m']} m)")
     if not e["name"]["en"]:
         hard.append("no name")
     if NOT_A_RANGE.search(e["name"]["en"]):
@@ -75,8 +79,6 @@ def checks(e):
         soft.append(c["peak_source"])
     if c["spike_pixels"] > 20:
         soft.append(f"{c['spike_pixels']} spike samples")
-    if e["name"]["de"] == e["name"]["en"] and e["peak"]["de"] == e["peak"]["en"]:
-        soft.append("no German labels")
     return hard, soft
 
 
