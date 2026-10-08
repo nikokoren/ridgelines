@@ -1,7 +1,7 @@
 """Pick the release list for an area: build candidates in rank order, keep those that pass the checks.
 
-    python pipeline/select.py europe                # writes data/release/europe.json
-    python pipeline/select.py africa --target 40    # a trial run
+    python pipeline/pick.py europe                # writes data/release/europe.json
+    python pipeline/pick.py africa --target 40    # a trial run
 
 Candidates come from candidates.py (ranges with a listed highest point first, then the terrain
 fallback, each by sitelinks). A candidate is skipped before any terrain work when its crop centre
@@ -131,7 +131,7 @@ def main():
     pool.shutdown(cancel_futures=True)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     json.dump({"area": a.area, "name": candidates.NAMES[a.area], "target": a.target,
-               "note": "Written by pipeline/select.py from live Wikidata and Copernicus GLO-90; rebuild, do not hand edit.",
+               "note": "Written by pipeline/pick.py from live Wikidata and Copernicus GLO-90; rebuild, do not hand edit.",
                "entries": picked}, open(out, "w"), ensure_ascii=False, indent=1)
     rep = os.path.join(entries.CACHE, "release", a.area + "_report.json")
     os.makedirs(os.path.dirname(rep), exist_ok=True)

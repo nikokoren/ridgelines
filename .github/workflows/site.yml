@@ -35,6 +35,10 @@ jobs:
         run: |
           pip install -r pipeline/requirements.txt
           sudo gem install liquid -v 5.14.0   # the runner image ships Ruby; TRMNL runs Ruby Liquid
+      - name: No pipeline module named after a standard library module
+        # pipeline/ is first on sys.path, so pipeline/select.py hid the stdlib select module and broke
+        # http.client on the runner (run 37857147132, 2026-10-08); copy.py and site.py did the same before.
+        run: python -c "import os, sys; bad = [f for f in os.listdir('pipeline') if f.endswith('.py') and f[:-3] in sys.stdlib_module_names]; sys.exit(f'rename {bad}' if bad else 0)"
       - uses: actions/cache@v4
         with:
           path: .cache/entries

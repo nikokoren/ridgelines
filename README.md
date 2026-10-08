@@ -27,7 +27,7 @@ Data: elevation from Copernicus DEM GLO-90, the list of ranges and their names f
 ```
 pip install -r pipeline/requirements.txt
 python pipeline/candidates.py         # counts per area (cached Wikidata queries in .cache/)
-python pipeline/select.py europe      # picks 365 ranges into data/release/europe.json
+python pipeline/pick.py europe      # picks 365 ranges into data/release/europe.json
 python pipeline/publish.py            # writes site/ (git-ignored) and recipe/polling_url.txt
 python pipeline/test_polling_url.py   # needs ruby and the liquid gem 5.14.0
 ```

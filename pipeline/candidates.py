@@ -18,7 +18,7 @@ Africa box first swallowed Turkey's Aegean coast (Besparmak Mountains).
 
 Crop: centred on the range's own coordinates when they lie near the summit, else on the summit.
 Width from the range's length (P2043) or area (P2046), else WIDTH_KM. Candidates are ranked by
-sitelinks; select.py builds them in that order and keeps those that pass the checks.
+sitelinks; pick.py builds them in that order and keeps those that pass the checks.
 """
 import collections, json, math, os, sys
 
