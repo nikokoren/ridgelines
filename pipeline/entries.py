@@ -15,7 +15,7 @@ Usage (from the repo root):
     python pipeline/entries.py --list data/beta_de_at.json    # a curated list
 pipeline/publish.py builds the published site from a list.
 """
-import base64, collections, http.client, json, math, os, sys, time, urllib.error, urllib.parse, urllib.request
+import base64, collections, http.client, json, math, os, re, sys, threading, time, urllib.error, urllib.parse, urllib.request
 import numpy as np
 import tifffile
 from scipy import ndimage
@@ -143,15 +143,16 @@ def wikidata(qid):
       BIND(wd:%s AS ?r)
       ?r rdfs:label ?rl FILTER(lang(?rl)="en")
       OPTIONAL { ?r rdfs:label ?rde FILTER(lang(?rde)="de") }
-      ?r wdt:P610 ?p . ?p rdfs:label ?pl FILTER(lang(?pl)="en")
+      ?r wdt:P610 ?p .
+      OPTIONAL { ?p rdfs:label ?pl FILTER(lang(?pl)="en") }
       OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
       ?p wdt:P2044 ?elev . ?p wdt:P625 ?coord .
       OPTIONAL { ?r wdt:P17 ?c . ?c rdfs:label ?cl FILTER(lang(?cl)="en")
                  OPTIONAL { ?c rdfs:label ?cdl FILTER(lang(?cdl)="de") } }
       OPTIONAL { ?p wdt:P17 ?pc }
-    } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v4")
+    } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v5")   # v5: peak label optional
     if not rows:
-        raise Skip(f"{qid}: no Wikidata row with English label, highest point, elevation and coordinates")
+        raise Skip(f"{qid}: no Wikidata row with English range label, highest point, elevation and coordinates")
     v = lambda b, k: b[k]["value"] if k in b else None
     b = max(rows, key=lambda b: float(b["elev"]["value"]))  # some peaks carry two elevations
     lon, lat = map(float, v(b, "coord")[6:-1].split())
@@ -191,27 +192,47 @@ KEEP_TILES = os.environ.get("RIDGELINES_KEEP_TILES", "1") != "0"
 TILE_MEMORY = 40   # decoded tiles kept in memory (about 11 MB each); the full list touches thousands
 
 
-def tile(lat_i, lon_i, _mem=collections.OrderedDict()):
-    """1 degree GLO-90 tile whose south-west corner is (lat_i, lon_i). None where the
-    dataset has no tile (tile_list), which is open ocean."""
-    if (lat_i, lon_i) in _mem:
-        _mem.move_to_end((lat_i, lon_i))
-        return _mem[(lat_i, lon_i)]
+def tile_name(lat_i, lon_i):
     ns, ew = ("N" if lat_i >= 0 else "S"), ("E" if lon_i >= 0 else "W")
-    name = f"Copernicus_DSM_COG_30_{ns}{abs(lat_i):02d}_00_{ew}{abs(lon_i):03d}_00_DEM"
+    return f"Copernicus_DSM_COG_30_{ns}{abs(lat_i):02d}_00_{ew}{abs(lon_i):03d}_00_DEM"
+
+
+def fetch(name):
+    """Download a listed tile into TILES unless it is there; returns its path (absent for ocean)."""
     path = os.path.join(TILES, name + ".tif")
     if name in tile_list() and not os.path.exists(path):
         os.makedirs(TILES, exist_ok=True)
+        part = f"{path}.{os.getpid()}.{threading.get_ident()}.part"
         for attempt in range(6):
             try:
-                urllib.request.urlretrieve(f"{GLO90}/{name}/{name}.tif", path + f".{os.getpid()}.part")
-                os.replace(path + f".{os.getpid()}.part", path)
+                urllib.request.urlretrieve(f"{GLO90}/{name}/{name}.tif", part)
+                os.replace(part, path)
                 break
             except (TimeoutError, urllib.error.URLError, ConnectionError, http.client.HTTPException):
                 # S3 answers 403 now and then for tiles that exist; never take that as ocean.
                 if attempt == 5:
                     raise
                 time.sleep(2 ** attempt)
+    return path
+
+
+def tiles_for(lat, lon, side_km):
+    """Names of the tiles a square crop of side_km around (lat, lon) reads."""
+    dlat = math.degrees(side_km / 2 / R) + 0.01
+    dlon = math.degrees(side_km / 2 / (R * math.cos(math.radians(min(89, abs(lat) + dlat))))) + 0.01
+    return [tile_name(a, (o + 180) % 360 - 180)
+            for a in range(math.floor(lat - dlat), math.floor(lat + dlat) + 1)
+            for o in range(math.floor(lon - dlon), math.floor(lon + dlon) + 1)]
+
+
+def tile(lat_i, lon_i, _mem=collections.OrderedDict()):
+    """1 degree GLO-90 tile whose south-west corner is (lat_i, lon_i). None where the
+    dataset has no tile (tile_list), which is open ocean."""
+    if (lat_i, lon_i) in _mem:
+        _mem.move_to_end((lat_i, lon_i))
+        return _mem[(lat_i, lon_i)]
+    name = tile_name(lat_i, lon_i)
+    path = fetch(name)
     if not os.path.exists(path):
         arr = None
     else:
@@ -266,6 +287,8 @@ PEAK_CLASSES = "wd:Q8502 wd:Q54050 wd:Q207326 wd:Q8072"   # mountain, hill, summ
 NAME_KM = 3            # a Wikidata peak this close to the terrain summit names it, if its listed
 NAME_TOLERANCE = 0.1   # elevation is within 10 % (at least 100 m) of the terrain height,
 NAME_KM_UNLISTED = 1.5 # or, if it lists no elevation, if it is this close
+# Labels that only state a height are not names ("Höhe 781" in the Adrar Plateau, 2026-10-08).
+PLACEHOLDER = re.compile(r"^(höhe|hill|point|peak|cote|kote|pt\.?|elevation)\s*\d", re.I)
 
 
 def nearest_peak(lat, lon, height):
@@ -278,11 +301,12 @@ def nearest_peak(lat, lon, height):
         bd:serviceParam wikibase:center "Point(%.5f %.5f)"^^geo:wktLiteral ; wikibase:radius "%g" . }
       VALUES ?cls { %s }
       ?p wdt:P31/wdt:P279* ?cls .
+      FILTER NOT EXISTS { ?p wdt:P31/wdt:P279* wd:Q46831 }     # a range is not its own summit (Aheggar)
       OPTIONAL { ?p p:P2044/psn:P2044/wikibase:quantityAmount ?elev . }
       OPTIONAL { ?p rdfs:label ?pl FILTER(lang(?pl)="en") }
       OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
       OPTIONAL { ?p wdt:P17 ?pc }
-    } GROUP BY ?p ?pl ?pde ?elev ?coord""" % (lon, lat, NAME_KM, PEAK_CLASSES), "around2_%.4f_%.4f" % (lat, lon))
+    } GROUP BY ?p ?pl ?pde ?elev ?coord""" % (lon, lat, NAME_KM, PEAK_CLASSES), "around3_%.4f_%.4f" % (lat, lon))
     best = None
     for b in rows:
         if not b["coord"]["value"].startswith("Point("):
@@ -300,6 +324,7 @@ def nearest_peak(lat, lon, height):
         if not (en or de):
             local, _ = local_name(pqid, None, None)
             en = de = local
+        en, de = (None if PLACEHOLDER.match(x or "") else x for x in (en, de))
         if not (en or de):
             continue
         if best is None or dist < best["km"]:

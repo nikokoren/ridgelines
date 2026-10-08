@@ -13,7 +13,8 @@ Two kinds of candidate (PROJECT.md, Decisions 2026-10-08):
 
 Area comes from the continent (P30) of the summit's country, or of the range's country for the
 terrain kind. Countries on two continents, summits without a country and ranges spanning several
-continents are placed by coordinates (area_at). Antarctica has no area.
+continents are placed by coordinates (area_at). Antarctica has no area. 2026-10-08: the
+Africa box first swallowed Turkey's Aegean coast (Besparmak Mountains).
 
 Crop: centred on the range's own coordinates when they lie near the summit, else on the summit.
 Width from the range's length (P2043) or area (P2046), else WIDTH_KM. Candidates are ranked by
@@ -46,11 +47,15 @@ def area_at(lat, lon):
         return None                                              # Antarctica
     if lon < -25 and lon > -168:
         return "asia" if (lat < 30 and lon < -150) else "americas"
-    if -20 <= lon <= 52 and lat < 37.5 and not (lon > 32.3 and lat > 12):
+    # Africa's north coast reaches 37.3 N in Tunisia but only 31.6 N in Egypt; Anatolia's
+    # Aegean coast (Besparmak Mountains, 37.5 N 27.5 E) lies south of 37.5 N.
+    if -20 <= lon <= 52 and lat < 37.5 and not (lon > 32.3 and lat > 12) and not (lon > 25.5 and lat > 31.7):
         return "africa"
     if lon <= 60 and lat >= 42.0 and lon > -25:
         return "europe"
     if lon <= 26.5 and lat >= 34.5 and lon > -25:                 # Greece, the Balkans, Iberia, Italy
+        return "europe"
+    if lon <= 29.2 and lat >= 40.6 and lon > -25:                 # Turkish Thrace (Strandzha)
         return "europe"
     return "asia"
 

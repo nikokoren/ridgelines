@@ -9,31 +9,54 @@ lies too close to one already picked, and after building when a check fails (CHE
 do not skip, they mark the range for the contact sheet (sweep.py release). The list file holds
 what publish.py needs to rebuild each entry; the report in .cache/release/ holds every decision.
 """
-import argparse, json, os, sys, time
+import argparse, base64, concurrent.futures, json, os, re, sys, time
+import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.join(HERE, "..")
 sys.path.insert(0, HERE)
 import candidates  # noqa: E402
 import entries  # noqa: E402
+import publish  # noqa: E402
 
+PREFETCH = 20         # candidates ahead whose tiles download in the background
 TARGET = 365          # a year without repeats in every area (Niko, 2026-10-08)
 CLOSE = 0.75          # crop centres closer than this share of the mean width show the same terrain
 SEA = 0.7             # share of sea in the reference window (Taveuni, an island, has 0.6)
 FLAT_M = 400          # height span of the reference window (Fichtelgebirge 664, MacDonnell 673)
+NOT_A_RANGE = re.compile(r"\b(reserve|national park|nature park)\b", re.I)  # "Ziama Strict Nature Reserve"; not "forest": Black Forest
+SPARSE = 0.04        # share of the reference window whose lines lift above the floor: below it the
+                      # drawing is a blank field with one bump (Mount Hombori and Adamawa Plateau 0.02)
+THIN = 0.10           # below this, flag for review (MacDonnell 0.09, approved; every beta range 0.20 or more)
 LOW_SUMMIT = 0.65     # terrain summit below this share of the listed height: not on high ground
                       # (smoothing alone gives 0.88 to 0.97 on the corpus, MacDonnell 0.71)
 
 
-def spec(c, area):
-    return dict(qid=c["wikidata"], role=f"release, {candidates.NAMES[area]}", lat=c["lat"], lon=c["lon"],
-                width_km=c["width_km"], kind=c["kind"])
+def role(area):
+    return f"release, {candidates.NAMES[area]}"
+
+
+def ripple_share(e):
+    """Share of the reference window (OG full view) where a line rises more than 15 % of the way
+    from the floor to the ripple top, from the stored heightmap."""
+    g = e["grid"]
+    q = np.frombuffer(base64.b64decode(e["heights"]), np.uint8).reshape(g, g).astype(float)
+    side, w = e["crop"]["side_km"], e["crop"]["width_km"]
+    d = (np.arange(g) + 0.5) / g * side - side / 2
+    win = (np.abs(d)[None, :] <= w / 2) & (np.abs(d)[:, None] <= w * entries.REF_ASPECT / 2)
+    lift = (q - e["floor"]) / max(1, e["top"] - e["floor"])
+    return float((lift[win] > 0.15).mean())
 
 
 def checks(e):
     """(hard failures, soft flags) of a built entry."""
     c = e["_checks"]
     hard, soft = [], []
+    share = ripple_share(e)
+    if share < SPARSE:
+        hard.append(f"too sparse ({share:.2f})")
+    elif share < THIN:
+        soft.append(f"thin ripples ({share:.2f})")
     if c["ocean_ref_share"] > SEA:
         hard.append(f"mostly sea ({c['ocean_ref_share']:.0%})")
     if c["relief_m"] < FLAT_M:
@@ -44,6 +67,8 @@ def checks(e):
         hard.append(f"summit off high ground ({c['peak_found_m']} of {e['peak_m']} m)")
     if not e["name"]["en"]:
         hard.append("no name")
+    if NOT_A_RANGE.search(e["name"]["en"]):
+        hard.append("not a range name")
     if e["kind"] == "terrain":
         soft.append("terrain summit" + ("" if c["named_peak"] else ", unnamed"))
     if c["peak_source"] not in ("listed", "terrain") and e["kind"] == "listed":
@@ -66,18 +91,25 @@ def main():
 
     cands = [c for c in candidates.all_candidates() if c["area"] == a.area]
     picked, report, t0 = [], [], time.time()
+    # Terrain downloads dominate (about 8 s per range one at a time), so the tiles of the next
+    # PREFETCH candidates download in parallel while the current one builds.
+    pool, queued = concurrent.futures.ThreadPoolExecutor(8), set()
     for n, c in enumerate(cands):
         if len(picked) >= a.target:
             break
+        for later in cands[n:n + PREFETCH]:
+            for name in entries.tiles_for(later["lat"], later["lon"], later["width_km"] * entries.SQUARE):
+                if name not in queued:
+                    queued.add(name)
+                    pool.submit(entries.fetch, name)
         near = [p for p in picked if candidates.km_between((c["lat"], c["lon"]), (p["lat"], p["lon"]))
                 < CLOSE * (c["width_km"] + p["width_km"]) / 2]
         rec = dict(wikidata=c["wikidata"], kind=c["kind"], sitelinks=c["sitelinks"])
         if near:
             report.append(dict(rec, skipped=f"too close to {near[0]['wikidata']}"))
             continue
-        entries.FIXTURES[c["wikidata"]] = spec(c, a.area)
         try:
-            e = entries.build(c["wikidata"])
+            e = publish.entry_for(dict(c, id=c["wikidata"]), role(a.area), skip_build=True)
         except entries.Skip as s:
             report.append(dict(rec, skipped=str(s)))
             continue
@@ -93,6 +125,7 @@ def main():
         if len(picked) % 25 == 0:
             print(f"{len(picked)} picked from {n + 1} candidates, {time.time() - t0:.0f} s", flush=True)
 
+    pool.shutdown(cancel_futures=True)
     os.makedirs(os.path.dirname(out), exist_ok=True)
     json.dump({"area": a.area, "name": candidates.NAMES[a.area], "target": a.target,
                "note": "Written by pipeline/select.py from live Wikidata and Copernicus GLO-90; rebuild, do not hand edit.",

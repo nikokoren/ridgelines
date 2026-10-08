@@ -8,13 +8,15 @@ Full requirements live in [docs/brief.md](docs/brief.md), a snapshot of the livi
 
 ## Architecture
 
-Beta (built 2026-10-02): `pipeline/entries.py` builds each listed range from Copernicus GLO-90 and Wikidata; `pipeline/publish.py` writes one payload per calendar slot to `site/beta/d/<n>.json` and the Polling URL; `.github/workflows/site.yml` deploys `site/` to GitHub Pages; the Polling URL picks today's slot from TRMNL's clock plus the user's UTC offset, as Downstream does (its D18). No server. The planned full architecture below still applies to the worldwide list.
+Static files on GitHub Pages, no server (2026-10-08). The pipeline runs on demand:
 
-### Planned for the full list
+1. `pipeline/candidates.py` lists every mountain range in Wikidata with an area: ranges with a listed highest point (one range per summit) and, for the terrain fallback, ranges with only coordinates.
+2. `pipeline/select.py <area>` builds candidates in rank order (sitelinks) and keeps the first 365 that pass the checks, into `data/release/<area>.json` (committed, rebuilt rather than hand edited). Its report goes to `.cache/release/`.
+3. `pipeline/entries.py` builds one entry per range from Copernicus GLO-90 (whole 1 degree tiles, cached, never committed) and Wikidata; for the fallback it finds the summit in the terrain and names it after the nearest matching Wikidata peak.
+4. `pipeline/publish.py` writes one payload per calendar slot into `site/<area>/d/<n>.json` (and the beta's `site/beta/`), plus the Polling URL. `.github/workflows/site.yml` builds and deploys it, keeps built entries in the Actions cache, and checks the Polling URL in Ruby Liquid (`pipeline/test_polling_url.py`).
+5. The Polling URL picks the area and slot from TRMNL's clock, the user's UTC offset and the Area setting (recipe/README.md, How a day's range is picked).
 
-1. **Build pipeline** (GitHub Actions, run on demand): Wikidata list of ranges, Copernicus GLO-90 crop windows over HTTP range requests, resample to a metric grid, spike cleanup, 8-bit base64 heightmap plus a per-entry height floor, one JSON file per entry plus a calendar index, uploaded to R2.
-2. **Cloudflare Worker:** maps the user's local date (TRMNL sends the UTC offset in seconds) and Area setting to an entry and returns its file. No KV, no writes, long edge caching.
-3. **TRMNL template:** plugin JS decodes the heightmap and draws SVG lines with framework paint colours and px() scaling. Caption sits in the native title bar.
+The brief's Cloudflare Worker and R2 plan is not needed while Pages serves static files: 1,460 payloads of about 55 kB are about 80 MB, well inside Pages' 1 GB.
 
 ## Decisions
 
@@ -74,7 +76,7 @@ Each finding is dated. Re-check before relying on it.
 
 1. One-time: Settings > Pages > Source: GitHub Actions, then run the `site` workflow (Actions tab). Check that `https://nikokoren.github.io/ridgelines/beta/d/0.json` answers.
 2. Install the beta on a device (recipe/README.md) and confirm: the drawing, the settings, the day flip at local midnight, and that the screenshot waits for the drawing.
-3. Store release (decided 2026-10-08): 365 ranges per area. Build steps: Wikidata candidates per area, terrain fallback for ranges without a highest point, automatic crops and flags (summit off high ground, too flat, mostly sea, too close to another range), contact sheets of flagged ranges plus a sample, Area setting (multi-select, filtered shared calendar), portrait checks in every view, release cleanup (name without "(beta)", About text). Measure plan usage on the first area before the rest.
+3. Store release (decided 2026-10-08): 365 ranges per area. Built 2026-10-08: candidates, terrain fallback, automatic crops and checks, review sheets (`AREA=<area> python tools/mockup/sweep.py release`), Area setting and Polling URL. Next: Niko reviews the Europe sheets; then `python pipeline/select.py americas`, `asia`, `africa` and their sheets; portrait checks in every view; release cleanup (name without "(beta)"); confirm the Area setting on a device.
 
 Done 2026-10-02: store search and GLO-90 licence check (Findings). Done 2026-10-01: framework version stamped; Wikidata properties confirmed live (P610 highest point, P2044 elevation, P625 coordinates, P17 country); fixture corpus of seven ranges plus Karwendel built from GLO-90 (tools/mockup/fixtures.py: Glockner Group, Teton Range, Lyngen Alps, Rwenzori, Taveuni, MacDonnell Ranges, Cuillin); first tuning pass across all of them.
 
