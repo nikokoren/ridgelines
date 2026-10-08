@@ -16,8 +16,8 @@ custom_fields:
   category: nature,art
   github_url: https://github.com/nikokoren/ridgelines
   description: >-
-    One real mountain range a day, drawn from above as rippled lines. Beta: 30 ranges in Germany
-    and Austria. The range changes at midnight in your time zone.<br><br>
+    One real mountain range a day, drawn from above as rippled lines. Pick the areas the ranges
+    come from, or none for all of them. The range changes at midnight in your time zone.<br><br>
     Terrain produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and
     Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
     reserved. The organisations in charge of the Copernicus programme by law or by delegation do
@@ -26,6 +26,17 @@ custom_fields:
     Nutzung des Copernicus WorldDEM™-90.<br><br>
     Range names, highest points, heights and countries:
     <a href="https://www.wikidata.org/">Wikidata</a> (CC0).
+- keyname: area
+  name: Area
+  field_type: select
+  multiple: true
+  description: Where the ranges come from. Tick one or more to take turns, a new range each day;
+    with none ticked you get every area in turn. Use ⌘+click or Ctrl+click to select and deselect.
+  options:
+  - Europe: europe
+  - Americas: americas
+  - Asia and Oceania: asia
+  - Africa: africa
 - keyname: language
   name: Language
   field_type: select

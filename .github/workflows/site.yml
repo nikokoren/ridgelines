@@ -1,6 +1,8 @@
-# Build the beta entries from Copernicus GLO-90 and Wikidata and deploy them to GitHub Pages.
-# One-time setup: Settings > Pages > Build and deployment > Source: GitHub Actions.
-# Runs on demand, and when the list or the build changes on main.
+# Build the entries of every list (beta and release areas) from Copernicus GLO-90 and Wikidata and
+# deploy them to GitHub Pages. One-time setup: Settings > Pages > Build and deployment > Source:
+# GitHub Actions. Runs on demand, and when a list or the build changes on main. Built entries are
+# kept in the Actions cache between runs (never committed); publish.py rebuilds any entry whose
+# crop or build differs.
 name: site
 
 on:
@@ -8,8 +10,10 @@ on:
   push:
     branches: [main]
     paths:
-      - data/beta_de_at.json
+      - data/**
       - pipeline/**
+      - recipe/polling_url.txt
+      - recipe/tools/polling_url.rb
       - .github/workflows/site.yml
 
 permissions:
@@ -28,9 +32,20 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install
-        run: pip install -r pipeline/requirements.txt
+        run: |
+          pip install -r pipeline/requirements.txt
+          sudo gem install liquid -v 5.14.0   # the runner image ships Ruby; TRMNL runs Ruby Liquid
+      - uses: actions/cache@v4
+        with:
+          path: .cache/entries
+          key: entries-${{ hashFiles('pipeline/entries.py', 'data/**') }}
+          restore-keys: entries-
       - name: Build entries and site
-        run: python pipeline/publish.py
+        env:
+          RIDGELINES_KEEP_TILES: "0"
+        run: python pipeline/publish.py --skip-build
+      - name: Polling URL renders the right slot in Ruby Liquid
+        run: python pipeline/test_polling_url.py
       - name: Polling URL unchanged
         run: git diff --exit-code recipe/polling_url.txt
       - uses: actions/upload-pages-artifact@v3

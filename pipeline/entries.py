@@ -15,7 +15,7 @@ Usage (from the repo root):
     python pipeline/entries.py --list data/beta_de_at.json    # a curated list
 pipeline/publish.py builds the published site from a list.
 """
-import base64, json, math, os, sys, urllib.parse, urllib.request
+import base64, collections, http.client, json, math, os, sys, time, urllib.error, urllib.parse, urllib.request
 import numpy as np
 import tifffile
 from scipy import ndimage
@@ -29,6 +29,9 @@ GRID = 200          # samples per side, brief: about 200 x 200
 FLOOR_PCT = 55      # default since 2026-10-01 (was 40, the first chosen mockup)
 SNAP_KM = 3         # search radius around the listed high point
 SPIKE_M = 250       # a sample this far above its 7 x 7 median is an artefact
+QUIET = False
+# Fingerprint of this file, stored in every entry; publish.py rebuilds entries built by another version.
+BUILD = __import__("hashlib").sha256(open(os.path.abspath(__file__), "rb").read()).hexdigest()[:12]
 UA = "ridgelines-build/0.2 (github.com/nikokoren/ridgelines)"
 
 # Corpus from PROJECT.md "Next up" item 5. Facts (names, high point, height,
@@ -128,6 +131,10 @@ def local_name(pqid, en, de):
     return en or de, "English label"
 
 
+class Skip(Exception):
+    """A range that cannot be built (no English label, no highest point); select.py moves on."""
+
+
 def wikidata(qid):
     rows = sparql("""SELECT ?p ?rl ?rde ?pl ?pde ?elev ?coord
       (GROUP_CONCAT(DISTINCT CONCAT(STRAFTER(STR(?c), "entity/"), "\t", ?cl, "\t", COALESCE(?cdl, ?cl)); separator="|") AS ?cs)
@@ -144,7 +151,7 @@ def wikidata(qid):
       OPTIONAL { ?p wdt:P17 ?pc }
     } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v4")
     if not rows:
-        raise SystemExit(f"{qid}: no Wikidata row with highest point, elevation and coordinates")
+        raise Skip(f"{qid}: no Wikidata row with English label, highest point, elevation and coordinates")
     v = lambda b, k: b[k]["value"] if k in b else None
     b = max(rows, key=lambda b: float(b["elev"]["value"]))  # some peaks carry two elevations
     lon, lat = map(float, v(b, "coord")[6:-1].split())
@@ -162,31 +169,63 @@ def wikidata(qid):
     )
 
 
-def tile(lat_i, lon_i, _mem={}):
+GLO90 = "https://copernicus-dem-90m.s3.amazonaws.com"
+
+
+def tile_list(_names=set()):
+    """Names of every GLO-90 tile, from the bucket's own tileList.txt (26,475 tiles, 2026-10-08).
+    A tile not in the list is open ocean; a listed tile that fails to download is an error."""
+    if not _names:
+        path = os.path.join(TILES, "tileList.txt")
+        if not os.path.exists(path):
+            os.makedirs(TILES, exist_ok=True)
+            urllib.request.urlretrieve(f"{GLO90}/tileList.txt", path)
+        _names.update(open(path).read().split())
+    return _names
+
+
+# RIDGELINES_KEEP_TILES=0 deletes each tile once decoded (GitHub Actions: the full list touches
+# more tiles than the runner's disk holds; the memory cache and geographic build order keep
+# re-downloads rare).
+KEEP_TILES = os.environ.get("RIDGELINES_KEEP_TILES", "1") != "0"
+TILE_MEMORY = 40   # decoded tiles kept in memory (about 11 MB each); the full list touches thousands
+
+
+def tile(lat_i, lon_i, _mem=collections.OrderedDict()):
     """1 degree GLO-90 tile whose south-west corner is (lat_i, lon_i). None where the
-    dataset has no tile, which is open ocean."""
+    dataset has no tile (tile_list), which is open ocean."""
     if (lat_i, lon_i) in _mem:
+        _mem.move_to_end((lat_i, lon_i))
         return _mem[(lat_i, lon_i)]
     ns, ew = ("N" if lat_i >= 0 else "S"), ("E" if lon_i >= 0 else "W")
     name = f"Copernicus_DSM_COG_30_{ns}{abs(lat_i):02d}_00_{ew}{abs(lon_i):03d}_00_DEM"
     path = os.path.join(TILES, name + ".tif")
-    if not os.path.exists(path) and not os.path.exists(path + ".missing"):
+    if name in tile_list() and not os.path.exists(path):
         os.makedirs(TILES, exist_ok=True)
-        try:
-            urllib.request.urlretrieve(f"https://copernicus-dem-90m.s3.amazonaws.com/{name}/{name}.tif", path)
-        except urllib.error.HTTPError as e:
-            if e.code not in (403, 404):
-                raise
-            open(path + ".missing", "w").close()
+        for attempt in range(6):
+            try:
+                urllib.request.urlretrieve(f"{GLO90}/{name}/{name}.tif", path + f".{os.getpid()}.part")
+                os.replace(path + f".{os.getpid()}.part", path)
+                break
+            except (TimeoutError, urllib.error.URLError, ConnectionError, http.client.HTTPException):
+                # S3 answers 403 now and then for tiles that exist; never take that as ocean.
+                if attempt == 5:
+                    raise
+                time.sleep(2 ** attempt)
     if not os.path.exists(path):
-        _mem[(lat_i, lon_i)] = None
-        return None
-    with tifffile.TiffFile(path) as t:
-        p = t.pages[0]
-        lon0, lat0 = p.tags["ModelTiepointTag"].value[3:5]
-        assert (round(lon0), round(lat0)) == (lon_i, lat_i + 1), (name, lon0, lat0)
-        _mem[(lat_i, lon_i)] = p.asarray().astype(np.float64)
-    return _mem[(lat_i, lon_i)]
+        arr = None
+    else:
+        with tifffile.TiffFile(path) as t:
+            p = t.pages[0]
+            lon0, lat0 = p.tags["ModelTiepointTag"].value[3:5]
+            assert (round(lon0), round(lat0)) == (lon_i, lat_i + 1), (name, lon0, lat0)
+            arr = p.asarray().astype(np.float64)
+        if not KEEP_TILES:
+            os.remove(path)
+    _mem[(lat_i, lon_i)] = arr
+    while len(_mem) > TILE_MEMORY:
+        _mem.popitem(last=False)
+    return arr
 
 
 def sample(lat, lon):
@@ -206,9 +245,77 @@ def sample(lat, lon):
     return out
 
 
+def range_facts(qid):
+    """Names and countries of a range without a highest point (terrain fallback)."""
+    rows = sparql("""SELECT ?rl ?rde
+      (GROUP_CONCAT(DISTINCT CONCAT(STRAFTER(STR(?c), "entity/"), "\t", ?cl, "\t", COALESCE(?cdl, ?cl)); separator="|") AS ?cs)
+      WHERE {
+      BIND(wd:%s AS ?r)
+      ?r rdfs:label ?rl FILTER(lang(?rl)="en")
+      OPTIONAL { ?r rdfs:label ?rde FILTER(lang(?rde)="de") }
+      OPTIONAL { ?r wdt:P17 ?c . ?c rdfs:label ?cl FILTER(lang(?cl)="en")
+                 OPTIONAL { ?c rdfs:label ?cdl FILTER(lang(?cdl)="de") } }
+    } GROUP BY ?rl ?rde""" % qid, qid + ".range")
+    if not rows:
+        raise Skip(f"{qid}: no English label")
+    v = lambda k: rows[0][k]["value"] if k in rows[0] else None
+    return dict(qid=qid, name={"en": v("rl"), "de": v("rde") or v("rl")}, cs=v("cs"))
+
+
+PEAK_CLASSES = "wd:Q8502 wd:Q54050 wd:Q207326 wd:Q8072"   # mountain, hill, summit, volcano
+NAME_KM = 3            # a Wikidata peak this close to the terrain summit names it, if its listed
+NAME_TOLERANCE = 0.1   # elevation is within 10 % (at least 100 m) of the terrain height,
+NAME_KM_UNLISTED = 1.5 # or, if it lists no elevation, if it is this close
+
+
+def nearest_peak(lat, lon, height):
+    """The Wikidata peak that names a terrain summit: the nearest one within NAME_KM whose listed
+    elevation matches the terrain, or within NAME_KM_UNLISTED if it lists none (many African
+    peaks carry no elevation). None if there is none."""
+    rows = sparql("""SELECT ?p ?pl ?pde ?elev ?coord
+      (GROUP_CONCAT(DISTINCT STRAFTER(STR(?pc), "entity/"); separator="|") AS ?pcs) WHERE {
+      SERVICE wikibase:around { ?p wdt:P625 ?coord .
+        bd:serviceParam wikibase:center "Point(%.5f %.5f)"^^geo:wktLiteral ; wikibase:radius "%g" . }
+      VALUES ?cls { %s }
+      ?p wdt:P31/wdt:P279* ?cls .
+      OPTIONAL { ?p p:P2044/psn:P2044/wikibase:quantityAmount ?elev . }
+      OPTIONAL { ?p rdfs:label ?pl FILTER(lang(?pl)="en") }
+      OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
+      OPTIONAL { ?p wdt:P17 ?pc }
+    } GROUP BY ?p ?pl ?pde ?elev ?coord""" % (lon, lat, NAME_KM, PEAK_CLASSES), "around2_%.4f_%.4f" % (lat, lon))
+    best = None
+    for b in rows:
+        if not b["coord"]["value"].startswith("Point("):
+            continue
+        plon, plat = map(float, b["coord"]["value"][6:-1].split())
+        elev = float(b["elev"]["value"]) if "elev" in b else None
+        dist = R * math.hypot(math.radians(plat - lat), math.radians(plon - lon) * math.cos(math.radians(lat)))
+        if elev is None and dist > NAME_KM_UNLISTED:
+            continue
+        if elev is not None and abs(elev - height) > max(100, NAME_TOLERANCE * height):
+            continue
+        pqid = b["p"]["value"].rsplit("/", 1)[-1]
+        en = b["pl"]["value"] if "pl" in b else None
+        de = b["pde"]["value"] if "pde" in b else None
+        if not (en or de):
+            local, _ = local_name(pqid, None, None)
+            en = de = local
+        if not (en or de):
+            continue
+        if best is None or dist < best["km"]:
+            best = dict(qid=pqid, en=en or de, de=de or en, m=round(elev if elev is not None else height),
+                        elevation_listed=elev is not None, km=round(dist, 2),
+                        countries=(b["pcs"]["value"] if "pcs" in b else "").split("|"))
+    return best
+
+
 def build(key, suffix=""):
     f = FIXTURES[key]
-    wd = wikidata(f["qid"])
+    kind = f.get("kind", "listed")
+    if kind == "listed":
+        wd = wikidata(f["qid"])
+    else:
+        wd = range_facts(f["qid"])
     side = f["width_km"] * SQUARE
     # Oversample 3x, then smooth and decimate, so the 200 grid averages terrain
     # instead of aliasing single 90 m pixels.
@@ -225,8 +332,8 @@ def build(key, suffix=""):
     bad = (z - med) > SPIKE_M
     spikes = int(bad.sum())
     zmax_raw = float(z.max())
-    above_peak = int((z > wd["peak_m"] + 20).sum())
     z[bad] = med[bad]
+    z_fine = z.copy()                                      # 3x grid, spikes removed, unsmoothed
     z = ndimage.gaussian_filter(z, 1.2)
     z = z.reshape(GRID, 3, GRID, 3).mean(axis=(1, 3))
     z_abs = z.copy()                                       # true heights, for locating the summit
@@ -236,6 +343,8 @@ def build(key, suffix=""):
         sigma_km, share = RELIEF
         z = z - share * ndimage.gaussian_filter(z, sigma_km / (side / GRID), mode="nearest")
     lo, hi = float(z.min()), float(z.max())
+    if hi - lo < 1:
+        raise Skip(f"{f['qid']}: no terrain in the crop (all {lo:.0f} m)")
     q = np.round((z - lo) / (hi - lo) * 255).astype(np.uint8)
     floor_m = float(np.percentile(z, FLOOR_PCT))
     # Ripple top: the highest sample in the reference window (what the OG full
@@ -245,12 +354,8 @@ def build(key, suffix=""):
     c = c.reshape(GRID, 3, GRID, 3).any(axis=(1, 3))
     top_m = float(z[c].max())
     ocean = float((z_abs <= 0.5).mean())
-    # High point position in km from the crop centre (east, north), snapped to
-    # the highest terrain within SNAP_KM of the listed point, so the label sits
-    # on the summit even when Wikidata's coordinates are rounded. If the listed
-    # point is not on high ground, the sign-flipped longitude and latitude are
-    # tried too, and the candidate whose summit best matches the listed height
-    # wins: Taveuni's Uluigalau is listed at 179.967 E, in the sea; it is at W.
+    ref = z_abs[c]
+    relief_ref = float(ref.max() - np.percentile(ref, 5))  # height span the reference window shows
     gx = xs.reshape(GRID, 3).mean(axis=1)
     gy = ys.reshape(GRID, 3).mean(axis=1)
 
@@ -258,29 +363,65 @@ def build(key, suffix=""):
         pe = math.radians(plon - f["lon"] + 540) % (2 * math.pi) - math.pi
         return R * pe * math.cos(math.radians(plat)), R * math.radians(plat - f["lat"])
 
-    def summit(plat, plon):
-        px, py = km(plat, plon)
-        near = (gx[None, :] - px) ** 2 + (gy[:, None] - py) ** 2 <= SNAP_KM ** 2
-        if not near.any():
-            return None
-        r, c = np.unravel_index(np.where(near, z_abs, -np.inf).argmax(), z_abs.shape)
-        return float(z_abs[r, c]), (float(gx[c]), float(gy[r])), math.hypot(gx[c] - px, gy[r] - py)
+    if kind == "listed":
+        # High point position in km from the crop centre (east, north), snapped to
+        # the highest terrain within SNAP_KM of the listed point, so the label sits
+        # on the summit even when Wikidata's coordinates are rounded. If the listed
+        # point is not on high ground, the sign-flipped longitude and latitude are
+        # tried too, and the candidate whose summit best matches the listed height
+        # wins: Taveuni's Uluigalau is listed at 179.967 E, in the sea; it is at W.
+        def summit(plat, plon):
+            px, py = km(plat, plon)
+            near = (gx[None, :] - px) ** 2 + (gy[:, None] - py) ** 2 <= SNAP_KM ** 2
+            if not near.any():
+                return None
+            r, c_ = np.unravel_index(np.where(near, z_abs, -np.inf).argmax(), z_abs.shape)
+            return float(z_abs[r, c_]), (float(gx[c_]), float(gy[r])), math.hypot(gx[c_] - px, gy[r] - py)
 
-    plat, plon = wd["peak_lat"], wd["peak_lon"]
-    at_peak = float(sample(np.array([plat]), np.array([plon]))[0])
-    peak_ok = at_peak >= 0.75 * wd["peak_m"]
-    cands = [("listed", plat, plon)]
-    if not peak_ok:
-        cands += [("longitude sign flipped", plat, -plon), ("latitude sign flipped", -plat, plon)]
-    found = [(n, summit(a, o)) for n, a, o in cands]
-    found = [(n, s_) for n, s_ in found if s_ and s_[0] > 0]
-    if found:
-        source, (peak_found_m, peak_xy, snap) = min(found, key=lambda t: abs(t[1][0] - wd["peak_m"]))
+        plat, plon = wd["peak_lat"], wd["peak_lon"]
+        at_peak = float(sample(np.array([plat]), np.array([plon]))[0])
+        peak_ok = at_peak >= 0.75 * wd["peak_m"]
+        cands = [("listed", plat, plon)]
+        if not peak_ok:
+            cands += [("longitude sign flipped", plat, -plon), ("latitude sign flipped", -plat, plon)]
+        found = [(n_, summit(a_, o_)) for n_, a_, o_ in cands]
+        found = [(n_, s_) for n_, s_ in found if s_ and s_[0] > 0]
+        if found:
+            source, (peak_found_m, peak_xy, snap) = min(found, key=lambda t: abs(t[1][0] - wd["peak_m"]))
+        else:
+            source, peak_found_m, peak_xy, snap = "listed, no terrain nearby", at_peak, km(plat, plon), 0.0
+        peak, peak_m, country = wd["peak"], wd["peak_m"], wd["country"]
+        checks = dict(peak_name_source=wd["peak_name_source"], peak_labels=wd["peak_labels"],
+                      peak_point_m=round(at_peak), peak_point_ok=peak_ok)
+        elevations = wd["elevations_listed"]
     else:
-        source, peak_found_m, peak_xy, snap = "listed, no terrain nearby", at_peak, km(plat, plon), 0.0
+        # Terrain fallback (Niko, 2026-10-08): the range has no highest point in Wikidata, so
+        # the summit is the highest terrain in the reference window (inset by a tenth, so the
+        # summit is not cut at the frame), named after the nearest Wikidata peak whose listed
+        # elevation matches. Without one the box says "Highest point" and the label is left out.
+        inset = (np.abs(gx) <= 0.45 * f["width_km"])[None, :] & (np.abs(gy) <= 0.45 * f["width_km"] * REF_ASPECT)[:, None]
+        r, c_ = np.unravel_index(np.where(inset, z_abs, -np.inf).argmax(), z_abs.shape)
+        peak_xy, snap, source = (float(gx[c_]), float(gy[r])), 0.0, "terrain"
+        peak_found_m = float(z_abs[r, c_])
+        fine_r, fine_c = slice(3 * r, 3 * r + 3), slice(3 * c_, 3 * c_ + 3)
+        terrain_m = float(z_fine[max(0, 3 * r - 6):3 * r + 9, max(0, 3 * c_ - 6):3 * c_ + 9].max())
+        slat = f["lat"] + math.degrees(peak_xy[1] / R)
+        slon = f["lon"] + math.degrees(peak_xy[0] / (R * math.cos(math.radians(slat))))
+        named = nearest_peak(slat, slon, terrain_m)
+        if named:
+            peak, peak_m = {"en": named["en"], "de": named["de"]}, named["m"]
+            source = f"terrain, named after {named['qid']} {named['km']} km away"
+        else:
+            peak, peak_m = {"en": "", "de": ""}, int(round(terrain_m))
+        country = countries(wd["cs"], named["countries"] if named else ())
+        checks = dict(peak_name_source="nearest Wikidata peak" if named else "none", peak_labels=peak,
+                      terrain_summit_m=round(terrain_m), named_peak=named)
+        elevations = []
+        del fine_r, fine_c
+    above_peak = int((z_fine > peak_m + 20).sum())
     entry = dict(
-        id=key, role=f["role"], wikidata=wd["qid"],
-        name=wd["name"], peak=wd["peak"], peak_m=wd["peak_m"], country=wd["country"],
+        id=key, role=f["role"], wikidata=wd["qid"], kind=kind, build=BUILD,
+        name=wd["name"], peak=peak, peak_m=peak_m, country=country,
         crop=dict(lat=f["lat"], lon=f["lon"], width_km=f["width_km"], side_km=round(side, 3)),
         grid=GRID, min_m=round(lo, 1), max_m=round(hi, 1),
         floor=int(round((floor_m - lo) / (hi - lo) * 255)), floor_pct=FLOOR_PCT,
@@ -300,20 +441,22 @@ def build(key, suffix=""):
             },
             "wikidata": {"en": "Range facts: Wikidata (CC0).", "de": "Gebirgsdaten: Wikidata (CC0)."},
         },
-        _checks=dict(peak_name_source=wd["peak_name_source"], peak_labels=wd["peak_labels"], peak_point_m=round(at_peak), peak_point_ok=peak_ok, peak_source=source,
+        _checks=dict(checks, peak_source=source,
                      peak_snap_km=round(snap, 2), peak_found_m=round(peak_found_m), spike_pixels=spikes, above_peak_pixels=above_peak, raw_max_m=round(zmax_raw, 1), ocean_share=round(ocean, 3),
+                     relief_m=round(relief_ref), ocean_ref_share=round(float((ref <= 0.5).mean()), 3),
                      peak_in_square=bool(abs(peak_xy[0]) < side / 2 and abs(peak_xy[1]) < side / 2),
-                     wikidata_elevations=wd["elevations_listed"]),
+                     wikidata_elevations=elevations),
     )
     os.makedirs(ENTRIES, exist_ok=True)
     path = os.path.join(ENTRIES, key + suffix + ".json")
     with open(path, "w") as fh:
         json.dump(entry, fh, ensure_ascii=False, separators=(",", ":"))
     c = entry["_checks"]
-    print(f"{key + suffix:11s} {os.path.getsize(path)/1000:5.1f} kB  {wd['name']['en']}: {wd['peak']['en']} {wd['peak_m']} m"
-          f"  crop {lo:.0f} to {hi:.0f} m, raw max {c['raw_max_m']:.0f} m, spikes {spikes}, above high point {above_peak}, ocean {ocean:.0%},"
-          f" peak in square {c['peak_in_square']}, Wikidata elevations {c['wikidata_elevations']},"
-          f" terrain at listed point {c['peak_point_m']} m, summit {c['peak_found_m']} m {c['peak_snap_km']} km away ({source})")
+    if not QUIET:
+        print(f"{key + suffix:11s} {os.path.getsize(path)/1000:5.1f} kB  {wd['name']['en']}: {peak['en']} {peak_m} m"
+              f"  crop {lo:.0f} to {hi:.0f} m, raw max {c['raw_max_m']:.0f} m, spikes {spikes}, above high point {above_peak}, ocean {ocean:.0%},"
+              f" peak in square {c['peak_in_square']}, relief {c['relief_m']} m, Wikidata elevations {elevations},"
+              f" summit {c['peak_found_m']} m {c['peak_snap_km']} km away ({source})")
     return entry
 
 

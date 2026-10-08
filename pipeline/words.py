@@ -6,8 +6,8 @@ keyed by language and units, so a third language is one more dictionary.
 """
 
 UI = {
-    "en": {"and": "and", "more": "and {n} more", "highest": "Highest peak", "thousands": ","},
-    "de": {"and": "und", "more": "und {n} weitere", "highest": "Höchster Gipfel", "thousands": "."},
+    "en": {"and": "and", "more": "and {n} more", "highest": "Highest peak", "point": "Highest point", "thousands": ","},
+    "de": {"and": "und", "more": "und {n} weitere", "highest": "Höchster Gipfel", "point": "Höchster Punkt", "thousands": "."},
 }
 LANGS = tuple(UI)
 UNITS = ("metric", "imperial")
@@ -36,14 +36,18 @@ def headline(entry, lang):
 
 
 def peak_line(entry, lang, units):
-    """Info box second line: "Highest peak Birkkarspitze 2,749 m" (Niko, 2026-10-01)."""
+    """Info box second line: "Highest peak Birkkarspitze 2,749 m" (Niko, 2026-10-01). A terrain
+    summit that no Wikidata peak names reads "Highest point 1,694 m"."""
+    if not entry["peak"][lang]:
+        return f"{UI[lang]['point']} {height(entry['peak_m'], lang, units)}"
     return f"{UI[lang]['highest']} {entry['peak'][lang]} {height(entry['peak_m'], lang, units)}"
 
 
 def captions(entry, lang, units):
     """Title bar instance text per view (title bar setting, off by default). Portrait drops the
     country, which did not fit beside the plugin title at 480 px (PROJECT.md, portrait caption)."""
-    name, peak = entry["name"][lang], f"{entry['peak'][lang]} {height(entry['peak_m'], lang, units)}"
+    name = entry["name"][lang]
+    peak = " ".join(p for p in (entry["peak"][lang], height(entry["peak_m"], lang, units)) if p)
     where = countries(entry, lang)
     return {
         "full": SEP.join(p for p in (name, peak, where) if p),
