@@ -2,9 +2,9 @@
 
 A [TRMNL](https://trmnl.com) recipe that shows one real mountain range per day, drawn as a top-down map of gently rippled lines.
 
-**Status:** store release in progress. 365 ranges for Europe picked and in review; Americas, Asia and Oceania, and Africa to follow. The beta (30 ranges in Germany and Austria) is still served from GitHub Pages.
+**Status:** release candidate. 1,460 ranges, 365 in each of four areas, served from GitHub Pages; not yet confirmed on a device. The beta folder (30 ranges in Germany and Austria) stays published for existing beta installs.
 
-![Beta ranges](docs/mockups/beta_1.png)
+![Release ranges](docs/mockups/release_europe_1.png)
 
 Data: elevation from Copernicus DEM GLO-90, the list of ranges and their names from Wikidata. See [recipe/settings.yml](recipe/settings.yml) for the notices.
 

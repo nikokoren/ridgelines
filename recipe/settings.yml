@@ -1,7 +1,7 @@
 ---
 # Ridgelines: TRMNL recipe settings (private plugin export format, as in Downstream's recipe/src/settings.yml).
 # polling_url must match recipe/polling_url.txt, which pipeline/publish.py writes.
-name: Ridgelines (beta)
+name: Ridgelines
 strategy: polling
 refresh_interval: 60
 polling_url: '{%- assign rl_off = trmnl.user.utc_offset | default: 0 | plus: 0 -%}{%- assign rl_day = "now" | date: "%s" | plus: rl_off | divided_by: 86400 -%}{%- assign rl_t = area | join: "," -%}{%- assign rl_s = "" -%}{%- if rl_t contains "europe" -%}{%- assign rl_s = rl_s | append: "europe," -%}{%- endif -%}{%- if rl_t contains "americas" -%}{%- assign rl_s = rl_s | append: "americas," -%}{%- endif -%}{%- if rl_t contains "asia" -%}{%- assign rl_s = rl_s | append: "asia," -%}{%- endif -%}{%- if rl_t contains "africa" -%}{%- assign rl_s = rl_s | append: "africa," -%}{%- endif -%}{%- if rl_s == "" -%}{%- assign rl_s = "europe,americas,asia,africa," -%}{%- endif -%}{%- assign rl_l = rl_s | split: "," -%}{%- assign rl_k = rl_l.size -%}{%- assign rl_j = rl_day | modulo: rl_k -%}{%- assign rl_a = rl_l[rl_j] -%}{%- case rl_a -%}{%- when "europe" -%}{%- assign rl_c = 365 -%}{%- when "americas" -%}{%- assign rl_c = 365 -%}{%- when "asia" -%}{%- assign rl_c = 365 -%}{%- when "africa" -%}{%- assign rl_c = 365 -%}{%- endcase -%}{%- assign rl_i = rl_day | divided_by: rl_k | modulo: rl_c -%}https://nikokoren.github.io/ridgelines/{{ rl_a }}/d/{{ rl_i }}.json'
@@ -16,8 +16,10 @@ custom_fields:
   category: nature,art
   github_url: https://github.com/nikokoren/ridgelines
   description: >-
-    One real mountain range a day, drawn from above as rippled lines. Pick the areas the ranges
-    come from, or none for all of them. The range changes at midnight in your time zone.<br><br>
+    One real mountain range a day, drawn from above as rippled lines: 1,460 ranges, 365 in each
+    of Europe, the Americas, Asia and Oceania, and Africa, so one area alone runs a year without
+    repeats. Pick the areas, or none for all of them. The range changes at midnight in your time
+    zone.<br><br>
     Terrain produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and
     Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
     reserved. The organisations in charge of the Copernicus programme by law or by delegation do

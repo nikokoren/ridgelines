@@ -215,9 +215,24 @@
         var entry = { heights: d.heights, grid: +d.grid, crop: { side_km: +d.sideKm, width_km: +d.widthKm },
                       floor: +d.floor, top: +d.top, peak_km: [+d.peakX, +d.peakY] };
         var opts = Object.assign({ peakName: d.peakName || null }, window.RIDGELINES_LOOK || {});
-        var report = draw(el, entry, opts);
-        el.setAttribute("data-ridgelines-drawn", report.drawn ? "1" : "0");
-        el.setAttribute("data-ridgelines-report", JSON.stringify(report));
+        var paint = function () {
+          var report = draw(el, entry, opts);
+          el.setAttribute("data-ridgelines-drawn", report.drawn ? "1" : "0");
+          el.setAttribute("data-ridgelines-report", JSON.stringify(report));
+          return report;
+        };
+        var first = paint();
+        // The framework can re-fit the info box text after this first drawing (seen in portrait
+        // half vertical and quadrant views, 2026-10-08). The map is placed around the box, so
+        // draw again whenever the box ends up a different size.
+        var info = el.parentNode && el.parentNode.querySelector("[data-ridgelines-box]");
+        if (info && window.ResizeObserver) {
+          var size = first.box ? first.box[2] + "x" + first.box[3] : "";
+          new ResizeObserver(function () {
+            var now = info.offsetWidth + "x" + info.offsetHeight;
+            if (now !== size) { size = now; paint(); }
+          }).observe(info);
+        }
       });
     }
     function start() {

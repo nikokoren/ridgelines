@@ -1,4 +1,4 @@
-# Ridgelines recipe (beta)
+# Ridgelines recipe
 
 TRMNL private plugin, Polling strategy. Framework classes only (Framework 3.4); the SVG line art takes every colour and size from TRMNLPaint.
 
