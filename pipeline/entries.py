@@ -148,13 +148,15 @@ def wikidata(qid):
       ?r wdt:P610 ?p .
       OPTIONAL { ?p rdfs:label ?pl FILTER(lang(?pl)="en") }
       OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
-      ?p p:P2044/psn:P2044/wikibase:quantityAmount ?elev . ?p wdt:P625 ?coord .   # normalised to metres
+      ?p p:P2044 ?est . ?est a wikibase:BestRank ; psn:P2044/wikibase:quantityAmount ?elev .   # metres, preferred
+      ?p wdt:P625 ?coord .
       OPTIONAL { ?r wdt:P17 ?c . ?c rdfs:label ?cl FILTER(lang(?cl)="en")
                  OPTIONAL { ?c rdfs:label ?cdl FILTER(lang(?cdl)="de") } }
       OPTIONAL { ?p wdt:P17 ?pc }
-    } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v6")
+    } GROUP BY ?p ?rl ?rde ?pl ?pde ?elev ?coord""" % qid, qid + ".v7")
     # v5: peak label optional. v6: elevations normalised to metres; until 2026-10-08 a US peak
-    # listed in feet came through as metres (Mount Nebo "11,933 m").
+    # listed in feet came through as metres (Mount Nebo "11,933 m"). v7: preferred statements
+    # only, as wdt: gave before (v6 read Mont Blanc's outdated 4,810 m over the current 4,806 m).
     if not rows:
         raise Skip(f"{qid}: no Wikidata row with English range label, highest point, elevation and coordinates")
     v = lambda b, k: b[k]["value"] if k in b else None
@@ -306,11 +308,11 @@ def nearest_peak(lat, lon, height):
       VALUES ?cls { %s }
       ?p wdt:P31/wdt:P279* ?cls .
       FILTER NOT EXISTS { ?p wdt:P31/wdt:P279* wd:Q46831 }     # a range is not its own summit (Aheggar)
-      OPTIONAL { ?p p:P2044/psn:P2044/wikibase:quantityAmount ?elev . }
+      OPTIONAL { ?p p:P2044 ?est . ?est a wikibase:BestRank ; psn:P2044/wikibase:quantityAmount ?elev . }
       OPTIONAL { ?p rdfs:label ?pl FILTER(lang(?pl)="en") }
       OPTIONAL { ?p rdfs:label ?pde FILTER(lang(?pde)="de") }
       OPTIONAL { ?p wdt:P17 ?pc }
-    } GROUP BY ?p ?pl ?pde ?elev ?coord""" % (lon, lat, NAME_KM, PEAK_CLASSES), "around3_%.4f_%.4f" % (lat, lon))
+    } GROUP BY ?p ?pl ?pde ?elev ?coord""" % (lon, lat, NAME_KM, PEAK_CLASSES), "around4_%.4f_%.4f" % (lat, lon))
     best = None
     for b in rows:
         if not b["coord"]["value"].startswith("Point("):

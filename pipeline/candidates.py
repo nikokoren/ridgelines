@@ -95,7 +95,7 @@ Q_LISTED = """SELECT ?r ?p ?elev ?coord ?sl ?len ?area ?rcoord
  (GROUP_CONCAT(DISTINCT STRAFTER(STR(?ct), "entity/"); separator="|") AS ?conts)
  WHERE {
   ?r wdt:P31/wdt:P279* wd:Q46831 ; wdt:P610 ?p .
-  ?p p:P2044/psn:P2044/wikibase:quantityAmount ?elev ; wdt:P625 ?coord .
+  ?p p:P2044 ?est ; wdt:P625 ?coord . ?est a wikibase:BestRank ; psn:P2044/wikibase:quantityAmount ?elev .
   ?r wikibase:sitelinks ?sl .
   OPTIONAL { ?r p:P2043/psn:P2043/wikibase:quantityAmount ?len }
   OPTIONAL { ?r p:P2046/psn:P2046/wikibase:quantityAmount ?area }
@@ -129,7 +129,7 @@ def num(b, k):
 
 
 def listed():
-    rows = sparql(Q_LISTED, "candidates.listed")
+    rows = sparql(Q_LISTED, "candidates.listed2")   # 2: preferred elevation statements only
     parents = collections.defaultdict(set)
     for b in sparql(Q_PARENTS, "candidates.parents"):
         parents[qid(b, "r")].add(qid(b, "parent"))
