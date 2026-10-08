@@ -15,7 +15,8 @@
 
     python sweep.py release [out]   AREA=europe: every flagged range of data/release/<area>.json plus
                                       every SAMPLE-th other one (default 6), 12 per sheet
-                                      (first: python ../../pipeline/select.py <area>; LIST=path for a trial list)
+                                      (first: python ../../pipeline/select.py <area>; LIST=path for a trial list;
+                                      FLAGGED=0 for the sample alone)
 
 LOOK='{"ripple": 5, "floorPct": 55}' overrides the look for any mode.
 """
@@ -145,7 +146,8 @@ async def release(r):
     path = os.environ.get("LIST") or os.path.join(render.ROOT, "data", "release", area + ".json")
     listed = json.load(open(path))["entries"]
     every = int(os.environ.get("SAMPLE", "6"))
-    pick = [x for i, x in enumerate(listed) if x["flags"] or i % every == 0]
+    flagged = os.environ.get("FLAGGED", "1") != "0"     # FLAGGED=0: the sample only (Africa: 317 of 365 flagged)
+    pick = [x for i, x in enumerate(listed) if (flagged and x["flags"]) or i % every == 0]
     report = []
     for part in range(0, len(pick), 12):
         cells = []
@@ -157,7 +159,7 @@ async def release(r):
             cells.append((p, f"{n}. {e['name']['en']}, {e['peak']['en'] or 'unnamed'} {e['peak_m']} m"
                              + (f"  [{'; '.join(x['flags'])}]" if x["flags"] else "")))
         render.sheet(cells, os.path.join(OUT, f"release_{area}_{part // 12 + 1}.png"), cols=3,
-                     title=f"{area}: flagged plus every {every}th, {part + 1} to {part + len(cells)} of {len(pick)}, TRMNL OG 1-bit, defaults")
+                     title=f"{area}: {'flagged plus ' if flagged else ''}every {every}th, {part + 1} to {part + len(cells)} of {len(pick)}, TRMNL OG 1-bit, defaults")
     json.dump(report, open(os.path.join(OUT, f"release_{area}_report.json"), "w"), indent=1)
     print(f"{len(pick)} of {len(listed)} rendered, drawn {sum(bool(x.get('drawn')) for x in report)}")
 

@@ -1,0 +1,5046 @@
+{
+ "area": "africa",
+ "name": "Africa",
+ "target": 365,
+ "note": "Written by pipeline/select.py from live Wikidata and Copernicus GLO-90; rebuild, do not hand edit.",
+ "entries": [
+  {
+   "id": "Q190048",
+   "wikidata": "Q190048",
+   "kind": "listed",
+   "name": "Tassili n'Ajjer",
+   "peak": "Jebel Azao",
+   "peak_m": 2158,
+   "lat": 25.2034,
+   "lon": 8.1227,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q106540",
+   "wikidata": "Q106540",
+   "kind": "listed",
+   "name": "Rwenzori Mountains",
+   "peak": "Mount Stanley",
+   "peak_m": 5109,
+   "lat": 0.3858,
+   "lon": 29.8717,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q275491",
+   "wikidata": "Q275491",
+   "kind": "listed",
+   "name": "Rif",
+   "peak": "Tidighin",
+   "peak_m": 2456,
+   "lat": 34.8432,
+   "lon": -4.5081,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q309104",
+   "wikidata": "Q309104",
+   "kind": "listed",
+   "name": "Tibesti Mountains",
+   "peak": "Emi Koussi",
+   "peak_m": 3445,
+   "lat": 19.7894,
+   "lon": 18.5511,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q751607",
+   "wikidata": "Q751607",
+   "kind": "listed",
+   "name": "Virunga Mountains",
+   "peak": "Mount Karisimbi",
+   "peak_m": 4507,
+   "lat": -1.4292,
+   "lon": 29.5483,
+   "width_km": 64,
+   "flags": []
+  },
+  {
+   "id": "Q850245",
+   "wikidata": "Q850245",
+   "kind": "listed",
+   "name": "Fouta Djallon",
+   "peak": "Mount Loura",
+   "peak_m": 1573,
+   "lat": 12.1122,
+   "lon": -12.2635,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q584279",
+   "wikidata": "Q584279",
+   "kind": "listed",
+   "name": "High Atlas",
+   "peak": "Jbel Toubkal",
+   "peak_m": 4167,
+   "lat": 31.0619,
+   "lon": -7.9161,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1433137",
+   "wikidata": "Q1433137",
+   "kind": "listed",
+   "name": "Moyen Atlas",
+   "peak": "Jbel Bou Naceur",
+   "peak_m": 3356,
+   "lat": 33.5665,
+   "lon": -3.8896,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1510436",
+   "wikidata": "Q1510436",
+   "kind": "listed",
+   "name": "Mulanje Massif",
+   "peak": "Sapitwa",
+   "peak_m": 3002,
+   "lat": -15.9,
+   "lon": 35.65,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q62624",
+   "wikidata": "Q62624",
+   "kind": "listed",
+   "name": "Aurès Mountains",
+   "peak": "Djebel Chélia",
+   "peak_m": 2328,
+   "lat": 35.3181,
+   "lon": 6.6369,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q811142",
+   "wikidata": "Q811142",
+   "kind": "listed",
+   "name": "Jos Plateau",
+   "peak": "Shere Hills",
+   "peak_m": 1829,
+   "lat": 9.95,
+   "lon": 9.05,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1888885",
+   "wikidata": "Q1888885",
+   "kind": "listed",
+   "name": "Mandara Mountains",
+   "peak": "Mount Oupay",
+   "peak_m": 1494,
+   "lat": 10.8833,
+   "lon": 13.7833,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q581452",
+   "wikidata": "Q581452",
+   "kind": "listed",
+   "name": "Togo Mountains",
+   "peak": "Mount Agou",
+   "peak_m": 986,
+   "lat": 6.8705,
+   "lon": 0.7546,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.08)"
+   ]
+  },
+  {
+   "id": "Q1982017",
+   "wikidata": "Q1982017",
+   "kind": "listed",
+   "name": "Semien Mountains",
+   "peak": "Ras Dashen",
+   "peak_m": 4533,
+   "lat": 13.2367,
+   "lon": 38.3725,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q897834",
+   "wikidata": "Q897834",
+   "kind": "listed",
+   "name": "Brandberg",
+   "peak": "Königstein",
+   "peak_m": 2573,
+   "lat": -21.1495,
+   "lon": 14.5775,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q182061",
+   "wikidata": "Q182061",
+   "kind": "listed",
+   "name": "Mitumba Mountains",
+   "peak": "Kahuzi",
+   "peak_m": 3308,
+   "lat": -2.2492,
+   "lon": 28.6911,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q319371",
+   "wikidata": "Q319371",
+   "kind": "listed",
+   "name": "Aberdare Range",
+   "peak": "Mount Satima",
+   "peak_m": 4001,
+   "lat": -0.4167,
+   "lon": 36.6333,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q886772",
+   "wikidata": "Q886772",
+   "kind": "listed",
+   "name": "Marrah Mountains",
+   "peak": "Deriba Caldera",
+   "peak_m": 3042,
+   "lat": 12.95,
+   "lon": 24.27,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q945773",
+   "wikidata": "Q945773",
+   "kind": "listed",
+   "name": "Cameroon line",
+   "peak": "Mount Cameroon",
+   "peak_m": 4095,
+   "lat": 4.2167,
+   "lon": 9.1725,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1278183",
+   "wikidata": "Q1278183",
+   "kind": "listed",
+   "name": "Eastern Highlands",
+   "peak": "Mount Nyangani",
+   "peak_m": 2592,
+   "lat": -18.3111,
+   "lon": 32.8506,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1296892",
+   "wikidata": "Q1296892",
+   "kind": "listed",
+   "name": "Kipengere Range",
+   "peak": "Mtorwi",
+   "peak_m": 2961,
+   "lat": -9.0833,
+   "lon": 34.0167,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1868712",
+   "wikidata": "Q1868712",
+   "kind": "listed",
+   "name": "Loma Mountains",
+   "peak": "Mount Bintumani",
+   "peak_m": 1945,
+   "lat": 9.17,
+   "lon": -11.12,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q556594",
+   "wikidata": "Q556594",
+   "kind": "listed",
+   "name": "Ankaratra",
+   "peak": "Tsiafajavona",
+   "peak_m": 2642,
+   "lat": -19.3498,
+   "lon": 47.2433,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q639193",
+   "wikidata": "Q639193",
+   "kind": "listed",
+   "name": "Swartberg",
+   "peak": "Seweweekspoortpiek",
+   "peak_m": 2325,
+   "lat": -33.3828,
+   "lon": 21.3589,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3430420",
+   "wikidata": "Q3430420",
+   "kind": "listed",
+   "name": "Maloti Mountains",
+   "peak": "Thabana Ntlenyana",
+   "peak_m": 3482,
+   "lat": -29.4667,
+   "lon": 29.2667,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q511672",
+   "wikidata": "Q511672",
+   "kind": "listed",
+   "name": "Andringitra Massif",
+   "peak": "pic Boby",
+   "peak_m": 2658,
+   "lat": -22.195,
+   "lon": 46.885,
+   "width_km": 50,
+   "flags": []
+  },
+  {
+   "id": "Q3033100",
+   "wikidata": "Q3033100",
+   "kind": "listed",
+   "name": "Djurdjura",
+   "peak": "Lalla-Khedidja",
+   "peak_m": 2308,
+   "lat": 36.4475,
+   "lon": 4.2283,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3073175",
+   "wikidata": "Q3073175",
+   "kind": "listed",
+   "name": "Serra da Malagueta",
+   "peak": "Malagueta",
+   "peak_m": 1064,
+   "lat": 15.1792,
+   "lon": -23.6833,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q4849508",
+   "wikidata": "Q4849508",
+   "kind": "listed",
+   "name": "Bakossi Mountains",
+   "peak": "Mount Kupe",
+   "peak_m": 2064,
+   "lat": 4.8094,
+   "lon": 9.7122,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q15240675",
+   "wikidata": "Q15240675",
+   "kind": "listed",
+   "name": "Ksour Range",
+   "peak": "Djebel Issa",
+   "peak_m": 2236,
+   "lat": 32.9117,
+   "lon": -0.4676,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q659679",
+   "wikidata": "Q659679",
+   "kind": "listed",
+   "name": "Mafinga Hills",
+   "peak": "Mafinga Central",
+   "peak_m": 2339,
+   "lat": -9.9764,
+   "lon": 33.3478,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1659738",
+   "wikidata": "Q1659738",
+   "kind": "listed",
+   "name": "Imatong Mountains",
+   "peak": "Kinyeti",
+   "peak_m": 3187,
+   "lat": 3.9475,
+   "lon": 32.9089,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1626923",
+   "wikidata": "Q1626923",
+   "kind": "listed",
+   "name": "Mambilla Plateau",
+   "peak": "Chappal Waddi",
+   "peak_m": 2419,
+   "lat": 7.0361,
+   "lon": 11.715,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q753212",
+   "wikidata": "Q753212",
+   "kind": "listed",
+   "name": "Atakor",
+   "peak": "Mount Tahat",
+   "peak_m": 2908,
+   "lat": 23.2889,
+   "lon": 5.5336,
+   "width_km": 46,
+   "flags": []
+  },
+  {
+   "id": "Q1232107",
+   "wikidata": "Q1232107",
+   "kind": "listed",
+   "name": "Jbel Saghro",
+   "peak": "Jbel Amalou n’Mansour",
+   "peak_m": 2712,
+   "lat": 31.1432,
+   "lon": -5.6441,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2895205",
+   "wikidata": "Q2895205",
+   "kind": "listed",
+   "name": "Ahmar Mountains",
+   "peak": "Kundudo",
+   "peak_m": 3000,
+   "lat": 9.4356,
+   "lon": 42.3419,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q946773",
+   "wikidata": "Q946773",
+   "kind": "listed",
+   "name": "Nyika Plateau",
+   "peak": "Nganda",
+   "peak_m": 2607,
+   "lat": -10.5,
+   "lon": 33.8333,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1250468",
+   "wikidata": "Q1250468",
+   "kind": "listed",
+   "name": "Dorsale",
+   "peak": "Jebel ech Chambi",
+   "peak_m": 1544,
+   "lat": 35.2067,
+   "lon": 8.6831,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1464606",
+   "wikidata": "Q1464606",
+   "kind": "listed",
+   "name": "Karas Mountains",
+   "peak": "Schroffenstein",
+   "peak_m": 2202,
+   "lat": -27.1833,
+   "lon": 18.7333,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q3011989",
+   "wikidata": "Q3011989",
+   "kind": "listed",
+   "name": "Dahra Range",
+   "peak": "Mont Zaccar",
+   "peak_m": 1550,
+   "lat": 36.3312,
+   "lon": 2.2133,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2906715",
+   "wikidata": "Q2906715",
+   "kind": "listed",
+   "name": "Danakil mountain",
+   "peak": "Nabro Volcano",
+   "peak_m": 2218,
+   "lat": 13.37,
+   "lon": 41.7,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q3445310",
+   "wikidata": "Q3445310",
+   "kind": "listed",
+   "name": "Tsitsikamma Mountains",
+   "peak": "Formosa Peak",
+   "peak_m": 1675,
+   "lat": -33.8641,
+   "lon": 23.7033,
+   "width_km": 64,
+   "flags": []
+  },
+  {
+   "id": "Q455699",
+   "wikidata": "Q455699",
+   "kind": "listed",
+   "name": "Amatola Mountains",
+   "peak": "Gaika’s Kop",
+   "peak_m": 1963,
+   "lat": -32.5461,
+   "lon": 26.952,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q758396",
+   "wikidata": "Q758396",
+   "kind": "listed",
+   "name": "Auas Mountains",
+   "peak": "Moltkeblick",
+   "peak_m": 2479,
+   "lat": -22.651,
+   "lon": 17.18,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1361283",
+   "wikidata": "Q1361283",
+   "kind": "listed",
+   "name": "Erongomassiv",
+   "peak": "Hohenstein (Namibia)",
+   "peak_m": 2319,
+   "lat": -21.7277,
+   "lon": 15.528,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q15120698",
+   "wikidata": "Q15120698",
+   "kind": "listed",
+   "name": "Monts Bagzane",
+   "peak": "Mont Idoukal-n-Taghès",
+   "peak_m": 2022,
+   "lat": 17.8392,
+   "lon": 8.7203,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q17069122",
+   "wikidata": "Q17069122",
+   "kind": "listed",
+   "name": "Ogo Mountains",
+   "peak": "Shimbiris",
+   "peak_m": 2460,
+   "lat": 10.7358,
+   "lon": 47.245,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q28716642",
+   "wikidata": "Q28716642",
+   "kind": "listed",
+   "name": "Khachna",
+   "peak": "Bouzegza",
+   "peak_m": 1033,
+   "lat": 36.6078,
+   "lon": 3.4444,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5758907",
+   "wikidata": "Q5758907",
+   "kind": "listed",
+   "name": "Highland Mountains",
+   "peak": "Table Mountain",
+   "peak_m": 1085,
+   "lat": -33.9622,
+   "lon": 18.4135,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.06)"
+   ]
+  },
+  {
+   "id": "Q15056519",
+   "wikidata": "Q15056519",
+   "kind": "listed",
+   "name": "Hakosberge",
+   "peak": "Gamsberg (Namibia)",
+   "peak_m": 2347,
+   "lat": -23.3425,
+   "lon": 16.2256,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q308807",
+   "wikidata": "Q308807",
+   "kind": "terrain",
+   "name": "Tadrart Acacus",
+   "peak": "",
+   "peak_m": 1425,
+   "lat": 24.8334,
+   "lon": 10.3333,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1129989",
+   "wikidata": "Q1129989",
+   "kind": "terrain",
+   "name": "Nuba Mountains",
+   "peak": "Jabal Temading",
+   "peak_m": 1442,
+   "lat": 12.0,
+   "lon": 30.75,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1343339",
+   "wikidata": "Q1343339",
+   "kind": "terrain",
+   "name": "Ennedi Plateau",
+   "peak": "",
+   "peak_m": 1246,
+   "lat": 17.25,
+   "lon": 22.0,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q587808",
+   "wikidata": "Q587808",
+   "kind": "terrain",
+   "name": "Witwatersrand",
+   "peak": "",
+   "peak_m": 1694,
+   "lat": -25.7861,
+   "lon": 27.8483,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q812630",
+   "wikidata": "Q812630",
+   "kind": "terrain",
+   "name": "Bayuda Desert",
+   "peak": "",
+   "peak_m": 928,
+   "lat": 18.3333,
+   "lon": 32.75,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q366569",
+   "wikidata": "Q366569",
+   "kind": "terrain",
+   "name": "Adrar Plateau",
+   "peak": "",
+   "peak_m": 791,
+   "lat": 20.4053,
+   "lon": -13.1111,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1501766",
+   "wikidata": "Q1501766",
+   "kind": "terrain",
+   "name": "Lebombo Mountains",
+   "peak": "",
+   "peak_m": 687,
+   "lat": -26.25,
+   "lon": 32.0,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q671222",
+   "wikidata": "Q671222",
+   "kind": "terrain",
+   "name": "Usambara Mountains",
+   "peak": "",
+   "peak_m": 2284,
+   "lat": -4.8,
+   "lon": 38.42,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q165620",
+   "wikidata": "Q165620",
+   "kind": "terrain",
+   "name": "Nafusa Mountains",
+   "peak": "",
+   "peak_m": 712,
+   "lat": 31.8649,
+   "lon": 11.7933,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q426767",
+   "wikidata": "Q426767",
+   "kind": "terrain",
+   "name": "Uluguru Mountains",
+   "peak": "Kimhandu Hill",
+   "peak_m": 2630,
+   "lat": -7.1667,
+   "lon": 37.6667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q917429",
+   "wikidata": "Q917429",
+   "kind": "terrain",
+   "name": "Matobo Hills",
+   "peak": "Mwazi",
+   "peak_m": 1559,
+   "lat": -20.5,
+   "lon": 28.5,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1462530",
+   "wikidata": "Q1462530",
+   "kind": "terrain",
+   "name": "Gilf Kebir",
+   "peak": "",
+   "peak_m": 1086,
+   "lat": 23.4414,
+   "lon": 25.8397,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q310342",
+   "wikidata": "Q310342",
+   "kind": "terrain",
+   "name": "Jebel Akhdar",
+   "peak": "",
+   "peak_m": 802,
+   "lat": 32.5977,
+   "lon": 21.4728,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q19605615",
+   "wikidata": "Q19605615",
+   "kind": "terrain",
+   "name": "Makhonjwa Mountains",
+   "peak": "Kariegasberg",
+   "peak_m": 2013,
+   "lat": -33.4,
+   "lon": 22.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q184284",
+   "wikidata": "Q184284",
+   "kind": "terrain",
+   "name": "Cederberg",
+   "peak": "Sneeukop",
+   "peak_m": 1920,
+   "lat": -32.3333,
+   "lon": 19.0833,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1692082",
+   "wikidata": "Q1692082",
+   "kind": "terrain",
+   "name": "Taita Hills",
+   "peak": "",
+   "peak_m": 2193,
+   "lat": -3.417,
+   "lon": 38.33,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q15179857",
+   "wikidata": "Q15179857",
+   "kind": "terrain",
+   "name": "Amour Range",
+   "peak": "Djebel Sidi Okba",
+   "peak_m": 1706,
+   "lat": 34.0,
+   "lon": 2.0,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1734011",
+   "wikidata": "Q1734011",
+   "kind": "terrain",
+   "name": "Langeberg",
+   "peak": "Misty Point",
+   "peak_m": 1571,
+   "lat": -33.8167,
+   "lon": 20.15,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1755306",
+   "wikidata": "Q1755306",
+   "kind": "terrain",
+   "name": "Naukluft Mountains",
+   "peak": "",
+   "peak_m": 1984,
+   "lat": -24.1667,
+   "lon": 16.1667,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1861057",
+   "wikidata": "Q1861057",
+   "kind": "terrain",
+   "name": "Ngong Hills",
+   "peak": "",
+   "peak_m": 2441,
+   "lat": -1.4,
+   "lon": 36.6333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2554147",
+   "wikidata": "Q2554147",
+   "kind": "terrain",
+   "name": "Bale Mountains",
+   "peak": "Mount Tullu Demtu",
+   "peak_m": 4389,
+   "lat": 6.8263,
+   "lon": 39.8193,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3163385",
+   "wikidata": "Q3163385",
+   "kind": "terrain",
+   "name": "Jbel Siroua",
+   "peak": "",
+   "peak_m": 3236,
+   "lat": 30.7039,
+   "lon": -7.6214,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q516536",
+   "wikidata": "Q516536",
+   "kind": "terrain",
+   "name": "Outeniqua Mountains",
+   "peak": "",
+   "peak_m": 1836,
+   "lat": -33.75,
+   "lon": 23.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1102439",
+   "wikidata": "Q1102439",
+   "kind": "terrain",
+   "name": "Serra da Chela",
+   "peak": "",
+   "peak_m": 1871,
+   "lat": -15.4993,
+   "lon": 13.4946,
+   "width_km": 80,
+   "flags": [
+    "thin ripples (0.10)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1955037",
+   "wikidata": "Q1955037",
+   "kind": "terrain",
+   "name": "Udzungwa Mountains",
+   "peak": "",
+   "peak_m": 2395,
+   "lat": -7.7667,
+   "lon": 36.8167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3128625",
+   "wikidata": "Q3128625",
+   "kind": "terrain",
+   "name": "Central Highlands",
+   "peak": "",
+   "peak_m": 2229,
+   "lat": -20.0,
+   "lon": 47.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323145",
+   "wikidata": "Q3323145",
+   "kind": "terrain",
+   "name": "Crystal Mountains",
+   "peak": "",
+   "peak_m": 582,
+   "lat": -5.5,
+   "lon": 13.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q986939",
+   "wikidata": "Q986939",
+   "kind": "terrain",
+   "name": "Bvumba Mountains",
+   "peak": "Castle Beacon",
+   "peak_m": 1888,
+   "lat": -19.1,
+   "lon": 32.7833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q18210461",
+   "wikidata": "Q18210461",
+   "kind": "terrain",
+   "name": "Tadrart Rouge",
+   "peak": "",
+   "peak_m": 1397,
+   "lat": 23.6714,
+   "lon": 10.8906,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2064009",
+   "wikidata": "Q2064009",
+   "kind": "terrain",
+   "name": "Itbay",
+   "peak": "Jabal as Sibā‘ī",
+   "peak_m": 1394,
+   "lat": 25.6611,
+   "lon": 33.9533,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.05)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3357948",
+   "wikidata": "Q3357948",
+   "kind": "terrain",
+   "name": "Ouarsenis",
+   "peak": "Djebel Ouarsenis",
+   "peak_m": 1956,
+   "lat": 35.8667,
+   "lon": 1.6167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q8536218",
+   "wikidata": "Q8536218",
+   "kind": "terrain",
+   "name": "Itombwe Mountains",
+   "peak": "",
+   "peak_m": 3214,
+   "lat": -3.5,
+   "lon": 28.9167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q892416",
+   "wikidata": "Q892416",
+   "kind": "terrain",
+   "name": "Bongo Massif",
+   "peak": "",
+   "peak_m": 1366,
+   "lat": 9.1359,
+   "lon": 23.146,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2569921",
+   "wikidata": "Q2569921",
+   "kind": "terrain",
+   "name": "Eastern Arc Mountains",
+   "peak": "",
+   "peak_m": 1880,
+   "lat": -6.0,
+   "lon": 36.0,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.06)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1788055",
+   "wikidata": "Q1788055",
+   "kind": "terrain",
+   "name": "Roggeveld Mountains",
+   "peak": "",
+   "peak_m": 1790,
+   "lat": -32.305,
+   "lon": 20.2719,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q18207810",
+   "wikidata": "Q18207810",
+   "kind": "terrain",
+   "name": "Hodna Mountains",
+   "peak": "Chouf Zouak",
+   "peak_m": 1850,
+   "lat": 35.8167,
+   "lon": 4.85,
+   "width_km": 72,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1848752",
+   "wikidata": "Q1848752",
+   "kind": "terrain",
+   "name": "Sneeuberge",
+   "peak": "Compassberg",
+   "peak_m": 2502,
+   "lat": -31.75,
+   "lon": 24.6,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1893565",
+   "wikidata": "Q1893565",
+   "kind": "terrain",
+   "name": "Nguru Mountains",
+   "peak": "",
+   "peak_m": 2372,
+   "lat": -6.0,
+   "lon": 37.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323024",
+   "wikidata": "Q3323024",
+   "kind": "terrain",
+   "name": "Bambouto massif",
+   "peak": "Mont Meleta",
+   "peak_m": 2737,
+   "lat": 5.6333,
+   "lon": 10.0833,
+   "width_km": 40,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q358857",
+   "wikidata": "Q358857",
+   "kind": "terrain",
+   "name": "Muchinga Mountains",
+   "peak": "Ibangwe",
+   "peak_m": 1838,
+   "lat": -12.0,
+   "lon": 31.75,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q7517358",
+   "wikidata": "Q7517358",
+   "kind": "terrain",
+   "name": "Simandou",
+   "peak": "Mountain Gleton",
+   "peak_m": 992,
+   "lat": 7.3483,
+   "lon": -8.9542,
+   "width_km": 80,
+   "flags": [
+    "thin ripples (0.05)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1475999",
+   "wikidata": "Q1475999",
+   "kind": "terrain",
+   "name": "Al Ḩamādah al Ḩamrā’",
+   "peak": "",
+   "peak_m": 1106,
+   "lat": 28.299,
+   "lon": 13.993,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q22080914",
+   "wikidata": "Q22080914",
+   "kind": "terrain",
+   "name": "Nimba Range",
+   "peak": "Mount Richard-Molard",
+   "peak_m": 1752,
+   "lat": 7.5667,
+   "lon": -8.4667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31776987",
+   "wikidata": "Q31776987",
+   "kind": "terrain",
+   "name": "Chimanimani Mountains",
+   "peak": "Monte Binga",
+   "peak_m": 2436,
+   "lat": -19.8667,
+   "lon": 33.1,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3861082",
+   "wikidata": "Q3861082",
+   "kind": "terrain",
+   "name": "Groot Winterhoek",
+   "peak": "Groot-Winterhoekpiek",
+   "peak_m": 1933,
+   "lat": -33.0301,
+   "lon": 19.1049,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q536938",
+   "wikidata": "Q536938",
+   "kind": "terrain",
+   "name": "Monts du Toura",
+   "peak": "",
+   "peak_m": 1129,
+   "lat": 7.6958,
+   "lon": -7.4006,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q549377",
+   "wikidata": "Q549377",
+   "kind": "terrain",
+   "name": "Soutpansberg",
+   "peak": "",
+   "peak_m": 1674,
+   "lat": -23.0,
+   "lon": 29.8667,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q7694621",
+   "wikidata": "Q7694621",
+   "kind": "terrain",
+   "name": "Teffedest Mountains",
+   "peak": "Aheggar",
+   "peak_m": 2240,
+   "lat": 24.5931,
+   "lon": 5.5011,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2171501",
+   "wikidata": "Q2171501",
+   "kind": "terrain",
+   "name": "Rubeho Mountains",
+   "peak": "",
+   "peak_m": 2183,
+   "lat": -6.9167,
+   "lon": 36.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323072",
+   "wikidata": "Q3323072",
+   "kind": "terrain",
+   "name": "Kibara Mountains",
+   "peak": "",
+   "peak_m": 1673,
+   "lat": -9.0412,
+   "lon": 26.6521,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323143",
+   "wikidata": "Q3323143",
+   "kind": "terrain",
+   "name": "Monts de Tlemcen",
+   "peak": "Djebel Dar Cheïkh",
+   "peak_m": 1604,
+   "lat": 34.7425,
+   "lon": -1.3044,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2562097",
+   "wikidata": "Q2562097",
+   "kind": "terrain",
+   "name": "Stormberg Mountains",
+   "peak": "Vaalkop",
+   "peak_m": 2163,
+   "lat": -31.4475,
+   "lon": 26.7175,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3323036",
+   "wikidata": "Q3323036",
+   "kind": "terrain",
+   "name": "Blue Mountains",
+   "peak": "",
+   "peak_m": 1883,
+   "lat": 1.5,
+   "lon": 30.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323054",
+   "wikidata": "Q3323054",
+   "kind": "terrain",
+   "name": "Goda Mountains",
+   "peak": "Eguer ‘Aleïta",
+   "peak_m": 1775,
+   "lat": 11.86,
+   "lon": 42.79,
+   "width_km": 48,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3538089",
+   "wikidata": "Q3538089",
+   "kind": "terrain",
+   "name": "Trara",
+   "peak": "Djebel Fillaoussene",
+   "peak_m": 1120,
+   "lat": 35.0,
+   "lon": -1.75,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q748035",
+   "wikidata": "Q748035",
+   "kind": "terrain",
+   "name": "Mayombe",
+   "peak": "",
+   "peak_m": 696,
+   "lat": -4.5,
+   "lon": 12.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q8028552",
+   "wikidata": "Q8028552",
+   "kind": "terrain",
+   "name": "Witteberge",
+   "peak": "Graskop",
+   "peak_m": 2538,
+   "lat": -30.6567,
+   "lon": 27.2131,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q10605835",
+   "wikidata": "Q10605835",
+   "kind": "terrain",
+   "name": "Oban Hills, Cross-river state",
+   "peak": "",
+   "peak_m": 1035,
+   "lat": 5.5,
+   "lon": 8.5833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1089481",
+   "wikidata": "Q1089481",
+   "kind": "terrain",
+   "name": "Wolkberg",
+   "peak": "Iron Crown",
+   "peak_m": 2118,
+   "lat": -24.065,
+   "lon": 30.065,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q11979989",
+   "wikidata": "Q11979989",
+   "kind": "terrain",
+   "name": "Kamiesberge",
+   "peak": "Sneeukop",
+   "peak_m": 1558,
+   "lat": -30.0889,
+   "lon": 17.9792,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q17009782",
+   "wikidata": "Q17009782",
+   "kind": "terrain",
+   "name": "East African mountains",
+   "peak": "Batian",
+   "peak_m": 5100,
+   "lat": -0.1,
+   "lon": 37.2,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q17110670",
+   "wikidata": "Q17110670",
+   "kind": "terrain",
+   "name": "Nandi Hills",
+   "peak": "",
+   "peak_m": 2612,
+   "lat": 0.1003,
+   "lon": 35.1764,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2175693",
+   "wikidata": "Q2175693",
+   "kind": "terrain",
+   "name": "Rumpi Hills",
+   "peak": "",
+   "peak_m": 1703,
+   "lat": 4.8333,
+   "lon": 9.1167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31785753",
+   "wikidata": "Q31785753",
+   "kind": "terrain",
+   "name": "Baynes Mountains",
+   "peak": "",
+   "peak_m": 2037,
+   "lat": -17.2,
+   "lon": 12.6667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q475213",
+   "wikidata": "Q475213",
+   "kind": "terrain",
+   "name": "Monts Kundelungu",
+   "peak": "",
+   "peak_m": 1718,
+   "lat": -9.7761,
+   "lon": 27.7824,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q477615",
+   "wikidata": "Q477615",
+   "kind": "terrain",
+   "name": "Viphya Mountains",
+   "peak": "Mpamphala",
+   "peak_m": 1942,
+   "lat": -11.6667,
+   "lon": 33.9,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q6420344",
+   "wikidata": "Q6420344",
+   "kind": "terrain",
+   "name": "Kleinrivier Mountains",
+   "peak": "Babilonstoring",
+   "peak_m": 1150,
+   "lat": -34.3899,
+   "lon": 19.3462,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1157408",
+   "wikidata": "Q1157408",
+   "kind": "terrain",
+   "name": "Jebel Dahar",
+   "peak": "",
+   "peak_m": 688,
+   "lat": 33.3917,
+   "lon": 10.1333,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q15221831",
+   "wikidata": "Q15221831",
+   "kind": "terrain",
+   "name": "Golis Mountains",
+   "peak": "Gacan Libaax",
+   "peak_m": 1998,
+   "lat": 9.8667,
+   "lon": 44.9167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1774549",
+   "wikidata": "Q1774549",
+   "kind": "terrain",
+   "name": "Klinghardt Mountains",
+   "peak": "Höchster",
+   "peak_m": 1070,
+   "lat": -27.3333,
+   "lon": 15.75,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q17747302",
+   "wikidata": "Q17747302",
+   "kind": "terrain",
+   "name": "Ouled Naïl Range",
+   "peak": "",
+   "peak_m": 1521,
+   "lat": 34.6667,
+   "lon": 3.4,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q20191018",
+   "wikidata": "Q20191018",
+   "kind": "terrain",
+   "name": "Lion Mountains",
+   "peak": "",
+   "peak_m": 888,
+   "lat": 8.2821,
+   "lon": -13.1197,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q25379514",
+   "wikidata": "Q25379514",
+   "kind": "terrain",
+   "name": "Barberton Greenstone Belt",
+   "peak": "Emlembe",
+   "peak_m": 1862,
+   "lat": -25.9739,
+   "lon": 31.0139,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2894310",
+   "wikidata": "Q2894310",
+   "kind": "terrain",
+   "name": "Belezma Range",
+   "peak": "Djebel Refaa",
+   "peak_m": 2130,
+   "lat": 35.6764,
+   "lon": 5.9024,
+   "width_km": 64,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3323107",
+   "wikidata": "Q3323107",
+   "kind": "terrain",
+   "name": "Shebshi Mountains",
+   "peak": "Mount Dimlang",
+   "peak_m": 1692,
+   "lat": 8.5,
+   "lon": 11.75,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3432170",
+   "wikidata": "Q3432170",
+   "kind": "terrain",
+   "name": "Kogelberg",
+   "peak": "",
+   "peak_m": 1251,
+   "lat": -34.25,
+   "lon": 18.9167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q528960",
+   "wikidata": "Q528960",
+   "kind": "terrain",
+   "name": "Winterberg",
+   "peak": "",
+   "peak_m": 1631,
+   "lat": -32.2675,
+   "lon": 23.2931,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q5395879",
+   "wikidata": "Q5395879",
+   "kind": "terrain",
+   "name": "Erta Ale Range",
+   "peak": "Ale Bagu",
+   "peak_m": 1031,
+   "lat": 13.6,
+   "lon": 40.6667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q557016",
+   "wikidata": "Q557016",
+   "kind": "terrain",
+   "name": "Beni-Chougrane",
+   "peak": "Koudiat M'taa Eltirs",
+   "peak_m": 921,
+   "lat": 35.5,
+   "lon": 0.2167,
+   "width_km": 40,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q754580",
+   "wikidata": "Q754580",
+   "kind": "terrain",
+   "name": "Atewa Range",
+   "peak": "",
+   "peak_m": 839,
+   "lat": 6.1667,
+   "lon": -0.6,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1105750",
+   "wikidata": "Q1105750",
+   "kind": "terrain",
+   "name": "Mahale Mountains",
+   "peak": "Kungwe Mountain",
+   "peak_m": 2330,
+   "lat": -6.2,
+   "lon": 30.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q11937168",
+   "wikidata": "Q11937168",
+   "kind": "terrain",
+   "name": "Mogods",
+   "peak": "Jebel el Akrat",
+   "peak_m": 486,
+   "lat": 37.1333,
+   "lon": 9.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q23671133",
+   "wikidata": "Q23671133",
+   "kind": "terrain",
+   "name": "Mbetpit",
+   "peak": "",
+   "peak_m": 1969,
+   "lat": 5.5178,
+   "lon": 10.7131,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.04)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q268180",
+   "wikidata": "Q268180",
+   "kind": "terrain",
+   "name": "Moka Range",
+   "peak": "Le Pouce",
+   "peak_m": 812,
+   "lat": -20.2,
+   "lon": 57.525,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31516332",
+   "wikidata": "Q31516332",
+   "kind": "terrain",
+   "name": "Balelesberg",
+   "peak": "Ntabankulu",
+   "peak_m": 2273,
+   "lat": -27.5453,
+   "lon": 30.1392,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31584347",
+   "wikidata": "Q31584347",
+   "kind": "terrain",
+   "name": "Buur Dhaab",
+   "peak": "",
+   "peak_m": 1201,
+   "lat": 9.0856,
+   "lon": 46.3194,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323087",
+   "wikidata": "Q3323087",
+   "kind": "terrain",
+   "name": "Mahenge",
+   "peak": "",
+   "peak_m": 1494,
+   "lat": -8.6833,
+   "lon": 36.7167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323110",
+   "wikidata": "Q3323110",
+   "kind": "terrain",
+   "name": "Ukaguru Mountains",
+   "peak": "Ijogo",
+   "peak_m": 2154,
+   "lat": -6.4667,
+   "lon": 37.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3641101",
+   "wikidata": "Q3641101",
+   "kind": "terrain",
+   "name": "Blouberg",
+   "peak": "Ga-Monnaasenamoriri",
+   "peak_m": 1993,
+   "lat": -23.0833,
+   "lon": 28.85,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q4795898",
+   "wikidata": "Q4795898",
+   "kind": "terrain",
+   "name": "Arrei Mountains",
+   "peak": "Sôfe",
+   "peak_m": 1282,
+   "lat": 11.0667,
+   "lon": 42.7333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q4816665",
+   "wikidata": "Q4816665",
+   "kind": "terrain",
+   "name": "Atlantika Mountains",
+   "peak": "",
+   "peak_m": 1827,
+   "lat": 8.6618,
+   "lon": 12.6425,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q4850113",
+   "wikidata": "Q4850113",
+   "kind": "terrain",
+   "name": "Klein Drakenstein mountains",
+   "peak": "Sefateng",
+   "peak_m": 1540,
+   "lat": -24.6,
+   "lon": 29.75,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q4853392",
+   "wikidata": "Q4853392",
+   "kind": "terrain",
+   "name": "Bamboesberg",
+   "peak": "Aasvoëlberg",
+   "peak_m": 2192,
+   "lat": -31.6067,
+   "lon": 26.12,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q6434484",
+   "wikidata": "Q6434484",
+   "kind": "terrain",
+   "name": "Kouebokkeveld Mountains",
+   "peak": "",
+   "peak_m": 1799,
+   "lat": -33.0833,
+   "lon": 19.4167,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q6777967",
+   "wikidata": "Q6777967",
+   "kind": "terrain",
+   "name": "Marungu highlands",
+   "peak": "",
+   "peak_m": 2286,
+   "lat": -7.1316,
+   "lon": 29.6947,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q7418779",
+   "wikidata": "Q7418779",
+   "kind": "terrain",
+   "name": "Sankwala Mountains",
+   "peak": "",
+   "peak_m": 1881,
+   "lat": 6.5333,
+   "lon": 9.2667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q9355952",
+   "wikidata": "Q9355952",
+   "kind": "terrain",
+   "name": "Tchabal Mbabo",
+   "peak": "",
+   "peak_m": 2380,
+   "lat": 7.2667,
+   "lon": 12.15,
+   "width_km": 44,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q10743917",
+   "wikidata": "Q10743917",
+   "kind": "terrain",
+   "name": "Takolokouzet",
+   "peak": "",
+   "peak_m": 1118,
+   "lat": 18.5959,
+   "lon": 9.5239,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1089627",
+   "wikidata": "Q1089627",
+   "kind": "terrain",
+   "name": "Chuosberge",
+   "peak": "",
+   "peak_m": 1627,
+   "lat": -22.3333,
+   "lon": 15.4167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1886397",
+   "wikidata": "Q1886397",
+   "kind": "terrain",
+   "name": "Makonde Plateau",
+   "peak": "",
+   "peak_m": 940,
+   "lat": -10.7167,
+   "lon": 39.2,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1914921",
+   "wikidata": "Q1914921",
+   "kind": "terrain",
+   "name": "Mbeya Range",
+   "peak": "Mbeya",
+   "peak_m": 2827,
+   "lat": -8.8333,
+   "lon": 33.3667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q21512301",
+   "wikidata": "Q21512301",
+   "kind": "terrain",
+   "name": "Massif of Collo",
+   "peak": "Djebel el Goufi",
+   "peak_m": 1183,
+   "lat": 37.0,
+   "lon": 6.4167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q27766584",
+   "wikidata": "Q27766584",
+   "kind": "terrain",
+   "name": "Matundwe Range",
+   "peak": "",
+   "peak_m": 573,
+   "lat": -16.7,
+   "lon": 34.95,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31500717",
+   "wikidata": "Q31500717",
+   "kind": "terrain",
+   "name": "Groot Winterhoek Mountains",
+   "peak": "Cockscomb",
+   "peak_m": 1768,
+   "lat": -33.5861,
+   "lon": 25.0003,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31535355",
+   "wikidata": "Q31535355",
+   "kind": "terrain",
+   "name": "Bokkeveldberge",
+   "peak": "Engelsman se Punt",
+   "peak_m": 869,
+   "lat": -31.3333,
+   "lon": 19.0667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31678573",
+   "wikidata": "Q31678573",
+   "kind": "terrain",
+   "name": "Vanstadensberg",
+   "peak": "Sphinx Peak",
+   "peak_m": 747,
+   "lat": -33.8867,
+   "lon": 25.2256,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31775433",
+   "wikidata": "Q31775433",
+   "kind": "terrain",
+   "name": "Mount Mecula",
+   "peak": "",
+   "peak_m": 1399,
+   "lat": -12.0833,
+   "lon": 37.6333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323066",
+   "wikidata": "Q3323066",
+   "kind": "terrain",
+   "name": "Monts Kanga",
+   "peak": "",
+   "peak_m": 835,
+   "lat": -4.3772,
+   "lon": 13.6231,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3323157",
+   "wikidata": "Q3323157",
+   "kind": "terrain",
+   "name": "Monts du Tessala",
+   "peak": "Djebel Tessala",
+   "peak_m": 1036,
+   "lat": 35.3189,
+   "lon": -0.765,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3461539",
+   "wikidata": "Q3461539",
+   "kind": "terrain",
+   "name": "Algiers Mountains",
+   "peak": "Koudia Lalla Tefouredj",
+   "peak_m": 892,
+   "lat": 36.5581,
+   "lon": 2.5328,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q7338882",
+   "wikidata": "Q7338882",
+   "kind": "terrain",
+   "name": "Riviersonderend Mountains",
+   "peak": "Jonaskop",
+   "peak_m": 1499,
+   "lat": -33.9978,
+   "lon": 19.5944,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1311156",
+   "wikidata": "Q1311156",
+   "kind": "terrain",
+   "name": "Rössing Mountains",
+   "peak": "",
+   "peak_m": 645,
+   "lat": -22.5167,
+   "lon": 14.8167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1331591",
+   "wikidata": "Q1331591",
+   "kind": "terrain",
+   "name": "Tirasberge",
+   "peak": "",
+   "peak_m": 1887,
+   "lat": -26.1333,
+   "lon": 16.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1405809",
+   "wikidata": "Q1405809",
+   "kind": "terrain",
+   "name": "Gobobosebberge",
+   "peak": "",
+   "peak_m": 975,
+   "lat": -21.25,
+   "lon": 14.1667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q15056776",
+   "wikidata": "Q15056776",
+   "kind": "terrain",
+   "name": "Hunsberge",
+   "peak": "",
+   "peak_m": 1648,
+   "lat": -27.8333,
+   "lon": 17.1667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1656805",
+   "wikidata": "Q1656805",
+   "kind": "terrain",
+   "name": "Idinen",
+   "peak": "",
+   "peak_m": 1284,
+   "lat": 25.2519,
+   "lon": 10.2167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q16964411",
+   "wikidata": "Q16964411",
+   "kind": "terrain",
+   "name": "Lavasoa-Ambatotsirongorongo Mountains",
+   "peak": "Grand Lavasoa",
+   "peak_m": 792,
+   "lat": -25.1,
+   "lon": 46.77,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.09)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q18631990",
+   "wikidata": "Q18631990",
+   "kind": "terrain",
+   "name": "Tsarisberge",
+   "peak": "",
+   "peak_m": 1872,
+   "lat": -24.8333,
+   "lon": 16.3333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q27573731",
+   "wikidata": "Q27573731",
+   "kind": "terrain",
+   "name": "Makay Massif",
+   "peak": "",
+   "peak_m": 807,
+   "lat": -21.3333,
+   "lon": 45.1667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31489048",
+   "wikidata": "Q31489048",
+   "kind": "terrain",
+   "name": "Krokodilpoortsberge",
+   "peak": "",
+   "peak_m": 1396,
+   "lat": -25.6094,
+   "lon": 31.0681,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31516202",
+   "wikidata": "Q31516202",
+   "kind": "terrain",
+   "name": "Bankberg",
+   "peak": "Besemgoedkop",
+   "peak_m": 2042,
+   "lat": -32.3167,
+   "lon": 25.3333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31517755",
+   "wikidata": "Q31517755",
+   "kind": "terrain",
+   "name": "Anysberg",
+   "peak": "",
+   "peak_m": 1597,
+   "lat": -33.5197,
+   "lon": 20.5572,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31520077",
+   "wikidata": "Q31520077",
+   "kind": "terrain",
+   "name": "Wemmershoekberge",
+   "peak": "Du Toits Peak",
+   "peak_m": 1995,
+   "lat": -33.8019,
+   "lon": 19.1344,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31526234",
+   "wikidata": "Q31526234",
+   "kind": "terrain",
+   "name": "Piketberg",
+   "peak": "Zebrakop",
+   "peak_m": 1440,
+   "lat": -32.7792,
+   "lon": 18.6926,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31528024",
+   "wikidata": "Q31528024",
+   "kind": "terrain",
+   "name": "Matsikammaberge",
+   "peak": "",
+   "peak_m": 1011,
+   "lat": -31.7661,
+   "lon": 18.8519,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31625075",
+   "wikidata": "Q31625075",
+   "kind": "terrain",
+   "name": "North Pare Mountains",
+   "peak": "Kindoroko",
+   "peak_m": 2092,
+   "lat": -3.75,
+   "lon": 37.6667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31625464",
+   "wikidata": "Q31625464",
+   "kind": "terrain",
+   "name": "Meri Hills",
+   "peak": "",
+   "peak_m": 2419,
+   "lat": -4.1333,
+   "lon": 35.5833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31625617",
+   "wikidata": "Q31625617",
+   "kind": "terrain",
+   "name": "Matiom Mountains",
+   "peak": "",
+   "peak_m": 2025,
+   "lat": -2.7,
+   "lon": 36.3833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31686335",
+   "wikidata": "Q31686335",
+   "kind": "terrain",
+   "name": "Strydpoortberge",
+   "peak": "",
+   "peak_m": 1843,
+   "lat": -24.25,
+   "lon": 29.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31691680",
+   "wikidata": "Q31691680",
+   "kind": "terrain",
+   "name": "Thaba ya Sekhukhune",
+   "peak": "",
+   "peak_m": 1976,
+   "lat": -24.9533,
+   "lon": 29.8969,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31706005",
+   "wikidata": "Q31706005",
+   "kind": "terrain",
+   "name": "Ngele",
+   "peak": "",
+   "peak_m": 2258,
+   "lat": -30.6108,
+   "lon": 29.5883,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31776783",
+   "wikidata": "Q31776783",
+   "kind": "terrain",
+   "name": "Serra Choa",
+   "peak": "",
+   "peak_m": 1872,
+   "lat": -18.0167,
+   "lon": 33.1833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31785786",
+   "wikidata": "Q31785786",
+   "kind": "terrain",
+   "name": "Awasibberge",
+   "peak": "",
+   "peak_m": 1741,
+   "lat": -25.4167,
+   "lon": 15.5833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q424357",
+   "wikidata": "Q424357",
+   "kind": "terrain",
+   "name": "Akwapim Hills",
+   "peak": "",
+   "peak_m": 982,
+   "lat": 7.417,
+   "lon": 0.6665,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q4803685",
+   "wikidata": "Q4803685",
+   "kind": "terrain",
+   "name": "Asbestos Mountains",
+   "peak": "Gakarosa",
+   "peak_m": 1846,
+   "lat": -27.9875,
+   "lon": 23.5311,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q68333384",
+   "wikidata": "Q68333384",
+   "kind": "terrain",
+   "name": "Nguu Mountains",
+   "peak": "",
+   "peak_m": 1597,
+   "lat": -5.5542,
+   "lon": 37.4722,
+   "width_km": 40,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q70754166",
+   "wikidata": "Q70754166",
+   "kind": "terrain",
+   "name": "Umalila Mountains",
+   "peak": "",
+   "peak_m": 2370,
+   "lat": -9.3119,
+   "lon": 33.445,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1257764",
+   "wikidata": "Q1257764",
+   "kind": "terrain",
+   "name": "Grimmrücken",
+   "peak": "",
+   "peak_m": 2007,
+   "lat": -22.8667,
+   "lon": 17.7333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q13647574",
+   "wikidata": "Q13647574",
+   "kind": "terrain",
+   "name": "Matthews Range",
+   "peak": "",
+   "peak_m": 2310,
+   "lat": 1.25,
+   "lon": 37.25,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q15106263",
+   "wikidata": "Q15106263",
+   "kind": "terrain",
+   "name": "Adrar Tamgak",
+   "peak": "",
+   "peak_m": 1895,
+   "lat": 19.1667,
+   "lon": 8.75,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q19287168",
+   "wikidata": "Q19287168",
+   "kind": "terrain",
+   "name": "Joubertberge",
+   "peak": "",
+   "peak_m": 1782,
+   "lat": -18.65,
+   "lon": 13.5333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1971765",
+   "wikidata": "Q1971765",
+   "kind": "terrain",
+   "name": "Nauaspoortberge",
+   "peak": "",
+   "peak_m": 2210,
+   "lat": -23.0667,
+   "lon": 17.1833,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.07)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q19758143",
+   "wikidata": "Q19758143",
+   "kind": "terrain",
+   "name": "Giraffenberge",
+   "peak": "",
+   "peak_m": 1806,
+   "lat": -18.3,
+   "lon": 13.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2036748",
+   "wikidata": "Q2036748",
+   "kind": "terrain",
+   "name": "Otaviberge",
+   "peak": "",
+   "peak_m": 2115,
+   "lat": -19.6667,
+   "lon": 17.5667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2131137",
+   "wikidata": "Q2131137",
+   "kind": "terrain",
+   "name": "Rantberge",
+   "peak": "",
+   "peak_m": 2031,
+   "lat": -23.75,
+   "lon": 16.1667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q21330970",
+   "wikidata": "Q21330970",
+   "kind": "terrain",
+   "name": "Musongati",
+   "peak": "Rutarengana",
+   "peak_m": 1860,
+   "lat": -3.3413,
+   "lon": 30.4815,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q22369405",
+   "wikidata": "Q22369405",
+   "kind": "terrain",
+   "name": "Monts de Kouboula",
+   "peak": "",
+   "peak_m": 650,
+   "lat": -3.7778,
+   "lon": 11.4378,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q22369675",
+   "wikidata": "Q22369675",
+   "kind": "terrain",
+   "name": "Monts du Kiangi",
+   "peak": "",
+   "peak_m": 579,
+   "lat": -3.6597,
+   "lon": 12.8767,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q22369738",
+   "wikidata": "Q22369738",
+   "kind": "terrain",
+   "name": "Monts Gaouala",
+   "peak": "",
+   "peak_m": 1282,
+   "lat": 7.0075,
+   "lon": 15.7478,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q22369991",
+   "wikidata": "Q22369991",
+   "kind": "terrain",
+   "name": "Monts Kissounga",
+   "peak": "",
+   "peak_m": 850,
+   "lat": -4.1108,
+   "lon": 12.5689,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q22502201",
+   "wikidata": "Q22502201",
+   "kind": "terrain",
+   "name": "Kaga Moumo",
+   "peak": "",
+   "peak_m": 1081,
+   "lat": 8.8958,
+   "lon": 22.8586,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23663496",
+   "wikidata": "Q23663496",
+   "kind": "terrain",
+   "name": "Monts Wal",
+   "peak": "",
+   "peak_m": 1627,
+   "lat": 7.95,
+   "lon": 14.1333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23663575",
+   "wikidata": "Q23663575",
+   "kind": "terrain",
+   "name": "Monts de Yafa",
+   "peak": "",
+   "peak_m": 1201,
+   "lat": 4.5667,
+   "lon": 10.9333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23663794",
+   "wikidata": "Q23663794",
+   "kind": "terrain",
+   "name": "Massif du Tinguelin",
+   "peak": "Boulgou",
+   "peak_m": 716,
+   "lat": 9.4303,
+   "lon": 13.4372,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.08)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q23665497",
+   "wikidata": "Q23665497",
+   "kind": "terrain",
+   "name": "Monts Panam",
+   "peak": "",
+   "peak_m": 1309,
+   "lat": 6.2,
+   "lon": 11.6333,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.10)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23666224",
+   "wikidata": "Q23666224",
+   "kind": "terrain",
+   "name": "Ngao Ndou",
+   "peak": "",
+   "peak_m": 1835,
+   "lat": 7.95,
+   "lon": 12.7833,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.09)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23666707",
+   "wikidata": "Q23666707",
+   "kind": "terrain",
+   "name": "Ngao Ndal",
+   "peak": "",
+   "peak_m": 1390,
+   "lat": 6.4333,
+   "lon": 13.2333,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.05)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23668927",
+   "wikidata": "Q23668927",
+   "kind": "terrain",
+   "name": "Mogazang",
+   "peak": "",
+   "peak_m": 944,
+   "lat": 10.695,
+   "lon": 14.3397,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.07)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23670462",
+   "wikidata": "Q23670462",
+   "kind": "terrain",
+   "name": "Monts Mfiki",
+   "peak": "",
+   "peak_m": 1019,
+   "lat": 4.3167,
+   "lon": 11.9667,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.07)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23671083",
+   "wikidata": "Q23671083",
+   "kind": "terrain",
+   "name": "Massif du Mbam",
+   "peak": "",
+   "peak_m": 2272,
+   "lat": 5.9464,
+   "lon": 10.7206,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23671101",
+   "wikidata": "Q23671101",
+   "kind": "terrain",
+   "name": "Tchabal Mbana",
+   "peak": "",
+   "peak_m": 1652,
+   "lat": 7.4667,
+   "lon": 12.7167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23671111",
+   "wikidata": "Q23671111",
+   "kind": "terrain",
+   "name": "Monts Mbang",
+   "peak": "",
+   "peak_m": 1452,
+   "lat": 7.6,
+   "lon": 13.7,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23675991",
+   "wikidata": "Q23675991",
+   "kind": "terrain",
+   "name": "Hoséré Borongo",
+   "peak": "",
+   "peak_m": 791,
+   "lat": 8.8686,
+   "lon": 13.0931,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23676034",
+   "wikidata": "Q23676034",
+   "kind": "terrain",
+   "name": "Hoséré Boulougoum",
+   "peak": "",
+   "peak_m": 1637,
+   "lat": 8.3775,
+   "lon": 13.49,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23676164",
+   "wikidata": "Q23676164",
+   "kind": "terrain",
+   "name": "Ngao Débélé",
+   "peak": "",
+   "peak_m": 1726,
+   "lat": 7.1667,
+   "lon": 14.3333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23676182",
+   "wikidata": "Q23676182",
+   "kind": "terrain",
+   "name": "Hoséré Dembako",
+   "peak": "",
+   "peak_m": 1678,
+   "lat": 8.4653,
+   "lon": 13.1386,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23677429",
+   "wikidata": "Q23677429",
+   "kind": "terrain",
+   "name": "Ngao Bam Yanga",
+   "peak": "",
+   "peak_m": 1344,
+   "lat": 6.7,
+   "lon": 13.0333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23677570",
+   "wikidata": "Q23677570",
+   "kind": "terrain",
+   "name": "Montagne de la Ngo",
+   "peak": "",
+   "peak_m": 1351,
+   "lat": 8.0447,
+   "lon": 15.0378,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23678924",
+   "wikidata": "Q23678924",
+   "kind": "terrain",
+   "name": "Monts Gaoli",
+   "peak": "",
+   "peak_m": 1255,
+   "lat": 7.4969,
+   "lon": 15.1192,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23779831",
+   "wikidata": "Q23779831",
+   "kind": "terrain",
+   "name": "Chaîne du Zouarha",
+   "peak": "",
+   "peak_m": 1442,
+   "lat": 36.5833,
+   "lon": 6.1833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23939978",
+   "wikidata": "Q23939978",
+   "kind": "terrain",
+   "name": "Salassima Range",
+   "peak": "",
+   "peak_m": 841,
+   "lat": 13.0167,
+   "lon": 42.0833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23940030",
+   "wikidata": "Q23940030",
+   "kind": "terrain",
+   "name": "Scirab",
+   "peak": "Dagab",
+   "peak_m": 2115,
+   "lat": 17.1167,
+   "lon": 37.8833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q23940354",
+   "wikidata": "Q23940354",
+   "kind": "terrain",
+   "name": "Malad",
+   "peak": "Mount Abargo",
+   "peak_m": 2542,
+   "lat": 16.9,
+   "lon": 38.4,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q23940765",
+   "wikidata": "Q23940765",
+   "kind": "terrain",
+   "name": "Gardedet",
+   "peak": "",
+   "peak_m": 1521,
+   "lat": 15.6167,
+   "lon": 38.1667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23941225",
+   "wikidata": "Q23941225",
+   "kind": "terrain",
+   "name": "Eltai",
+   "peak": "",
+   "peak_m": 1740,
+   "lat": 15.7167,
+   "lon": 37.8,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q23941764",
+   "wikidata": "Q23941764",
+   "kind": "terrain",
+   "name": "Aigher Tallim",
+   "peak": "Jabal Roribet",
+   "peak_m": 2714,
+   "lat": 17.5333,
+   "lon": 38.2,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q23948549",
+   "wikidata": "Q23948549",
+   "kind": "terrain",
+   "name": "Beyani",
+   "peak": "Ermemmi",
+   "peak_m": 2478,
+   "lat": 15.5769,
+   "lon": 38.6139,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q27223641",
+   "wikidata": "Q27223641",
+   "kind": "terrain",
+   "name": "Djadjana",
+   "peak": "Mont Ntringui",
+   "peak_m": 1595,
+   "lat": -12.1664,
+   "lon": 44.4606,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q27575385",
+   "wikidata": "Q27575385",
+   "kind": "terrain",
+   "name": "Analavelona",
+   "peak": "",
+   "peak_m": 1277,
+   "lat": -22.75,
+   "lon": 44.1667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q27694293",
+   "wikidata": "Q27694293",
+   "kind": "terrain",
+   "name": "Erensi",
+   "peak": "Kavorou",
+   "peak_m": 1048,
+   "lat": 15.17,
+   "lon": -2.4592,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q27767244",
+   "wikidata": "Q27767244",
+   "kind": "terrain",
+   "name": "Kandoli Mountains",
+   "peak": "Mtoghama Hill",
+   "peak_m": 1604,
+   "lat": -11.3936,
+   "lon": 34.2436,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q30349745",
+   "wikidata": "Q30349745",
+   "kind": "terrain",
+   "name": "Chaîne du Thaljah",
+   "peak": "Jabal an Naqb",
+   "peak_m": 894,
+   "lat": 34.3333,
+   "lon": 8.1667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31392766",
+   "wikidata": "Q31392766",
+   "kind": "terrain",
+   "name": "Matumbi Highlands",
+   "peak": "",
+   "peak_m": 729,
+   "lat": -8.3333,
+   "lon": 38.9167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31469139",
+   "wikidata": "Q31469139",
+   "kind": "terrain",
+   "name": "Mount Arthur Range",
+   "peak": "Mount Arthur",
+   "peak_m": 1851,
+   "lat": -31.6628,
+   "lon": 27.1472,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31473469",
+   "wikidata": "Q31473469",
+   "kind": "terrain",
+   "name": "Matuwana Mountains",
+   "peak": "",
+   "peak_m": 1713,
+   "lat": -31.3333,
+   "lon": 28.2833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31474188",
+   "wikidata": "Q31474188",
+   "kind": "terrain",
+   "name": "Mashongololo",
+   "peak": "",
+   "peak_m": 1700,
+   "lat": -27.6481,
+   "lon": 31.0594,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31474578",
+   "wikidata": "Q31474578",
+   "kind": "terrain",
+   "name": "Maroneberge",
+   "peak": "Maope",
+   "peak_m": 1860,
+   "lat": -24.7333,
+   "lon": 30.2833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31475108",
+   "wikidata": "Q31475108",
+   "kind": "terrain",
+   "name": "Mapumulo Hills",
+   "peak": "",
+   "peak_m": 1758,
+   "lat": -26.2833,
+   "lon": 30.85,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31475719",
+   "wikidata": "Q31475719",
+   "kind": "terrain",
+   "name": "Mankamane",
+   "peak": "Suurkop",
+   "peak_m": 1587,
+   "lat": -28.4814,
+   "lon": 30.4483,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31478210",
+   "wikidata": "Q31478210",
+   "kind": "terrain",
+   "name": "Magedla",
+   "peak": "Perdeberg",
+   "peak_m": 2138,
+   "lat": -30.8275,
+   "lon": 28.44,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31482944",
+   "wikidata": "Q31482944",
+   "kind": "terrain",
+   "name": "Jibāl Hawlad",
+   "peak": "Jabal Sabidana",
+   "peak_m": 1755,
+   "lat": 17.9958,
+   "lon": 36.8794,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31483574",
+   "wikidata": "Q31483574",
+   "kind": "terrain",
+   "name": "Laer Sneeuberge",
+   "peak": "Meelberg",
+   "peak_m": 2225,
+   "lat": -32.1831,
+   "lon": 23.8086,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31484799",
+   "wikidata": "Q31484799",
+   "kind": "terrain",
+   "name": "KwaNomtshwele",
+   "peak": "KwaPakwe",
+   "peak_m": 1602,
+   "lat": -28.8486,
+   "lon": 30.7756,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31486522",
+   "wikidata": "Q31486522",
+   "kind": "terrain",
+   "name": "KwaCeza",
+   "peak": "",
+   "peak_m": 1391,
+   "lat": -27.9539,
+   "lon": 31.3214,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31486961",
+   "wikidata": "Q31486961",
+   "kind": "terrain",
+   "name": "Kurumanheuwels",
+   "peak": "",
+   "peak_m": 1771,
+   "lat": -27.5831,
+   "lon": 23.405,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31489698",
+   "wikidata": "Q31489698",
+   "kind": "terrain",
+   "name": "Kramberg",
+   "peak": "Die Vensterklip",
+   "peak_m": 1968,
+   "lat": -30.7961,
+   "lon": 26.5714,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.09)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31489911",
+   "wikidata": "Q31489911",
+   "kind": "terrain",
+   "name": "Kouga Range",
+   "peak": "Klipfonteinberg",
+   "peak_m": 866,
+   "lat": -33.95,
+   "lon": 24.6667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31490207",
+   "wikidata": "Q31490207",
+   "kind": "terrain",
+   "name": "Korannaberg",
+   "peak": "Magwataneng",
+   "peak_m": 1548,
+   "lat": -27.3564,
+   "lon": 22.5036,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31490422",
+   "wikidata": "Q31490422",
+   "kind": "terrain",
+   "name": "Kookfonteinberg",
+   "peak": "",
+   "peak_m": 1356,
+   "lat": -32.7675,
+   "lon": 20.2014,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31490578",
+   "wikidata": "Q31490578",
+   "kind": "terrain",
+   "name": "Kommetjieberge",
+   "peak": "Boesmanskop",
+   "peak_m": 2069,
+   "lat": -32.0333,
+   "lon": 24.95,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31490646",
+   "wikidata": "Q31490646",
+   "kind": "terrain",
+   "name": "Kombuisfonteinberge",
+   "peak": "Aasvoëlberg",
+   "peak_m": 1662,
+   "lat": -30.9078,
+   "lon": 23.6361,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31491670",
+   "wikidata": "Q31491670",
+   "kind": "terrain",
+   "name": "Klipfontein se Berg",
+   "peak": "",
+   "peak_m": 1398,
+   "lat": -32.82,
+   "lon": 21.1675,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31491884",
+   "wikidata": "Q31491884",
+   "kind": "terrain",
+   "name": "Klein Winterberge",
+   "peak": "Katberg",
+   "peak_m": 1828,
+   "lat": -32.5167,
+   "lon": 26.45,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31492142",
+   "wikidata": "Q31492142",
+   "kind": "terrain",
+   "name": "Klein Roggeveldberge",
+   "peak": "",
+   "peak_m": 1451,
+   "lat": -32.835,
+   "lon": 20.6133,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31492163",
+   "wikidata": "Q31492163",
+   "kind": "terrain",
+   "name": "Klein-Roggeveldberge",
+   "peak": "",
+   "peak_m": 1848,
+   "lat": -32.5333,
+   "lon": 21.0333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31493765",
+   "wikidata": "Q31493765",
+   "kind": "terrain",
+   "name": "Kareekasberge",
+   "peak": "",
+   "peak_m": 1622,
+   "lat": -32.0492,
+   "lon": 20.4769,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31495033",
+   "wikidata": "Q31495033",
+   "kind": "terrain",
+   "name": "Jumbla Range",
+   "peak": "",
+   "peak_m": 2276,
+   "lat": -30.5111,
+   "lon": 28.8022,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31496407",
+   "wikidata": "Q31496407",
+   "kind": "terrain",
+   "name": "Ingilanyoni Range",
+   "peak": "Kleinthal",
+   "peak_m": 1010,
+   "lat": -30.0667,
+   "lon": 30.55,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31499170",
+   "wikidata": "Q31499170",
+   "kind": "terrain",
+   "name": "Heksrivierberge",
+   "peak": "Duiwelsnek se Berge",
+   "peak_m": 1634,
+   "lat": -30.9667,
+   "lon": 22.9667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31499665",
+   "wikidata": "Q31499665",
+   "kind": "terrain",
+   "name": "Hanglipberge",
+   "peak": "",
+   "peak_m": 1787,
+   "lat": -24.1992,
+   "lon": 28.6617,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31500930",
+   "wikidata": "Q31500930",
+   "kind": "terrain",
+   "name": "Grootrivierberge",
+   "peak": "",
+   "peak_m": 1559,
+   "lat": -33.1128,
+   "lon": 23.8681,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31503593",
+   "wikidata": "Q31503593",
+   "kind": "terrain",
+   "name": "Gemsbokberg",
+   "peak": "Gemsbokberg",
+   "peak_m": 2094,
+   "lat": -27.4667,
+   "lon": 29.4333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31504833",
+   "wikidata": "Q31504833",
+   "kind": "terrain",
+   "name": "Fish River Rand",
+   "peak": "",
+   "peak_m": 795,
+   "lat": -33.0364,
+   "lon": 26.3911,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31504873",
+   "wikidata": "Q31504873",
+   "kind": "terrain",
+   "name": "Fishback Ridge",
+   "peak": "Swartberg",
+   "peak_m": 2309,
+   "lat": -30.2039,
+   "lon": 29.2978,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31505122",
+   "wikidata": "Q31505122",
+   "kind": "terrain",
+   "name": "Ewecweni Range",
+   "peak": "",
+   "peak_m": 1273,
+   "lat": -31.9167,
+   "lon": 28.0167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31511533",
+   "wikidata": "Q31511533",
+   "kind": "terrain",
+   "name": "Cala Flats",
+   "peak": "",
+   "peak_m": 1752,
+   "lat": -31.55,
+   "lon": 27.55,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31512826",
+   "wikidata": "Q31512826",
+   "kind": "terrain",
+   "name": "Bothasberg",
+   "peak": "Koeberg",
+   "peak_m": 2393,
+   "lat": -28.3728,
+   "lon": 28.6486,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31512873",
+   "wikidata": "Q31512873",
+   "kind": "terrain",
+   "name": "Bothaberg",
+   "peak": "",
+   "peak_m": 1829,
+   "lat": -25.4108,
+   "lon": 29.6872,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31513106",
+   "wikidata": "Q31513106",
+   "kind": "terrain",
+   "name": "Bosberg",
+   "peak": "Bruintjieshoogte",
+   "peak_m": 1748,
+   "lat": -32.6853,
+   "lon": 25.5411,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31517447",
+   "wikidata": "Q31517447",
+   "kind": "terrain",
+   "name": "Attakwasberge",
+   "peak": "Engelseberg",
+   "peak_m": 1465,
+   "lat": -33.8742,
+   "lon": 21.9361,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31522103",
+   "wikidata": "Q31522103",
+   "kind": "terrain",
+   "name": "Swartruggens",
+   "peak": "Sneeukop",
+   "peak_m": 2052,
+   "lat": -32.7667,
+   "lon": 19.6,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31523310",
+   "wikidata": "Q31523310",
+   "kind": "terrain",
+   "name": "Soutpansberg",
+   "peak": "Suikerbosplaat",
+   "peak_m": 848,
+   "lat": -31.885,
+   "lon": 19.3089,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31525308",
+   "wikidata": "Q31525308",
+   "kind": "terrain",
+   "name": "Roep-My-Nie-Berg",
+   "peak": "",
+   "peak_m": 1652,
+   "lat": -31.5833,
+   "lon": 19.6667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31525473",
+   "wikidata": "Q31525473",
+   "kind": "terrain",
+   "name": "Richtersveld",
+   "peak": "Vandersterrberg",
+   "peak_m": 1266,
+   "lat": -28.305,
+   "lon": 17.1092,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31527123",
+   "wikidata": "Q31527123",
+   "kind": "terrain",
+   "name": "N'Guroebees",
+   "peak": "",
+   "peak_m": 907,
+   "lat": -28.95,
+   "lon": 17.9667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31527242",
+   "wikidata": "Q31527242",
+   "kind": "terrain",
+   "name": "Naruchasberg",
+   "peak": "",
+   "peak_m": 611,
+   "lat": -29.45,
+   "lon": 17.2833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31527380",
+   "wikidata": "Q31527380",
+   "kind": "terrain",
+   "name": "Nababiepsberge",
+   "peak": "Bluff",
+   "peak_m": 887,
+   "lat": -28.8283,
+   "lon": 17.5744,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31529155",
+   "wikidata": "Q31529155",
+   "kind": "terrain",
+   "name": "Kosiesberg",
+   "peak": "Rooiberg",
+   "peak_m": 1145,
+   "lat": -29.1372,
+   "lon": 17.5606,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31529299",
+   "wikidata": "Q31529299",
+   "kind": "terrain",
+   "name": "Komaggas",
+   "peak": "",
+   "peak_m": 879,
+   "lat": -29.7833,
+   "lon": 17.5333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31529367",
+   "wikidata": "Q31529367",
+   "kind": "terrain",
+   "name": "Koerisberge",
+   "peak": "Witberg",
+   "peak_m": 1152,
+   "lat": -29.1167,
+   "lon": 18.8333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31531673",
+   "wikidata": "Q31531673",
+   "kind": "terrain",
+   "name": "Hahn Romansberg",
+   "peak": "Abbasasberge",
+   "peak_m": 901,
+   "lat": -28.9081,
+   "lon": 18.355,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.08)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31533364",
+   "wikidata": "Q31533364",
+   "kind": "terrain",
+   "name": "Elandskloofberge",
+   "peak": "",
+   "peak_m": 2001,
+   "lat": -33.4314,
+   "lon": 19.0869,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31534092",
+   "wikidata": "Q31534092",
+   "kind": "terrain",
+   "name": "Dolomite Peaks",
+   "peak": "Cornellsberg",
+   "peak_m": 1368,
+   "lat": -28.6794,
+   "lon": 17.0286,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31534926",
+   "wikidata": "Q31534926",
+   "kind": "terrain",
+   "name": "Bredasdorpberge",
+   "peak": "",
+   "peak_m": 704,
+   "lat": -34.5167,
+   "lon": 19.9,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31535304",
+   "wikidata": "Q31535304",
+   "kind": "terrain",
+   "name": "Bontberg",
+   "peak": "Rooiberg",
+   "peak_m": 2190,
+   "lat": -33.2794,
+   "lon": 19.8483,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31537646",
+   "wikidata": "Q31537646",
+   "kind": "terrain",
+   "name": "Mulali Hills",
+   "peak": "Namba",
+   "peak_m": 1368,
+   "lat": -8.3,
+   "lon": 30.45,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31537920",
+   "wikidata": "Q31537920",
+   "kind": "terrain",
+   "name": "Chungu Hills",
+   "peak": "",
+   "peak_m": 1933,
+   "lat": -8.7,
+   "lon": 31.3833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31537972",
+   "wikidata": "Q31537972",
+   "kind": "terrain",
+   "name": "Chisembwe Hills",
+   "peak": "Kanonje",
+   "peak_m": 1434,
+   "lat": -8.5833,
+   "lon": 29.4667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31538444",
+   "wikidata": "Q31538444",
+   "kind": "terrain",
+   "name": "Ngurunguru Hills",
+   "peak": "",
+   "peak_m": 1322,
+   "lat": -14.0417,
+   "lon": 32.6167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31538459",
+   "wikidata": "Q31538459",
+   "kind": "terrain",
+   "name": "Ngoli Hills",
+   "peak": "",
+   "peak_m": 1612,
+   "lat": -13.5372,
+   "lon": 30.2167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31538607",
+   "wikidata": "Q31538607",
+   "kind": "terrain",
+   "name": "Nabola",
+   "peak": "Mabwituba Hills",
+   "peak_m": 1535,
+   "lat": -16.3792,
+   "lon": 28.2169,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31539352",
+   "wikidata": "Q31539352",
+   "kind": "terrain",
+   "name": "Kukwe Range",
+   "peak": "Kukwe",
+   "peak_m": 1666,
+   "lat": -13.5667,
+   "lon": 32.7167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31540398",
+   "wikidata": "Q31540398",
+   "kind": "terrain",
+   "name": "Chifukunya Hills",
+   "peak": "",
+   "peak_m": 1647,
+   "lat": -14.4242,
+   "lon": 29.8078,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31541067",
+   "wikidata": "Q31541067",
+   "kind": "terrain",
+   "name": "Vumbere Range",
+   "peak": "Spitzkop",
+   "peak_m": 1951,
+   "lat": -19.85,
+   "lon": 32.5667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31541180",
+   "wikidata": "Q31541180",
+   "kind": "terrain",
+   "name": "Umvukwe Range",
+   "peak": "",
+   "peak_m": 1682,
+   "lat": -17.3333,
+   "lon": 30.6333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31541350",
+   "wikidata": "Q31541350",
+   "kind": "terrain",
+   "name": "Sutskwe",
+   "peak": "Sutskwe",
+   "peak_m": 1295,
+   "lat": -17.1667,
+   "lon": 32.4167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31542190",
+   "wikidata": "Q31542190",
+   "kind": "terrain",
+   "name": "Rukovakuona Mountains",
+   "peak": "Manovi",
+   "peak_m": 1257,
+   "lat": -16.3917,
+   "lon": 30.645,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31543080",
+   "wikidata": "Q31543080",
+   "kind": "terrain",
+   "name": "Nyadzomba Range",
+   "peak": "Rukope",
+   "peak_m": 1081,
+   "lat": -16.7667,
+   "lon": 32.8833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31543974",
+   "wikidata": "Q31543974",
+   "kind": "terrain",
+   "name": "Munaka Range",
+   "peak": "Munaka",
+   "peak_m": 1308,
+   "lat": -20.5667,
+   "lon": 30.55,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.10)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31544086",
+   "wikidata": "Q31544086",
+   "kind": "terrain",
+   "name": "Mtukwa Range",
+   "peak": "Dangamvuri",
+   "peak_m": 1778,
+   "lat": -18.8211,
+   "lon": 31.6989,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31544212",
+   "wikidata": "Q31544212",
+   "kind": "terrain",
+   "name": "Musasi Hills",
+   "peak": "Chisiyana",
+   "peak_m": 1541,
+   "lat": -20.0192,
+   "lon": 31.5467,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31544636",
+   "wikidata": "Q31544636",
+   "kind": "terrain",
+   "name": "Mavuradonha Mountains",
+   "peak": "Chipari",
+   "peak_m": 1494,
+   "lat": -16.4578,
+   "lon": 31.5292,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31544680",
+   "wikidata": "Q31544680",
+   "kind": "terrain",
+   "name": "Matusadona Range",
+   "peak": "",
+   "peak_m": 1292,
+   "lat": -16.9167,
+   "lon": 28.5833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31545079",
+   "wikidata": "Q31545079",
+   "kind": "terrain",
+   "name": "Maparu Range",
+   "peak": "Gombekombe",
+   "peak_m": 1594,
+   "lat": -17.0278,
+   "lon": 31.2322,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31546054",
+   "wikidata": "Q31546054",
+   "kind": "terrain",
+   "name": "Inyanga Mountains",
+   "peak": "Rukotso",
+   "peak_m": 2395,
+   "lat": -18.0,
+   "lon": 32.7667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31548568",
+   "wikidata": "Q31548568",
+   "kind": "terrain",
+   "name": "Chigura Range",
+   "peak": "",
+   "peak_m": 1859,
+   "lat": -17.6667,
+   "lon": 32.7833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31549136",
+   "wikidata": "Q31549136",
+   "kind": "terrain",
+   "name": "Beza Range",
+   "peak": "",
+   "peak_m": 1478,
+   "lat": -20.15,
+   "lon": 30.9667,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.09)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31549713",
+   "wikidata": "Q31549713",
+   "kind": "terrain",
+   "name": "Mavuradonha Moutains",
+   "peak": "",
+   "peak_m": 1574,
+   "lat": -16.4364,
+   "lon": 31.2042,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31568781",
+   "wikidata": "Q31568781",
+   "kind": "terrain",
+   "name": "Tingi Mountains",
+   "peak": "Sankanbiaiwa",
+   "peak_m": 1693,
+   "lat": 8.9167,
+   "lon": -10.7833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31569054",
+   "wikidata": "Q31569054",
+   "kind": "terrain",
+   "name": "Nimini Mountains",
+   "peak": "Nimini",
+   "peak_m": 716,
+   "lat": 8.4753,
+   "lon": -11.1439,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31569467",
+   "wikidata": "Q31569467",
+   "kind": "terrain",
+   "name": "Kongotan Range",
+   "peak": "Kerekonko",
+   "peak_m": 1135,
+   "lat": 8.6547,
+   "lon": -10.6086,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31569745",
+   "wikidata": "Q31569745",
+   "kind": "terrain",
+   "name": "Jojima Hills",
+   "peak": "",
+   "peak_m": 816,
+   "lat": 8.3167,
+   "lon": -10.4,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.08)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31570054",
+   "wikidata": "Q31570054",
+   "kind": "terrain",
+   "name": "Boana Hills",
+   "peak": "",
+   "peak_m": 833,
+   "lat": 8.8719,
+   "lon": -11.2169,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.04)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31572709",
+   "wikidata": "Q31572709",
+   "kind": "terrain",
+   "name": "Buuraha Xuseen",
+   "peak": "Yaacdu",
+   "peak_m": 1094,
+   "lat": 10.5069,
+   "lon": 43.2303,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31572822",
+   "wikidata": "Q31572822",
+   "kind": "terrain",
+   "name": "Buuraha Xoogidaad",
+   "peak": "",
+   "peak_m": 1917,
+   "lat": 10.8531,
+   "lon": 48.2036,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31572854",
+   "wikidata": "Q31572854",
+   "kind": "terrain",
+   "name": "Buuraha Xonkod",
+   "peak": "",
+   "peak_m": 1422,
+   "lat": 11.5825,
+   "lon": 50.3697,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31572919",
+   "wikidata": "Q31572919",
+   "kind": "terrain",
+   "name": "Buuraha Xero Warsangeli",
+   "peak": "",
+   "peak_m": 1512,
+   "lat": 11.0983,
+   "lon": 48.7281,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.06)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31572951",
+   "wikidata": "Q31572951",
+   "kind": "terrain",
+   "name": "Buuraha Xaysimo Dhirow",
+   "peak": "",
+   "peak_m": 2103,
+   "lat": 11.4206,
+   "lon": 49.8169,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31573000",
+   "wikidata": "Q31573000",
+   "kind": "terrain",
+   "name": "Buuraha Xayid",
+   "peak": "",
+   "peak_m": 768,
+   "lat": 11.7994,
+   "lon": 50.9242,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31573360",
+   "wikidata": "Q31573360",
+   "kind": "terrain",
+   "name": "Wooble",
+   "peak": "",
+   "peak_m": 1717,
+   "lat": 10.2261,
+   "lon": 43.4097,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31573376",
+   "wikidata": "Q31573376",
+   "kind": "terrain",
+   "name": "Buuraha Wisisha",
+   "peak": "Aftoox",
+   "peak_m": 1816,
+   "lat": 10.2503,
+   "lon": 42.9914,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31573532",
+   "wikidata": "Q31573532",
+   "kind": "terrain",
+   "name": "Buuraha Waraabaale",
+   "peak": "Lafa Gari",
+   "peak_m": 888,
+   "lat": 2.7333,
+   "lon": 41.8,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31573581",
+   "wikidata": "Q31573581",
+   "kind": "terrain",
+   "name": "Buuraha Wagar",
+   "peak": "Tawawir",
+   "peak_m": 1970,
+   "lat": 10.0039,
+   "lon": 45.3925,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31573965",
+   "wikidata": "Q31573965",
+   "kind": "terrain",
+   "name": "Buuraha Tabca",
+   "peak": "",
+   "peak_m": 1819,
+   "lat": 10.4139,
+   "lon": 46.8667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31574143",
+   "wikidata": "Q31574143",
+   "kind": "terrain",
+   "name": "Sukorre",
+   "peak": "",
+   "peak_m": 1504,
+   "lat": 10.9167,
+   "lon": 49.4333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31574321",
+   "wikidata": "Q31574321",
+   "kind": "terrain",
+   "name": "Buuraha Siigdoor",
+   "peak": "Buuraha Dhaxsi",
+   "peak_m": 1442,
+   "lat": 11.5167,
+   "lon": 50.6833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31574400",
+   "wikidata": "Q31574400",
+   "kind": "terrain",
+   "name": "Buuraha Shimbiraale",
+   "peak": "Xuurow Ciidle",
+   "peak_m": 520,
+   "lat": 10.8828,
+   "lon": 50.8217,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31574416",
+   "wikidata": "Q31574416",
+   "kind": "terrain",
+   "name": "Buuraha Shilomadow",
+   "peak": "Dulbiciid",
+   "peak_m": 1068,
+   "lat": 9.0269,
+   "lon": 47.8147,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31574472",
+   "wikidata": "Q31574472",
+   "kind": "terrain",
+   "name": "Buuraha Shesheho",
+   "peak": "",
+   "peak_m": 1598,
+   "lat": 10.0147,
+   "lon": 46.4164,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31574532",
+   "wikidata": "Q31574532",
+   "kind": "terrain",
+   "name": "Buuraha Shabeello",
+   "peak": "",
+   "peak_m": 1596,
+   "lat": 11.0592,
+   "lon": 50.1178,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31574664",
+   "wikidata": "Q31574664",
+   "kind": "terrain",
+   "name": "Buuraha Sardheer",
+   "peak": "",
+   "peak_m": 525,
+   "lat": 3.1581,
+   "lon": 42.2247,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31574814",
+   "wikidata": "Q31574814",
+   "kind": "terrain",
+   "name": "Buuraha Samaadka Taagan",
+   "peak": "",
+   "peak_m": 1249,
+   "lat": 9.7347,
+   "lon": 46.9442,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31574846",
+   "wikidata": "Q31574846",
+   "kind": "terrain",
+   "name": "Buuraha Saley",
+   "peak": "",
+   "peak_m": 1217,
+   "lat": 10.1314,
+   "lon": 44.2886,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31575195",
+   "wikidata": "Q31575195",
+   "kind": "terrain",
+   "name": "Buuraha Raasane",
+   "peak": "",
+   "peak_m": 1669,
+   "lat": 10.3528,
+   "lon": 46.0614,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31575419",
+   "wikidata": "Q31575419",
+   "kind": "terrain",
+   "name": "Buuraha Qaw Qaw Saare",
+   "peak": "",
+   "peak_m": 678,
+   "lat": 2.7611,
+   "lon": 42.1328,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31575464",
+   "wikidata": "Q31575464",
+   "kind": "terrain",
+   "name": "Buuraha Qalalow",
+   "peak": "",
+   "peak_m": 1641,
+   "lat": 9.8731,
+   "lon": 43.7189,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31575654",
+   "wikidata": "Q31575654",
+   "kind": "terrain",
+   "name": "Ninjog",
+   "peak": "",
+   "peak_m": 1405,
+   "lat": 9.6833,
+   "lon": 45.9167,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.07)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31575926",
+   "wikidata": "Q31575926",
+   "kind": "terrain",
+   "name": "Buuraha Mogoro",
+   "peak": "Eila El Gadir",
+   "peak_m": 984,
+   "lat": 10.5983,
+   "lon": 45.8292,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31576119",
+   "wikidata": "Q31576119",
+   "kind": "terrain",
+   "name": "Buuraha Marsin",
+   "peak": "",
+   "peak_m": 792,
+   "lat": 10.1747,
+   "lon": 44.7833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31576151",
+   "wikidata": "Q31576151",
+   "kind": "terrain",
+   "name": "Buuraha Marmaregle",
+   "peak": "Dubeyrin",
+   "peak_m": 1563,
+   "lat": 10.0483,
+   "lon": 46.0042,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31577403",
+   "wikidata": "Q31577403",
+   "kind": "terrain",
+   "name": "Buuraha Karimo",
+   "peak": "",
+   "peak_m": 1444,
+   "lat": 9.6311,
+   "lon": 46.4319,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31577884",
+   "wikidata": "Q31577884",
+   "kind": "terrain",
+   "name": "Buuraha Jerey",
+   "peak": "",
+   "peak_m": 1245,
+   "lat": 10.2172,
+   "lon": 43.9017,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31578096",
+   "wikidata": "Q31578096",
+   "kind": "terrain",
+   "name": "Buuraha Hursela",
+   "peak": "",
+   "peak_m": 1080,
+   "lat": 10.5733,
+   "lon": 46.4244,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31578862",
+   "wikidata": "Q31578862",
+   "kind": "terrain",
+   "name": "Buuraha Guri Cal",
+   "peak": "Sarbi Dheer",
+   "peak_m": 933,
+   "lat": 11.6194,
+   "lon": 51.18,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31579165",
+   "wikidata": "Q31579165",
+   "kind": "terrain",
+   "name": "Goween",
+   "peak": "",
+   "peak_m": 429,
+   "lat": 5.3167,
+   "lon": 48.25,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31579543",
+   "wikidata": "Q31579543",
+   "kind": "terrain",
+   "name": "Buuraha Girdi",
+   "peak": "",
+   "peak_m": 486,
+   "lat": 10.5217,
+   "lon": 45.2317,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.10)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31580148",
+   "wikidata": "Q31580148",
+   "kind": "terrain",
+   "name": "Buuraha Gal Shiikh",
+   "peak": "Buuraha Gayraar",
+   "peak_m": 1346,
+   "lat": 9.9689,
+   "lon": 47.1664,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31580406",
+   "wikidata": "Q31580406",
+   "kind": "terrain",
+   "name": "Buuraha Gadaare",
+   "peak": "",
+   "peak_m": 1589,
+   "lat": 11.0133,
+   "lon": 49.0967,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31581595",
+   "wikidata": "Q31581595",
+   "kind": "terrain",
+   "name": "Buuraha Dhukukulo",
+   "peak": "",
+   "peak_m": 1341,
+   "lat": 10.0783,
+   "lon": 46.7281,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31581987",
+   "wikidata": "Q31581987",
+   "kind": "terrain",
+   "name": "Buuraha Dhaqane",
+   "peak": "Dhaymoole",
+   "peak_m": 1112,
+   "lat": 10.1769,
+   "lon": 45.1133,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31582880",
+   "wikidata": "Q31582880",
+   "kind": "terrain",
+   "name": "Buuraha Dhakabweyne",
+   "peak": "",
+   "peak_m": 1803,
+   "lat": 9.92,
+   "lon": 43.3528,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31583955",
+   "wikidata": "Q31583955",
+   "kind": "terrain",
+   "name": "Buuraha Cal Miskaat",
+   "peak": "Jarco",
+   "peak_m": 1793,
+   "lat": 10.8539,
+   "lon": 49.7431,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31584751",
+   "wikidata": "Q31584751",
+   "kind": "terrain",
+   "name": "Buuraha Beelyo",
+   "peak": "",
+   "peak_m": 893,
+   "lat": 11.2275,
+   "lon": 50.9772,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31584980",
+   "wikidata": "Q31584980",
+   "kind": "terrain",
+   "name": "Buuraha Badeet",
+   "peak": "",
+   "peak_m": 1305,
+   "lat": 11.2953,
+   "lon": 49.3742,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31586040",
+   "wikidata": "Q31586040",
+   "kind": "terrain",
+   "name": "Buuraha Buur-Caanood",
+   "peak": "Buur Caanood",
+   "peak_m": 1054,
+   "lat": 9.0953,
+   "lon": 47.3072,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.09)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31593490",
+   "wikidata": "Q31593490",
+   "kind": "terrain",
+   "name": "Mahamba Mountains",
+   "peak": "Inkonjane Kop",
+   "peak_m": 1382,
+   "lat": -27.05,
+   "lon": 31.05,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31594066",
+   "wikidata": "Q31594066",
+   "kind": "terrain",
+   "name": "Bulunga Mountains",
+   "peak": "",
+   "peak_m": 923,
+   "lat": -26.6167,
+   "lon": 31.55,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31595437",
+   "wikidata": "Q31595437",
+   "kind": "terrain",
+   "name": "Hadjer Katchmiré",
+   "peak": "",
+   "peak_m": 935,
+   "lat": 13.4,
+   "lon": 20.6667,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.08)",
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31595465",
+   "wikidata": "Q31595465",
+   "kind": "terrain",
+   "name": "Massif du Kapka",
+   "peak": "",
+   "peak_m": 1276,
+   "lat": 15.1167,
+   "lon": 21.75,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31598775",
+   "wikidata": "Q31598775",
+   "kind": "terrain",
+   "name": "Monts Mbéré",
+   "peak": "",
+   "peak_m": 978,
+   "lat": 7.6669,
+   "lon": 16.1036,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31625528",
+   "wikidata": "Q31625528",
+   "kind": "terrain",
+   "name": "Mbizi Mountains",
+   "peak": "",
+   "peak_m": 2444,
+   "lat": -7.8667,
+   "lon": 31.6667,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q31626665",
+   "wikidata": "Q31626665",
+   "kind": "terrain",
+   "name": "Nyarugongo Range",
+   "peak": "Kicherere",
+   "peak_m": 1907,
+   "lat": -1.1439,
+   "lon": 30.8367,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31626783",
+   "wikidata": "Q31626783",
+   "kind": "terrain",
+   "name": "Chabutambara Range",
+   "peak": "Ngaara Hill",
+   "peak_m": 1737,
+   "lat": -1.6917,
+   "lon": 31.1647,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31674593",
+   "wikidata": "Q31674593",
+   "kind": "terrain",
+   "name": "Wynberge",
+   "peak": "Wildeperdeberg",
+   "peak_m": 1753,
+   "lat": -32.3378,
+   "lon": 24.1244,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q31674963",
+   "wikidata": "Q31674963",
+   "kind": "terrain",
+   "name": "Wolwefonteinberg",
+   "peak": "Waaipoort",
+   "peak_m": 1086,
+   "lat": -33.2642,
+   "lon": 24.5603,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  }
+ ]
+}
