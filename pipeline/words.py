@@ -17,7 +17,8 @@ SEP = " · "
 def height(m, lang, units):
     """2,749 m / 2.749 m; feet rounded to the nearest 10 ft (docs/brief.md, Text and language)."""
     v, unit = (m, "m") if units == "metric" else (int(round(m * 3.28084 / 10) * 10), "ft")
-    return f"{v:,}".replace(",", UI[lang]["thousands"]) + " " + unit
+    # No-break space: a wrapped line never parts the number from its unit ("4,34…" on #81, 2026-10-08).
+    return f"{v:,}".replace(",", UI[lang]["thousands"]) + "\u00a0" + unit
 
 
 def countries(entry, lang):
