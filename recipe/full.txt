@@ -4,9 +4,9 @@
   <div class="w--full h--full relative">
     <div class="w--full h--full" data-ridgelines data-heights="{{ heights }}" data-grid="{{ grid }}" data-side-km="{{ side_km }}" data-width-km="{{ width_km }}" data-floor="{{ floor }}" data-top="{{ top }}" data-peak-x="{{ peak_x }}" data-peak-y="{{ peak_y }}" data-peak-name="{%- if rl_label == "yes" -%}{{ peak[rl_lang] | escape }}{%- endif -%}"></div>
     {%- if rl_box == "yes" %}
-    <div class="absolute bottom--3 lg:bottom--6 left--3 p--3 z--2 bg--canvas outline flex flex--col flex--left gap--xsmall w--[45cqw] portrait:w--[80cqw]" data-ridgelines-box>
-      <span class="w--full title title--large lg:title--xlarge" data-clamp="2">{{ box_title[rl_lang] }}</span>
-      <span class="w--full description md:description--large" data-clamp="1">{{ box_peak[rl_lang][rl_units] }}</span>
+    <div class="absolute bottom--3 lg:bottom--6 left--3 p--3 z--2 bg--canvas outline flex flex--col flex--left gap--xsmall w--[60cqw] lg:w--[45cqw] portrait:w--[80cqw] lg:portrait:w--[80cqw]" data-ridgelines-box>
+      <span class="w--full title title--large lg:title--xlarge" data-clamp="3">{{ box_title[rl_lang] }}</span>
+      <span class="w--full description md:description--large" data-clamp="2">{{ box_peak[rl_lang][rl_units] }}</span>
     </div>
     {%- endif %}
   </div>

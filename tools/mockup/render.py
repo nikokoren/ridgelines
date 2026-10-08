@@ -134,7 +134,11 @@ class Renderer:
         await p.wait_for_function("""Array.prototype.every.call(document.querySelectorAll('[data-ridgelines]'),
             function (el) { return el.hasAttribute('data-ridgelines-drawn'); })""", timeout=20000)
         rep = await p.evaluate("""Array.prototype.map.call(document.querySelectorAll('[data-ridgelines]'),
-            function (el) { return JSON.parse(el.getAttribute('data-ridgelines-report')); })""")
+            function (el) { var r = JSON.parse(el.getAttribute('data-ridgelines-report'));
+              // the info box as it ends up, after the framework's clamp (report.box is taken at draw time)
+              var i = el.parentNode.querySelector('[data-ridgelines-box]');
+              if (i) r.boxFinal = [i.offsetLeft, i.offsetTop, i.offsetWidth, i.offsetHeight];
+              return r; })""")
         await p.screenshot(path=out)
         await ctx.close()
         quantise(out, DEVICES[device]["depth"])

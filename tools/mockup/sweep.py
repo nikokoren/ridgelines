@@ -13,6 +13,15 @@
     python sweep.py beta    [out]   the Germany and Austria beta list, 10 per sheet
                                       (first: python ../../pipeline/entries.py --list ../../data/beta_de_at.json)
 
+    python sweep.py release [out]   AREA=europe: every flagged range of data/release/<area>.json plus
+                                      every SAMPLE-th other one (default 6), 12 per sheet
+                                      (first: python ../../pipeline/select.py <area>; LIST=path for a trial list;
+                                      FLAGGED=0 for the sample alone)
+
+    python sweep.py every   [out]   every published range (beta and data/release/*.json) on OG full landscape
+                                      and portrait and TRMNL X full, German: drawn, label shown, label clear of
+                                      the box, inside the square. Resumes from out/every.jsonl; no images kept
+
 LOOK='{"ripple": 5, "floorPct": 55}' overrides the look for any mode.
 """
 import asyncio, json, os, sys, render
@@ -133,6 +142,65 @@ async def beta(r):
         render.sheet(cells, os.path.join(OUT, f"beta_{part // 10 + 1}.png"), cols=2,
                      title=f"Beta list {part + 1} to {part + len(cells)}, TRMNL OG 1-bit, full view, defaults")
     json.dump(report, open(os.path.join(OUT, "beta_report.json"), "w"), indent=1)
+
+
+async def release(r):
+    """Review sheets for a release list: all flagged ranges plus a regular sample of the rest."""
+    area = os.environ.get("AREA", "europe")
+    path = os.environ.get("LIST") or os.path.join(render.ROOT, "data", "release", area + ".json")
+    listed = json.load(open(path))["entries"]
+    every = int(os.environ.get("SAMPLE", "6"))
+    CELLS = os.path.join(render.CACHE, "cells")         # per-range renders stay out of docs/
+    os.makedirs(CELLS, exist_ok=True)
+    flagged = os.environ.get("FLAGGED", "1") != "0"     # FLAGGED=0: the sample only (Africa: 317 of 365 flagged)
+    pick = [x for i, x in enumerate(listed) if (flagged and x["flags"]) or i % every == 0]
+    report = []
+    for part in range(0, len(pick), 12):
+        cells = []
+        for x in pick[part:part + 12]:
+            e = render.load(x["id"]); p = os.path.join(CELLS, f"release_{x['id']}.png")
+            rep = (await r.shot(e, "og", "full", p, look=LOOK))[0]
+            rep.update(entry=x["id"], flags=x["flags"]); report.append(rep)
+            n = listed.index(x) + 1
+            cells.append((p, f"{n}. {e['name']['en']}, {e['peak']['en'] or 'unnamed'} {e['peak_m']} m"
+                             + (f"  [{'; '.join(x['flags'])}]" if x["flags"] else "")))
+        render.sheet(cells, os.path.join(OUT, f"release_{area}_{part // 12 + 1}.png"), cols=3,
+                     title=f"{area}: {'flagged plus ' if flagged else ''}every {every}th, {part + 1} to {part + len(cells)} of {len(pick)}, TRMNL OG 1-bit, defaults")
+    json.dump(report, open(os.path.join(CELLS, f"release_{area}_report.json"), "w"), indent=1)
+    print(f"{len(pick)} of {len(listed)} rendered, drawn {sum(bool(x.get('drawn')) for x in report)}")
+
+
+async def every(r):
+    """Every published range in the views where the box is largest relative to the drawing."""
+    combos = [("og", False), ("og", True), ("v2", False)]
+    lists = [os.path.join(render.ROOT, "data", "beta_de_at.json")] + sorted(
+        os.path.join(render.ROOT, "data", "release", f) for f in os.listdir(os.path.join(render.ROOT, "data", "release")))
+    log = os.path.join(OUT, "every.jsonl")
+    done = set()
+    if os.path.exists(log):
+        done = {(d["entry"], d["device"], d["portrait"]) for d in map(json.loads, open(log))}
+    tmp = os.path.join(render.CACHE, "every.png")
+    with open(log, "a") as fh:
+        for path in lists:
+            for x in json.load(open(path))["entries"]:
+                e = render.load(x["id"])
+                for dev, portrait in combos:
+                    if (x["id"], dev, portrait) in done:
+                        continue
+                    rep = (await r.shot(e, dev, "full", tmp, lang="de", portrait=portrait, look=LOOK))[0]
+                    b, l = rep.get("boxFinal"), rep.get("label")
+                    over = bool(b and l and not (l["x"] + l["w"] <= b[0] or l["x"] >= b[0] + b[2]
+                                                 or l["y"] + l["h"] <= b[1] or l["y"] >= b[1] + b[3]))
+                    fh.write(json.dumps(dict(entry=x["id"], list=os.path.basename(path), device=dev, portrait=portrait,
+                                             drawn=rep.get("drawn"), label=bool(l), named=bool(e["peak"]["de"]),
+                                             over_box=over, outside=bool(rep.get("outside")),
+                                             box_moved=rep.get("box") != b)) + "\n")
+                    fh.flush()
+    rows = [json.loads(l) for l in open(log)]
+    print(len(rows), "renders; not drawn", sum(not d["drawn"] for d in rows),
+          "; named summit without label", sum(d["named"] and not d["label"] for d in rows),
+          "; label over box", sum(d["over_box"] for d in rows), "; outside square", sum(d["outside"] for d in rows),
+          "; box changed after drawing", sum(d["box_moved"] for d in rows))
 
 
 async def main():

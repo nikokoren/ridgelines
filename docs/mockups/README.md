@@ -22,6 +22,10 @@ Real TRMNL framework 3.4 markup, CSS, fonts and title bar, drawn by tools/mockup
 | `lang_de.png` | German captions in quadrant, half horizontal and full views |
 | `beta_1.png`, `beta_2.png`, `beta_3.png` | The 30 Germany and Austria beta ranges (data/beta_de_at.json) at the defaults, OG 1-bit |
 | `shade_ogv2.png`, `shade_v2.png` | Black lines only vs two shading by height variants, 2-bit OG and 4-bit TRMNL X |
+| `release_europe_1.png` to `release_europe_6.png` | Europe release list (2026-10-08): the 12 flagged ranges plus every 6th, 72 of 365, OG 1-bit at the defaults. Numbers in the captions are list positions |
+| `release_americas_1.png` to `release_americas_11.png` | Americas release list (2026-10-08): the 90 flagged ranges (mostly terrain summits) plus every 8th, 123 of 365, same settings |
+| `release_asia_1.png` to `release_asia_12.png` | Asia and Oceania release list (2026-10-08): the 103 flagged ranges plus every 8th, 137 of 365, same settings |
+| `release_africa_1.png` to `release_africa_8.png` | Africa release list (2026-10-08): every 4th range, 92 of 365 (317 are flagged, almost all as terrain summits), same settings |
 
 Regenerate with `python tools/mockup/sweep.py <mode>` (modes listed in the script).
 

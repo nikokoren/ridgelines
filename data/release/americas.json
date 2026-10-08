@@ -1,0 +1,4569 @@
+{
+ "area": "americas",
+ "name": "Americas",
+ "target": 365,
+ "note": "Written by pipeline/select.py from live Wikidata and Copernicus GLO-90; rebuild, do not hand edit.",
+ "entries": [
+  {
+   "id": "Q26777",
+   "wikidata": "Q26777",
+   "kind": "listed",
+   "name": "Sierra Nevada",
+   "peak": "Mount Whitney",
+   "peak_m": 4421,
+   "lat": 36.5786,
+   "lon": -118.2919,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q4558",
+   "wikidata": "Q4558",
+   "kind": "listed",
+   "name": "Cascade Range",
+   "peak": "Mount Rainier",
+   "peak_m": 4389,
+   "lat": 46.8505,
+   "lon": -121.76,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q357546",
+   "wikidata": "Q357546",
+   "kind": "listed",
+   "name": "Adirondack Mountains",
+   "peak": "Mount Marcy",
+   "peak_m": 1629,
+   "lat": 44.1125,
+   "lon": -73.9239,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q118899",
+   "wikidata": "Q118899",
+   "kind": "listed",
+   "name": "Brazilian Highlands",
+   "peak": "Pico da Bandeira",
+   "peak_m": 2891,
+   "lat": -20.4352,
+   "lon": -41.7963,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q250937",
+   "wikidata": "Q250937",
+   "kind": "listed",
+   "name": "Black Hills",
+   "peak": "Black Elk Peak",
+   "peak_m": 2208,
+   "lat": 43.8717,
+   "lon": -103.5317,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q559784",
+   "wikidata": "Q559784",
+   "kind": "listed",
+   "name": "Serra do Mar",
+   "peak": "Pico Maior de Friburgo",
+   "peak_m": 2366,
+   "lat": -22.3518,
+   "lon": -42.5866,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1124584",
+   "wikidata": "Q1124584",
+   "kind": "listed",
+   "name": "Sierra Madre Occidental",
+   "peak": "Cerro Mohinora",
+   "peak_m": 3308,
+   "lat": 25.9561,
+   "lon": -107.0478,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q26728",
+   "wikidata": "Q26728",
+   "kind": "listed",
+   "name": "Sierra Nevada de Santa Marta",
+   "peak": "Pico Cristóbal Colón",
+   "peak_m": 5775,
+   "lat": 10.8667,
+   "lon": -73.72,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q654527",
+   "wikidata": "Q654527",
+   "kind": "listed",
+   "name": "Sierra Maestra",
+   "peak": "Pico Turquino",
+   "peak_m": 1974,
+   "lat": 19.9894,
+   "lon": -76.8358,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q48719",
+   "wikidata": "Q48719",
+   "kind": "listed",
+   "name": "Saint Elias Mountains",
+   "peak": "Mount Logan",
+   "peak_m": 5959,
+   "lat": 60.5672,
+   "lon": -140.4053,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q144040",
+   "wikidata": "Q144040",
+   "kind": "listed",
+   "name": "Sierra Madre Oriental",
+   "peak": "Cerro El Potosí",
+   "peak_m": 3721,
+   "lat": 24.8717,
+   "lon": -100.2325,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q804330",
+   "wikidata": "Q804330",
+   "kind": "listed",
+   "name": "Cordillera Blanca",
+   "peak": "Huascarán",
+   "peak_m": 6768,
+   "lat": -9.1167,
+   "lon": -77.6,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q278070",
+   "wikidata": "Q278070",
+   "kind": "listed",
+   "name": "Trans-Mexican Volcanic Belt",
+   "peak": "Citlaltepetl",
+   "peak_m": 5636,
+   "lat": 19.0167,
+   "lon": -97.2667,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q957600",
+   "wikidata": "Q957600",
+   "kind": "listed",
+   "name": "Cordillera de Talamanca",
+   "peak": "Cerro Chirripó",
+   "peak_m": 3820,
+   "lat": 9.5,
+   "lon": -83.6,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q678687",
+   "wikidata": "Q678687",
+   "kind": "listed",
+   "name": "Aleutian Range",
+   "peak": "Mount Redoubt",
+   "peak_m": 3108,
+   "lat": 60.4853,
+   "lon": -152.7431,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q929910",
+   "wikidata": "Q929910",
+   "kind": "listed",
+   "name": "Brooks Range",
+   "peak": "Mount Isto",
+   "peak_m": 2736,
+   "lat": 69.2022,
+   "lon": -143.8017,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1141373",
+   "wikidata": "Q1141373",
+   "kind": "listed",
+   "name": "Allegheny Mountains",
+   "peak": "Spruce Knob",
+   "peak_m": 1482,
+   "lat": 38.6997,
+   "lon": -79.5328,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1544388",
+   "wikidata": "Q1544388",
+   "kind": "listed",
+   "name": "Wasatch Range",
+   "peak": "Mount Nebo",
+   "peak_m": 3637,
+   "lat": 39.8214,
+   "lon": -111.76,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q41507",
+   "wikidata": "Q41507",
+   "kind": "listed",
+   "name": "Green Mountains",
+   "peak": "Mount Mansfield",
+   "peak_m": 1340,
+   "lat": 44.5436,
+   "lon": -72.8142,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1029702",
+   "wikidata": "Q1029702",
+   "kind": "listed",
+   "name": "Sierra Madre del Sur",
+   "peak": "Cerro Nube Flane",
+   "peak_m": 3720,
+   "lat": 16.214,
+   "lon": -96.1824,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q255079",
+   "wikidata": "Q255079",
+   "kind": "listed",
+   "name": "Olympic Mountains",
+   "peak": "Mount Olympus",
+   "peak_m": 2432,
+   "lat": 47.8333,
+   "lon": -123.8333,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q27036",
+   "wikidata": "Q27036",
+   "kind": "listed",
+   "name": "Sierra Madre de Chiapas",
+   "peak": "Volcán Tajumulco",
+   "peak_m": 4203,
+   "lat": 15.0339,
+   "lon": -91.9028,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q616559",
+   "wikidata": "Q616559",
+   "kind": "listed",
+   "name": "Wrangell Mountains",
+   "peak": "Mount Blackburn",
+   "peak_m": 4996,
+   "lat": 61.8,
+   "lon": -143.5,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q765874",
+   "wikidata": "Q765874",
+   "kind": "listed",
+   "name": "Maya Mountains",
+   "peak": "Doyle's Delight",
+   "peak_m": 1124,
+   "lat": 16.5015,
+   "lon": -89.0463,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q200635",
+   "wikidata": "Q200635",
+   "kind": "listed",
+   "name": "Mantiqueira Mountains",
+   "peak": "Pedra da Mina",
+   "peak_m": 2798,
+   "lat": -22.4167,
+   "lon": -44.85,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1089367",
+   "wikidata": "Q1089367",
+   "kind": "listed",
+   "name": "Chugach Mountains",
+   "peak": "Mount Marcus Baker",
+   "peak_m": 4016,
+   "lat": 61.4378,
+   "lon": -147.751,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1360486",
+   "wikidata": "Q1360486",
+   "kind": "listed",
+   "name": "Great Smoky Mountains",
+   "peak": "Kuwohi",
+   "peak_m": 2025,
+   "lat": 35.5628,
+   "lon": -83.4986,
+   "width_km": 73,
+   "flags": []
+  },
+  {
+   "id": "Q885808",
+   "wikidata": "Q885808",
+   "kind": "listed",
+   "name": "Blue Mountains",
+   "peak": "Blue Mountain Peak",
+   "peak_m": 2256,
+   "lat": 18.0467,
+   "lon": -76.5792,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q1132302",
+   "wikidata": "Q1132302",
+   "kind": "listed",
+   "name": "Cordillera Real",
+   "peak": "Illimani",
+   "peak_m": 6438,
+   "lat": -16.6333,
+   "lon": -67.7908,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1419854",
+   "wikidata": "Q1419854",
+   "kind": "listed",
+   "name": "San Gabriel Mountains",
+   "peak": "Mount San Antonio",
+   "peak_m": 3069,
+   "lat": 34.29,
+   "lon": -117.65,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q143014",
+   "wikidata": "Q143014",
+   "kind": "listed",
+   "name": "Cordillera Oriental",
+   "peak": "Ritacuba Blanco",
+   "peak_m": 5410,
+   "lat": 6.4942,
+   "lon": -72.2975,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q586241",
+   "wikidata": "Q586241",
+   "kind": "listed",
+   "name": "Teton Range",
+   "peak": "Grand Teton",
+   "peak_m": 4199,
+   "lat": 43.75,
+   "lon": -110.83,
+   "width_km": 56,
+   "flags": []
+  },
+  {
+   "id": "Q143982",
+   "wikidata": "Q143982",
+   "kind": "listed",
+   "name": "Cordillera Central",
+   "peak": "Nevado del Huila",
+   "peak_m": 5364,
+   "lat": 2.9333,
+   "lon": -76.0333,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2263948",
+   "wikidata": "Q2263948",
+   "kind": "listed",
+   "name": "North American Cordillera",
+   "peak": "Denali",
+   "peak_m": 6190,
+   "lat": 63.0691,
+   "lon": -151.0063,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q288133",
+   "wikidata": "Q288133",
+   "kind": "listed",
+   "name": "Cordillera Darwin",
+   "peak": "Monte Shipton",
+   "peak_m": 2469,
+   "lat": -54.75,
+   "lon": -69.48,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q632794",
+   "wikidata": "Q632794",
+   "kind": "listed",
+   "name": "Hawaiian–Emperor seamount chain",
+   "peak": "Mauna Kea",
+   "peak_m": 4207,
+   "lat": 19.8206,
+   "lon": -155.468,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q931210",
+   "wikidata": "Q931210",
+   "kind": "listed",
+   "name": "Cordillera de Mérida",
+   "peak": "Pico Bolívar",
+   "peak_m": 4978,
+   "lat": 8.6667,
+   "lon": -71.0,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q732567",
+   "wikidata": "Q732567",
+   "kind": "listed",
+   "name": "Cordillera Huayhuash",
+   "peak": "Yerupajá",
+   "peak_m": 6635,
+   "lat": -10.3,
+   "lon": -76.9,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q75596",
+   "wikidata": "Q75596",
+   "kind": "listed",
+   "name": "Laurentian Mountains",
+   "peak": "Mont Raoul-Blanchard",
+   "peak_m": 1181,
+   "lat": 47.3167,
+   "lon": -70.8333,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1229470",
+   "wikidata": "Q1229470",
+   "kind": "listed",
+   "name": "Santa Monica Mountains",
+   "peak": "Sandstone Peak",
+   "peak_m": 949,
+   "lat": 34.1203,
+   "lon": -118.9319,
+   "width_km": 51,
+   "flags": []
+  },
+  {
+   "id": "Q738543",
+   "wikidata": "Q738543",
+   "kind": "listed",
+   "name": "Uinta Mountains",
+   "peak": "King's Peak",
+   "peak_m": 4123,
+   "lat": 40.7764,
+   "lon": -110.3728,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1722116",
+   "wikidata": "Q1722116",
+   "kind": "listed",
+   "name": "Wind River Range",
+   "peak": "Gannett Peak",
+   "peak_m": 4207,
+   "lat": 43.1844,
+   "lon": -109.653,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2033447",
+   "wikidata": "Q2033447",
+   "kind": "listed",
+   "name": "Ouachita Mountains",
+   "peak": "Mount Magazine",
+   "peak_m": 839,
+   "lat": 35.1672,
+   "lon": -93.645,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1530786",
+   "wikidata": "Q1530786",
+   "kind": "listed",
+   "name": "Pakaraima Mountains",
+   "peak": "Mount Roraima",
+   "peak_m": 2810,
+   "lat": 5.1419,
+   "lon": -60.7642,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1556007",
+   "wikidata": "Q1556007",
+   "kind": "listed",
+   "name": "White Mountains",
+   "peak": "Mount Washington",
+   "peak_m": 1917,
+   "lat": 44.27,
+   "lon": -71.31,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2165526",
+   "wikidata": "Q2165526",
+   "kind": "listed",
+   "name": "San Juan Mountains",
+   "peak": "Uncompahgre Peak",
+   "peak_m": 4361,
+   "lat": 38.0717,
+   "lon": -107.454,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1577959",
+   "wikidata": "Q1577959",
+   "kind": "listed",
+   "name": "San Bernardino Mountains",
+   "peak": "San Gorgonio Mountain",
+   "peak_m": 3506,
+   "lat": 34.1256,
+   "lon": -116.8764,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q331762",
+   "wikidata": "Q331762",
+   "kind": "listed",
+   "name": "Absaroka Range",
+   "peak": "Francs Peak",
+   "peak_m": 4011,
+   "lat": 43.9614,
+   "lon": -109.331,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q83788",
+   "wikidata": "Q83788",
+   "kind": "listed",
+   "name": "Cordillera Central",
+   "peak": "Pico Duarte",
+   "peak_m": 3101,
+   "lat": 19.0331,
+   "lon": -71.0053,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1514701",
+   "wikidata": "Q1514701",
+   "kind": "listed",
+   "name": "Kenai Mountains",
+   "peak": "Truuli Peak",
+   "peak_m": 2015,
+   "lat": 59.9131,
+   "lon": -150.4347,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1669849",
+   "wikidata": "Q1669849",
+   "kind": "listed",
+   "name": "Santa Cruz Mountains",
+   "peak": "Loma Prieta",
+   "peak_m": 1155,
+   "lat": 37.1108,
+   "lon": -121.845,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q59897",
+   "wikidata": "Q59897",
+   "kind": "listed",
+   "name": "Santa Catalina Mountains",
+   "peak": "Mount Lemmon",
+   "peak_m": 2795,
+   "lat": 32.443,
+   "lon": -110.788,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q2120979",
+   "wikidata": "Q2120979",
+   "kind": "listed",
+   "name": "Wilhelmina Mountains",
+   "peak": "Julianatop",
+   "peak_m": 1280,
+   "lat": 3.75,
+   "lon": -56.5,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3693409",
+   "wikidata": "Q3693409",
+   "kind": "listed",
+   "name": "Cordillera de Guanacaste",
+   "peak": "Miravalles Volcano",
+   "peak_m": 2028,
+   "lat": 10.7483,
+   "lon": -85.1528,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q428530",
+   "wikidata": "Q428530",
+   "kind": "listed",
+   "name": "Cordillera Central",
+   "peak": "Irazú Volcano",
+   "peak_m": 3432,
+   "lat": 9.9769,
+   "lon": -83.8542,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q643243",
+   "wikidata": "Q643243",
+   "kind": "listed",
+   "name": "Big Horn Mountains",
+   "peak": "Cloud Peak",
+   "peak_m": 4013,
+   "lat": 44.3822,
+   "lon": -107.1756,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1074716",
+   "wikidata": "Q1074716",
+   "kind": "listed",
+   "name": "Chiricahua Mountains",
+   "peak": "Chiricahua Peak",
+   "peak_m": 2979,
+   "lat": 31.9298,
+   "lon": -109.3823,
+   "width_km": 44,
+   "flags": []
+  },
+  {
+   "id": "Q1132237",
+   "wikidata": "Q1132237",
+   "kind": "listed",
+   "name": "Cordillera Domeyko",
+   "peak": "Cerro del Quimal",
+   "peak_m": 4278,
+   "lat": -23.1074,
+   "lon": -68.6623,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1470027",
+   "wikidata": "Q1470027",
+   "kind": "listed",
+   "name": "Front Range",
+   "peak": "Grays Peak",
+   "peak_m": 4350,
+   "lat": 39.6339,
+   "lon": -105.817,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1697657",
+   "wikidata": "Q1697657",
+   "kind": "listed",
+   "name": "Long Range Mountains",
+   "peak": "The Cabox",
+   "peak_m": 812,
+   "lat": 48.8331,
+   "lon": -58.4842,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2997153",
+   "wikidata": "Q2997153",
+   "kind": "listed",
+   "name": "Venezuelan Coastal Range",
+   "peak": "Pico Naiguatá",
+   "peak_m": 2765,
+   "lat": 10.5433,
+   "lon": -66.7825,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q648502",
+   "wikidata": "Q648502",
+   "kind": "listed",
+   "name": "Cordillera Vilcanota",
+   "peak": "Ausangate",
+   "peak_m": 6384,
+   "lat": -13.7667,
+   "lon": -71.3,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1132209",
+   "wikidata": "Q1132209",
+   "kind": "listed",
+   "name": "Cordillera Apolobamba",
+   "peak": "Chaupi Orco",
+   "peak_m": 6044,
+   "lat": -14.65,
+   "lon": -69.2333,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2603094",
+   "wikidata": "Q2603094",
+   "kind": "listed",
+   "name": "Cordillera Carabaya",
+   "peak": "Allincapac",
+   "peak_m": 5780,
+   "lat": -13.9089,
+   "lon": -70.409,
+   "width_km": 60,
+   "flags": []
+  },
+  {
+   "id": "Q3815925",
+   "wikidata": "Q3815925",
+   "kind": "listed",
+   "name": "Watkins Range",
+   "peak": "Gunnbjørn Fjeld",
+   "peak_m": 3694,
+   "lat": 68.9195,
+   "lon": -29.8985,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q636706",
+   "wikidata": "Q636706",
+   "kind": "listed",
+   "name": "California Coast Ranges",
+   "peak": "Mount Linn",
+   "peak_m": 2468,
+   "lat": 40.0368,
+   "lon": -122.855,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1329317",
+   "wikidata": "Q1329317",
+   "kind": "listed",
+   "name": "Allardyce Range",
+   "peak": "Mount Paget",
+   "peak_m": 2934,
+   "lat": -54.4167,
+   "lon": -36.5333,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1559442",
+   "wikidata": "Q1559442",
+   "kind": "listed",
+   "name": "Tehachapi Mountains",
+   "peak": "Double Mountain",
+   "peak_m": 2436,
+   "lat": 34.95,
+   "lon": -118.58,
+   "width_km": 51,
+   "flags": []
+  },
+  {
+   "id": "Q2603124",
+   "wikidata": "Q2603124",
+   "kind": "listed",
+   "name": "Vilcabamba mountain range",
+   "peak": "Salcantay",
+   "peak_m": 6271,
+   "lat": -13.3336,
+   "lon": -72.5444,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2745292",
+   "wikidata": "Q2745292",
+   "kind": "listed",
+   "name": "Pocono Mountains",
+   "peak": "Camelback Mountain",
+   "peak_m": 650,
+   "lat": 41.0419,
+   "lon": -75.3458,
+   "width_km": 79,
+   "flags": []
+  },
+  {
+   "id": "Q2961786",
+   "wikidata": "Q2961786",
+   "kind": "listed",
+   "name": "Purcell Mountains",
+   "peak": "Mount Farnham",
+   "peak_m": 3493,
+   "lat": 50.4889,
+   "lon": -116.4869,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q3121157",
+   "wikidata": "Q3121157",
+   "kind": "listed",
+   "name": "Baffin Mountains",
+   "peak": "Mount Odin",
+   "peak_m": 2147,
+   "lat": 66.55,
+   "lon": -65.4333,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q692982",
+   "wikidata": "Q692982",
+   "kind": "listed",
+   "name": "Guadalupe Mountains",
+   "peak": "Guadalupe Peak",
+   "peak_m": 2667,
+   "lat": 31.8911,
+   "lon": -104.86,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1502403",
+   "wikidata": "Q1502403",
+   "kind": "listed",
+   "name": "Panamint Range",
+   "peak": "Telescope Peak",
+   "peak_m": 3366,
+   "lat": 36.1699,
+   "lon": -117.089,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1974825",
+   "wikidata": "Q1974825",
+   "kind": "listed",
+   "name": "San Francisco Peaks",
+   "peak": "Humphreys Peak",
+   "peak_m": 3847,
+   "lat": 35.3464,
+   "lon": -111.678,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2478659",
+   "wikidata": "Q2478659",
+   "kind": "listed",
+   "name": "Chisos Mountains",
+   "peak": "Emory Peak",
+   "peak_m": 2385,
+   "lat": 29.27,
+   "lon": -103.3,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q2608181",
+   "wikidata": "Q2608181",
+   "kind": "listed",
+   "name": "Patagonian Andes",
+   "peak": "Monte San Valentin",
+   "peak_m": 4058,
+   "lat": -46.595,
+   "lon": -73.3458,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1027662",
+   "wikidata": "Q1027662",
+   "kind": "listed",
+   "name": "Gallatin Range",
+   "peak": "Electric Peak",
+   "peak_m": 3341,
+   "lat": 45.0053,
+   "lon": -110.837,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1132259",
+   "wikidata": "Q1132259",
+   "kind": "listed",
+   "name": "Cordillera Occidental",
+   "peak": "Nevado Sajama",
+   "peak_m": 6542,
+   "lat": -18.1081,
+   "lon": -68.8831,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1264835",
+   "wikidata": "Q1264835",
+   "kind": "listed",
+   "name": "Presidential Range",
+   "peak": "Mount Washington",
+   "peak_m": 2376,
+   "lat": 44.3321,
+   "lon": -121.839,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1433957",
+   "wikidata": "Q1433957",
+   "kind": "listed",
+   "name": "White Mountains",
+   "peak": "White Mountain Peak",
+   "peak_m": 4344,
+   "lat": 37.58,
+   "lon": -118.27,
+   "width_km": 78,
+   "flags": []
+  },
+  {
+   "id": "Q1478903",
+   "wikidata": "Q1478903",
+   "kind": "listed",
+   "name": "Sawatch Range",
+   "peak": "Mount Elbert",
+   "peak_m": 4401,
+   "lat": 39.1177,
+   "lon": -106.445,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1752253",
+   "wikidata": "Q1752253",
+   "kind": "listed",
+   "name": "Laramie Mountains",
+   "peak": "Laramie Peak",
+   "peak_m": 3132,
+   "lat": 42.2678,
+   "lon": -105.4419,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1756672",
+   "wikidata": "Q1756672",
+   "kind": "listed",
+   "name": "Santa Ana Mountains",
+   "peak": "Santiago Peak",
+   "peak_m": 1734,
+   "lat": 33.7106,
+   "lon": -117.5342,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1816015",
+   "wikidata": "Q1816015",
+   "kind": "listed",
+   "name": "Cordillera Real",
+   "peak": "Cotopaxi volcano",
+   "peak_m": 5897,
+   "lat": -0.6806,
+   "lon": -78.4378,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1840447",
+   "wikidata": "Q1840447",
+   "kind": "listed",
+   "name": "Fairweather Range",
+   "peak": "Mount Fairweather",
+   "peak_m": 4671,
+   "lat": 58.9065,
+   "lon": -137.5266,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2367757",
+   "wikidata": "Q2367757",
+   "kind": "listed",
+   "name": "Henry Mountains",
+   "peak": "Mount Ellen",
+   "peak_m": 3507,
+   "lat": 38.1088,
+   "lon": -110.814,
+   "width_km": 40,
+   "flags": []
+  },
+  {
+   "id": "Q2384085",
+   "wikidata": "Q2384085",
+   "kind": "listed",
+   "name": "Chaîne de la Selle",
+   "peak": "Peak la Selle",
+   "peak_m": 2674,
+   "lat": 18.3667,
+   "lon": -71.9833,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2477664",
+   "wikidata": "Q2477664",
+   "kind": "listed",
+   "name": "Taconic Mountains",
+   "peak": "Equinox Mountain",
+   "peak_m": 1163,
+   "lat": 43.1704,
+   "lon": -73.1112,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q372185",
+   "wikidata": "Q372185",
+   "kind": "listed",
+   "name": "Sierra de San Pedro Mártir",
+   "peak": "Picacho del Diablo",
+   "peak_m": 3096,
+   "lat": 30.9908,
+   "lon": -115.375,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q476913",
+   "wikidata": "Q476913",
+   "kind": "listed",
+   "name": "Siskiyou Mountains",
+   "peak": "Mount Ashland",
+   "peak_m": 2296,
+   "lat": 42.0806,
+   "lon": -122.7172,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q820961",
+   "wikidata": "Q820961",
+   "kind": "listed",
+   "name": "Berkshires",
+   "peak": "Mount Greylock",
+   "peak_m": 1064,
+   "lat": 42.6375,
+   "lon": -73.1667,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q828541",
+   "wikidata": "Q828541",
+   "kind": "listed",
+   "name": "Tordrillo Mountains",
+   "peak": "Mount Torbert",
+   "peak_m": 3434,
+   "lat": 61.4094,
+   "lon": -152.4117,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1428678",
+   "wikidata": "Q1428678",
+   "kind": "listed",
+   "name": "Santa Rita Mountains",
+   "peak": "Mount Wrightson",
+   "peak_m": 2881,
+   "lat": 31.7231,
+   "lon": -110.8803,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q17072376",
+   "wikidata": "Q17072376",
+   "kind": "listed",
+   "name": "Hart Ranges",
+   "peak": "Mount Ovington",
+   "peak_m": 2949,
+   "lat": 54.1499,
+   "lon": -120.5695,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1780581",
+   "wikidata": "Q1780581",
+   "kind": "listed",
+   "name": "United States Range",
+   "peak": "Mount Eugene",
+   "peak_m": 1880,
+   "lat": 82.42,
+   "lon": -68.0,
+   "width_km": 74,
+   "flags": []
+  },
+  {
+   "id": "Q3088333",
+   "wikidata": "Q3088333",
+   "kind": "listed",
+   "name": "Spring Mountains",
+   "peak": "Charleston Peak",
+   "peak_m": 3632,
+   "lat": 36.2981,
+   "lon": -115.664,
+   "width_km": 47,
+   "flags": []
+  },
+  {
+   "id": "Q3116170",
+   "wikidata": "Q3116170",
+   "kind": "listed",
+   "name": "Massif de la Hotte",
+   "peak": "Pic Macaya",
+   "peak_m": 2347,
+   "lat": 18.3831,
+   "lon": -74.0256,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q467386",
+   "wikidata": "Q467386",
+   "kind": "listed",
+   "name": "La Sal Mountains",
+   "peak": "Mount Peale",
+   "peak_m": 3876,
+   "lat": 38.4489,
+   "lon": -109.241,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q528048",
+   "wikidata": "Q528048",
+   "kind": "listed",
+   "name": "Monteregian Hills",
+   "peak": "Mont Mégantic",
+   "peak_m": 1110,
+   "lat": 45.4558,
+   "lon": -71.1528,
+   "width_km": 72,
+   "flags": []
+  },
+  {
+   "id": "Q6651844",
+   "wikidata": "Q6651844",
+   "kind": "listed",
+   "name": "Little San Bernardino Mountains",
+   "peak": "Quail Mountain",
+   "peak_m": 1772,
+   "lat": 33.9742,
+   "lon": -116.3167,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q751704",
+   "wikidata": "Q751704",
+   "kind": "listed",
+   "name": "Wallowa Mountains",
+   "peak": "Sacajawea Peak",
+   "peak_m": 2999,
+   "lat": 45.2,
+   "lon": -117.32,
+   "width_km": 51,
+   "flags": []
+  },
+  {
+   "id": "Q779298",
+   "wikidata": "Q779298",
+   "kind": "listed",
+   "name": "Cordillera Occidental",
+   "peak": "Chimborazo",
+   "peak_m": 6263,
+   "lat": -1.4692,
+   "lon": -78.8175,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q786567",
+   "wikidata": "Q786567",
+   "kind": "listed",
+   "name": "Cordillera Oriental",
+   "peak": "Tunari",
+   "peak_m": 5023,
+   "lat": -17.2865,
+   "lon": -66.3926,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1132308",
+   "wikidata": "Q1132308",
+   "kind": "listed",
+   "name": "Cordillera de Lípez",
+   "peak": "Uturuncu",
+   "peak_m": 6008,
+   "lat": -22.2645,
+   "lon": -67.1869,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1419187",
+   "wikidata": "Q1419187",
+   "kind": "listed",
+   "name": "Sangre de Cristo Range",
+   "peak": "Blanca Peak",
+   "peak_m": 4374,
+   "lat": 37.5772,
+   "lon": -105.486,
+   "width_km": 76,
+   "flags": []
+  },
+  {
+   "id": "Q14874910",
+   "wikidata": "Q14874910",
+   "kind": "listed",
+   "name": "Waputik Mountains",
+   "peak": "Howse Peak",
+   "peak_m": 3295,
+   "lat": 51.8139,
+   "lon": -116.6811,
+   "width_km": 49,
+   "flags": []
+  },
+  {
+   "id": "Q1758915",
+   "wikidata": "Q1758915",
+   "kind": "listed",
+   "name": "Otish Mountains",
+   "peak": "Mont Yapeitso",
+   "peak_m": 1128,
+   "lat": 52.3223,
+   "lon": -70.4451,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q3446571",
+   "wikidata": "Q3446571",
+   "kind": "listed",
+   "name": "Ruby Mountains",
+   "peak": "Ruby Dome",
+   "peak_m": 3471,
+   "lat": 40.6219,
+   "lon": -115.475,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3468538",
+   "wikidata": "Q3468538",
+   "kind": "listed",
+   "name": "Neacola Mountains",
+   "peak": "Mount Neacola",
+   "peak_m": 2873,
+   "lat": 60.7986,
+   "lon": -153.394,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7901546",
+   "wikidata": "Q7901546",
+   "kind": "listed",
+   "name": "Urubamba mountain range",
+   "peak": "Sahuasiray",
+   "peak_m": 5818,
+   "lat": -13.2133,
+   "lon": -71.99,
+   "width_km": 60,
+   "flags": []
+  },
+  {
+   "id": "Q879368",
+   "wikidata": "Q879368",
+   "kind": "listed",
+   "name": "Sierra de la Ventana",
+   "peak": "Cerro Tres Picos",
+   "peak_m": 1239,
+   "lat": -38.1556,
+   "lon": -61.95,
+   "width_km": 80,
+   "flags": [
+    "thin ripples (0.09)"
+   ]
+  },
+  {
+   "id": "Q919170",
+   "wikidata": "Q919170",
+   "kind": "listed",
+   "name": "British Empire Range",
+   "peak": "Barbeau Peak",
+   "peak_m": 2616,
+   "lat": 81.9147,
+   "lon": -75.0092,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1115648",
+   "wikidata": "Q1115648",
+   "kind": "listed",
+   "name": "Cordillera Central",
+   "peak": "Cerro de Punta",
+   "peak_m": 1338,
+   "lat": 18.1725,
+   "lon": -66.5919,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1121658",
+   "wikidata": "Q1121658",
+   "kind": "listed",
+   "name": "Serra Geral",
+   "peak": "Morro da Igreja",
+   "peak_m": 1822,
+   "lat": -28.125,
+   "lon": -49.4744,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1132318",
+   "wikidata": "Q1132318",
+   "kind": "listed",
+   "name": "Cordillera de los Frailes",
+   "peak": "Nuevo Mundo volcano",
+   "peak_m": 5462,
+   "lat": -19.7742,
+   "lon": -66.4783,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1143699",
+   "wikidata": "Q1143699",
+   "kind": "listed",
+   "name": "Cumberland Mountains",
+   "peak": "High Knob",
+   "peak_m": 1287,
+   "lat": 36.8926,
+   "lon": -82.6296,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1145853",
+   "wikidata": "Q1145853",
+   "kind": "listed",
+   "name": "Beartooth Mountains",
+   "peak": "Granite Peak",
+   "peak_m": 3904,
+   "lat": 45.1633,
+   "lon": -109.807,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1248010",
+   "wikidata": "Q1248010",
+   "kind": "listed",
+   "name": "Oquirrh Mountains",
+   "peak": "Flat Top Mountain",
+   "peak_m": 3235,
+   "lat": 40.3725,
+   "lon": -112.1892,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q130057",
+   "wikidata": "Q130057",
+   "kind": "listed",
+   "name": "Abajo Mountains",
+   "peak": "Abajo Peak",
+   "peak_m": 3465,
+   "lat": 37.8505,
+   "lon": -109.5471,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1326192",
+   "wikidata": "Q1326192",
+   "kind": "listed",
+   "name": "Franklin Mountains",
+   "peak": "Cap Mountain",
+   "peak_m": 1570,
+   "lat": 63.407,
+   "lon": -123.2155,
+   "width_km": 80,
+   "flags": [
+    "thin ripples (0.09)"
+   ]
+  },
+  {
+   "id": "Q2747638",
+   "wikidata": "Q2747638",
+   "kind": "listed",
+   "name": "Lewis Range",
+   "peak": "Mount Cleveland",
+   "peak_m": 3194,
+   "lat": 48.9247,
+   "lon": -113.848,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2841975",
+   "wikidata": "Q2841975",
+   "kind": "listed",
+   "name": "Franklin Mountains",
+   "peak": "North Franklin Mountain",
+   "peak_m": 2192,
+   "lat": 31.9028,
+   "lon": -106.493,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.07)"
+   ]
+  },
+  {
+   "id": "Q2912061",
+   "wikidata": "Q2912061",
+   "kind": "listed",
+   "name": "Waputik Range",
+   "peak": "Mount Balfour",
+   "peak_m": 3272,
+   "lat": 51.5331,
+   "lon": -116.3672,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q2961855",
+   "wikidata": "Q2961855",
+   "kind": "listed",
+   "name": "Kananaskis Range",
+   "peak": "Mount Galatea",
+   "peak_m": 3185,
+   "lat": 50.8389,
+   "lon": -115.275,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2961868",
+   "wikidata": "Q2961868",
+   "kind": "listed",
+   "name": "Winston Churchill Range",
+   "peak": "Mount Columbia",
+   "peak_m": 3747,
+   "lat": 52.1475,
+   "lon": -117.4406,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q2961872",
+   "wikidata": "Q2961872",
+   "kind": "listed",
+   "name": "Skagit Range",
+   "peak": "Mount Baker",
+   "peak_m": 3286,
+   "lat": 48.7773,
+   "lon": -121.8132,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3109569",
+   "wikidata": "Q3109569",
+   "kind": "listed",
+   "name": "Goat Rocks",
+   "peak": "Gilbert Peak",
+   "peak_m": 2494,
+   "lat": 46.4886,
+   "lon": -121.4058,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q3432180",
+   "wikidata": "Q3432180",
+   "kind": "listed",
+   "name": "Rincon Mountains",
+   "peak": "Mica Mountain",
+   "peak_m": 2642,
+   "lat": 32.17,
+   "lon": -110.51,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q4468442",
+   "wikidata": "Q4468442",
+   "kind": "listed",
+   "name": "White Mountains",
+   "peak": "Mount Baldy",
+   "peak_m": 3477,
+   "lat": 33.9061,
+   "lon": -109.563,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5015465",
+   "wikidata": "Q5015465",
+   "kind": "listed",
+   "name": "Cabinet Mountains",
+   "peak": "Snowshoe Peak",
+   "peak_m": 2663,
+   "lat": 48.1666,
+   "lon": -115.8343,
+   "width_km": 74,
+   "flags": []
+  },
+  {
+   "id": "Q5679589",
+   "wikidata": "Q5679589",
+   "kind": "listed",
+   "name": "Cordillera Ampato",
+   "peak": "Coropuna",
+   "peak_m": 6425,
+   "lat": -15.5203,
+   "lon": -72.6572,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q6942848",
+   "wikidata": "Q6942848",
+   "kind": "listed",
+   "name": "Muskwa Ranges",
+   "peak": "Mount Ulysses",
+   "peak_m": 3024,
+   "lat": 57.3464,
+   "lon": -124.0928,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q7058903",
+   "wikidata": "Q7058903",
+   "kind": "listed",
+   "name": "Northern Range",
+   "peak": "El Cerro del Aripo",
+   "peak_m": 940,
+   "lat": 10.7333,
+   "lon": -61.25,
+   "width_km": 72,
+   "flags": []
+  },
+  {
+   "id": "Q7194814",
+   "wikidata": "Q7194814",
+   "kind": "listed",
+   "name": "Pinaleño Mountains",
+   "peak": "Mount Graham",
+   "peak_m": 3267,
+   "lat": 32.7014,
+   "lon": -109.8717,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7284691",
+   "wikidata": "Q7284691",
+   "kind": "listed",
+   "name": "Rainbow Range",
+   "peak": "Tsitsutl Peak",
+   "peak_m": 2495,
+   "lat": 52.67,
+   "lon": -125.83,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q8534941",
+   "wikidata": "Q8534941",
+   "kind": "listed",
+   "name": "Cerro de la Neblina",
+   "peak": "Pico da Neblina",
+   "peak_m": 2994,
+   "lat": 0.8864,
+   "lon": -65.9894,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q879008",
+   "wikidata": "Q879008",
+   "kind": "listed",
+   "name": "Bitterroot Mountains",
+   "peak": "Trapper Peak",
+   "peak_m": 3096,
+   "lat": 45.8898,
+   "lon": -114.298,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q13507396",
+   "wikidata": "Q13507396",
+   "kind": "listed",
+   "name": "Stauning Alps",
+   "peak": "Dansketinden",
+   "peak_m": 2842,
+   "lat": 72.125,
+   "lon": -24.955,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1367141",
+   "wikidata": "Q1367141",
+   "kind": "listed",
+   "name": "Sierra Blanca",
+   "peak": "Sierra Blanca Peak",
+   "peak_m": 3649,
+   "lat": 33.3743,
+   "lon": -105.809,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1422677",
+   "wikidata": "Q1422677",
+   "kind": "listed",
+   "name": "Santa Lucia Range",
+   "peak": "Junipero Serra Peak",
+   "peak_m": 1785,
+   "lat": 36.0511,
+   "lon": -121.4691,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1584534",
+   "wikidata": "Q1584534",
+   "kind": "listed",
+   "name": "Serra da Cantareira",
+   "peak": "Pico do Jaraguá",
+   "peak_m": 1135,
+   "lat": -23.4593,
+   "lon": -46.7674,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1916284",
+   "wikidata": "Q1916284",
+   "kind": "listed",
+   "name": "Medicine Bow Mountains",
+   "peak": "Clark Peak",
+   "peak_m": 3947,
+   "lat": 40.6068,
+   "lon": -105.93,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2961852",
+   "wikidata": "Q2961852",
+   "kind": "listed",
+   "name": "Gabilan Range",
+   "peak": "Fremont Peak",
+   "peak_m": 967,
+   "lat": 36.7572,
+   "lon": -121.504,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2961861",
+   "wikidata": "Q2961861",
+   "kind": "listed",
+   "name": "Okanagan Range",
+   "peak": "Mount Lago",
+   "peak_m": 2665,
+   "lat": 48.8292,
+   "lon": -120.5369,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3081133",
+   "wikidata": "Q3081133",
+   "kind": "listed",
+   "name": "San Andres Mountains",
+   "peak": "Salinas Peak",
+   "peak_m": 2733,
+   "lat": 33.2986,
+   "lon": -106.531,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3197589",
+   "wikidata": "Q3197589",
+   "kind": "listed",
+   "name": "Kitimat Ranges",
+   "peak": "Howson Peak",
+   "peak_m": 2759,
+   "lat": 54.4186,
+   "lon": -127.7439,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3323052",
+   "wikidata": "Q3323052",
+   "kind": "listed",
+   "name": "Entiat Mountains",
+   "peak": "Mount Fernow",
+   "peak_m": 2819,
+   "lat": 48.1619,
+   "lon": -120.808,
+   "width_km": 68,
+   "flags": []
+  },
+  {
+   "id": "Q3323122",
+   "wikidata": "Q3323122",
+   "kind": "listed",
+   "name": "Wenatchee Mountains",
+   "peak": "Mount Stuart",
+   "peak_m": 2869,
+   "lat": 47.4251,
+   "lon": -120.8329,
+   "width_km": 76,
+   "flags": []
+  },
+  {
+   "id": "Q3861076",
+   "wikidata": "Q3861076",
+   "kind": "listed",
+   "name": "Chuska Mountains",
+   "peak": "Roof Butte",
+   "peak_m": 2983,
+   "lat": 36.4614,
+   "lon": -109.0963,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q479007",
+   "wikidata": "Q479007",
+   "kind": "listed",
+   "name": "Carson Range",
+   "peak": "Freel Peak",
+   "peak_m": 3318,
+   "lat": 38.8575,
+   "lon": -119.9,
+   "width_km": 67,
+   "flags": []
+  },
+  {
+   "id": "Q5127364",
+   "wikidata": "Q5127364",
+   "kind": "listed",
+   "name": "Clark Range",
+   "peak": "Merced Peak",
+   "peak_m": 3567,
+   "lat": 37.68,
+   "lon": -119.4,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q592208",
+   "wikidata": "Q592208",
+   "kind": "listed",
+   "name": "Lost River Range",
+   "peak": "Borah Peak",
+   "peak_m": 3857,
+   "lat": 44.1374,
+   "lon": -113.781,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1139255",
+   "wikidata": "Q1139255",
+   "kind": "listed",
+   "name": "Crazy Mountains",
+   "peak": "Crazy Peak",
+   "peak_m": 3418,
+   "lat": 46.0178,
+   "lon": -110.277,
+   "width_km": 48,
+   "flags": []
+  },
+  {
+   "id": "Q14705286",
+   "wikidata": "Q14705286",
+   "kind": "listed",
+   "name": "Toquima Range",
+   "peak": "Mount Jefferson",
+   "peak_m": 3641,
+   "lat": 38.9408,
+   "lon": -116.836,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2721679",
+   "wikidata": "Q2721679",
+   "kind": "listed",
+   "name": "Warner Mountains",
+   "peak": "Eagle Peak",
+   "peak_m": 3017,
+   "lat": 41.2834,
+   "lon": -120.201,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q3475317",
+   "wikidata": "Q3475317",
+   "kind": "listed",
+   "name": "Schell Creek Range",
+   "peak": "North Schell Peak",
+   "peak_m": 3622,
+   "lat": 39.4132,
+   "lon": -114.5997,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3479953",
+   "wikidata": "Q3479953",
+   "kind": "listed",
+   "name": "Serranía del Darién",
+   "peak": "Cerro Tacarcuna",
+   "peak_m": 1875,
+   "lat": 8.1667,
+   "lon": -77.3,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q4139132",
+   "wikidata": "Q4139132",
+   "kind": "listed",
+   "name": "Principal Cordillera",
+   "peak": "Aconcagua",
+   "peak_m": 6962,
+   "lat": -32.6531,
+   "lon": -70.0117,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q4851215",
+   "wikidata": "Q4851215",
+   "kind": "listed",
+   "name": "Ball Range",
+   "peak": "Mount Ball",
+   "peak_m": 3311,
+   "lat": 51.15,
+   "lon": -116.0167,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5433979",
+   "wikidata": "Q5433979",
+   "kind": "listed",
+   "name": "Fannin Range",
+   "peak": "Mount Bishop",
+   "peak_m": 1509,
+   "lat": 49.4833,
+   "lon": -122.924,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5688284",
+   "wikidata": "Q5688284",
+   "kind": "listed",
+   "name": "Huallanca mountain range",
+   "peak": "Huallanca",
+   "peak_m": 5470,
+   "lat": -9.9167,
+   "lon": -77.0389,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5997798",
+   "wikidata": "Q5997798",
+   "kind": "listed",
+   "name": "Ilgachuz Range",
+   "peak": "Far Mountain",
+   "peak_m": 2410,
+   "lat": 52.77,
+   "lon": -125.3,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q7856755",
+   "wikidata": "Q7856755",
+   "kind": "listed",
+   "name": "Tushar Mountains",
+   "peak": "Delano Peak",
+   "peak_m": 3710,
+   "lat": 38.3692,
+   "lon": -112.371,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7958996",
+   "wikidata": "Q7958996",
+   "kind": "listed",
+   "name": "Waddington Range",
+   "peak": "Mount Waddington",
+   "peak_m": 4019,
+   "lat": 51.3831,
+   "lon": -125.3347,
+   "width_km": 63,
+   "flags": []
+  },
+  {
+   "id": "Q7994576",
+   "wikidata": "Q7994576",
+   "kind": "listed",
+   "name": "White Cloud Mountains",
+   "peak": "Castle Peak",
+   "peak_m": 3601,
+   "lat": 44.0395,
+   "lon": -114.5855,
+   "width_km": 40,
+   "flags": []
+  },
+  {
+   "id": "Q1034277",
+   "wikidata": "Q1034277",
+   "kind": "listed",
+   "name": "Cape Breton Highlands",
+   "peak": "White Hill",
+   "peak_m": 535,
+   "lat": 46.7499,
+   "lon": -60.5983,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q14706057",
+   "wikidata": "Q14706057",
+   "kind": "listed",
+   "name": "Manzano Mountains",
+   "peak": "Manzano Peak",
+   "peak_m": 3078,
+   "lat": 34.5909,
+   "lon": -106.4467,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1611163",
+   "wikidata": "Q1611163",
+   "kind": "listed",
+   "name": "Vancouver Island Ranges",
+   "peak": "Golden Hinde",
+   "peak_m": 2195,
+   "lat": 49.67,
+   "lon": -125.82,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2047839",
+   "wikidata": "Q2047839",
+   "kind": "listed",
+   "name": "Palisades",
+   "peak": "North Palisade",
+   "peak_m": 4343,
+   "lat": 37.0942,
+   "lon": -118.514,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2284506",
+   "wikidata": "Q2284506",
+   "kind": "listed",
+   "name": "Sierras de Comechingones",
+   "peak": "Mount Champaquí",
+   "peak_m": 2790,
+   "lat": -31.9833,
+   "lon": -64.9333,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2961867",
+   "wikidata": "Q2961867",
+   "kind": "listed",
+   "name": "Sawback Range",
+   "peak": "Mount St. Bride",
+   "peak_m": 3315,
+   "lat": 51.5078,
+   "lon": -115.9553,
+   "width_km": 36,
+   "flags": []
+  },
+  {
+   "id": "Q2961871",
+   "wikidata": "Q2961871",
+   "kind": "listed",
+   "name": "Vermilion Range",
+   "peak": "Cascade Mountain",
+   "peak_m": 2998,
+   "lat": 51.2283,
+   "lon": -115.563,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q3323120",
+   "wikidata": "Q3323120",
+   "kind": "listed",
+   "name": "Monts Valin",
+   "peak": "Pic Dubuc",
+   "peak_m": 880,
+   "lat": 48.6131,
+   "lon": -70.7967,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q4877478",
+   "wikidata": "Q4877478",
+   "kind": "listed",
+   "name": "Beaufort Range",
+   "peak": "Mount Joan",
+   "peak_m": 1556,
+   "lat": 49.4147,
+   "lon": -124.92,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q4921364",
+   "wikidata": "Q4921364",
+   "kind": "listed",
+   "name": "Black Mountains",
+   "peak": "Mount Mitchell",
+   "peak_m": 2037,
+   "lat": 35.7647,
+   "lon": -82.2653,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q4955117",
+   "wikidata": "Q4955117",
+   "kind": "listed",
+   "name": "Bradshaw Mountains",
+   "peak": "Mount Union",
+   "peak_m": 2435,
+   "lat": 34.4147,
+   "lon": -112.4039,
+   "width_km": 51,
+   "flags": []
+  },
+  {
+   "id": "Q5270877",
+   "wikidata": "Q5270877",
+   "kind": "listed",
+   "name": "Diamond Mountains",
+   "peak": "Diamond Peak",
+   "peak_m": 3240,
+   "lat": 39.5853,
+   "lon": -115.8186,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5364086",
+   "wikidata": "Q5364086",
+   "kind": "listed",
+   "name": "Elk Range",
+   "peak": "Mount Pocaterra",
+   "peak_m": 2941,
+   "lat": 50.5992,
+   "lon": -115.029,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5523296",
+   "wikidata": "Q5523296",
+   "kind": "listed",
+   "name": "Garibaldi Ranges",
+   "peak": "Wedge Mountain",
+   "peak_m": 2895,
+   "lat": 50.1331,
+   "lon": -122.793,
+   "width_km": 66,
+   "flags": []
+  },
+  {
+   "id": "Q5586126",
+   "wikidata": "Q5586126",
+   "kind": "listed",
+   "name": "Gore Range",
+   "peak": "Mount Powell",
+   "peak_m": 4141,
+   "lat": 39.8333,
+   "lon": -106.4172,
+   "width_km": 61,
+   "flags": []
+  },
+  {
+   "id": "Q5647134",
+   "wikidata": "Q5647134",
+   "kind": "listed",
+   "name": "Sierra Vicuña Mackenna",
+   "peak": "Cerro Vicuña Mackenna",
+   "peak_m": 3114,
+   "lat": -24.45,
+   "lon": -70.05,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q5925202",
+   "wikidata": "Q5925202",
+   "kind": "listed",
+   "name": "Hualapai Mountains",
+   "peak": "Hualapai Peak",
+   "peak_m": 2566,
+   "lat": 35.075,
+   "lon": -113.9008,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q607323",
+   "wikidata": "Q607323",
+   "kind": "listed",
+   "name": "Chila mountain range",
+   "peak": "Ch'ila",
+   "peak_m": 5654,
+   "lat": -15.4064,
+   "lon": -72.1664,
+   "width_km": 64,
+   "flags": []
+  },
+  {
+   "id": "Q6378775",
+   "wikidata": "Q6378775",
+   "kind": "listed",
+   "name": "Kaumajet Mountains",
+   "peak": "Brave Mountain",
+   "peak_m": 1300,
+   "lat": 57.8814,
+   "lon": -62.0264,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q6462724",
+   "wikidata": "Q6462724",
+   "kind": "listed",
+   "name": "La Garita Mountains",
+   "peak": "San Luis Peak",
+   "peak_m": 4271,
+   "lat": 38.0228,
+   "lon": -106.923,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7137951",
+   "wikidata": "Q7137951",
+   "kind": "listed",
+   "name": "Park Range",
+   "peak": "Mount Zirkel",
+   "peak_m": 3712,
+   "lat": 40.8311,
+   "lon": -106.663,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q7244701",
+   "wikidata": "Q7244701",
+   "kind": "listed",
+   "name": "Princess Margaret Range",
+   "peak": "Outlook Peak",
+   "peak_m": 1920,
+   "lat": 79.75,
+   "lon": -90.83,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q7448930",
+   "wikidata": "Q7448930",
+   "kind": "listed",
+   "name": "Selwyn Mountains",
+   "peak": "Keele Peak",
+   "peak_m": 2972,
+   "lat": 63.4314,
+   "lon": -130.3239,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7720516",
+   "wikidata": "Q7720516",
+   "kind": "listed",
+   "name": "The Bugaboos",
+   "peak": "Howser Spire",
+   "peak_m": 3412,
+   "lat": 50.7458,
+   "lon": -116.789,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q8040386",
+   "wikidata": "Q8040386",
+   "kind": "listed",
+   "name": "Wyoming Range",
+   "peak": "Wyoming Peak",
+   "peak_m": 3470,
+   "lat": 42.6044,
+   "lon": -110.6243,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1259245",
+   "wikidata": "Q1259245",
+   "kind": "listed",
+   "name": "San Emigdio Mountains",
+   "peak": "San Emigdio Mountain",
+   "peak_m": 2284,
+   "lat": 34.8733,
+   "lon": -119.179,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q13635458",
+   "wikidata": "Q13635458",
+   "kind": "listed",
+   "name": "Grapevine Mountains",
+   "peak": "Grapevine Peak",
+   "peak_m": 2663,
+   "lat": 36.9652,
+   "lon": -117.149,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q14874778",
+   "wikidata": "Q14874778",
+   "kind": "listed",
+   "name": "Tuya Range",
+   "peak": "Ash Mountain",
+   "peak_m": 2125,
+   "lat": 59.3444,
+   "lon": -130.509,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q14874908",
+   "wikidata": "Q14874908",
+   "kind": "listed",
+   "name": "Victoria Cross Ranges",
+   "peak": "Snaring Mountain",
+   "peak_m": 2931,
+   "lat": 53.0,
+   "lon": -118.3,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q2348074",
+   "wikidata": "Q2348074",
+   "kind": "listed",
+   "name": "Sierra Mixteca",
+   "peak": "Zempoaltepetl",
+   "peak_m": 3396,
+   "lat": 17.1325,
+   "lon": -96.0125,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q24192718",
+   "wikidata": "Q24192718",
+   "kind": "listed",
+   "name": "Pinal Mountains",
+   "peak": "Pinal Peak",
+   "peak_m": 2392,
+   "lat": 33.2823,
+   "lon": -110.8212,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2961794",
+   "wikidata": "Q2961794",
+   "kind": "listed",
+   "name": "Northern Oregon Coast Range",
+   "peak": "Rogers Peak",
+   "peak_m": 1130,
+   "lat": 45.6647,
+   "lon": -123.5481,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q3323091",
+   "wikidata": "Q3323091",
+   "kind": "listed",
+   "name": "Mayacamas Mountains",
+   "peak": "Cobb Mountain",
+   "peak_m": 1440,
+   "lat": 38.67,
+   "lon": -122.633,
+   "width_km": 68,
+   "flags": []
+  },
+  {
+   "id": "Q4019477",
+   "wikidata": "Q4019477",
+   "kind": "listed",
+   "name": "Whetstone Mountains",
+   "peak": "Apache Peak",
+   "peak_m": 2351,
+   "lat": 31.81,
+   "lon": -110.42,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q4878244",
+   "wikidata": "Q4878244",
+   "kind": "listed",
+   "name": "Beaverhead Mountains",
+   "peak": "Scott Peak",
+   "peak_m": 3473,
+   "lat": 44.3539,
+   "lon": -112.821,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q4906262",
+   "wikidata": "Q4906262",
+   "kind": "listed",
+   "name": "Big Salmon Range",
+   "peak": "Gray Peak",
+   "peak_m": 2174,
+   "lat": 61.1787,
+   "lon": -133.617,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q49176129",
+   "wikidata": "Q49176129",
+   "kind": "listed",
+   "name": "Deep Creek Range",
+   "peak": "Ibapah Peak",
+   "peak_m": 3663,
+   "lat": 39.85,
+   "lon": -113.91,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q4947151",
+   "wikidata": "Q4947151",
+   "kind": "listed",
+   "name": "Bosche Range",
+   "peak": "Mount Aeolus",
+   "peak_m": 2643,
+   "lat": 53.3,
+   "lon": -118.17,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5063897",
+   "wikidata": "Q5063897",
+   "kind": "listed",
+   "name": "Cerbat Mountains",
+   "peak": "Mount Tipton",
+   "peak_m": 2180,
+   "lat": 35.4311,
+   "lon": -114.1677,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5197085",
+   "wikidata": "Q5197085",
+   "kind": "listed",
+   "name": "Cuyamaca Mountains",
+   "peak": "Cuyamaca Peak",
+   "peak_m": 1986,
+   "lat": 32.942,
+   "lon": -116.604,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5578820",
+   "wikidata": "Q5578820",
+   "kind": "listed",
+   "name": "Gold Range",
+   "peak": "Mount Odin",
+   "peak_m": 2971,
+   "lat": 50.6167,
+   "lon": -118.1667,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5598693",
+   "wikidata": "Q5598693",
+   "kind": "listed",
+   "name": "Great Balsam Mountains",
+   "peak": "Richland Balsam",
+   "peak_m": 1954,
+   "lat": 35.3443,
+   "lon": -82.983,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5924983",
+   "wikidata": "Q5924983",
+   "kind": "listed",
+   "name": "Huachuca Mountains",
+   "peak": "Miller Peak",
+   "peak_m": 2879,
+   "lat": 31.4094,
+   "lon": -110.293,
+   "width_km": 44,
+   "flags": []
+  },
+  {
+   "id": "Q5929184",
+   "wikidata": "Q5929184",
+   "kind": "listed",
+   "name": "Hueco Mountains",
+   "peak": "Cerro Alto Mountain",
+   "peak_m": 2043,
+   "lat": 31.9453,
+   "lon": -105.97,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q6649061",
+   "wikidata": "Q6649061",
+   "kind": "listed",
+   "name": "Little Belt Mountains",
+   "peak": "Big Baldy Mountain",
+   "peak_m": 2798,
+   "lat": 46.9685,
+   "lon": -110.606,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q6986581",
+   "wikidata": "Q6986581",
+   "kind": "listed",
+   "name": "Needle Mountains",
+   "peak": "Mount Eolus",
+   "peak_m": 4295,
+   "lat": 37.6219,
+   "lon": -107.623,
+   "width_km": 43,
+   "flags": []
+  },
+  {
+   "id": "Q7196735",
+   "wikidata": "Q7196735",
+   "kind": "listed",
+   "name": "Pioneer Mountains",
+   "peak": "Hyndman Peak",
+   "peak_m": 3660,
+   "lat": 43.7494,
+   "lon": -114.131,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7270250",
+   "wikidata": "Q7270250",
+   "kind": "listed",
+   "name": "Queen Charlotte Mountains",
+   "peak": "Mount Moresby",
+   "peak_m": 1164,
+   "lat": 53.0192,
+   "lon": -132.086,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7270378",
+   "wikidata": "Q7270378",
+   "kind": "listed",
+   "name": "Queen Elizabeth Ranges",
+   "peak": "Mount Unwin",
+   "peak_m": 3268,
+   "lat": 52.61,
+   "lon": -117.528,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q7447464",
+   "wikidata": "Q7447464",
+   "kind": "listed",
+   "name": "Selamiut Range",
+   "peak": "Mount Caubvick",
+   "peak_m": 1652,
+   "lat": 58.8833,
+   "lon": -63.7167,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7567987",
+   "wikidata": "Q7567987",
+   "kind": "listed",
+   "name": "South Mountain",
+   "peak": "Quirauk Mountain",
+   "peak_m": 653,
+   "lat": 39.72,
+   "lon": -77.49,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q7631460",
+   "wikidata": "Q7631460",
+   "kind": "listed",
+   "name": "Sublett Range",
+   "peak": "Sublett Range High Point",
+   "peak_m": 2284,
+   "lat": 42.37,
+   "lon": -112.931,
+   "width_km": 48,
+   "flags": []
+  },
+  {
+   "id": "Q7824759",
+   "wikidata": "Q7824759",
+   "kind": "listed",
+   "name": "Topatopa Mountains",
+   "peak": "Hines Peak",
+   "peak_m": 2047,
+   "lat": 34.5292,
+   "lon": -119.0426,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7976889",
+   "wikidata": "Q7976889",
+   "kind": "listed",
+   "name": "Huaytapallana mountain range",
+   "peak": "Huaytapallana",
+   "peak_m": 5557,
+   "lat": -11.5864,
+   "lon": -74.8208,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q895152",
+   "wikidata": "Q895152",
+   "kind": "listed",
+   "name": "Boundary Ranges",
+   "peak": "Mount Ratz",
+   "peak_m": 3090,
+   "lat": 57.3931,
+   "lon": -132.303,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q14874648",
+   "wikidata": "Q14874648",
+   "kind": "listed",
+   "name": "Kispiox Range",
+   "peak": "Kispiox Mountain",
+   "peak_m": 2096,
+   "lat": 55.3985,
+   "lon": -127.943,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q14874774",
+   "wikidata": "Q14874774",
+   "kind": "listed",
+   "name": "Tower of London Range",
+   "peak": "Constable Peak",
+   "peak_m": 2824,
+   "lat": 58.3,
+   "lon": -124.8333,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q18681246",
+   "wikidata": "Q18681246",
+   "kind": "listed",
+   "name": "Boise Mountains",
+   "peak": "Two Point Mountain",
+   "peak_m": 3086,
+   "lat": 43.7372,
+   "lon": -114.9767,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q2124922",
+   "wikidata": "Q2124922",
+   "kind": "listed",
+   "name": "Rabbit Ears Range",
+   "peak": "Parkview Mountain",
+   "peak_m": 3749,
+   "lat": 40.3303,
+   "lon": -106.136,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q22370205",
+   "wikidata": "Q22370205",
+   "kind": "listed",
+   "name": "McGerrigle Mountains",
+   "peak": "Mont Jacques-Cartier",
+   "peak_m": 1270,
+   "lat": 48.9264,
+   "lon": -65.9569,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q22649139",
+   "wikidata": "Q22649139",
+   "kind": "listed",
+   "name": "Hughes Range",
+   "peak": "Mount Fisher",
+   "peak_m": 2843,
+   "lat": 49.6333,
+   "lon": -115.4687,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q25248335",
+   "wikidata": "Q25248335",
+   "kind": "listed",
+   "name": "Schweizerland",
+   "peak": "Mont Forel",
+   "peak_m": 3383,
+   "lat": 66.9333,
+   "lon": -36.7833,
+   "width_km": 60,
+   "flags": []
+  },
+  {
+   "id": "Q2961864",
+   "wikidata": "Q2961864",
+   "kind": "listed",
+   "name": "Sir Donald Range",
+   "peak": "Mount Sir Donald",
+   "peak_m": 3284,
+   "lat": 51.2767,
+   "lon": -117.46,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q4712530",
+   "wikidata": "Q4712530",
+   "kind": "listed",
+   "name": "Albion Mountains",
+   "peak": "Cache Peak",
+   "peak_m": 3151,
+   "lat": 42.1856,
+   "lon": -113.661,
+   "width_km": 53,
+   "flags": []
+  },
+  {
+   "id": "Q4817136",
+   "wikidata": "Q4817136",
+   "kind": "listed",
+   "name": "Atna Range",
+   "peak": "Shedin Peak",
+   "peak_m": 2588,
+   "lat": 55.9392,
+   "lon": -127.48,
+   "width_km": 38,
+   "flags": []
+  },
+  {
+   "id": "Q4879015",
+   "wikidata": "Q4879015",
+   "kind": "listed",
+   "name": "Bedded Range",
+   "peak": "Coquihalla Mountain",
+   "peak_m": 2157,
+   "lat": 49.525,
+   "lon": -121.06,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q4905801",
+   "wikidata": "Q4905801",
+   "kind": "listed",
+   "name": "Big Hatchet Mountains",
+   "peak": "Big Hatchet Peak",
+   "peak_m": 2548,
+   "lat": 31.5972,
+   "lon": -108.337,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.07)"
+   ]
+  },
+  {
+   "id": "Q5025946",
+   "wikidata": "Q5025946",
+   "kind": "listed",
+   "name": "Camelsfoot Range",
+   "peak": "Red Mountain",
+   "peak_m": 2445,
+   "lat": 51.2036,
+   "lon": -122.549,
+   "width_km": 49,
+   "flags": []
+  },
+  {
+   "id": "Q5033825",
+   "wikidata": "Q5033825",
+   "kind": "listed",
+   "name": "Cantilever Range",
+   "peak": "Skihist Mountain",
+   "peak_m": 2968,
+   "lat": 50.1878,
+   "lon": -121.9033,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5059183",
+   "wikidata": "Q5059183",
+   "kind": "listed",
+   "name": "Centennial Mountains",
+   "peak": "Mount Jefferson",
+   "peak_m": 3114,
+   "lat": 44.5621,
+   "lon": -111.5047,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5168758",
+   "wikidata": "Q5168758",
+   "kind": "listed",
+   "name": "Copper Mountains",
+   "peak": "Copper Mountain",
+   "peak_m": 3023,
+   "lat": 41.7913,
+   "lon": -115.5084,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q6729888",
+   "wikidata": "Q6729888",
+   "kind": "listed",
+   "name": "Magdalena Mountains",
+   "peak": "South Baldy",
+   "peak_m": 3288,
+   "lat": 34.0484,
+   "lon": -107.1853,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q6933890",
+   "wikidata": "Q6933890",
+   "kind": "listed",
+   "name": "Mule Mountains",
+   "peak": "Mount Ballard",
+   "peak_m": 2248,
+   "lat": 31.4833,
+   "lon": -109.8667,
+   "width_km": 36,
+   "flags": []
+  },
+  {
+   "id": "Q7195409",
+   "wikidata": "Q7195409",
+   "kind": "listed",
+   "name": "Pine Valley Mountains",
+   "peak": "Signal Peak",
+   "peak_m": 3160,
+   "lat": 37.3197,
+   "lon": -113.492,
+   "width_km": 39,
+   "flags": []
+  },
+  {
+   "id": "Q7240336",
+   "wikidata": "Q7240336",
+   "kind": "listed",
+   "name": "Premier Range",
+   "peak": "Mount Sir Wilfrid Laurier",
+   "peak_m": 3516,
+   "lat": 52.83,
+   "lon": -119.75,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7249860",
+   "wikidata": "Q7249860",
+   "kind": "listed",
+   "name": "Promontory Mountains",
+   "peak": "Messix Peak",
+   "peak_m": 2240,
+   "lat": 41.4902,
+   "lon": -112.5084,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7511863",
+   "wikidata": "Q7511863",
+   "kind": "listed",
+   "name": "Sifton Ranges",
+   "peak": "Ruby Range",
+   "peak_m": 1945,
+   "lat": 57.7833,
+   "lon": -126.2333,
+   "width_km": 43,
+   "flags": []
+  },
+  {
+   "id": "Q7528957",
+   "wikidata": "Q7528957",
+   "kind": "listed",
+   "name": "Sir Sandford Range",
+   "peak": "Mount Sir Sandford",
+   "peak_m": 3519,
+   "lat": 51.6567,
+   "lon": -117.868,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7600178",
+   "wikidata": "Q7600178",
+   "kind": "listed",
+   "name": "Stansbury Mountains",
+   "peak": "Deseret Peak",
+   "peak_m": 3362,
+   "lat": 40.52,
+   "lon": -112.63,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7798677",
+   "wikidata": "Q7798677",
+   "kind": "listed",
+   "name": "Thudaka Range",
+   "peak": "Thudaka Peak",
+   "peak_m": 2748,
+   "lat": 57.9269,
+   "lon": -126.848,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7909433",
+   "wikidata": "Q7909433",
+   "kind": "listed",
+   "name": "Valdivian Coast Range",
+   "peak": "Cerro Oncol",
+   "peak_m": 715,
+   "lat": -39.6667,
+   "lon": -73.2833,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q8024856",
+   "wikidata": "Q8024856",
+   "kind": "listed",
+   "name": "Windy Range",
+   "peak": "Neptune Peak",
+   "peak_m": 3201,
+   "lat": 51.8667,
+   "lon": -118.15,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q18209233",
+   "wikidata": "Q18209233",
+   "kind": "listed",
+   "name": "Beezley Hills",
+   "peak": "Monument Hill",
+   "peak_m": 880,
+   "lat": 47.3263,
+   "lon": -119.7598,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q19802187",
+   "wikidata": "Q19802187",
+   "kind": "listed",
+   "name": "Eastern Alaska Range",
+   "peak": "Mount Hayes",
+   "peak_m": 4216,
+   "lat": 63.6208,
+   "lon": -146.715,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q20011248",
+   "wikidata": "Q20011248",
+   "kind": "listed",
+   "name": "Sierras de Famatina",
+   "peak": "Cerro General Belgrano",
+   "peak_m": 6250,
+   "lat": -29.0146,
+   "lon": -67.8264,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q24828325",
+   "wikidata": "Q24828325",
+   "kind": "listed",
+   "name": "Lemon Range",
+   "peak": "Actress (Greenland)",
+   "peak_m": 2514,
+   "lat": 68.5833,
+   "lon": -31.85,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q2961846",
+   "wikidata": "Q2961846",
+   "kind": "listed",
+   "name": "Cheam Range",
+   "peak": "Welch Peak",
+   "peak_m": 2431,
+   "lat": 49.16,
+   "lon": -121.601,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5061556",
+   "wikidata": "Q5061556",
+   "kind": "listed",
+   "name": "Central Oregon Coast Range",
+   "peak": "Marys Peak",
+   "peak_m": 1250,
+   "lat": 44.6,
+   "lon": -123.57,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5099009",
+   "wikidata": "Q5099009",
+   "kind": "listed",
+   "name": "Chilla-Kimsa Chata mountain range",
+   "peak": "Laqaya",
+   "peak_m": 4825,
+   "lat": -16.6833,
+   "lon": -68.7167,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q5140849",
+   "wikidata": "Q5140849",
+   "kind": "listed",
+   "name": "Coeur d'Alene Mountains",
+   "peak": "Cherry Peak",
+   "peak_m": 2241,
+   "lat": 47.4879,
+   "lon": -115.17,
+   "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q6494204",
+   "wikidata": "Q6494204",
+   "kind": "listed",
+   "name": "Last Chance Range",
+   "peak": "Dry Mountain",
+   "peak_m": 2645,
+   "lat": 36.9088,
+   "lon": -117.598,
+   "width_km": 39,
+   "flags": []
+  },
+  {
+   "id": "Q6878644",
+   "wikidata": "Q6878644",
+   "kind": "listed",
+   "name": "Mission Mountains",
+   "peak": "McDonald Peak",
+   "peak_m": 2993,
+   "lat": 47.3828,
+   "lon": -113.919,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7284692",
+   "wikidata": "Q7284692",
+   "kind": "listed",
+   "name": "Rainbow Range",
+   "peak": "Mount Robson",
+   "peak_m": 3954,
+   "lat": 53.05,
+   "lon": -119.05,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q7414919",
+   "wikidata": "Q7414919",
+   "kind": "listed",
+   "name": "San Mateo Mountains",
+   "peak": "Mount Taylor",
+   "peak_m": 3440,
+   "lat": 35.24,
+   "lon": -107.61,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7502367",
+   "wikidata": "Q7502367",
+   "kind": "listed",
+   "name": "Shoshone Range",
+   "peak": "Mount Lewis",
+   "peak_m": 2950,
+   "lat": 40.3505,
+   "lon": -116.884,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7511645",
+   "wikidata": "Q7511645",
+   "kind": "listed",
+   "name": "Sierra de Falcón",
+   "peak": "Cerro Galicia",
+   "peak_m": 1600,
+   "lat": 11.1775,
+   "lon": -69.7031,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7521123",
+   "wikidata": "Q7521123",
+   "kind": "listed",
+   "name": "Simpson Park Mountains",
+   "peak": "Fagin Mountain",
+   "peak_m": 2788,
+   "lat": 39.7506,
+   "lon": -116.5797,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7567565",
+   "wikidata": "Q7567565",
+   "kind": "listed",
+   "name": "South Jasper Ranges",
+   "peak": "Mount Edith Cavell",
+   "peak_m": 3363,
+   "lat": 52.6683,
+   "lon": -118.057,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7842568",
+   "wikidata": "Q7842568",
+   "kind": "listed",
+   "name": "Trinity Alps",
+   "peak": "Thompson Peak",
+   "peak_m": 2744,
+   "lat": 41.0004,
+   "lon": -123.0484,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q14683468",
+   "wikidata": "Q14683468",
+   "kind": "listed",
+   "name": "Nelson Range",
+   "peak": "Hunter Mountain",
+   "peak_m": 2273,
+   "lat": 36.5569,
+   "lon": -117.6564,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q1784519",
+   "wikidata": "Q1784519",
+   "kind": "listed",
+   "name": "Schwatka Mountains",
+   "peak": "Mount Igikpak",
+   "peak_m": 2523,
+   "lat": 67.4131,
+   "lon": -154.966,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q18378795",
+   "wikidata": "Q18378795",
+   "kind": "listed",
+   "name": "West Mountains",
+   "peak": "Snowbank Mountain",
+   "peak_m": 2536,
+   "lat": 44.4667,
+   "lon": -116.234,
+   "width_km": 72,
+   "flags": []
+  },
+  {
+   "id": "Q22812773",
+   "wikidata": "Q22812773",
+   "kind": "listed",
+   "name": "Massif du Sud",
+   "peak": "Mont du Midi",
+   "peak_m": 915,
+   "lat": 46.6079,
+   "lon": -70.4507,
+   "width_km": 35,
+   "flags": []
+  },
+  {
+   "id": "Q5189594",
+   "wikidata": "Q5189594",
+   "kind": "listed",
+   "name": "Crowsnest Range",
+   "peak": "Mount Ptolemy",
+   "peak_m": 2813,
+   "lat": 49.5483,
+   "lon": -114.6317,
+   "width_km": 51,
+   "flags": []
+  },
+  {
+   "id": "Q5254692",
+   "wikidata": "Q5254692",
+   "kind": "listed",
+   "name": "Delta Mountains",
+   "peak": "Mount Kimball (Alaska)",
+   "peak_m": 3139,
+   "lat": 63.2386,
+   "lon": -144.644,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q6683291",
+   "wikidata": "Q6683291",
+   "kind": "listed",
+   "name": "Los Testigos Massif",
+   "peak": "Kamarkawarai Tepuy",
+   "peak_m": 2400,
+   "lat": 5.8821,
+   "lon": -62.1099,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q7235119",
+   "wikidata": "Q7235119",
+   "kind": "listed",
+   "name": "Potosí mountain range",
+   "peak": "Khunurana",
+   "peak_m": 5071,
+   "lat": -19.6833,
+   "lon": -65.6333,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q22463575",
+   "wikidata": "Q22463575",
+   "kind": "listed",
+   "name": "Auriol Range",
+   "peak": "Mount Martha Black",
+   "peak_m": 2512,
+   "lat": 60.6292,
+   "lon": -137.6003,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q22470755",
+   "wikidata": "Q22470755",
+   "kind": "listed",
+   "name": "Backbone Ranges",
+   "peak": "Mount Nirvana",
+   "peak_m": 2773,
+   "lat": 61.8747,
+   "lon": -127.68,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q27966614",
+   "wikidata": "Q27966614",
+   "kind": "listed",
+   "name": "California Cascades",
+   "peak": "Mount Shasta",
+   "peak_m": 4322,
+   "lat": 41.4092,
+   "lon": -122.1949,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q49176084",
+   "wikidata": "Q49176084",
+   "kind": "listed",
+   "name": "Culebra Range",
+   "peak": "Culebra Peak",
+   "peak_m": 4282,
+   "lat": 37.1222,
+   "lon": -105.1856,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q49177767",
+   "wikidata": "Q49177767",
+   "kind": "listed",
+   "name": "San Miguel Mountains",
+   "peak": "Mount Wilson",
+   "peak_m": 4344,
+   "lat": 37.8567,
+   "lon": -108.0034,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q86668352",
+   "wikidata": "Q86668352",
+   "kind": "listed",
+   "name": "Resthaven Group",
+   "peak": "Mount Chown",
+   "peak_m": 3316,
+   "lat": 53.3969,
+   "lon": -119.417,
+   "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q674485",
+   "wikidata": "Q674485",
+   "kind": "terrain",
+   "name": "Copper Canyon",
+   "peak": "",
+   "peak_m": 2575,
+   "lat": 27.5161,
+   "lon": -107.7658,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q126063",
+   "wikidata": "Q126063",
+   "kind": "terrain",
+   "name": "Auyán Tepuy",
+   "peak": "",
+   "peak_m": 2224,
+   "lat": 5.9009,
+   "lon": -62.55,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2015709",
+   "wikidata": "Q2015709",
+   "kind": "terrain",
+   "name": "Serranía de Perijá",
+   "peak": "",
+   "peak_m": 3564,
+   "lat": 10.0164,
+   "lon": -72.9578,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q422879",
+   "wikidata": "Q422879",
+   "kind": "terrain",
+   "name": "Sierra Nevada de Lagunas Bravas",
+   "peak": "Cumbre del Laudo",
+   "peak_m": 6152,
+   "lat": -26.4919,
+   "lon": -68.5594,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2310805",
+   "wikidata": "Q2310805",
+   "kind": "terrain",
+   "name": "Puna de Atacama",
+   "peak": "Acamarachi",
+   "peak_m": 6023,
+   "lat": -23.46,
+   "lon": -67.36,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1366819",
+   "wikidata": "Q1366819",
+   "kind": "terrain",
+   "name": "Escambray Mountains",
+   "peak": "Pico San Juan",
+   "peak_m": 1103,
+   "lat": 21.9847,
+   "lon": -80.1325,
+   "width_km": 64,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1660972",
+   "wikidata": "Q1660972",
+   "kind": "terrain",
+   "name": "Sierra de los Cuchumatanes",
+   "peak": "",
+   "peak_m": 3813,
+   "lat": 15.4164,
+   "lon": -91.3469,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1062622",
+   "wikidata": "Q1062622",
+   "kind": "terrain",
+   "name": "Chapada Diamantina",
+   "peak": "",
+   "peak_m": 1676,
+   "lat": -12.8803,
+   "lon": -41.3722,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1080344",
+   "wikidata": "Q1080344",
+   "kind": "terrain",
+   "name": "Sierra de los Tuxtlas",
+   "peak": "Cerro Santa Martha",
+   "peak_m": 1636,
+   "lat": 18.45,
+   "lon": -94.95,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q368819",
+   "wikidata": "Q368819",
+   "kind": "terrain",
+   "name": "Serranía de la Macarena",
+   "peak": "",
+   "peak_m": 1596,
+   "lat": 2.9692,
+   "lon": -73.9006,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1908889",
+   "wikidata": "Q1908889",
+   "kind": "terrain",
+   "name": "Mato Grosso Plateau",
+   "peak": "",
+   "peak_m": 800,
+   "lat": -15.5,
+   "lon": -55.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3082696",
+   "wikidata": "Q3082696",
+   "kind": "terrain",
+   "name": "Bogota savanna",
+   "peak": "Tablón Grande",
+   "peak_m": 3778,
+   "lat": 5.1963,
+   "lon": -73.9586,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1476263",
+   "wikidata": "Q1476263",
+   "kind": "terrain",
+   "name": "Sandia Mountains",
+   "peak": "",
+   "peak_m": 3240,
+   "lat": 35.2089,
+   "lon": -106.4469,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2740752",
+   "wikidata": "Q2740752",
+   "kind": "terrain",
+   "name": "Borborema Plateau",
+   "peak": "",
+   "peak_m": 909,
+   "lat": -7.0,
+   "lon": -37.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q283784",
+   "wikidata": "Q283784",
+   "kind": "terrain",
+   "name": "Ogilvie Mountains",
+   "peak": "",
+   "peak_m": 2134,
+   "lat": 64.37,
+   "lon": -137.27,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3066648",
+   "wikidata": "Q3066648",
+   "kind": "terrain",
+   "name": "Colombian Massif",
+   "peak": "Cordillera de Sucubún",
+   "peak_m": 4044,
+   "lat": 1.75,
+   "lon": -76.5,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q885809",
+   "wikidata": "Q885809",
+   "kind": "terrain",
+   "name": "Blue Mountains",
+   "peak": "",
+   "peak_m": 2298,
+   "lat": 45.5,
+   "lon": -118.0,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q177231",
+   "wikidata": "Q177231",
+   "kind": "terrain",
+   "name": "Serra Gaúcha",
+   "peak": "",
+   "peak_m": 909,
+   "lat": -29.0,
+   "lon": -51.25,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q186910",
+   "wikidata": "Q186910",
+   "kind": "terrain",
+   "name": "Mogollon Rim",
+   "peak": "",
+   "peak_m": 2426,
+   "lat": 34.3367,
+   "lon": -110.9372,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2241223",
+   "wikidata": "Q2241223",
+   "kind": "terrain",
+   "name": "Diablo Range",
+   "peak": "San Benito Mountain",
+   "peak_m": 1605,
+   "lat": 36.3697,
+   "lon": -120.6443,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q4118599",
+   "wikidata": "Q4118599",
+   "kind": "terrain",
+   "name": "Mogollon Mountains",
+   "peak": "Mogollon Baldy",
+   "peak_m": 3284,
+   "lat": 33.2253,
+   "lon": -108.5214,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q839280",
+   "wikidata": "Q839280",
+   "kind": "terrain",
+   "name": "Richardson Mountains",
+   "peak": "",
+   "peak_m": 1495,
+   "lat": 68.17,
+   "lon": -137.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1267492",
+   "wikidata": "Q1267492",
+   "kind": "terrain",
+   "name": "Parima Mountains",
+   "peak": "",
+   "peak_m": 1481,
+   "lat": 3.5,
+   "lon": -64.25,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1418937",
+   "wikidata": "Q1418937",
+   "kind": "terrain",
+   "name": "Sierra de Juárez",
+   "peak": "Cerro La Campana",
+   "peak_m": 1849,
+   "lat": 32.25,
+   "lon": -115.8333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q746425",
+   "wikidata": "Q746425",
+   "kind": "terrain",
+   "name": "Sierra de las Minas",
+   "peak": "",
+   "peak_m": 2987,
+   "lat": 15.25,
+   "lon": -89.5,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q16630587",
+   "wikidata": "Q16630587",
+   "kind": "terrain",
+   "name": "Serranía de Hornocal",
+   "peak": "",
+   "peak_m": 5127,
+   "lat": -23.2617,
+   "lon": -65.1226,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2404229",
+   "wikidata": "Q2404229",
+   "kind": "terrain",
+   "name": "Sierra Region of Ecuador",
+   "peak": "",
+   "peak_m": 4531,
+   "lat": -1.0,
+   "lon": -79.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3108552",
+   "wikidata": "Q3108552",
+   "kind": "terrain",
+   "name": "Carajás Mountains",
+   "peak": "",
+   "peak_m": 895,
+   "lat": -6.2769,
+   "lon": -50.5817,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3306528",
+   "wikidata": "Q3306528",
+   "kind": "terrain",
+   "name": "Anderson Mesa",
+   "peak": "Mormon Mountain",
+   "peak_m": 2592,
+   "lat": 35.055,
+   "lon": -111.44,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3656188",
+   "wikidata": "Q3656188",
+   "kind": "terrain",
+   "name": "Kanuku Mountains",
+   "peak": "",
+   "peak_m": 1052,
+   "lat": 3.2,
+   "lon": -59.5833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q576985",
+   "wikidata": "Q576985",
+   "kind": "terrain",
+   "name": "Antillanca Group",
+   "peak": "",
+   "peak_m": 1971,
+   "lat": -40.7747,
+   "lon": -72.1564,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1132294",
+   "wikidata": "Q1132294",
+   "kind": "terrain",
+   "name": "Cordillera de Apaneca-Lamatepec",
+   "peak": "Santa Ana Volcano",
+   "peak_m": 2381,
+   "lat": 13.9167,
+   "lon": -89.7167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1180112",
+   "wikidata": "Q1180112",
+   "kind": "terrain",
+   "name": "De Long Mountains",
+   "peak": "",
+   "peak_m": 1237,
+   "lat": 68.42,
+   "lon": -161.67,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1319878",
+   "wikidata": "Q1319878",
+   "kind": "terrain",
+   "name": "Serra Pelada",
+   "peak": "",
+   "peak_m": 688,
+   "lat": -5.9443,
+   "lon": -49.6647,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1585042",
+   "wikidata": "Q1585042",
+   "kind": "terrain",
+   "name": "Serranía del Aguaragüe",
+   "peak": "",
+   "peak_m": 1712,
+   "lat": -21.0572,
+   "lon": -63.4906,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2340368",
+   "wikidata": "Q2340368",
+   "kind": "terrain",
+   "name": "Santa Rosa Mountains",
+   "peak": "Toro Peak",
+   "peak_m": 2657,
+   "lat": 33.4314,
+   "lon": -116.2278,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2961818",
+   "wikidata": "Q2961818",
+   "kind": "terrain",
+   "name": "Cassiar Mountains",
+   "peak": "",
+   "peak_m": 1924,
+   "lat": 60.25,
+   "lon": -131.17,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q6177126",
+   "wikidata": "Q6177126",
+   "kind": "terrain",
+   "name": "Jemez Mountains",
+   "peak": "Redondo Peak",
+   "peak_m": 3431,
+   "lat": 35.8834,
+   "lon": -106.3672,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q6436866",
+   "wikidata": "Q6436866",
+   "kind": "terrain",
+   "name": "Zuñi Mountains",
+   "peak": "Mount Sedgwick",
+   "peak_m": 2821,
+   "lat": 35.1678,
+   "lon": -108.317,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q7502362",
+   "wikidata": "Q7502362",
+   "kind": "terrain",
+   "name": "Shoshone Mountains",
+   "peak": "",
+   "peak_m": 3388,
+   "lat": 38.8991,
+   "lon": -117.5426,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1075637",
+   "wikidata": "Q1075637",
+   "kind": "terrain",
+   "name": "Chocolate Mountains",
+   "peak": "",
+   "peak_m": 1301,
+   "lat": 33.4659,
+   "lon": -115.584,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2319097",
+   "wikidata": "Q2319097",
+   "kind": "terrain",
+   "name": "Ptarí Tepuy",
+   "peak": "",
+   "peak_m": 2243,
+   "lat": 5.7669,
+   "lon": -61.8107,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2369956",
+   "wikidata": "Q2369956",
+   "kind": "terrain",
+   "name": "Sutter Buttes",
+   "peak": "South Butte",
+   "peak_m": 607,
+   "lat": 39.2264,
+   "lon": -121.8106,
+   "width_km": 45,
+   "flags": [
+    "thin ripples (0.05)",
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2396891",
+   "wikidata": "Q2396891",
+   "kind": "terrain",
+   "name": "Superstition Mountains",
+   "peak": "Mound Mountain",
+   "peak_m": 1881,
+   "lat": 33.4781,
+   "lon": -111.2389,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2946761",
+   "wikidata": "Q2946761",
+   "kind": "terrain",
+   "name": "Martial Mountains",
+   "peak": "Cerro Vinciguerra",
+   "peak_m": 1422,
+   "lat": -54.78,
+   "lon": -68.39,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3322329",
+   "wikidata": "Q3322329",
+   "kind": "terrain",
+   "name": "Omineca Mountains",
+   "peak": "",
+   "peak_m": 2335,
+   "lat": 56.5,
+   "lon": -125.5,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q4892037",
+   "wikidata": "Q4892037",
+   "kind": "terrain",
+   "name": "Berkeley Hills",
+   "peak": "Rocky Ridge, California",
+   "peak_m": 606,
+   "lat": 37.8828,
+   "lon": -122.2378,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q6799898",
+   "wikidata": "Q6799898",
+   "kind": "terrain",
+   "name": "Sierra del Lacandón",
+   "peak": "",
+   "peak_m": 664,
+   "lat": 17.1951,
+   "lon": -91.0861,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q783415",
+   "wikidata": "Q783415",
+   "kind": "terrain",
+   "name": "Talkeetna Mountains",
+   "peak": "",
+   "peak_m": 2569,
+   "lat": 62.0333,
+   "lon": -147.9,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q845183",
+   "wikidata": "Q845183",
+   "kind": "terrain",
+   "name": "Kuskokwim Mountains",
+   "peak": "",
+   "peak_m": 1163,
+   "lat": 62.8667,
+   "lon": -156.25,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1160995",
+   "wikidata": "Q1160995",
+   "kind": "terrain",
+   "name": "Pampa de Achala",
+   "peak": "",
+   "peak_m": 2321,
+   "lat": -31.6136,
+   "lon": -64.8533,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q15276413",
+   "wikidata": "Q15276413",
+   "kind": "terrain",
+   "name": "Serranía de Chiribiquete",
+   "peak": "",
+   "peak_m": 819,
+   "lat": 1.3275,
+   "lon": -72.7614,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1782291",
+   "wikidata": "Q1782291",
+   "kind": "terrain",
+   "name": "Mount Sarisariñama",
+   "peak": "",
+   "peak_m": 2373,
+   "lat": 4.55,
+   "lon": -64.2333,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1988889",
+   "wikidata": "Q1988889",
+   "kind": "terrain",
+   "name": "Dragoon Mountains",
+   "peak": "Mount Glenn",
+   "peak_m": 2293,
+   "lat": 31.8833,
+   "lon": -109.9833,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2403979",
+   "wikidata": "Q2403979",
+   "kind": "terrain",
+   "name": "Bahoruco Mountain Range",
+   "peak": "",
+   "peak_m": 2260,
+   "lat": 18.1167,
+   "lon": -71.4167,
+   "width_km": 56,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2997143",
+   "wikidata": "Q2997143",
+   "kind": "terrain",
+   "name": "Cordillera de Nahuelbuta",
+   "peak": "Alto de Nahuelbuta",
+   "peak_m": 1514,
+   "lat": -37.72,
+   "lon": -73.03,
+   "width_km": 80,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2997146",
+   "wikidata": "Q2997146",
+   "kind": "terrain",
+   "name": "Cordillera Los Maribios",
+   "peak": "Volcán del Hoyo",
+   "peak_m": 974,
+   "lat": 12.56,
+   "lon": -86.78,
+   "width_km": 48,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2997147",
+   "wikidata": "Q2997147",
+   "kind": "terrain",
+   "name": "Cordillera de San Blas",
+   "peak": "",
+   "peak_m": 776,
+   "lat": 9.2667,
+   "lon": -78.5,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3048968",
+   "wikidata": "Q3048968",
+   "kind": "terrain",
+   "name": "Upuigma Tepuy",
+   "peak": "",
+   "peak_m": 2240,
+   "lat": 5.0863,
+   "lon": -61.9562,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3479954",
+   "wikidata": "Q3479954",
+   "kind": "terrain",
+   "name": "Baudó Mountains",
+   "peak": "",
+   "peak_m": 1113,
+   "lat": 6.2,
+   "lon": -77.2,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q4388398",
+   "wikidata": "Q4388398",
+   "kind": "terrain",
+   "name": "Cordillera dariense",
+   "peak": "",
+   "peak_m": 1532,
+   "lat": 13.4987,
+   "lon": -85.4941,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q46588",
+   "wikidata": "Q46588",
+   "kind": "terrain",
+   "name": "Cordillera Kimsa Cruz",
+   "peak": "Wayna Khunu Qullu",
+   "peak_m": 5640,
+   "lat": -17.0,
+   "lon": -67.3333,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q599073",
+   "wikidata": "Q599073",
+   "kind": "terrain",
+   "name": "San Rafael Mountains",
+   "peak": "Big Pine Mountain",
+   "peak_m": 2076,
+   "lat": 34.7108,
+   "lon": -119.814,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q7034692",
+   "wikidata": "Q7034692",
+   "kind": "terrain",
+   "name": "Tahltan Highland",
+   "peak": "",
+   "peak_m": 1668,
+   "lat": 58.0,
+   "lon": -131.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q804422",
+   "wikidata": "Q804422",
+   "kind": "terrain",
+   "name": "Bakhuis Mountains",
+   "peak": "",
+   "peak_m": 672,
+   "lat": 4.35,
+   "lon": -56.75,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1132205",
+   "wikidata": "Q1132205",
+   "kind": "terrain",
+   "name": "Cordillera de Azanaques",
+   "peak": "",
+   "peak_m": 4778,
+   "lat": -18.5,
+   "lon": -66.5833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1132292",
+   "wikidata": "Q1132292",
+   "kind": "terrain",
+   "name": "Cordillera de Chichas",
+   "peak": "",
+   "peak_m": 4589,
+   "lat": -20.75,
+   "lon": -66.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1313342",
+   "wikidata": "Q1313342",
+   "kind": "terrain",
+   "name": "Sierra Mazateca",
+   "peak": "Zizintepetl",
+   "peak_m": 3261,
+   "lat": 18.2729,
+   "lon": -96.7679,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q13632272",
+   "wikidata": "Q13632272",
+   "kind": "terrain",
+   "name": "Chonta mountain range",
+   "peak": "Nevado Altar",
+   "peak_m": 5246,
+   "lat": -12.9,
+   "lon": -75.2522,
+   "width_km": 40,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1388670",
+   "wikidata": "Q1388670",
+   "kind": "terrain",
+   "name": "Virgin Mountains",
+   "peak": "",
+   "peak_m": 2431,
+   "lat": 36.6028,
+   "lon": -114.112,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q14476240",
+   "wikidata": "Q14476240",
+   "kind": "terrain",
+   "name": "Sweet Grass Hills",
+   "peak": "West Butte",
+   "peak_m": 2121,
+   "lat": 48.8472,
+   "lon": -111.375,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1722858",
+   "wikidata": "Q1722858",
+   "kind": "terrain",
+   "name": "Alsek Ranges",
+   "peak": "",
+   "peak_m": 2630,
+   "lat": 59.5164,
+   "lon": -137.3686,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q20019224",
+   "wikidata": "Q20019224",
+   "kind": "terrain",
+   "name": "Nassau Mountains",
+   "peak": "",
+   "peak_m": 590,
+   "lat": 4.8,
+   "lon": -54.6,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2049917",
+   "wikidata": "Q2049917",
+   "kind": "terrain",
+   "name": "Cordillera Septentrional",
+   "peak": "Diego de Ocampo",
+   "peak_m": 1235,
+   "lat": 19.614,
+   "lon": -70.729,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2068238",
+   "wikidata": "Q2068238",
+   "kind": "terrain",
+   "name": "Peloncillo Mountains",
+   "peak": "Grey Mountain",
+   "peak_m": 2094,
+   "lat": 31.88,
+   "lon": -108.92,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2117324",
+   "wikidata": "Q2117324",
+   "kind": "terrain",
+   "name": "Pueblo Mountains",
+   "peak": "Pueblo Mountain",
+   "peak_m": 2633,
+   "lat": 42.1,
+   "lon": -118.649,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2284502",
+   "wikidata": "Q2284502",
+   "kind": "terrain",
+   "name": "Moto Sierra de Neiba",
+   "peak": "",
+   "peak_m": 2238,
+   "lat": 18.6358,
+   "lon": -71.5219,
+   "width_km": 35,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q2284522",
+   "wikidata": "Q2284522",
+   "kind": "terrain",
+   "name": "Sierras Chicas",
+   "peak": "Uritorco",
+   "peak_m": 1979,
+   "lat": -30.8333,
+   "lon": -64.4167,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2382975",
+   "wikidata": "Q2382975",
+   "kind": "terrain",
+   "name": "Shawangunk Ridge",
+   "peak": "Mount Don Bosco",
+   "peak_m": 697,
+   "lat": 41.7248,
+   "lon": -74.2046,
+   "width_km": 60,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q24826071",
+   "wikidata": "Q24826071",
+   "kind": "terrain",
+   "name": "Roosevelt Range",
+   "peak": "",
+   "peak_m": 1762,
+   "lat": 83.2667,
+   "lon": -35.0,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q3479948",
+   "wikidata": "Q3479948",
+   "kind": "terrain",
+   "name": "Montes de María",
+   "peak": "Cuchilla Mancamo",
+   "peak_m": 688,
+   "lat": 9.6657,
+   "lon": -75.2026,
+   "width_km": 52,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3629557",
+   "wikidata": "Q3629557",
+   "kind": "terrain",
+   "name": "Augusta Mountains",
+   "peak": "Cain Mountain",
+   "peak_m": 2555,
+   "lat": 40.016,
+   "lon": -117.53,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q3656183",
+   "wikidata": "Q3656183",
+   "kind": "terrain",
+   "name": "North Imataka Mountains",
+   "peak": "",
+   "peak_m": 710,
+   "lat": 8.2604,
+   "lon": -61.9464,
+   "width_km": 80,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q5055433",
+   "wikidata": "Q5055433",
+   "kind": "terrain",
+   "name": "Cayoosh Range",
+   "peak": "",
+   "peak_m": 2720,
+   "lat": 50.5,
+   "lon": -122.3667,
+   "width_km": 48,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q5065013",
+   "wikidata": "Q5065013",
+   "kind": "terrain",
+   "name": "Cerro de las Mitras",
+   "peak": "",
+   "peak_m": 2895,
+   "lat": 25.7184,
+   "lon": -100.436,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q5065029",
+   "wikidata": "Q5065029",
+   "kind": "terrain",
+   "name": "Cerros de Escazú",
+   "peak": "Cerro Piedra Blanca",
+   "peak_m": 2408,
+   "lat": 9.85,
+   "lon": -84.15,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  }
+ ]
+}
