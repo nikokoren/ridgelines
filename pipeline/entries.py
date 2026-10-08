@@ -67,6 +67,7 @@ SHORT_COUNTRY = {
     "Q145": ("UK", "Vereinigtes Königreich"),      # no accurate common German short form
     "Q213": ("Czechia", "Tschechien"),                # as in Downstream
     "Q974": ("DR\u00a0Congo", "DR\u00a0Kongo"),       # no-break space keeps "DR" with its noun
+    "Q148": ("China", "China"),                    # Wikidata: "People's Republic of China" (2026-10-08)
 }
 
 
