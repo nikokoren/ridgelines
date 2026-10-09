@@ -7,8 +7,8 @@ keyed by language and units, so a third language is one more dictionary.
 import re
 
 UI = {
-    "en": {"and": "and", "more": "and {n} more", "highest": "Highest peak", "point": "Highest point", "thousands": ","},
-    "de": {"and": "und", "more": "und {n} weitere", "highest": "Höchster Gipfel", "point": "Höchster Punkt", "thousands": "."},
+    "en": {"and": "and", "more": "and {n} more", "highest": "Highest peak", "unnamed": "Unnamed", "thousands": ","},
+    "de": {"and": "und", "more": "und {n} weitere", "highest": "Höchster Gipfel", "unnamed": "Unbenannt", "thousands": "."},
 }
 LANGS = tuple(UI)
 UNITS = ("metric", "imperial")
@@ -48,7 +48,9 @@ def plain(text):
 
 
 def peak_name(entry, lang):
-    return plain(entry["peak"][lang])
+    """The summit's name; a summit no Wikidata peak names is "Unnamed" / "Unbenannt"
+    on the map, in the info box and in the title bar alike (Niko, 2026-10-09)."""
+    return plain(entry["peak"][lang]) or UI[lang]["unnamed"]
 
 
 def range_name(entry, lang):
@@ -66,13 +68,9 @@ def headline(entry, lang):
 
 def peak_line(entry, lang, units):
     """Info box second line: "Highest peak: Birkkarspitze · 2,749 m" (Niko, 2026-10-09; was
-    "Highest peak Birkkarspitze 2,749 m" from 2026-10-01). A terrain summit that no Wikidata peak
-    names reads "Highest point: 1,694 m". The no-break space keeps the dot off the start of a
-    wrapped line."""
-    h = height(entry["peak_m"], lang, units)
-    if not entry["peak"][lang]:
-        return f"{UI[lang]['point']}: {h}"
-    return f"{UI[lang]['highest']}: {peak_name(entry, lang)}\u00a0· {h}"
+    "Highest peak Birkkarspitze 2,749 m" from 2026-10-01); an unnamed summit reads "Highest peak:
+    Unnamed peak · 1,425 m". The no-break space keeps the dot off the start of a wrapped line."""
+    return f"{UI[lang]['highest']}: {peak_name(entry, lang)}\u00a0· {height(entry['peak_m'], lang, units)}"
 
 
 def captions(entry, lang, units):
@@ -82,7 +80,7 @@ def captions(entry, lang, units):
     and country (Niko, 2026-10-09; portrait showed range and peak, and long ones lost the
     height), quadrant and half vertical the range alone."""
     name = range_name(entry, lang)
-    peak = " ".join(p for p in (peak_name(entry, lang), height(entry["peak_m"], lang, units)) if p)
+    peak = f"{peak_name(entry, lang)} {height(entry['peak_m'], lang, units)}"
     return {
         "full": SEP.join((headline(entry, lang), peak)),
         "full_portrait": headline(entry, lang),

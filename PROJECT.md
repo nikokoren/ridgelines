@@ -33,6 +33,7 @@ The brief's Cloudflare Worker and R2 plan is not needed while Pages serves stati
 | 2026-10-09 | Peak name, info box and title bar are boolean fields (TRMNL `field_type: boolean`; defaults on, on, off). The title bar caption follows the info box's order: range, country, then peak and height | Niko |
 | 2026-10-09 | Info box peak line: "Highest peak: Birkkarspitze · 2,749 m" ("Höchster Gipfel: Birkkarspitze · 2.749 m"; unnamed: "Highest point: 1,694 m"), replacing "Highest peak Birkkarspitze 2,749 m" from 2026-10-01. Units stay m and ft | Niko |
 | 2026-10-09 | Portrait title bar shows range and country, like half horizontal | Niko |
+| 2026-10-09 | A summit no Wikidata peak names is "Unnamed" / "Unbenannt" on the map, in the info box ("Highest peak: Unnamed · 1,425 m", "Höchster Gipfel: Unbenannt · 1.425 m") and in the title bar, replacing "Highest point: 1,425 m" and no map label. 298 of 1,490 ranges (Africa 180, Asia and Oceania 63, Americas 50, Europe 5) | Niko |
 | 2026-10-08 | Full view info box 60 % of the drawing's width on OG and Kindle (`w--[60cqw]`), 45 % on TRMNL X (`lg:w--[45cqw]`), 80 % in portrait on every device; headline up to three lines, peak line up to two. Measured widths: OG 468 of 780 px, Kindle 468 of 780, TRMNL X 459 of 1020, portrait 368 of 460 (OG) and 608 of 760 (X) | Niko, after the 45, 57 and 65cqw renders (Findings, box width) |
 | 2026-10-02 | Beta served from GitHub Pages, no Worker: static payloads per calendar slot, picked by the Polling URL from the date and the user's UTC offset, as in Downstream. The Worker stays the plan for the worldwide list if Pages falls short | Niko |
 | 2026-10-02 | Grey screens draw black lines only, no shading by height | Niko, after docs/mockups/shade_ogv2.png and shade_v2.png |
@@ -49,6 +50,8 @@ Everything else in docs/brief.md (data sources, settings, delivery) is the propo
 ## Findings
 
 Each finding is dated. Re-check before relying on it.
+
+- **2026-10-09, labels for unnamed summits.** With "Unnamed" / "Unbenannt" the 298 unnamed summits now get a map label. All of them on OG full landscape and portrait and TRMNL X full: 894 renders, every one labelled, 0 labels over the box, 0 outside the stored square (rendered with the longer "Unbenannter Gipfel"). A further check of 200 random ranges in half horizontal, half vertical, quadrant and TRMNL X portrait: 1,000 renders, every named summit labelled. Every summit missing a label before was an unnamed one.
 
 - **2026-10-09, every range after the name and area changes.** `sweep.py every` on the re-picked lists with the new peak line, cleaned names and portrait caption: 4,470 renders (1,490 ranges, OG full landscape and portrait, TRMNL X full, German), all drawn, every named summit labelled, 0 labels over the box, 0 outside the stored square, 0 boxes that changed after drawing.
 
