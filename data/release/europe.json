@@ -991,18 +991,6 @@
    "flags": []
   },
   {
-   "id": "Q153822",
-   "wikidata": "Q153822",
-   "kind": "listed",
-   "name": "Basse-Terre Island",
-   "peak": "Soufrière",
-   "peak_m": 1467,
-   "lat": 16.0438,
-   "lon": -61.6634,
-   "width_km": 37,
-   "flags": []
-  },
-  {
    "id": "Q2503011",
    "wikidata": "Q2503011",
    "kind": "listed",
@@ -1023,18 +1011,6 @@
    "peak_m": 2528,
    "lat": 40.9422,
    "lon": 21.8047,
-   "width_km": 45,
-   "flags": []
-  },
-  {
-   "id": "Q1457996",
-   "wikidata": "Q1457996",
-   "kind": "listed",
-   "name": "Tumuk Humak Mountains",
-   "peak": "Bellevue de l'Inini",
-   "peak_m": 831,
-   "lat": 3.5406,
-   "lon": -53.5733,
    "width_km": 45,
    "flags": []
   },
@@ -2397,18 +2373,6 @@
    "flags": []
   },
   {
-   "id": "Q1800250",
-   "wikidata": "Q1800250",
-   "kind": "listed",
-   "name": "Salvesen Range",
-   "peak": "Mount Carse",
-   "peak_m": 2330,
-   "lat": -54.6667,
-   "lon": -36.1167,
-   "width_km": 45,
-   "flags": []
-  },
-  {
    "id": "Q228131",
    "wikidata": "Q228131",
    "kind": "listed",
@@ -3673,18 +3637,6 @@
    ]
   },
   {
-   "id": "Q3297593",
-   "wikidata": "Q3297593",
-   "kind": "listed",
-   "name": "Gallieni Massif",
-   "peak": "Mont Ross",
-   "peak_m": 1850,
-   "lat": -49.5922,
-   "lon": 69.4958,
-   "width_km": 35,
-   "flags": []
-  },
-  {
    "id": "Q3297635",
    "wikidata": "Q3297635",
    "kind": "listed",
@@ -3886,18 +3838,6 @@
    "lat": 46.36,
    "lon": 11.2,
    "width_km": 45,
-   "flags": []
-  },
-  {
-   "id": "Q2961792",
-   "wikidata": "Q2961792",
-   "kind": "listed",
-   "name": "Chaîne centrale",
-   "peak": "Mont Panié",
-   "peak_m": 1629,
-   "lat": -20.5883,
-   "lon": 164.7706,
-   "width_km": 80,
    "flags": []
   },
   {
@@ -4406,6 +4346,76 @@
    "width_km": 45,
    "flags": [
     "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q163177",
+   "wikidata": "Q163177",
+   "kind": "terrain",
+   "name": "Majevica",
+   "peak": "Mala Jelica",
+   "peak_m": 833,
+   "lat": 44.5167,
+   "lon": 18.8833,
+   "width_km": 40,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1778649",
+   "wikidata": "Q1778649",
+   "kind": "terrain",
+   "name": "Papuk",
+   "peak": "",
+   "peak_m": 939,
+   "lat": 45.5333,
+   "lon": 17.65,
+   "width_km": 45,
+   "flags": [
+    "terrain summit, unnamed"
+   ]
+  },
+  {
+   "id": "Q1817516",
+   "wikidata": "Q1817516",
+   "kind": "terrain",
+   "name": "Romanija",
+   "peak": "Velike Stijene",
+   "peak_m": 1534,
+   "lat": 43.8833,
+   "lon": 18.6833,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q2476466",
+   "wikidata": "Q2476466",
+   "kind": "terrain",
+   "name": "North Urals",
+   "peak": "Koyp",
+   "peak_m": 1079,
+   "lat": 62.0,
+   "lon": 59.45,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q1293127",
+   "wikidata": "Q1293127",
+   "kind": "terrain",
+   "name": "De syv søstre",
+   "peak": "Botnkrona",
+   "peak_m": 1072,
+   "lat": 65.95,
+   "lon": 12.57,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
    ]
   }
  ]

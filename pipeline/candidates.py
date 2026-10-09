@@ -62,7 +62,15 @@ def area_at(lat, lon):
 
 def area_of(conts, lat, lon):
     areas = {CONTINENT[c] for c in conts if c in CONTINENT}
-    return areas.pop() if len(areas) == 1 else area_at(lat, lon)
+    area = areas.pop() if len(areas) == 1 else area_at(lat, lon)
+    # Overseas territories carry their home country's continent: Guadeloupe, French Guiana,
+    # New Caledonia and Kerguelen came out as Europe, Hawaii as the Americas (2026-10-09). A
+    # summit far outside Europe, or on Hawaii, is placed by position instead.
+    if area == "europe" and not (34 <= lat <= 82 and -32 <= lon <= 70):
+        area = area_at(lat, lon)
+    if area == "americas" and lat < 30 and lon < -150:
+        area = "asia"
+    return area
 
 
 def point(wkt):

@@ -34,8 +34,27 @@ BETA = os.path.join(ROOT, "data", "beta_de_at.json")
 RELEASE = os.path.join(ROOT, "data", "release")
 
 
+NAME_OVERRIDES = os.path.join(ROOT, "data", "name_overrides.json")   # written by names.py
+
+
+def overridden(e, _cache={}):
+    """The entry with the names names.py replaced: English names that were another language's,
+    and names in a script the fonts cannot draw ("" leaves a peak unnamed)."""
+    if "o" not in _cache:
+        _cache["o"] = json.load(open(NAME_OVERRIDES))["overrides"] if os.path.exists(NAME_OVERRIDES) else {}
+    o = _cache["o"].get(e["id"])
+    if not o:
+        return e
+    e = dict(e)
+    for field in ("name", "peak"):
+        if field in o:
+            e[field] = dict(e[field], **{l: o[field][l] for l in ("en", "de") if l in o[field]})
+    return e
+
+
 def payload(e):
     """What TRMNL polls for one range: the drawing data plus every word, keyed by language and units."""
+    e = overridden(e)
     return {
         "v": 1,
         "id": e["id"],

@@ -1,0 +1,150 @@
+{
+ "note": "Written by pipeline/names.py: English names that were another language's, from English Wikipedia titles. Rebuild, do not hand edit.",
+ "overrides": {
+  "Q1116019": {
+   "peak": {
+    "was": "Pik Semionova Tien-Shanskogo",
+    "wikidata": "Q20619813",
+    "en": "Semenov-Tian-Shansky Peak"
+   }
+  },
+  "Q111676": {
+   "peak": {
+    "en": "Vishegrad",
+    "de": "Vishegrad",
+    "was": "Вишеград",
+    "wikidata": "Q9375421"
+   }
+  },
+  "Q1420375": {
+   "name": {
+    "was": "Sudirmanbergen",
+    "wikidata": "Q1420375",
+    "en": "Sudirman Range"
+   }
+  },
+  "Q1431570": {
+   "peak": {
+    "en": "Gudurički vrh",
+    "was": "Гудурички врх",
+    "wikidata": "Q2708467"
+   }
+  },
+  "Q1511240": {
+   "name": {
+    "was": "Silsilat Jibāl Qandīl",
+    "wikidata": "Q1511240",
+    "en": "Qandil Mountains"
+   }
+  },
+  "Q1557099": {
+   "name": {
+    "was": "Momskiy Khrebet",
+    "wikidata": "Q1557099",
+    "en": "Moma Range"
+   }
+  },
+  "Q1673845": {
+   "name": {
+    "was": "Iserlohner Höhe",
+    "wikidata": "Q1673845",
+    "en": "Iserlohn Heights"
+   }
+  },
+  "Q2415499": {
+   "name": {
+    "was": "Pegunungan Foja",
+    "wikidata": "Q2415499",
+    "en": "Foja Mountains"
+   }
+  },
+  "Q2474500": {
+   "peak": {
+    "en": "Machkharakhokhi",
+    "de": "Machkharakhokhi",
+    "was": "მაჩხარახოხი",
+    "wikidata": "Q12866676"
+   }
+  },
+  "Q2657171": {
+   "peak": {
+    "was": "Böyük Kirs Dağı",
+    "wikidata": "Q21212188",
+    "en": "Mount Boyuk Kirs"
+   }
+  },
+  "Q2961792": {
+   "name": {
+    "was": "Chaîne centrale",
+    "wikidata": "Q2961792",
+    "en": "Central Range"
+   }
+  },
+  "Q2961875": {
+   "peak": {
+    "was": "Pik Karla Marxa",
+    "wikidata": "Q1670220",
+    "en": "Karl Marx Peak"
+   }
+  },
+  "Q3545380": {
+   "peak": {
+    "was": "Pik Mayakovskiy",
+    "wikidata": "Q2468340",
+    "en": "Mayakovsky Peak"
+   }
+  },
+  "Q3651831": {
+   "peak": {
+    "en": "Ch'itagvala",
+    "de": "Ch'itagvala",
+    "was": "ჭითაგვალა",
+    "wikidata": "Q12871296"
+   }
+  },
+  "Q4226126": {
+   "peak": {
+    "was": "Pik BAM",
+    "wikidata": "Q4362531",
+    "en": "BAM Peak"
+   }
+  },
+  "Q539174": {
+   "peak": {
+    "was": "Mahya Dağı",
+    "wikidata": "Q1402638",
+    "en": "Mount Mahya"
+   }
+  },
+  "Q794778": {
+   "peak": {
+    "was": "Vârful Cucurbăta Mare",
+    "wikidata": "Q19709850",
+    "en": "Cucurbăta Mare"
+   }
+  },
+  "Q804012": {
+   "peak": {
+    "en": "Lednikovaya gora",
+    "de": "Lednikovaya gora",
+    "was": "Ледниковая гора",
+    "wikidata": "Q4257139"
+   }
+  },
+  "Q975280": {
+   "peak": {
+    "was": "Kaçkar Dağı",
+    "wikidata": "Q1641126",
+    "en": "Mount Kaçkar"
+   }
+  },
+  "Q978233": {
+   "peak": {
+    "en": "Shārat Walī Khalīfah",
+    "de": "Shārat Walī Khalīfah",
+    "was": "شارة ولي خليفة",
+    "wikidata": "Q21583769"
+   }
+  }
+ }
+}
