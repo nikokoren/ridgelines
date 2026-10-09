@@ -51,6 +51,8 @@ Everything else in docs/brief.md (data sources, settings, delivery) is the propo
 
 Each finding is dated. Re-check before relying on it.
 
+- **2026-10-09, labels for unnamed summits.** With "Unnamed" / "Unbenannt" the 298 unnamed summits now get a map label. All of them on OG full landscape and portrait and TRMNL X full: 894 renders, every one labelled, 0 labels over the box, 0 outside the stored square (rendered with the longer "Unbenannter Gipfel"). A further check of 200 random ranges in half horizontal, half vertical, quadrant and TRMNL X portrait: 1,000 renders, every named summit labelled. Every summit missing a label before was an unnamed one.
+
 - **2026-10-09, every range after the name and area changes.** `sweep.py every` on the re-picked lists with the new peak line, cleaned names and portrait caption: 4,470 renders (1,490 ranges, OG full landscape and portrait, TRMNL X full, German), all drawn, every named summit labelled, 0 labels over the box, 0 outside the stored square, 0 boxes that changed after drawing.
 
 - **2026-10-09, portrait title bar.** OG portrait captions that run past the title bar: range and peak (before) 2,032 of 5,763; range and country (now) 185 of 2,607; range alone would be 5 of 2,002. TRMNL X portrait and landscape: 0. OG landscape full caption: 14 of 5,864. Measured in Chromium with the framework (text swapped in one page). *Re-check:* after any caption change.
