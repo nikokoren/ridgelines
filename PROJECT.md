@@ -49,6 +49,8 @@ Everything else in docs/brief.md (data sources, settings, delivery) is the propo
 
 Each finding is dated. Re-check before relying on it.
 
+- **2026-10-09, new peak line fits.** "Highest peak: Birkkarspitze · 2,749 m" is up to 60 characters (was 57). The 800 longest of all peak lines, both languages and unit systems, through the framework's own clamp: 0 cut at two lines in OG full landscape and portrait, TRMNL X full, half horizontal, half vertical and quadrant. *Re-check:* after any change to the box copy or classes.
+
 - **2026-10-09, boolean settings.** TRMNL's form builder article (intercom.help/trmnl 10513740, fetched 2026-10-09) lists 19 field types, among them `boolean`, whose value "should either be `true` or `false`"; it does not say whether Liquid receives booleans or text. Liquid's `default` filter treats `false` as empty, so the old `| default: "yes"` would have turned an unticked box back on. The template now reads true/false as booleans or text, plus the old "yes"/"no". `pipeline/test_settings.py` renders every view with each form (true, false, "true", "false", "yes", "no", "", missing) in Ruby Liquid: 96 renders, 0 wrong; the old template got 32 wrong. Runs in the site workflow. *Re-check:* on a device, untick each box.
 - **2026-10-09, caption order.** The info box reads range, country, then peak and height; the title bar's full caption put the country last ("Rätikon · Schesaplana 2,965 m · Austria and 2 more"). Not intended: the title bar captions predate the info box. Now "Rätikon, Austria and 2 more · Schesaplana 2,965 m"; portrait drops the country, half horizontal the peak, half vertical and quadrant keep the range. The info box itself is the same in every view.
 
