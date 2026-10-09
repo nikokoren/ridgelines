@@ -53,11 +53,14 @@ def headline(entry, lang):
 
 
 def peak_line(entry, lang, units):
-    """Info box second line: "Highest peak Birkkarspitze 2,749 m" (Niko, 2026-10-01). A terrain
-    summit that no Wikidata peak names reads "Highest point 1,694 m"."""
+    """Info box second line: "Highest peak: Birkkarspitze · 2,749 m" (Niko, 2026-10-09; was
+    "Highest peak Birkkarspitze 2,749 m" from 2026-10-01). A terrain summit that no Wikidata peak
+    names reads "Highest point: 1,694 m". The no-break space keeps the dot off the start of a
+    wrapped line."""
+    h = height(entry["peak_m"], lang, units)
     if not entry["peak"][lang]:
-        return f"{UI[lang]['point']} {height(entry['peak_m'], lang, units)}"
-    return f"{UI[lang]['highest']} {peak_name(entry, lang)} {height(entry['peak_m'], lang, units)}"
+        return f"{UI[lang]['point']}: {h}"
+    return f"{UI[lang]['highest']}: {peak_name(entry, lang)}\u00a0· {h}"
 
 
 def captions(entry, lang, units):
