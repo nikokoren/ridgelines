@@ -1285,6 +1285,20 @@
    ]
   },
   {
+   "id": "Q21081377",
+   "wikidata": "Q21081377",
+   "kind": "terrain",
+   "name": "Famara",
+   "peak": "Peñas del Chache",
+   "peak_m": 672,
+   "lat": 29.1252,
+   "lon": -13.5254,
+   "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
    "id": "Q2171501",
    "wikidata": "Q2171501",
    "kind": "terrain",
@@ -1378,6 +1392,20 @@
    "lat": 35.0,
    "lon": -1.75,
    "width_km": 35,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
+   "id": "Q747584",
+   "wikidata": "Q747584",
+   "kind": "terrain",
+   "name": "Macizo de Teno",
+   "peak": "Teide",
+   "peak_m": 3715,
+   "lat": 28.3,
+   "lon": -16.85,
+   "width_km": 45,
    "flags": [
     "terrain summit"
    ]
@@ -5009,34 +5037,6 @@
    "peak_m": 1737,
    "lat": -1.6917,
    "lon": 31.1647,
-   "width_km": 45,
-   "flags": [
-    "terrain summit"
-   ]
-  },
-  {
-   "id": "Q31674593",
-   "wikidata": "Q31674593",
-   "kind": "terrain",
-   "name": "Wynberge",
-   "peak": "Wildeperdeberg",
-   "peak_m": 1753,
-   "lat": -32.3378,
-   "lon": 24.1244,
-   "width_km": 45,
-   "flags": [
-    "terrain summit"
-   ]
-  },
-  {
-   "id": "Q31674963",
-   "wikidata": "Q31674963",
-   "kind": "terrain",
-   "name": "Wolwefonteinberg",
-   "peak": "Waaipoort",
-   "peak_m": 1086,
-   "lat": -33.2642,
-   "lon": 24.5603,
    "width_km": 45,
    "flags": [
     "terrain summit"

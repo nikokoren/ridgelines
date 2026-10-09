@@ -727,6 +727,18 @@
    "flags": []
   },
   {
+   "id": "Q632794",
+   "wikidata": "Q632794",
+   "kind": "listed",
+   "name": "Hawaiian–Emperor seamount chain",
+   "peak": "Mauna Kea",
+   "peak_m": 4207,
+   "lat": 19.8206,
+   "lon": -155.468,
+   "width_km": 80,
+   "flags": []
+  },
+  {
    "id": "Q1969254",
    "wikidata": "Q1969254",
    "kind": "listed",
@@ -2455,6 +2467,18 @@
    "flags": []
   },
   {
+   "id": "Q3297593",
+   "wikidata": "Q3297593",
+   "kind": "listed",
+   "name": "Gallieni Massif",
+   "peak": "Mont Ross",
+   "peak_m": 1850,
+   "lat": -49.5922,
+   "lon": 69.4958,
+   "width_km": 35,
+   "flags": []
+  },
+  {
    "id": "Q3915866",
    "wikidata": "Q3915866",
    "kind": "listed",
@@ -2658,6 +2682,18 @@
    "lat": -41.9333,
    "lon": 145.583,
    "width_km": 45,
+   "flags": []
+  },
+  {
+   "id": "Q2961792",
+   "wikidata": "Q2961792",
+   "kind": "listed",
+   "name": "Chaîne centrale",
+   "peak": "Mont Panié",
+   "peak_m": 1629,
+   "lat": -20.5883,
+   "lon": 164.7706,
+   "width_km": 80,
    "flags": []
   },
   {
@@ -4543,49 +4579,6 @@
    "peak_m": 3145,
    "lat": 24.2175,
    "lon": 101.3247,
-   "width_km": 45,
-   "flags": [
-    "terrain summit, unnamed"
-   ]
-  },
-  {
-   "id": "Q4101391",
-   "wikidata": "Q4101391",
-   "kind": "terrain",
-   "name": "Bei Shan",
-   "peak": "",
-   "peak_m": 2027,
-   "lat": 41.5,
-   "lon": 95.0,
-   "width_km": 45,
-   "flags": [
-    "thin ripples (0.05)",
-    "terrain summit, unnamed"
-   ]
-  },
-  {
-   "id": "Q4452299",
-   "wikidata": "Q4452299",
-   "kind": "terrain",
-   "name": "Khrebet Tas-Kystabyt",
-   "peak": "",
-   "peak_m": 2187,
-   "lat": 63.8139,
-   "lon": 144.0328,
-   "width_km": 45,
-   "flags": [
-    "terrain summit, unnamed"
-   ]
-  },
-  {
-   "id": "Q577061",
-   "wikidata": "Q577061",
-   "kind": "terrain",
-   "name": "Lena-Angara plateau",
-   "peak": "",
-   "peak_m": 1107,
-   "lat": 55.5,
-   "lon": 105.0,
    "width_km": 45,
    "flags": [
     "terrain summit, unnamed"

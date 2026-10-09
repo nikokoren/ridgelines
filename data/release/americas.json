@@ -377,6 +377,18 @@
    "flags": []
   },
   {
+   "id": "Q153822",
+   "wikidata": "Q153822",
+   "kind": "listed",
+   "name": "Basse-Terre Island",
+   "peak": "Soufrière",
+   "peak_m": 1467,
+   "lat": 16.0438,
+   "lon": -61.6634,
+   "width_km": 37,
+   "flags": []
+  },
+  {
    "id": "Q586241",
    "wikidata": "Q586241",
    "kind": "listed",
@@ -401,6 +413,18 @@
    "flags": []
   },
   {
+   "id": "Q1457996",
+   "wikidata": "Q1457996",
+   "kind": "listed",
+   "name": "Tumuk Humak Mountains",
+   "peak": "Bellevue de l'Inini",
+   "peak_m": 831,
+   "lat": 3.5406,
+   "lon": -53.5733,
+   "width_km": 45,
+   "flags": []
+  },
+  {
    "id": "Q2263948",
    "wikidata": "Q2263948",
    "kind": "listed",
@@ -421,18 +445,6 @@
    "peak_m": 2469,
    "lat": -54.75,
    "lon": -69.48,
-   "width_km": 80,
-   "flags": []
-  },
-  {
-   "id": "Q632794",
-   "wikidata": "Q632794",
-   "kind": "listed",
-   "name": "Hawaiian–Emperor seamount chain",
-   "peak": "Mauna Kea",
-   "peak_m": 4207,
-   "lat": 19.8206,
-   "lon": -155.468,
    "width_km": 80,
    "flags": []
   },
@@ -1010,6 +1022,18 @@
    "lat": 33.7106,
    "lon": -117.5342,
    "width_km": 80,
+   "flags": []
+  },
+  {
+   "id": "Q1800250",
+   "wikidata": "Q1800250",
+   "kind": "listed",
+   "name": "Salvesen Range",
+   "peak": "Mount Carse",
+   "peak_m": 2330,
+   "lat": -54.6667,
+   "lon": -36.1167,
+   "width_km": 45,
    "flags": []
   },
   {
@@ -3445,6 +3469,20 @@
    ]
   },
   {
+   "id": "Q921987",
+   "wikidata": "Q921987",
+   "kind": "terrain",
+   "name": "Carbet Mountains",
+   "peak": "Morne Piquet",
+   "peak_m": 1130,
+   "lat": 14.6982,
+   "lon": -61.1138,
+   "width_km": 45,
+   "flags": [
+    "terrain summit"
+   ]
+  },
+  {
    "id": "Q1660972",
    "wikidata": "Q1660972",
    "kind": "terrain",
@@ -4521,48 +4559,6 @@
    "width_km": 80,
    "flags": [
     "terrain summit, unnamed"
-   ]
-  },
-  {
-   "id": "Q5055433",
-   "wikidata": "Q5055433",
-   "kind": "terrain",
-   "name": "Cayoosh Range",
-   "peak": "",
-   "peak_m": 2720,
-   "lat": 50.5,
-   "lon": -122.3667,
-   "width_km": 48,
-   "flags": [
-    "terrain summit, unnamed"
-   ]
-  },
-  {
-   "id": "Q5065013",
-   "wikidata": "Q5065013",
-   "kind": "terrain",
-   "name": "Cerro de las Mitras",
-   "peak": "",
-   "peak_m": 2895,
-   "lat": 25.7184,
-   "lon": -100.436,
-   "width_km": 45,
-   "flags": [
-    "terrain summit, unnamed"
-   ]
-  },
-  {
-   "id": "Q5065029",
-   "wikidata": "Q5065029",
-   "kind": "terrain",
-   "name": "Cerros de Escazú",
-   "peak": "Cerro Piedra Blanca",
-   "peak_m": 2408,
-   "lat": 9.85,
-   "lon": -84.15,
-   "width_km": 45,
-   "flags": [
-    "terrain summit"
    ]
   }
  ]
