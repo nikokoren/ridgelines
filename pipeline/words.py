@@ -7,7 +7,7 @@ keyed by language and units, so a third language is one more dictionary.
 import re
 
 UI = {
-    "en": {"and": "and", "more": "and {n} more", "highest": "Highest peak", "unnamed": "Unnamed peak", "thousands": ","},
+    "en": {"and": "and", "more": "and {n} more", "highest": "Highest peak", "unnamed": "Unnamed", "thousands": ","},
     "de": {"and": "und", "more": "und {n} weitere", "highest": "Höchster Gipfel", "unnamed": "Unbenannt", "thousands": "."},
 }
 LANGS = tuple(UI)
@@ -48,7 +48,7 @@ def plain(text):
 
 
 def peak_name(entry, lang):
-    """The summit's name; a summit no Wikidata peak names is "Unnamed peak" / "Unbenannt"
+    """The summit's name; a summit no Wikidata peak names is "Unnamed" / "Unbenannt"
     on the map, in the info box and in the title bar alike (Niko, 2026-10-09)."""
     return plain(entry["peak"][lang]) or UI[lang]["unnamed"]
 
