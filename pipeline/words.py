@@ -53,22 +53,27 @@ def headline(entry, lang):
 
 
 def peak_line(entry, lang, units):
-    """Info box second line: "Highest peak Birkkarspitze 2,749 m" (Niko, 2026-10-01). A terrain
-    summit that no Wikidata peak names reads "Highest point 1,694 m"."""
+    """Info box second line: "Highest peak: Birkkarspitze · 2,749 m" (Niko, 2026-10-09; was
+    "Highest peak Birkkarspitze 2,749 m" from 2026-10-01). A terrain summit that no Wikidata peak
+    names reads "Highest point: 1,694 m". The no-break space keeps the dot off the start of a
+    wrapped line."""
+    h = height(entry["peak_m"], lang, units)
     if not entry["peak"][lang]:
-        return f"{UI[lang]['point']} {height(entry['peak_m'], lang, units)}"
-    return f"{UI[lang]['highest']} {peak_name(entry, lang)} {height(entry['peak_m'], lang, units)}"
+        return f"{UI[lang]['point']}: {h}"
+    return f"{UI[lang]['highest']}: {peak_name(entry, lang)}\u00a0· {h}"
 
 
 def captions(entry, lang, units):
-    """Title bar instance text per view (title bar setting, off by default). Portrait drops the
-    country, which did not fit beside the plugin title at 480 px (PROJECT.md, portrait caption)."""
+    """Title bar instance text per view (title bar setting, off by default), in the info box's
+    order: range, country, then peak and height (2026-10-09; the full caption used to put the
+    country last). Narrower views drop from the end: portrait drops the country, which did not
+    fit beside the plugin title at 480 px (PROJECT.md, portrait caption), half horizontal the
+    peak, quadrant and half vertical keep the range alone."""
     name = range_name(entry, lang)
     peak = " ".join(p for p in (peak_name(entry, lang), height(entry["peak_m"], lang, units)) if p)
-    where = countries(entry, lang)
     return {
-        "full": SEP.join(p for p in (name, peak, where) if p),
+        "full": SEP.join((headline(entry, lang), peak)),
         "full_portrait": SEP.join((name, peak)),
-        "half_horizontal": SEP.join(p for p in (name, where) if p),
+        "half_horizontal": headline(entry, lang),
         "short": name,
     }

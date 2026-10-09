@@ -1,5 +1,5 @@
 {%- comment -%}
-  Ridgelines: shared part, prepended to every view by TRMNL. Reads the settings (an empty value
+  Ridgelines: shared part, prepended to every view by TRMNL. Reads the settings (a missing value
   counts as the default) and holds the one drawing script. Every word on screen comes from the
   payload, keyed by language and units (pipeline/words.py); only the error screen has its own.
   Framework classes only; the SVG line art takes every colour and size from TRMNLPaint.
@@ -8,9 +8,18 @@
 {%- if rl_lang != "de" -%}{%- assign rl_lang = "en" -%}{%- endif -%}
 {%- assign rl_units = trmnl.plugin_settings.custom_fields_values.units | default: "metric" -%}
 {%- if rl_units != "imperial" -%}{%- assign rl_units = "metric" -%}{%- endif -%}
-{%- assign rl_label = trmnl.plugin_settings.custom_fields_values.peak_label | default: "yes" -%}
-{%- assign rl_box = trmnl.plugin_settings.custom_fields_values.info_box | default: "yes" -%}
-{%- assign rl_bar = trmnl.plugin_settings.custom_fields_values.title_bar | default: "no" -%}
+{%- comment -%}
+  Peak name, info box and title bar are boolean fields. TRMNL's form builder article does not say
+  whether Liquid gets true/false or "true"/"false", so both count, and so do the "yes"/"no" of the
+  select fields that came before (2026-10-09). Not "| default:": Liquid's default filter treats
+  false as empty and would turn an unticked box back on.
+{%- endcomment -%}
+{%- assign rl_v = trmnl.plugin_settings.custom_fields_values.peak_label -%}
+{%- assign rl_label = "yes" -%}{%- if rl_v == false or rl_v == "false" or rl_v == "no" -%}{%- assign rl_label = "no" -%}{%- endif -%}
+{%- assign rl_v = trmnl.plugin_settings.custom_fields_values.info_box -%}
+{%- assign rl_box = "yes" -%}{%- if rl_v == false or rl_v == "false" or rl_v == "no" -%}{%- assign rl_box = "no" -%}{%- endif -%}
+{%- assign rl_v = trmnl.plugin_settings.custom_fields_values.title_bar -%}
+{%- assign rl_bar = "no" -%}{%- if rl_v == true or rl_v == "true" or rl_v == "yes" -%}{%- assign rl_bar = "yes" -%}{%- endif -%}
 <script>
   // One script for every Ridgelines drawing on the screen; a mashup can hold the plugin twice,
   // so drawings are found by attribute.
