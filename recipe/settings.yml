@@ -57,25 +57,16 @@ custom_fields:
   default: metric
 - keyname: peak_label
   name: Peak name
-  field_type: select
+  field_type: boolean
   description: Name the highest peak above its summit in the drawing.
-  options:
-  - Show: 'yes'
-  - Hide: 'no'
-  default: 'yes'
+  default: true
 - keyname: info_box
   name: Info box
-  field_type: select
+  field_type: boolean
   description: Range and country, with the highest peak and its height, bottom left.
-  options:
-  - Show: 'yes'
-  - Hide: 'no'
-  default: 'yes'
+  default: true
 - keyname: title_bar
   name: Title bar
-  field_type: select
+  field_type: boolean
   description: TRMNL's title bar with the plugin name and a short caption.
-  options:
-  - Show: 'yes'
-  - Hide: 'no'
-  default: 'no'
+  default: false

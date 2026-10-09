@@ -14,6 +14,8 @@ on:
       - pipeline/**
       - recipe/polling_url.txt
       - recipe/tools/polling_url.rb
+      - recipe/*.txt
+      - recipe/tools/render.rb
       - .github/workflows/site.yml
 
 permissions:
@@ -50,6 +52,8 @@ jobs:
         run: python pipeline/publish.py --skip-build
       - name: Polling URL renders the right slot in Ruby Liquid
         run: python pipeline/test_polling_url.py
+      - name: Show/hide settings read right in Ruby Liquid
+        run: python pipeline/test_settings.py
       - name: Polling URL unchanged
         run: git diff --exit-code recipe/polling_url.txt
       - uses: actions/upload-pages-artifact@v3
