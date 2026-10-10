@@ -16,10 +16,17 @@ custom_fields:
   category: nature,art
   github_url: https://github.com/nikokoren/ridgelines
   description: >-
-    One real mountain range a day, drawn from above as rippled lines: 1,460 ranges, 365 in each
-    of Europe, the Americas, Asia and Oceania, and Africa, so one area alone runs a year without
-    repeats. Pick the areas, or none for all of them. The range changes at midnight in your time
-    zone.<br><br>
+    Discover a real mountain range every morning. Ridgelines is minimalist mountain art for your
+    TRMNL: each day, satellite elevation data becomes a series of rippled, contour-like lines that
+    show the shape of one real range from above.<br><br>
+    Every drawing is a specific place on Earth, chosen for its terrain and its highest peak. A small
+    info panel names the range, its country and its highest summit with its elevation.<br><br>
+    Explore 1,460 ranges across Europe, the Americas, Asia and Oceania, and Africa. With 365 in
+    each area, one area alone lasts a full year without repeats. Tick the areas you like, or none
+    for all of them.<br><br>
+    Made for e-ink, the clean line art stays crisp on every TRMNL screen size, in portrait or
+    landscape, in black and white or greyscale. The landscape changes once a day, at midnight in
+    your time zone: a quiet moment of discovery, and a new place to learn about every morning.<br><br>
     Terrain produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and
     Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
     reserved. The organisations in charge of the Copernicus programme by law or by delegation do
@@ -27,6 +34,25 @@ custom_fields:
     kraft Gesetzes oder im Auftrag für das Copernicus-Programm zuständig sind, haften nicht für die
     Nutzung des Copernicus WorldDEM™-90.<br><br>
     Range names, highest points, heights and countries:
+    <a href="https://www.wikidata.org/">Wikidata</a> (CC0).
+  description-de: >-
+    Entdecke jeden Morgen ein echtes Gebirge. Ridgelines ist minimalistische Bergkunst für deinen
+    TRMNL: Jeden Tag werden Höhendaten aus Satellitenmessungen zu gewellten, höhenlinienartigen
+    Linien, die die Form eines echten Gebirges von oben zeigen.<br><br>
+    Jede Zeichnung ist ein bestimmter Ort der Erde, ausgewählt nach Gelände und höchstem Gipfel.
+    Ein kleines Infofeld nennt das Gebirge, sein Land und seinen höchsten Gipfel mit Höhe.<br><br>
+    1.460 Gebirge in Europa, Amerika, Asien und Ozeanien sowie Afrika stehen bereit. Mit 365 pro
+    Region reicht eine Region allein für ein ganzes Jahr ohne Wiederholung. Wähle die Regionen, die
+    dich interessieren, oder keine für alle.<br><br>
+    Für E-Ink gemacht: Die klaren Linien bleiben scharf auf jeder TRMNL-Bildschirmgröße, im Hoch-
+    und Querformat, in Schwarzweiß wie in Graustufen. Das Bild wechselt einmal am Tag, um
+    Mitternacht in deiner Zeitzone: ein ruhiger Moment der Entdeckung und jeden Morgen ein neuer
+    Ort zum Kennenlernen.<br><br>
+    Terrain produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and
+    Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
+    reserved. Die Organisationen, die kraft Gesetzes oder im Auftrag für das Copernicus-Programm
+    zuständig sind, haften nicht für die Nutzung des Copernicus WorldDEM™-90.<br><br>
+    Namen der Gebirge, höchste Gipfel, Höhen und Länder:
     <a href="https://www.wikidata.org/">Wikidata</a> (CC0).
 - keyname: area
   name: Area

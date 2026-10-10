@@ -1,4 +1,4 @@
-# Ridgelines
+# Ridgelines: Daily Mountain Art
 
 A [TRMNL](https://trmnl.com) recipe that shows one real mountain range per day, drawn as a top-down map of gently rippled lines.
 
