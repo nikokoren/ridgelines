@@ -42,6 +42,7 @@ Rules for any agent working in this repo.
 ## Copy
 
 - English and German from the first release, every string keyed by language code.
+- Write German copy from scratch, as a native speaker would, never as a translation of the English. Translated copy sounds robotic (Niko, 2026-10-10).
 - No en or em dashes in user-facing text, docs or commit messages. Use commas, periods, or rephrase.
 - The listing, icon and store image must not reference or imitate the album cover associated with ridgeline plots.
 

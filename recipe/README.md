@@ -6,7 +6,7 @@ TRMNL private plugin, Polling strategy. Framework classes only (Framework 3.4); 
 
 | File | TRMNL tab or field |
 | --- | --- |
-| `settings.yml` | Plugin settings: name, Polling strategy, Polling URL, refresh every 60 minutes, and the form fields (About with the Copernicus and Wikidata notices; Area; Language; Units; Peak name; Info box; Title bar) |
+| `settings.yml` | Plugin settings: name, Polling strategy, Polling URL, refresh every 60 minutes, and the form fields (About in English and German, `description` and `description-de`, each with the Copernicus and Wikidata notices; Area; Language; Units; Peak name; Info box; Title bar) |
 | `polling_url.txt` | The Polling URL, also inside `settings.yml`. Written by `pipeline/publish.py`; the build fails if the two differ |
 | `shared.txt` | **Shared** tab: reads the settings (an empty value counts as the default) and holds the drawing script |
 | `full.txt`, `half_horizontal.txt`, `half_vertical.txt`, `quadrant.txt` | One tab per view |
@@ -27,7 +27,7 @@ Each file is one payload of about 55 kB: the heightmap and every word on screen,
 
 1. In TRMNL, create a private plugin with the **Polling** strategy.
 2. Paste the Polling URL from `polling_url.txt`, set the refresh interval to 60 minutes.
-3. Add the form fields from `settings.yml` (keynames `area` (multiple), `language`, `units`, `peak_label`, `info_box`, `title_bar`, with the options and defaults listed there), and paste the About text.
+3. Add the form fields from `settings.yml` (keynames `area` (multiple), `language`, `units`, `peak_label`, `info_box`, `title_bar`, with the options and defaults listed there), and paste the About text in both languages.
 4. Paste `shared.txt` into the Shared tab and each view file into its tab.
 
 Alternatively zip `settings.yml` and the `.txt` files (renamed to `.liquid`) for TRMNL's plugin import; that path has not been tried.

@@ -16,10 +16,15 @@ custom_fields:
   category: nature,art
   github_url: https://github.com/nikokoren/ridgelines
   description: >-
-    One real mountain range a day, drawn from above as rippled lines: 1,460 ranges, 365 in each
-    of Europe, the Americas, Asia and Oceania, and Africa, so one area alone runs a year without
-    repeats. Pick the areas, or none for all of them. The range changes at midnight in your time
-    zone.<br><br>
+    Discover a real mountain range every morning. Ridgelines is minimalist mountain art for your
+    TRMNL: each day, satellite elevation data becomes a series of rippled, contour-like lines that
+    show the shape of one real range from above.<br><br>
+    Every drawing is a specific place on Earth, chosen for its terrain and its highest peak. A small
+    info panel names the range, its country and its highest summit with its elevation.<br><br>
+    Explore mountains across Europe, the Americas, Asia and Oceania, and Africa.<br><br>
+    Made for e-ink, the clean line art stays crisp on every TRMNL screen size, in portrait or
+    landscape, in black and white or greyscale. The landscape changes once a day, giving you a
+    quiet moment of discovery and a new place to learn about every morning.<br><br>
     Terrain produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and
     Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
     reserved. The organisations in charge of the Copernicus programme by law or by delegation do
@@ -27,6 +32,24 @@ custom_fields:
     kraft Gesetzes oder im Auftrag für das Copernicus-Programm zuständig sind, haften nicht für die
     Nutzung des Copernicus WorldDEM™-90.<br><br>
     Range names, highest points, heights and countries:
+    <a href="https://www.wikidata.org/">Wikidata</a> (CC0).
+  description-de: >-
+    Jeden Morgen ein echtes Gebirge auf deinem TRMNL. Ridgelines macht aus Satellitendaten feine,
+    gewellte Linien und zeigt so, wie die Landschaft von oben aussieht. Bergkunst in ihrer
+    schlichtesten Form.<br><br>
+    Hinter jedem Bild steckt ein echter Ort, ausgesucht wegen seines Geländes und seines höchsten
+    Gipfels. Ein kleiner Kasten verrät, wie das Gebirge heißt, wo es liegt und wie hoch sein
+    Gipfel ist.<br><br>
+    Die Reise führt durch Europa, Amerika, Asien und Ozeanien sowie Afrika, von den Alpen über die
+    Anden und den Himalaya bis zum Hohen Atlas.<br><br>
+    Die klaren Linien sind für E-Ink gemacht und bleiben auf jedem TRMNL gestochen scharf,
+    hochkant wie quer, in Schwarzweiß wie in Graustufen. Das Bild wechselt einmal am Tag: ein
+    kurzer, ruhiger Blick am Morgen, und du kennst wieder einen Ort mehr auf der Welt.<br><br>
+    Terrain produced using Copernicus WorldDEM™-90 © DLR e.V. 2010-2014 and © Airbus Defence and
+    Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights
+    reserved. Die Organisationen, die kraft Gesetzes oder im Auftrag für das Copernicus-Programm
+    zuständig sind, haften nicht für die Nutzung des Copernicus WorldDEM™-90.<br><br>
+    Namen der Gebirge, höchste Gipfel, Höhen und Länder:
     <a href="https://www.wikidata.org/">Wikidata</a> (CC0).
 - keyname: area
   name: Area
