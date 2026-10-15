@@ -66,8 +66,8 @@
 
       var el = { el: box };
       var ink = TRMNLPaint.textColor("default", el);
-      var paper = TRMNLPaint.semantic("canvas", el).color;
-      var gap = TRMNLPaint.px(opts.gap, el), amp = opts.ripple * gap;
+      var paper = TRMNLPaint.semantic("canvas", { el: el }).color;
+      var gap = TRMNLPaint.px(opts.gap, { el: el }), amp = opts.ripple * gap;
       var depth = parseFloat(TRMNLPaint.cssVar("--framework-bit-depth", el)) || 1;
       var a = decode(entry);
       var floor = opts.floor == null ? entry.floor : opts.floor;
@@ -76,7 +76,7 @@
         floor = sorted[Math.min(sorted.length - 1, Math.floor(opts.floorPct / 100 * sorted.length))];
       }
       var top255 = opts.norm === "crop" ? 255 : entry.top;   // ripple can overshoot above top
-      var kmPerPx = entry.crop.width_km / (REF_GAPS * TRMNLPaint.px(LOOK.gap, el)) * (opts.zoom || 1);
+      var kmPerPx = entry.crop.width_km / (REF_GAPS * TRMNLPaint.px(LOOK.gap, { el: el })) * (opts.zoom || 1);
 
       var lines = Math.max(2, Math.floor((h - amp) / gap) + 1);
       var used = amp + (lines - 1) * gap, top = (h - used) / 2;
@@ -111,7 +111,7 @@
 
       var svg = svgEl("svg", { width: w, height: h, viewBox: "0 0 " + w + " " + h });
       if (depth <= 1) svg.setAttribute("shape-rendering", "crispEdges");
-      var stroke = TRMNLPaint.px(1, el), step = Math.max(1, TRMNLPaint.px(2, el));
+      var stroke = TRMNLPaint.px(1, { el: el }), step = Math.max(1, TRMNLPaint.px(2, { el: el }));
       // Sample every line first, so the ripple scale can follow the crop's top
       // (norm "crop", default) or the visible window's top (norm "window").
       var rows = [], xs = [], hiSeen = 0;
@@ -135,7 +135,7 @@
         var defs = svgEl("defs", {});
         svg.appendChild(defs);
         opts.shade.forEach(function (s, k) {
-          var f = TRMNLPaint.bg(s[1], el), fill = f.color;
+          var f = TRMNLPaint.bg(s[1], { el: el }), fill = f.color;
           if (f.url && f.size) {
             var id = "rl-shade-" + k + "-" + Math.random().toString(36).slice(2, 7);
             var pat = svgEl("pattern", { id: id, patternUnits: "userSpaceOnUse", width: f.size, height: f.size });
@@ -177,7 +177,7 @@
       report.lines = lines;
 
       if (opts.label !== false && peakPt && opts.peakName) {
-        var type = TRMNLPaint.type("label", el);
+        var type = TRMNLPaint.type(opts.labelClass || "label", { el: el });
         var fs = parseFloat(type.fontSize), tick = opts.tick * gap;
         var x = peakPt[0], y = peakPt[1];
         var tickLine = svgEl("line", { x1: x, y1: y - gap * 0.5, x2: x, y2: y - gap * 0.5 - tick, stroke: ink, "stroke-width": stroke });
@@ -223,7 +223,7 @@
         var d = el.dataset;
         var entry = { heights: d.heights, grid: +d.grid, crop: { side_km: +d.sideKm, width_km: +d.widthKm },
                       floor: +d.floor, top: +d.top, peak_km: [+d.peakX, +d.peakY] };
-        var opts = Object.assign({ peakName: d.peakName || null }, window.RIDGELINES_LOOK || {});
+        var opts = Object.assign({ peakName: d.peakName || null, labelClass: d.labelClass || "label" }, window.RIDGELINES_LOOK || {});
         var paint = function () {
           var report = draw(el, entry, opts);
           el.setAttribute("data-ridgelines-drawn", report.drawn ? "1" : "0");
