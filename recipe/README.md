@@ -6,7 +6,7 @@ TRMNL private plugin, Polling strategy. Framework classes only (Framework 3.4); 
 
 | File | TRMNL tab or field |
 | --- | --- |
-| `settings.yml` | Plugin settings: name, Polling strategy, Polling URL, refresh every 60 minutes, and the form fields (About in English and German, `description` and `description-de`, each with the Copernicus and Wikidata notices; Area; Language; Units; Peak name; Info box; Title bar) |
+| `settings.yml` | Plugin settings: name, Polling strategy, Polling URL, refresh every 60 minutes, and the form fields (About in English and German, `description` and `description-de`, each with the Copernicus and Wikidata notices; Area; Language; Units; Peak name; Info box; Title bar; Globe view) |
 | `polling_url.txt` | The Polling URL, also inside `settings.yml`. Written by `pipeline/publish.py`; the build fails if the two differ |
 | `shared.txt` | **Shared** tab: reads the settings (an empty value counts as the default) and holds the drawing script |
 | `full.txt`, `half_horizontal.txt`, `half_vertical.txt`, `quadrant.txt` | One tab per view |
@@ -27,7 +27,23 @@ Each file is one payload of about 55 kB: the heightmap and every word on screen,
 
 1. In TRMNL, create a private plugin with the **Polling** strategy.
 2. Paste the Polling URL from `polling_url.txt`, set the refresh interval to 60 minutes.
-3. Add the form fields from `settings.yml` (keynames `area` (multiple), `language`, `units`, `peak_label`, `info_box`, `title_bar`, with the options and defaults listed there), and paste the About text in both languages.
+3. Add the form fields from `settings.yml` (keynames `area` (multiple), `language`, `units`, `peak_label`, `info_box`, `title_bar`, `world_map`, with the options and defaults listed there), and paste the About text in both languages.
 4. Paste `shared.txt` into the Shared tab and each view file into its tab.
 
 Alternatively zip `settings.yml` and the `.txt` files (renamed to `.liquid`) for TRMNL's plugin import; that path has not been tried.
+
+## Globe view
+
+Globe view is off by default (`world_map`). It adds a round globe rotated to centre the range crop location
+in the bottom-right corner of full views, landscape and portrait. In portrait the info box
+narrows to leave room. The continents are outlined, with a solid dot at the centre marking the location. Half views and quadrants never show it. There are no extra network requests
+during rendering. The globe uses public-domain Natural Earth 1:110m land, simplified for this size
+(see tools/world_map.py); very small islands are omitted, but their locations still get a dot.
+A fisheye projection magnifies geography near the dot by up to 3x, compressing the outer
+hemisphere into the same circular rim. This is a deliberately stylised locator. Projection
+and hemisphere clipping use bundled d3-geo, with its licence notices
+in Shared and tools/globe-LICENSE.txt. tools/globe.js documents how to regenerate the bundle.
+
+After updating the templates and adding the boolean field, rebuild and deploy the Pages payloads
+with pipeline/publish.py so they include location.lat and location.lon. Existing payloads without
+coordinates still render normally, with the locator hidden until the data is updated.

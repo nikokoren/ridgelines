@@ -2,10 +2,10 @@
 
     python pipeline/test_settings.py      # needs ruby and the liquid gem (5.14.0)
 
-Peak name, info box and title bar are boolean fields (2026-10-09). TRMNL's form builder article
+Peak name, info box, title bar and world map are boolean fields (2026-10-09). TRMNL's form builder article
 does not say whether Liquid receives true/false or "true"/"false", and earlier installs saved
 "yes"/"no" from the select fields, so every form is rendered in every view: true, false,
-"true", "false", "yes", "no", "" and missing. Defaults: peak name and info box on, title bar off.
+"true", "false", "yes", "no", "" and missing. Defaults: peak name and info box on, title bar and world map off. The map is full-view only.
 """
 import json, os, subprocess, sys
 
@@ -23,6 +23,10 @@ PAYLOAD = {"heights": "AA==", "grid": 1, "side_km": 1, "width_km": 1, "floor": 0
            "caption": {l: {u: {"full": "Karwendel", "full_portrait": "Karwendel", "half_horizontal": "Karwendel",
                                 "short": "Karwendel"} for u in ("metric", "imperial")} for l in ("en", "de")}}
 
+# Real range location from the committed beta list; no invented geographic input.
+REFERENCE = json.load(open(os.path.join(HERE, "..", "data", "beta_de_at.json")))["entries"][0]
+PAYLOAD["location"] = {k: REFERENCE[k] for k in ("lat", "lon")}
+
 
 def render(view, values):
     ctx = dict(PAYLOAD, trmnl={"user": {"utc_offset": 0}, "plugin_settings": {"custom_fields_values": values}})
@@ -35,20 +39,30 @@ def render(view, values):
 def shown(html):
     return {"peak_label": 'data-peak-name="Birkkarspitze"' in html,
             "info_box": "data-ridgelines-box>" in html,     # the markup, not the script's selector
-            "title_bar": "title_bar" in html}
+            "title_bar": "title_bar" in html,
+            "world_map": 'data-world-lat="' in html}
 
 
 if __name__ == "__main__":
     n = bad = 0
-    for key, default in (("peak_label", True), ("info_box", True), ("title_bar", False)):
+    for key, default in (("peak_label", True), ("info_box", True), ("title_bar", False), ("world_map", False)):
         for form, value in FORMS.items():
             want = True if value in ON else False if value in OFF else default
             values = {} if value is None else {key: value}
             for view in VIEWS:
                 got = shown(render(view, values))[key]
+                expected = want and (view == "full" or key != "world_map")
                 n += 1
-                if got != want:
+                if got != expected:
                     bad += 1
-                    print(f"mismatch: {key} = {form} in {view}: shown {got}, want {want}")
+                    print(f"mismatch: {key} = {form} in {view}: shown {got}, want {expected}")
+    # Older published payloads must remain usable until the data is rebuilt.
+    location = PAYLOAD.pop("location")
+    for view in VIEWS:
+        n += 1
+        if shown(render(view, {"world_map": True}))["world_map"]:
+            bad += 1
+            print(f"locator shown without coordinates in {view}")
+    PAYLOAD["location"] = location
     print(f"{n} renders, {bad} mismatches")
     sys.exit(1 if bad else 0)

@@ -52,12 +52,19 @@ def overridden(e, _cache={}):
     return e
 
 
+def range_location(crop):
+    """Crop centre as a geographic location; curated crops can cross the antimeridian."""
+    lon = crop["lon"]
+    return {"lat": crop["lat"], "lon": lon if -180 <= lon <= 180 else (lon + 180) % 360 - 180}
+
+
 def payload(e):
     """What TRMNL polls for one range: the drawing data plus every word, keyed by language and units."""
     e = overridden(e)
     return {
         "v": 1,
         "id": e["id"],
+        "location": range_location(e["crop"]),
         "heights": e["heights"], "grid": e["grid"],
         "side_km": e["crop"]["side_km"], "width_km": e["crop"]["width_km"],
         "floor": e["floor"], "top": e["top"],

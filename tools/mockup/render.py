@@ -37,7 +37,7 @@ VIEWS = {
     "quadrant":        ("mashup--2x2", "view--quadrant"),
 }
 # Defaults of the custom fields in recipe/settings.yml (Niko, 2026-10-01).
-SETTINGS = dict(language="en", units="metric", peak_label="yes", info_box="yes", title_bar="no")
+SETTINGS = dict(language="en", units="metric", peak_label="yes", info_box="yes", title_bar="no", world_map="no")
 
 
 def liquid(view, payload, settings):
