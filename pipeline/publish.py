@@ -88,10 +88,22 @@ def polling_url(counts=None, beta_count=30):
         '{%- if rl_t contains "' + a + '" -%}{%- assign rl_s = rl_s | append: "' + a + ',' + '" -%}{%- endif -%}'
         for a in areas)
     pick += '{%- if rl_s == "" -%}{%- assign rl_s = "' + "".join(a + "," for a in areas) + '" -%}{%- endif -%}'
+    # Daily: the ticked areas take turns, one per day; each area's counter (how many of its ranges
+    # have been shown) is day div k. Expedition mode: one area per week, starting Monday at local
+    # midnight (day 0, 1970-01-01, was a Thursday, so the week is (day + 3) div 7). The area's
+    # counter is then (week div k) * 7 + weekday - 3, which advances at the same pace as day div k,
+    # so switching the mode moves at most a few ranges, and with one area ticked it equals the day.
     pick += ('{%- assign rl_l = rl_s | split: "," -%}{%- assign rl_k = rl_l.size -%}'
-             '{%- assign rl_j = rl_day | modulo: rl_k -%}{%- assign rl_a = rl_l[rl_j] -%}'
+             '{%- assign rl_e = expedition -%}'
+             '{%- if rl_e == true or rl_e == "true" or rl_e == "yes" -%}'
+             '{%- assign rl_w = rl_day | plus: 3 | divided_by: 7 -%}{%- assign rl_dw = rl_day | plus: 3 | modulo: 7 -%}'
+             '{%- assign rl_j = rl_w | modulo: rl_k -%}'
+             '{%- assign rl_n = rl_w | divided_by: rl_k | times: 7 | plus: rl_dw | minus: 3 -%}'
+             '{%- else -%}'
+             '{%- assign rl_j = rl_day | modulo: rl_k -%}{%- assign rl_n = rl_day | divided_by: rl_k -%}'
+             '{%- endif -%}{%- assign rl_a = rl_l[rl_j] -%}'
              '{%- case rl_a -%}' + "".join('{%- when "' + a + '" -%}{%- assign rl_c = ' + str(counts[a]) + ' -%}' for a in areas)
-             + '{%- endcase -%}{%- assign rl_i = rl_day | divided_by: rl_k | modulo: rl_c -%}')
+             + '{%- endcase -%}{%- assign rl_i = rl_n | modulo: rl_c -%}')
     return day + pick + SITE_URL + "/{{ rl_a }}/d/{{ rl_i }}.json"
 
 
