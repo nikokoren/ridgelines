@@ -42,3 +42,20 @@ python mockup.py --mode headon --out front.png     # rejected front-on panorama
 - **Coverage.** The demo tiles only cover 47 to 48°N and 11 to 12°E, so the only preset is the Karwendel. Tuning across the planned fixture corpus needs the tool extended to read Copernicus GLO-90.
 - **Spikes.** Heights above the preset's documented high point are patched and clipped. The Karwendel crop has a spike reaching 3,011 m against a documented 2,749 m.
 - **Check.** With default settings the output matched `docs/mockups/chosen_topdown_64_lines.png` exactly on 2026-10-01 (0 of 384,000 pixels differ). Re-run that diff after any change.
+
+## Globe locator checks
+
+After building the eight real fixtures with `python pipeline/entries.py`, run
+`python tools/mockup/test_world_map.py` from the repository root. It checks all published
+range coordinates, including antimeridian wrapping, then renders the fixture corpus on
+every listed device, in both orientations and all views. Full views cover English and
+German, both themes, the locator off, and an art-only view with a title bar. It checks
+that the rotated location is centred, plus overlap with the caption and summit label. The default Chromium is
+`/usr/bin/chromium`; set `CHROME` to use another installed binary. Framework assets must
+already be fetched into the renderer cache.
+
+`node recipe/tools/test_globe.mjs` checks the bundled projection against all committed
+published locations, including the date line. It verifies a centred marker, finite geometry,
+hemisphere clipping and different globe silhouettes for different locations, without building terrain.
+It also checks real neighbouring ranges for centre magnification and verifies that real visible
+locations keep their radial direction and remain inside the same globe radius.

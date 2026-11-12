@@ -13,9 +13,8 @@ on:
       - data/**
       - pipeline/**
       - recipe/polling_url.txt
-      - recipe/tools/polling_url.rb
+      - recipe/tools/**
       - recipe/*.txt
-      - recipe/tools/render.rb
       - .github/workflows/site.yml
 
 permissions:
@@ -46,6 +45,8 @@ jobs:
           path: .cache/entries
           key: entries-${{ hashFiles('pipeline/entries.py', 'data/**') }}
           restore-keys: entries-
+      - name: Globe centres and clips every published location
+        run: node recipe/tools/test_globe.mjs
       - name: Build entries and site
         env:
           RIDGELINES_KEEP_TILES: "0"

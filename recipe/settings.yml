@@ -93,3 +93,9 @@ custom_fields:
   field_type: boolean
   description: TRMNL's title bar with the plugin name and a short caption.
   default: false
+
+- keyname: world_map
+  name: Globe view
+  field_type: boolean
+  description: Show a small globe centred on the range, bottom right in full-screen views.
+  default: false
