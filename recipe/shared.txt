@@ -125,7 +125,9 @@ var RidgelinesGlobe=(()=>{var Wn=Object.defineProperty;var le=Object.getOwnPrope
       var lat = Number(d.worldLat), lon = Number(d.worldLon);
       if (!Number.isFinite(lat) || !Number.isFinite(lon) || Math.abs(lat) > 90 || Math.abs(lon) > 180) return null;
       var paint = { el: box }, inset = TRMNLPaint.px(12, paint), pad = TRMNLPaint.px(5, paint);
-      var diameter = Math.min(TRMNLPaint.px(74, paint), box.clientWidth * 0.18);
+      // TRMNL X (the framework's screen--lg size class) gets a globe half as large again (Niko, 2026-11-12).
+      var screen = TRMNLPaint.screen(box), large = !!(screen && screen.classList.contains("screen--lg"));
+      var diameter = Math.min(TRMNLPaint.px(large ? 111 : 74, paint), box.clientWidth * 0.18);
       var size = diameter + 2 * pad;
       return { x: box.clientWidth - inset - size, y: box.clientHeight - inset - size,
         w: size, h: size, pad: pad, lat: lat, lon: lon, radius: diameter / 2 };
